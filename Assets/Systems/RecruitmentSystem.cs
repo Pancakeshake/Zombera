@@ -1,4 +1,5 @@
 using UnityEngine;
+using Zombera.Characters;
 
 namespace Zombera.Systems
 {
@@ -8,6 +9,20 @@ namespace Zombera.Systems
     public sealed class RecruitmentSystem : MonoBehaviour
     {
         [SerializeField] private SquadManager squadManager;
+        [SerializeField] private bool addFollowControllerOnRecruit = true;
+
+        private void Awake()
+        {
+            if (squadManager == null)
+            {
+                squadManager = SquadManager.Instance;
+            }
+
+            if (squadManager == null)
+            {
+                squadManager = FindObjectOfType<SquadManager>();
+            }
+        }
 
         public bool TryRecruit(SurvivorAI survivor, RecruitmentMethod method)
         {
@@ -23,11 +38,15 @@ namespace Zombera.Systems
                 return false;
             }
 
-            survivor.MarkRecruited();
+            SquadMember squadMember = PrepareSquadMember(survivor);
 
-            // TODO: Convert survivor to squad member prefab/component pipeline.
-            // TODO: Register recruit in squad manager with persistent ID.
-            _ = squadManager;
+            if (squadMember == null)
+            {
+                return false;
+            }
+
+            survivor.MarkRecruited();
+            ResolveSquadManager()?.RegisterMember(squadMember);
 
             return true;
         }
@@ -37,6 +56,48 @@ namespace Zombera.Systems
             // TODO: Push dialogue event into UI/dialogue pipeline.
             _ = survivor;
             _ = dialogueEvent;
+        }
+
+        private SquadMember PrepareSquadMember(SurvivorAI survivor)
+        {
+            GameObject recruitObject = survivor.gameObject;
+            Unit recruitUnit = recruitObject.GetComponent<Unit>();
+
+            if (recruitUnit == null)
+            {
+                recruitUnit = recruitObject.AddComponent<Unit>();
+            }
+
+            if (addFollowControllerOnRecruit && recruitObject.GetComponent<FollowController>() == null)
+            {
+                recruitObject.AddComponent<FollowController>();
+            }
+
+            SquadMember squadMember = recruitObject.GetComponent<SquadMember>();
+
+            if (squadMember == null)
+            {
+                squadMember = recruitObject.AddComponent<SquadMember>();
+            }
+
+            squadMember.RefreshReferences();
+            recruitUnit.SetRole(UnitRole.SquadMember);
+            return squadMember;
+        }
+
+        private SquadManager ResolveSquadManager()
+        {
+            if (squadManager == null)
+            {
+                squadManager = SquadManager.Instance;
+            }
+
+            if (squadManager == null)
+            {
+                squadManager = FindObjectOfType<SquadManager>();
+            }
+
+            return squadManager;
         }
     }
 

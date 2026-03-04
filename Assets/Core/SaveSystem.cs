@@ -11,6 +11,8 @@ namespace Zombera.Core
     {
         [SerializeField] private string saveFolderName = "Saves";
 
+        private readonly Dictionary<string, GameSaveData> saveSlots = new Dictionary<string, GameSaveData>();
+
         public bool IsInitialized { get; private set; }
         public string CurrentSlotId { get; private set; }
 
@@ -33,19 +35,53 @@ namespace Zombera.Core
         {
             CurrentSlotId = slotId;
             GameSaveData saveData = BuildSaveData();
-
-            // TODO: Serialize saveData to disk (JSON/binary/chunk files).
-            // TODO: Add async pipeline and backup/rollback strategy.
-            _ = saveData;
+            SaveGameData(slotId, saveData);
         }
 
         public void LoadGame(string slotId)
         {
             CurrentSlotId = slotId;
 
-            // TODO: Read save payload from disk and validate version/hash.
-            GameSaveData saveData = new GameSaveData();
+            if (!TryLoadGameData(slotId, out GameSaveData saveData))
+            {
+                // TODO: Read save payload from disk and validate version/hash.
+                saveData = new GameSaveData();
+            }
+
             ApplySaveData(saveData);
+        }
+
+        public void SaveGameData(string slotId, GameSaveData saveData)
+        {
+            if (string.IsNullOrWhiteSpace(slotId))
+            {
+                return;
+            }
+
+            CurrentSlotId = slotId;
+            saveSlots[slotId] = CloneSaveData(saveData);
+
+            // TODO: Serialize saveData to disk (JSON/binary/chunk files).
+            // TODO: Add async pipeline and backup/rollback strategy.
+            // TODO: Save index metadata and slot screenshots.
+        }
+
+        public bool TryLoadGameData(string slotId, out GameSaveData saveData)
+        {
+            if (string.IsNullOrWhiteSpace(slotId))
+            {
+                saveData = null;
+                return false;
+            }
+
+            if (!saveSlots.TryGetValue(slotId, out GameSaveData cachedSave))
+            {
+                saveData = null;
+                return false;
+            }
+
+            saveData = CloneSaveData(cachedSave);
+            return true;
         }
 
         public GameSaveData BuildSaveData()
@@ -63,6 +99,18 @@ namespace Zombera.Core
             // TODO: Reconstruct runtime objects from saveData in deterministic order.
             // TODO: Resolve cross-object references (units, chunk entities, bases).
             _ = saveData;
+        }
+
+        private static GameSaveData CloneSaveData(GameSaveData source)
+        {
+            if (source == null)
+            {
+                return new GameSaveData();
+            }
+
+            string json = JsonUtility.ToJson(source);
+            GameSaveData cloned = JsonUtility.FromJson<GameSaveData>(json);
+            return cloned ?? new GameSaveData();
         }
     }
 

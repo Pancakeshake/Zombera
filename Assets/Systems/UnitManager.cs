@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Zombera.Characters;
 
 namespace Zombera.Systems
@@ -26,12 +27,14 @@ namespace Zombera.Systems
             Instance = this;
             DontDestroyOnLoad(gameObject);
             RefreshRegistry();
+            SceneManager.sceneLoaded += OnSceneLoaded;
         }
 
         private void OnDestroy()
         {
             if (Instance == this)
             {
+                SceneManager.sceneLoaded -= OnSceneLoaded;
                 Instance = null;
             }
         }
@@ -45,8 +48,13 @@ namespace Zombera.Systems
             {
                 RegisterUnit(units[i]);
             }
+        }
 
-            // TODO: Listen to scene load events to refresh registry after scene transitions.
+        private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+        {
+            _ = scene;
+            _ = mode;
+            RefreshRegistry();
         }
 
         public void RegisterUnit(Unit unit)

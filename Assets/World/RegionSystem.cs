@@ -12,6 +12,7 @@ namespace Zombera.World
     {
         [SerializeField] private List<RegionDefinition> regions = new List<RegionDefinition>();
         [SerializeField] private RegionDefinition fallbackRegion;
+        [SerializeField] private int chunkSize = 32;
 
         public RegionDefinition GetRegionAtWorldPosition(Vector3 worldPosition)
         {
@@ -30,7 +31,7 @@ namespace Zombera.World
 
         public RegionDefinition GetRegionAtChunk(Vector2Int chunkCoordinates)
         {
-            Vector3 samplePosition = new Vector3(chunkCoordinates.x * 64f, 0f, chunkCoordinates.y * 64f);
+            Vector3 samplePosition = new Vector3(chunkCoordinates.x * chunkSize, 0f, chunkCoordinates.y * chunkSize);
             return GetRegionAtWorldPosition(samplePosition);
         }
 

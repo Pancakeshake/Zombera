@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Zombera.Systems
 {
@@ -8,11 +9,55 @@ namespace Zombera.Systems
     /// </summary>
     public sealed class SquadManager : MonoBehaviour
     {
+        public static SquadManager Instance { get; private set; }
+
         [SerializeField] private CommandSystem commandSystem;
 
         private readonly List<SquadMember> squadMembers = new List<SquadMember>();
 
         public IReadOnlyList<SquadMember> SquadMembers => squadMembers;
+
+        private void Awake()
+        {
+            if (Instance != null && Instance != this)
+            {
+                Destroy(gameObject);
+                return;
+            }
+
+            Instance = this;
+            RefreshSquadRoster();
+        }
+
+        private void OnEnable()
+        {
+            SceneManager.sceneLoaded += OnSceneLoaded;
+        }
+
+        private void OnDisable()
+        {
+            SceneManager.sceneLoaded -= OnSceneLoaded;
+        }
+
+        private void OnDestroy()
+        {
+            if (Instance == this)
+            {
+                SceneManager.sceneLoaded -= OnSceneLoaded;
+                Instance = null;
+            }
+        }
+
+        public void RefreshSquadRoster()
+        {
+            squadMembers.Clear();
+            SquadMember[] members = FindObjectsOfType<SquadMember>();
+
+            for (int i = 0; i < members.Length; i++)
+            {
+                RegisterMember(members[i]);
+            }
+        }
 
         public void RegisterMember(SquadMember member)
         {
@@ -54,6 +99,13 @@ namespace Zombera.Systems
             }
 
             return null;
+        }
+
+        private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+        {
+            _ = scene;
+            _ = mode;
+            RefreshSquadRoster();
         }
     }
 }

@@ -9,8 +9,10 @@ namespace Zombera.World
     public sealed class ChunkLoader : MonoBehaviour
     {
         [SerializeField] private int loadRadiusInChunks = 1;
-        [SerializeField] private int chunkSize = 64;
+        [SerializeField] private int chunkSize = 32;
+        [SerializeField] private ChunkCache chunkCache;
 
+        public int ChunkSize => chunkSize;
         public IReadOnlyDictionary<Vector2Int, WorldChunk> LoadedChunks => loadedChunks;
 
         private readonly Dictionary<Vector2Int, WorldChunk> loadedChunks = new Dictionary<Vector2Int, WorldChunk>();
@@ -37,7 +39,9 @@ namespace Zombera.World
                     continue;
                 }
 
-                RegionDefinition region = regionSystem.GetRegionAtChunk(requiredCoord);
+                RegionDefinition region = regionSystem != null
+                    ? regionSystem.GetRegionAtChunk(requiredCoord)
+                    : null;
                 LoadChunk(requiredCoord, region, chunkGenerator);
             }
 
@@ -58,7 +62,19 @@ namespace Zombera.World
 
         private void LoadChunk(Vector2Int coordinates, RegionDefinition region, ChunkGenerator chunkGenerator)
         {
-            WorldChunk chunk = chunkGenerator.GenerateChunk(coordinates, region);
+            WorldChunk chunk = null;
+
+            if (chunkCache != null && chunkCache.TryGetChunk(coordinates, out WorldChunk cachedChunk))
+            {
+                chunk = cachedChunk;
+                chunkCache.RemoveChunk(coordinates);
+            }
+
+            if (chunk == null)
+            {
+                chunk = chunkGenerator.GenerateChunk(coordinates, region);
+            }
+
             loadedChunks[coordinates] = chunk;
 
             // TODO: Instantiate visual and nav representations from pooled prefabs.
@@ -72,6 +88,7 @@ namespace Zombera.World
             }
 
             loadedChunks.Remove(coordinates);
+            chunkCache?.StoreChunk(chunk);
 
             // TODO: Persist dirty chunk state before unload.
             // TODO: Return spawned entities to pools.

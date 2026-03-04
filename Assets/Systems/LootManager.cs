@@ -71,6 +71,22 @@ namespace Zombera.Systems
             return container.OpenContainer(deterministicSeed);
         }
 
+        public List<LootContainer> GetTrackedContainers(List<LootContainer> result = null)
+        {
+            List<LootContainer> containers = result ?? new List<LootContainer>(trackedContainers.Count);
+            containers.Clear();
+
+            foreach (LootContainer container in trackedContainers)
+            {
+                if (container != null)
+                {
+                    containers.Add(container);
+                }
+            }
+
+            return containers;
+        }
+
         private void OnLootGenerated(LootGeneratedEvent gameEvent)
         {
             GeneratedLootEventCount++;

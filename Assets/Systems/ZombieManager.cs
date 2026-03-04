@@ -13,6 +13,13 @@ namespace Zombera.Systems
     {
         [SerializeField] private ZombieSpawner zombieSpawner;
         [SerializeField] private HordeManager hordeManager;
+        [SerializeField] private ZombieType ambientZombieType;
+        [SerializeField, Range(0f, 1f)] private float ambientSpawnChancePerSimulationTick = 0.35f;
+        [SerializeField] private int maxManagedZombies = 200;
+        [SerializeField] private int minAmbientWaveSize = 1;
+        [SerializeField] private int maxAmbientWaveSize = 4;
+        [SerializeField] private float ambientSpawnDistanceFromPlayer = 40f;
+        [SerializeField] private float ambientSpawnRadius = 12f;
 
         private readonly HashSet<ZombieAI> activeZombies = new HashSet<ZombieAI>();
 
@@ -29,6 +36,7 @@ namespace Zombera.Systems
             IsInitialized = true;
             EventSystem.Instance?.Subscribe<ZombieSpawnedEvent>(OnZombieSpawned);
             EventSystem.Instance?.Subscribe<UnitDeathEvent>(OnUnitDeath);
+            EventSystem.Instance?.Subscribe<WorldSimulationTickEvent>(OnWorldSimulationTick);
 
             // TODO: Bootstrap zombie populations from save/world state.
         }
@@ -43,6 +51,7 @@ namespace Zombera.Systems
             IsInitialized = false;
             EventSystem.Instance?.Unsubscribe<ZombieSpawnedEvent>(OnZombieSpawned);
             EventSystem.Instance?.Unsubscribe<UnitDeathEvent>(OnUnitDeath);
+            EventSystem.Instance?.Unsubscribe<WorldSimulationTickEvent>(OnWorldSimulationTick);
             activeZombies.Clear();
         }
 
@@ -118,6 +127,43 @@ namespace Zombera.Systems
 
             UnregisterZombie(zombie);
             zombieSpawner?.ReturnToPool(zombie);
+        }
+
+        private void OnWorldSimulationTick(WorldSimulationTickEvent gameEvent)
+        {
+            if (!IsInitialized || zombieSpawner == null || ambientZombieType == null)
+            {
+                return;
+            }
+
+            if (ActiveZombieCount >= maxManagedZombies)
+            {
+                return;
+            }
+
+            if (Random.value > ambientSpawnChancePerSimulationTick)
+            {
+                return;
+            }
+
+            int minCount = Mathf.Max(1, minAmbientWaveSize);
+            int maxCount = Mathf.Max(minCount, maxAmbientWaveSize);
+            int count = Random.Range(minCount, maxCount + 1);
+
+            Vector2 direction2D = Random.insideUnitCircle;
+
+            if (direction2D.sqrMagnitude <= 0.0001f)
+            {
+                direction2D = Vector2.right;
+            }
+
+            direction2D.Normalize();
+
+            Vector3 spawnCenter = gameEvent.PlayerPosition + new Vector3(direction2D.x, 0f, direction2D.y) * ambientSpawnDistanceFromPlayer;
+            SpawnZombieWave(ambientZombieType, spawnCenter, count, ambientSpawnRadius);
+
+            // TODO: Drive hordeManager composition updates during simulation pulse.
+            _ = hordeManager;
         }
     }
 }
