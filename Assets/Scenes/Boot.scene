@@ -1,0 +1,3 @@
+Scene Name: Boot
+Purpose: Boot loads and initializes core systems.
+TODO: Replace with Unity scene asset `Boot.unity`.

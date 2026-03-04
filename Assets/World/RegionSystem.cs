@@ -1,0 +1,65 @@
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+using Zombera.Data;
+
+namespace Zombera.World
+{
+    /// <summary>
+    /// Resolves biome/region information and base difficulty by world position/chunk.
+    /// </summary>
+    public sealed class RegionSystem : MonoBehaviour
+    {
+        [SerializeField] private List<RegionDefinition> regions = new List<RegionDefinition>();
+        [SerializeField] private RegionDefinition fallbackRegion;
+
+        public RegionDefinition GetRegionAtWorldPosition(Vector3 worldPosition)
+        {
+            for (int i = 0; i < regions.Count; i++)
+            {
+                RegionDefinition region = regions[i];
+
+                if (region.Bounds.Contains(worldPosition))
+                {
+                    return region;
+                }
+            }
+
+            return fallbackRegion;
+        }
+
+        public RegionDefinition GetRegionAtChunk(Vector2Int chunkCoordinates)
+        {
+            Vector3 samplePosition = new Vector3(chunkCoordinates.x * 64f, 0f, chunkCoordinates.y * 64f);
+            return GetRegionAtWorldPosition(samplePosition);
+        }
+
+        public float GetDifficultyAtWorldPosition(Vector3 worldPosition)
+        {
+            RegionDefinition region = GetRegionAtWorldPosition(worldPosition);
+            return region != null ? region.GetDifficulty() : 1f;
+        }
+    }
+
+    /// <summary>
+    /// Region descriptor combining spatial bounds and data-driven configuration.
+    /// </summary>
+    [Serializable]
+    public sealed class RegionDefinition
+    {
+        public string RegionId;
+        public Bounds Bounds;
+        public float BaseDifficulty = 1f;
+        public RegionData RegionData;
+
+        public float GetDifficulty()
+        {
+            if (RegionData != null)
+            {
+                return RegionData.difficulty;
+            }
+
+            return BaseDifficulty;
+        }
+    }
+}
