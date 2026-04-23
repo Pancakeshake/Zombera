@@ -309,6 +309,9 @@ namespace Zombera.Core
             unitManager?.RefreshRegistry();
             squadManager?.RefreshSquadRoster();
 
+            LoadingScreenOverlay.SetProgress(0.965f, "Registering player...");
+            yield return EnsureProvisionalPlayerRegisteredForWorldInit();
+
             if (applyCharacterSelection)
             {
                 ApplyCharacterSelectionToActivePlayer();
@@ -321,6 +324,9 @@ namespace Zombera.Core
             // Keep loading overlay for at least one world frame while systems settle.
             yield return null;
 
+            LoadingScreenOverlay.SetProgress(0.992f, "Building navigation...");
+            yield return WaitForFinalWorldPlayerSpawnIfPresent();
+
             SetGameState(GameState.Playing);
             RunReadinessValidation(StartupReadinessValidator.ValidationMode.WorldSession);
 
@@ -329,6 +335,62 @@ namespace Zombera.Core
             yield return LoadingScreenOverlay.WaitForVisualProgress(1f, 2.5f);
             LoadingScreenOverlay.Hide();
             worldSessionStarting = false;
+        }
+
+        private static IEnumerator EnsureProvisionalPlayerRegisteredForWorldInit()
+        {
+            PlayerSpawner spawner = FindFirstObjectByType<PlayerSpawner>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+            if (spawner == null)
+            {
+                yield break;
+            }
+
+            spawner.EnsureProvisionalPlayerForWorldSession();
+
+            float timeout = 8f;
+            float start = Time.unscaledTime;
+
+            while (Time.unscaledTime - start < timeout)
+            {
+                if (spawner.SpawnedPlayer != null)
+                {
+                    yield break;
+                }
+
+                yield return null;
+            }
+
+            Debug.LogWarning(
+                "[GameManager] Timed out waiting for PlayerSpawner to register a provisional player before InitializeWorld. " +
+                "World streaming may briefly use a fallback origin until the player exists.",
+                spawner);
+        }
+
+        private static IEnumerator WaitForFinalWorldPlayerSpawnIfPresent()
+        {
+            PlayerSpawner spawner = FindFirstObjectByType<PlayerSpawner>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+            if (spawner == null)
+            {
+                yield break;
+            }
+
+            float timeout = 120f;
+            float start = Time.unscaledTime;
+
+            while (Time.unscaledTime - start < timeout)
+            {
+                if (spawner.HasFinalizedWorldPlayerSpawn)
+                {
+                    yield break;
+                }
+
+                yield return null;
+            }
+
+            Debug.LogWarning(
+                "[GameManager] Timed out waiting for PlayerSpawner to finalize world spawn (NavMesh snap / agent / UI wiring). " +
+                "Continuing session startup; gameplay may be partially uninitialized.",
+                spawner);
         }
 
         private void ApplyCharacterSelectionToActivePlayer()

@@ -166,6 +166,11 @@ namespace Zombera.Characters
         [Tooltip("When enabled, delays spawning until at least one MapMagic terrain tile is active in the scene (prevents spawning at raw fallback points).")]
         [SerializeField] private bool deferSpawnUntilMapMagicTerrainReady = true;
         [SerializeField, Min(0f)] private float maxSecondsToWaitForMapMagicTerrain = 6f;
+        [Tooltip(
+            "When MapMagic is present, defer the first runtime NavMesh build until terrain exists or MapMagic reports completion. " +
+            "A lightweight player instance is created first so WorldManager.InitializeWorld can resolve the player transform.")]
+        [SerializeField] private bool deferInitialNavMeshUntilMapMagicReady = true;
+        [SerializeField, Min(0f)] private float maxSecondsToWaitForInitialMapMagicNavMesh = 12f;
         [Tooltip("Extra margin (0-0.45) excluded from the deployed tile rect when searching for a flatter spawn point.")]
         [SerializeField, Range(0f, 0.45f)] private float mapMagicSpawnRectEdgeMarginNormalized = 0.12f;
         [Tooltip("How many random candidate points to test when selecting a flatter MapMagic spawn position.")]
@@ -188,6 +193,11 @@ namespace Zombera.Characters
 
         public Unit SpawnedPlayer { get; private set; }
 
+        /// <summary>
+        /// True after <see cref="SpawnPlayer"/> has finished wiring (snap, agent, squad, HUD). Used by <see cref="GameManager"/> to sequence world init.
+        /// </summary>
+        public bool HasFinalizedWorldPlayerSpawn { get; private set; }
+
         private static readonly Dictionary<int, NavMeshDataInstance> s_runtimeNavMeshInstances = new Dictionary<int, NavMeshDataInstance>();
         private static PlayerSpawner s_runtimeNavMeshOwner;
         private static bool s_loggedNestedSpawnerRemovalWarning;
@@ -201,6 +211,8 @@ namespace Zombera.Characters
         private bool _ownsRuntimeNavMeshInstance;
         private bool _spawnBootstrapStarted;
         private bool _loggedSpawnDeferral;
+        private bool _mapMagicAllCompleteSinceBootstrap;
+        private bool _deferInitialNavMeshThisBootstrap;
         private PlayerInputController _activeInputController;
         private Unit _activeControlledUnit;
         private SquadControlUiCoordinator _squadControlUiCoordinator;
@@ -388,6 +400,10 @@ namespace Zombera.Characters
                 Debug.Log("[PlayerSpawner] Beginning world spawn bootstrap.", this);
             }
 
+            HasFinalizedWorldPlayerSpawn = false;
+            _mapMagicAllCompleteSinceBootstrap = false;
+            _deferInitialNavMeshThisBootstrap = false;
+
             PrepareScenePlayerCandidatesForSpawn();
 
             if (stabilizeMapMagicGenerationInPlayMode)
@@ -396,6 +412,16 @@ namespace Zombera.Characters
             }
 
             _runtimeNavMeshBootstrapper?.SyncStreamingNavMeshTuning(BuildStreamingNavMeshTuning());
+
+            bool mapMagicPresent = FindFirstObjectByType<MapMagicObject>() != null;
+            bool deferInitialNavMesh = deferInitialNavMeshUntilMapMagicReady && mapMagicPresent;
+
+            if (deferInitialNavMesh)
+            {
+                _deferInitialNavMeshThisBootstrap = true;
+                StartCoroutine(DeferredInitialNavMeshAndSpawnRoutine());
+                return;
+            }
 
             Vector3 navMeshCenter = ResolveMainSpawnPosition();
             _lastNavMeshCenter = navMeshCenter;
@@ -424,6 +450,175 @@ namespace Zombera.Characters
             }
 
             SpawnPlayer();
+        }
+
+        /// <summary>
+        /// Instantiates (or reuses) the player at a conservative position so <see cref="WorldManager"/> and character selection
+        /// can run before MapMagic terrain and NavMesh are ready. Does not snap to NavMesh or enable the NavMeshAgent.
+        /// </summary>
+        public void EnsureProvisionalPlayerForWorldSession()
+        {
+            if (HasFinalizedWorldPlayerSpawn || SpawnedPlayer != null)
+            {
+                return;
+            }
+
+            PrepareScenePlayerCandidatesForSpawn();
+
+            Vector3 provisionalPosition = spawnPoint != null ? spawnPoint.position : transform.position;
+            Quaternion provisionalRotation = spawnPoint != null ? spawnPoint.rotation : Quaternion.identity;
+
+            GameObject instance = AcquireOrCreatePlayerRootInstance(provisionalPosition, provisionalRotation);
+            if (instance == null)
+            {
+                return;
+            }
+
+            _ = _umaSpawnStylingService?.PrepareUmaAvatarForSanitizedSpawn(instance);
+            SanitizeRuntimeUnitHierarchy(instance);
+
+            string selectedName = CharacterSelectionState.SelectedCharacterName;
+            instance.name = string.IsNullOrWhiteSpace(selectedName) ? "Player" : selectedName;
+
+            SpawnedPlayer = instance.GetComponent<Unit>();
+            if (SpawnedPlayer == null)
+            {
+                Debug.LogError("[PlayerSpawner] Provisional player root has no Unit component.", instance);
+                return;
+            }
+
+            ApplyDevModeSpawnInventory(SpawnedPlayer);
+        }
+
+        private System.Collections.IEnumerator DeferredInitialNavMeshAndSpawnRoutine()
+        {
+            float registrationTimeout = 8f;
+            float registrationStart = Time.unscaledTime;
+
+            while (SpawnedPlayer == null && Time.unscaledTime - registrationStart < registrationTimeout)
+            {
+                yield return null;
+            }
+
+            if (SpawnedPlayer == null)
+            {
+                Debug.LogError(
+                    "[PlayerSpawner] Deferred MapMagic NavMesh bootstrap timed out waiting for a provisional player Unit. " +
+                    "Assign a player prefab on PlayerSpawner or place a player candidate in the scene.",
+                    this);
+                _deferInitialNavMeshThisBootstrap = false;
+                yield break;
+            }
+
+            float timeout = Mathf.Max(0f, maxSecondsToWaitForInitialMapMagicNavMesh);
+            float start = Time.unscaledTime;
+
+            while (Time.unscaledTime - start < timeout)
+            {
+                if (SpawnPointSelector.FindFirstActiveMapMagicTerrain(gameObject.scene) != null || _mapMagicAllCompleteSinceBootstrap)
+                {
+                    break;
+                }
+
+                yield return null;
+            }
+
+            Vector3 navMeshCenter = ResolveMainSpawnPosition();
+            _lastNavMeshCenter = navMeshCenter;
+            _hasLastNavMeshCenter = true;
+
+            if (logSpawnTerrainDiagnostics)
+            {
+                LogSpawnTerrainDiagnostics(navMeshCenter);
+            }
+
+            bool navMeshBuilt = (_runtimeNavMeshBootstrapper != null) &&
+                                _runtimeNavMeshBootstrapper.TryBuildRuntimeNavMesh(navMeshCenter, BuildStreamingNavMeshTuning());
+
+            if (!navMeshBuilt && navMeshRetryAttempts > 0)
+            {
+                _runtimeNavMeshBootstrapper?.StartRetryBake(
+                    navMeshCenter,
+                    new RuntimeNavMeshRetryTuning(navMeshRetryAttempts, navMeshRetryDelaySeconds),
+                    BuildStreamingNavMeshTuning());
+            }
+
+            _deferInitialNavMeshThisBootstrap = false;
+
+            if (deferSpawnUntilMapMagicTerrainReady && ShouldDeferSpawnUntilMapMagicTerrainReady(navMeshCenter))
+            {
+                float spawnTimeout = Mathf.Max(0f, maxSecondsToWaitForMapMagicTerrain);
+                float spawnStart = Time.unscaledTime;
+
+                while (Time.unscaledTime - spawnStart < spawnTimeout)
+                {
+                    if (SpawnPointSelector.FindFirstActiveMapMagicTerrain(gameObject.scene) != null)
+                    {
+                        break;
+                    }
+
+                    yield return null;
+                }
+
+                Vector3 updatedCenter = ResolveMainSpawnPosition();
+                _lastNavMeshCenter = updatedCenter;
+                _hasLastNavMeshCenter = true;
+
+                _ = (_runtimeNavMeshBootstrapper != null) &&
+                    _runtimeNavMeshBootstrapper.TryBuildRuntimeNavMesh(updatedCenter, BuildStreamingNavMeshTuning());
+            }
+
+            SpawnPlayer();
+        }
+
+        private GameObject AcquireOrCreatePlayerRootInstance(Vector3 worldPosition, Quaternion worldRotation)
+        {
+            Unit reuseUnit = null;
+            foreach (Unit u in FindObjectsByType<Unit>(FindObjectsSortMode.None))
+            {
+                if (!IsPlayerCandidate(u))
+                {
+                    continue;
+                }
+
+                if (reuseUnit == null)
+                {
+                    reuseUnit = u;
+                }
+                else
+                {
+                    Debug.Log($"[PlayerSpawner] Destroying extra player candidate Unit: {u.gameObject.name}");
+                    Destroy(u.gameObject);
+                }
+            }
+
+            if (reuseUnit != null)
+            {
+                GameObject go = reuseUnit.gameObject;
+                reuseUnit.SetRole(UnitRole.Player);
+                go.transform.position = worldPosition;
+                go.transform.rotation = worldRotation;
+                if (logSpawnTerrainDiagnostics)
+                {
+                    Debug.Log($"[PlayerSpawner] Reusing scene Unit '{go.name}' for provisional spawn at {worldPosition}");
+                }
+
+                return go;
+            }
+
+            if (playerPrefab == null)
+            {
+                Debug.LogWarning("[PlayerSpawner] No player prefab assigned and no reusable player Unit was found.", this);
+                return null;
+            }
+
+            GameObject instance = Instantiate(playerPrefab, worldPosition, worldRotation);
+            if (logSpawnTerrainDiagnostics)
+            {
+                Debug.Log($"[PlayerSpawner] Instantiated provisional Player at {worldPosition}");
+            }
+
+            return instance;
         }
 
         private bool ShouldDeferSpawnUntilMapMagicTerrainReady(Vector3 spawnOrigin)
@@ -466,10 +661,6 @@ namespace Zombera.Characters
             Vector3 updatedCenter = ResolveMainSpawnPosition();
             _lastNavMeshCenter = updatedCenter;
             _hasLastNavMeshCenter = true;
-
-            // If we were waiting, give NavMesh a chance to build at least once.
-            _ = (_runtimeNavMeshBootstrapper != null) &&
-                _runtimeNavMeshBootstrapper.TryBuildRuntimeNavMesh(updatedCenter, BuildStreamingNavMeshTuning());
 
             SpawnPlayer();
         }
@@ -1102,6 +1293,13 @@ namespace Zombera.Characters
         private void HandleMapMagicAllComplete(MapMagicObject mapMagic)
         {
             StreamedWorldMetrics.RecordMapMagicAllComplete();
+            _mapMagicAllCompleteSinceBootstrap = true;
+
+            if (_deferInitialNavMeshThisBootstrap)
+            {
+                return;
+            }
+
             _runtimeNavMeshBootstrapper?.QueueThrottledMapMagicNavMeshRebake(
                 mapMagic,
                 rebakeNavMeshOnMapMagicComplete,
@@ -1125,46 +1323,10 @@ namespace Zombera.Characters
                     BuildSpawnSnapConfig());
             }
 
-            // Prefer reusing an already-live PLAYER unit over instantiating a new one.
-            // Do not reuse or destroy non-player units (for example, placed zombies).
-            Unit reuseUnit = null;
-            foreach (Unit u in FindObjectsByType<Unit>(FindObjectsSortMode.None))
+            GameObject instance = AcquireOrCreatePlayerRootInstance(spawnPosition, spawnRotation);
+            if (instance == null)
             {
-                if (!IsPlayerCandidate(u))
-                {
-                    continue;
-                }
-
-                if (reuseUnit == null)
-                {
-                    reuseUnit = u;
-                }
-                else
-                {
-                    Debug.Log($"[PlayerSpawner] Destroying extra player candidate Unit: {u.gameObject.name}");
-                    Destroy(u.gameObject);
-                }
-            }
-
-            GameObject instance;
-            if (reuseUnit != null)
-            {
-                instance = reuseUnit.gameObject;
-                reuseUnit.SetRole(UnitRole.Player);
-                instance.transform.position = spawnPosition;
-                instance.transform.rotation = spawnRotation;
-                Debug.Log($"[PlayerSpawner] Reusing scene Unit '{instance.name}' at {spawnPosition}");
-            }
-            else
-            {
-                if (playerPrefab == null)
-                {
-                    Debug.LogWarning("[PlayerSpawner] No player prefab assigned and no reusable player Unit was found.", this);
-                    return;
-                }
-
-                instance = Instantiate(playerPrefab, spawnPosition, spawnRotation);
-                Debug.Log($"[PlayerSpawner] Instantiated new Player at {spawnPosition}");
+                return;
             }
 
             var dca = _umaSpawnStylingService?.PrepareUmaAvatarForSanitizedSpawn(instance);
@@ -1212,6 +1374,8 @@ namespace Zombera.Characters
                 _requestedValidationZombieSpawn = true;
                 StartCoroutine(SpawnValidationZombieNearPlayer(instance.transform));
             }
+
+            HasFinalizedWorldPlayerSpawn = true;
         }
 
         private void EnsureStartupTestSquad(Unit playerUnit)
