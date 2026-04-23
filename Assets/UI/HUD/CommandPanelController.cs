@@ -86,8 +86,16 @@ namespace Zombera.UI
         private void RaiseCommandRequested(HUDCommandType commandType)
         {
             CommandRequested?.Invoke(commandType);
+            SetCommandInteractable(commandType, false);
+            StartCoroutine(RestoreCommandAfterDelay(commandType, commandCooldownSeconds));
+        }
 
-            // TODO: Add command confirmation and cooldown indicator hooks.
+        [SerializeField, Min(0f)] private float commandCooldownSeconds = 0.5f;
+
+        private System.Collections.IEnumerator RestoreCommandAfterDelay(HUDCommandType commandType, float delay)
+        {
+            yield return new UnityEngine.WaitForSeconds(delay);
+            SetCommandInteractable(commandType, true);
         }
 
         private Button GetButton(HUDCommandType commandType)

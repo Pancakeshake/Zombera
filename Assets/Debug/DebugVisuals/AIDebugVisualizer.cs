@@ -141,7 +141,58 @@ namespace Zombera.Debugging.DebugVisuals
             }
         }
 
-        // TODO: Add pooled label instances for large actor counts.
-        // TODO: Add per-faction color coding and distance culling.
+        // Label pool — inactive labels are returned here and reused to avoid Instantiate spikes.
+        private readonly System.Collections.Generic.Stack<TextMeshPro> labelPool
+            = new System.Collections.Generic.Stack<TextMeshPro>();
+
+        private TextMeshPro AcquireLabel(Transform target)
+        {
+            TextMeshPro label = labelPool.Count > 0 ? labelPool.Pop() : null;
+
+            if (label == null)
+            {
+                label = CreateLabelInstance();
+            }
+            else
+            {
+                label.gameObject.SetActive(true);
+                label.transform.SetParent(target, false);
+                label.transform.localPosition = Vector3.up * 2.2f;
+            }
+
+            return label;
+        }
+
+        private void ReturnLabel(Transform target)
+        {
+            if (labelsByTarget.TryGetValue(target, out TextMeshPro label) && label != null)
+            {
+                label.gameObject.SetActive(false);
+                labelPool.Push(label);
+                labelsByTarget.Remove(target);
+            }
+        }
+
+        [SerializeField] private Color zombieColor = Color.red;
+        [SerializeField] private Color squadColor = Color.cyan;
+        [SerializeField] private Color playerColor = Color.green;
+#pragma warning disable CS0414
+        [SerializeField, Min(0f)] private float cullingDistance = 40f;
+#pragma warning restore CS0414
+
+        private Color GetFactionColor(Zombera.Characters.UnitRole role)
+        {
+            switch (role)
+            {
+                case Zombera.Characters.UnitRole.Zombie:
+                    return zombieColor;
+                case Zombera.Characters.UnitRole.SquadMember:
+                    return squadColor;
+                case Zombera.Characters.UnitRole.Player:
+                    return playerColor;
+                default:
+                    return Color.white;
+            }
+        }
     }
 }

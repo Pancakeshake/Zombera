@@ -6,8 +6,12 @@ AI should read this file together with:
 
 game_design.md
 architecture.md
+.github/copilot-instructions.md
 
 These files define the mechanics and architecture of the game.
+
+The `.github/copilot-instructions.md` file stores persistent implementation workflow standards
+for repeatable tool-driven setup and build system conventions.
 
 ---
 

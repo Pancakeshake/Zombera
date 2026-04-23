@@ -10,13 +10,18 @@ namespace Zombera.AI.States
     [DisallowMultipleComponent]
     public sealed class ChaseState : MonoBehaviour, IUnitBrainState
     {
+        [SerializeField, Min(1f)] private float chaseTimeoutSeconds = 10f;
+
         public UnitBrainStateType StateType => UnitBrainStateType.Chase;
+
+        private float _lastHadTargetTime;
 
         public void Enter(UnitBrain brain, UnitSensorFrame sensorFrame, UnitDecision decision)
         {
             _ = brain;
             _ = sensorFrame;
             _ = decision;
+            _lastHadTargetTime = Time.time;
         }
 
         public void Tick(UnitBrain brain, UnitSensorFrame sensorFrame, UnitDecision decision)
@@ -30,26 +35,31 @@ namespace Zombera.AI.States
 
             if (target != null)
             {
-                brain.MoveAction?.ExecuteMove(target.transform.position);
+                _lastHadTargetTime = Time.time;
+                brain.MoveAction?.ExecuteMoveWithNavFallback(target.transform.position);
                 return;
             }
 
             if (decision.TargetPosition != Vector3.zero)
             {
-                brain.MoveAction?.ExecuteMove(decision.TargetPosition);
+                _lastHadTargetTime = Time.time;
+                brain.MoveAction?.ExecuteMoveWithNavFallback(decision.TargetPosition);
                 return;
             }
 
             if (sensorFrame.HasHeardNoise)
             {
-                brain.MoveAction?.ExecuteMove(sensorFrame.LastNoisePosition);
+                _lastHadTargetTime = Time.time;
+                brain.MoveAction?.ExecuteMoveWithNavFallback(sensorFrame.LastNoisePosition);
                 return;
             }
 
-            brain.MoveAction?.StopMovement();
-
-            // TODO: Add nav fallback when direct chase path is blocked.
-            // TODO: Add chase timeout and target-loss recovery.
+            // Target lost — stop movement. If consistently lost past the timeout the
+            // utility evaluator will naturally score a lower-cost action higher.
+            if (Time.time - _lastHadTargetTime > chaseTimeoutSeconds)
+            {
+                brain.MoveAction?.StopMovement();
+            }
         }
 
         public void Exit(UnitBrain brain)

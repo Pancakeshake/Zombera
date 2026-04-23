@@ -20,7 +20,7 @@ namespace Zombera.Systems
 
             if (squadManager == null)
             {
-                squadManager = FindObjectOfType<SquadManager>();
+                squadManager = FindFirstObjectByType<SquadManager>();
             }
         }
 
@@ -53,9 +53,16 @@ namespace Zombera.Systems
 
         public void TriggerRecruitmentDialogue(SurvivorAI survivor, DialogueEvent dialogueEvent)
         {
-            // TODO: Push dialogue event into UI/dialogue pipeline.
-            _ = survivor;
-            _ = dialogueEvent;
+            if (survivor == null || dialogueEvent == null)
+            {
+                return;
+            }
+
+            Core.EventSystem.PublishGlobal(new Core.DialogueRequestedEvent
+            {
+                DialogueData = dialogueEvent,
+                Survivor = survivor
+            });
         }
 
         private SquadMember PrepareSquadMember(SurvivorAI survivor)
@@ -94,7 +101,7 @@ namespace Zombera.Systems
 
             if (squadManager == null)
             {
-                squadManager = FindObjectOfType<SquadManager>();
+                squadManager = FindFirstObjectByType<SquadManager>();
             }
 
             return squadManager;

@@ -53,13 +53,30 @@ namespace Zombera.Debugging.DebugStressTests
 
             DebugLogger.Log(LogCategory.Stress, $"Squad stress batch requested: {count}", this);
 
-            for (int i = 0; i < count; i++)
-            {
-                spawnDebugTools?.SpawnSurvivor();
-            }
+            StartCoroutine(StagedSquadSpawn(count));
+        }
 
-            // TODO: Replace looped requests with staged spawn waves.
-            // TODO: Track AI update cost after each squad batch.
+        private System.Collections.IEnumerator StagedSquadSpawn(int count)
+        {
+            int batchSize = 5;
+            int spawned = 0;
+            float aiCostBefore = UnityEngine.Time.realtimeSinceStartup;
+
+            while (spawned < count)
+            {
+                int thisWave = Mathf.Min(batchSize, count - spawned);
+
+                for (int i = 0; i < thisWave; i++)
+                {
+                    spawnDebugTools?.SpawnSurvivor();
+                }
+
+                spawned += thisWave;
+                float aiCostAfter = UnityEngine.Time.realtimeSinceStartup;
+                DebugLogger.Log(LogCategory.Stress, $"Squad wave spawned: {spawned}/{count} — batch real-time cost: {(aiCostAfter - aiCostBefore) * 1000f:F1}ms", this);
+                aiCostBefore = aiCostAfter;
+                yield return new UnityEngine.WaitForSeconds(0.1f);
+            }
         }
     }
 }

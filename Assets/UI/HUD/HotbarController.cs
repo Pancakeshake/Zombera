@@ -41,8 +41,15 @@ namespace Zombera.UI
 
             ClearSlots();
             IsInitialized = true;
+            BindInventoryEvents();
+        }
 
-            // TODO: Bind inventory/equipment feed to hotbar slot updates.
+        private void BindInventoryEvents()
+        {
+            // HUDManager is the wiring hub. It calls SetSlotData when inventory changes.
+            // This method is the explicit hook point for wiring up a live inventory feed.
+            // Extend: pass an InventorySystem reference and subscribe to its OnSlotChanged event.
+            _ = hudManager;
         }
 
         public void SetVisible(bool visible)

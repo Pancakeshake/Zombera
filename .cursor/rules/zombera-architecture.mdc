@@ -1,0 +1,18 @@
+---
+description: Zombera architecture, ownership boundaries, and state gating
+alwaysApply: true
+---
+
+# Zombera architecture rules
+
+- **World vs Menu gating**: If behavior must not run in menus, gate by `GameManager.Instance.CurrentState`.
+  - **Allowed**: `LoadingWorld`, `Playing`, `Paused`
+  - **Blocked**: `MainMenu`
+- **Ownership** (prefer changing the owner, not adding new side effects elsewhere):
+  - `WorldManager`: world-session lifecycle + chunk streaming tick + simulation tick
+  - `PlayerSpawner`: spawn/bootstrap + MapMagic stabilization + initial NavMesh readiness
+  - `StreamingNavMeshTileService`: per-tile NavMesh build/removal (MapMagic tile events)
+  - `CombatEncounterManager`: encounter rules and attack resolution
+- **Avoid hidden runtime wiring**: prefer scene-visible refs/components; if auto-add is needed, make it idempotent and log once.
+- **Tuning**: if a value is adjusted repeatedly, promote it to a serialized field or config asset (don’t duplicate constants).
+

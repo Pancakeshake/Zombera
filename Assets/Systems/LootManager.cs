@@ -90,9 +90,20 @@ namespace Zombera.Systems
         private void OnLootGenerated(LootGeneratedEvent gameEvent)
         {
             GeneratedLootEventCount++;
+            TrackLootMetrics(gameEvent);
+        }
 
-            // TODO: Feed loot metrics into balancing telemetry.
-            _ = gameEvent;
+        private void TrackLootMetrics(LootGeneratedEvent gameEvent)
+        {
+            if (!IsInitialized)
+            {
+                return;
+            }
+
+            // Emit a lightweight debug log entry for balancing review.
+            // A full telemetry sink (CSV, remote analytics) can subscribe to
+            // LootGeneratedEvent directly without touching this manager.
+            Debug.Log($"[LootManager] Loot generated — container:{gameEvent.ContainerId} items:{gameEvent.ItemCount} weight:{gameEvent.TotalWeight:F1} type:{gameEvent.LocationType} total:{GeneratedLootEventCount}");
         }
     }
 }

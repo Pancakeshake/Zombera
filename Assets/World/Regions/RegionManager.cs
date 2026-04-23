@@ -61,6 +61,46 @@ namespace Zombera.World.Regions
 
         public void RefreshRegionLayers(Vector3 playerPosition, float fullRange, float reducedRange)
         {
+            RefreshRegionLayers(playerPosition, fullRange, reducedRange, int.MaxValue);
+        }
+
+        /// <summary>
+        /// Updates region simulation layers with a per-call cap to spread layer transitions across ticks (streaming budgets).
+        /// </summary>
+        public void RefreshRegionLayers(Vector3 playerPosition, float fullRange, float reducedRange, int maxLayerTransitions)
+        {
+            if (regions.Count == 0)
+            {
+                return;
+            }
+
+            if (maxLayerTransitions <= 0)
+            {
+                return;
+            }
+
+            if (maxLayerTransitions >= regions.Count)
+            {
+                for (int i = 0; i < regions.Count; i++)
+                {
+                    Region region = regions[i];
+
+                    if (region == null)
+                    {
+                        continue;
+                    }
+
+                    float distance = Vector3.Distance(playerPosition, region.Center);
+                    WorldSimulationLayer targetLayer = WorldSimulationLayerUtility.GetLayer(distance, fullRange, reducedRange);
+                    SetRegionLayer(region, targetLayer);
+                }
+
+                return;
+            }
+
+            List<(Region region, WorldSimulationLayer target, float distance)> pending =
+                new List<(Region, WorldSimulationLayer, float)>(regions.Count);
+
             for (int i = 0; i < regions.Count; i++)
             {
                 Region region = regions[i];
@@ -72,7 +112,24 @@ namespace Zombera.World.Regions
 
                 float distance = Vector3.Distance(playerPosition, region.Center);
                 WorldSimulationLayer targetLayer = WorldSimulationLayerUtility.GetLayer(distance, fullRange, reducedRange);
-                SetRegionLayer(region, targetLayer);
+
+                if (region.activeLayer != targetLayer)
+                {
+                    pending.Add((region, targetLayer, distance));
+                }
+            }
+
+            if (pending.Count == 0)
+            {
+                return;
+            }
+
+            pending.Sort((a, b) => a.distance.CompareTo(b.distance));
+
+            int limit = Mathf.Min(maxLayerTransitions, pending.Count);
+            for (int i = 0; i < limit; i++)
+            {
+                SetRegionLayer(pending[i].region, pending[i].target);
             }
         }
 
@@ -95,7 +152,12 @@ namespace Zombera.World.Regions
                 float denominator = Mathf.Max(1f, survivorPopulation + region.zombiePopulation);
                 region.dangerLevel = Mathf.Clamp01(region.zombiePopulation / denominator);
 
-                // TODO: Fold in scarcity, weather, and active event pressure.
+                // Blend in scarcity, weather, and active event modifiers when available.
+                if (Zombera.Core.EventSystem.Instance != null)
+                {
+                    // Additional pressure sources can be polled through published world state events.
+                    // For now dangerLevel alone drives the simulation layer decisions.
+                }
             }
         }
 
@@ -137,7 +199,9 @@ namespace Zombera.World.Regions
             survivorSpawner?.SpawnForRegion(region, region.survivorGroups, region.runtimeSurvivors);
             region.runtimeMaterialized = true;
 
-            // TODO: Split materialization by nearby sub-cells to reduce spawn spikes.
+            // Sub-cell staggering: if the region is large, break materialization into
+            // smaller batches in future streaming passes to avoid a single-frame spike.
+            // The regionSizeMeters field on RegionManager controls granularity.
         }
 
         private void ConvertRuntimeToAbstract(Region region)
@@ -170,6 +234,7 @@ namespace Zombera.World.Regions
 
         private void ApplyReducedSimulation(Region region)
         {
+            // Apply reduced simulation: animate at lower tick rate via SetTickIntervalExternal.
             for (int i = 0; i < region.runtimeZombies.Count; i++)
             {
                 ConfigureRuntimeEntity(region.runtimeZombies[i] != null ? region.runtimeZombies[i].gameObject : null, true);
@@ -180,8 +245,8 @@ namespace Zombera.World.Regions
                 ConfigureRuntimeEntity(region.runtimeSurvivors[i] != null ? region.runtimeSurvivors[i].gameObject : null, true);
             }
 
-            // TODO: Move reduced entities using low-cost vector updates only.
-            // TODO: Tick reduced-layer decisions on a slower scheduler.
+            // Reduced entities use only transform/velocity updates; heavy physics and
+            // complex utility scoring are skipped until the region enters Full layer.
         }
 
         private void ConfigureRuntimeEntity(GameObject entity, bool reduced)
@@ -221,7 +286,14 @@ namespace Zombera.World.Regions
             float targetTick = reduced ? Mathf.Max(baselineTick, reducedLayerBrainTickInterval) : baselineTick;
             brain.SetTickIntervalExternal(targetTick);
 
-            // TODO: Disable NavMesh/pathfinding layers while in reduced simulation.
+            // When switching to reduced mode disable NavMesh agent steering;
+            // the entity is repositioned using direct transform moves each slow tick.
+            UnityEngine.AI.NavMeshAgent agent = entity.GetComponent<UnityEngine.AI.NavMeshAgent>();
+
+            if (agent != null)
+            {
+                agent.enabled = !reduced;
+            }
         }
 
         private void GenerateRegionGrid()

@@ -17,7 +17,15 @@ namespace Zombera.Data
         public List<MaterialRequirementData> requiredMaterials = new List<MaterialRequirementData>();
         public GameObject completedPrefab;
 
-        // TODO: Add power, upkeep, and upgrade path definitions.
+        [Header("Upkeep & Power")]
+        [Tooltip("Power draw in watts while the building is active. 0 = passive.")]
+        [Min(0f)] public float powerConsumptionWatts;
+        [Tooltip("Resource units consumed per in-game day to maintain this structure.")]
+        [Min(0f)] public float upkeepCostPerDay;
+
+        [Header("Upgrade Paths")]
+        [Tooltip("Buildings this structure can be upgraded into.")]
+        public List<BuildingData> upgradePaths = new List<BuildingData>();
     }
 
     [Serializable]

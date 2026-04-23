@@ -18,10 +18,42 @@ namespace Zombera.Debugging
         public bool enableGodMode;
         public bool enableSlowMotion;
 
+        [Header("Developer Spawn Cheats")]
+        [Tooltip("When debug mode is active, spawn the player with all configured item definitions in inventory.")]
+        public bool enableDevSpawnFullInventory = true;
+
         [Header("Tuning")]
         [Range(0.05f, 1f)] public float slowMotionScale = 0.2f;
 
-        // TODO: Add per-system debug channels (combat, world, squad, save).
-        // TODO: Add profile presets for lightweight and full debug sessions.
+        [Header("Per-System Debug Channels")]
+        public bool debugCombat;
+        public bool debugWorld;
+        public bool debugSquad;
+        public bool debugSave;
+
+        [Header("Profile Presets")]
+        public bool useLightweightProfile;
+
+        public void ApplyLightweightProfile()
+        {
+            showAIStates = false;
+            showDetectionRadius = false;
+            showPathfinding = false;
+            debugCombat = false;
+            debugWorld = false;
+            debugSquad = false;
+            debugSave = false;
+        }
+
+        public void ApplyFullDebugProfile()
+        {
+            showAIStates = true;
+            showDetectionRadius = true;
+            showPathfinding = true;
+            debugCombat = true;
+            debugWorld = true;
+            debugSquad = true;
+            debugSave = true;
+        }
     }
 }

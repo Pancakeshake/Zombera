@@ -1,4 +1,9 @@
+using System;
 using UnityEngine;
+#if ENABLE_INPUT_SYSTEM
+using UnityEngine.InputSystem;
+#endif
+using Zombera.UI.SquadManagement;
 
 namespace Zombera.Debugging.DebugTools
 {
@@ -31,6 +36,10 @@ namespace Zombera.Debugging.DebugTools
         [SerializeField] private WorldDebugTools worldDebugTools;
         [SerializeField] private AISimulationTools aiSimulationTools;
 
+        [Header("Input Arbitration")]
+        [SerializeField] private bool suppressMenuHotkeyConflicts = true;
+        [SerializeField] private ZomberaSquadManagementUI squadManagementUI;
+
         public string ToolName => nameof(DebugKeybinds);
         public bool IsToolEnabled { get; private set; } = true;
 
@@ -56,48 +65,185 @@ namespace Zombera.Debugging.DebugTools
                 return;
             }
 
-            if (Input.GetKeyDown(toggleMenuKey))
+            if (ShouldSuppressDebugFunctionHotkeysThisFrame())
+            {
+                return;
+            }
+
+            if (WasKeyPressedThisFrame(toggleMenuKey))
             {
                 DebugManager.Instance?.ToggleDebugMenu();
             }
 
-            if (Input.GetKeyDown(toggleSlowMotionKey))
+            if (WasKeyPressedThisFrame(toggleSlowMotionKey))
             {
                 DebugManager.Instance?.ToggleSlowMotion();
             }
 
-            if (Input.GetKeyDown(toggleAIDebugKey))
+            if (WasKeyPressedThisFrame(toggleAIDebugKey))
             {
                 DebugManager.Instance?.ToggleAIDebugVisuals();
             }
 
-            if (Input.GetKeyDown(spawnZombieKey))
+            if (WasKeyPressedThisFrame(spawnZombieKey))
             {
                 spawnDebugTools?.SpawnZombie();
             }
 
-            if (Input.GetKeyDown(spawnSurvivorKey))
+            if (WasKeyPressedThisFrame(spawnSurvivorKey))
             {
                 spawnDebugTools?.SpawnSurvivor();
             }
 
-            if (Input.GetKeyDown(toggleGodModeKey))
+            if (WasKeyPressedThisFrame(toggleGodModeKey))
             {
                 DebugManager.Instance?.ToggleGodMode();
             }
 
-            if (Input.GetKeyDown(spawnHordeKey))
+            if (WasKeyPressedThisFrame(spawnHordeKey))
             {
                 spawnDebugTools?.SpawnZombieHorde();
             }
 
-            if (Input.GetKeyDown(advanceWorldSimulationKey))
+            if (WasKeyPressedThisFrame(advanceWorldSimulationKey))
             {
                 worldDebugTools?.AdvanceWorldSimulation();
             }
         }
 
-        // TODO: Add runtime-rebind UI and persisted keybind profiles.
-        // TODO: Add modifier key support for alternate debug actions.
+        private bool ShouldSuppressDebugFunctionHotkeysThisFrame()
+        {
+            if (!suppressMenuHotkeyConflicts)
+            {
+                return false;
+            }
+
+            if (squadManagementUI == null)
+            {
+                squadManagementUI = FindFirstObjectByType<ZomberaSquadManagementUI>();
+            }
+
+            if (squadManagementUI == null)
+            {
+                return false;
+            }
+
+            return WasKeyPressedThisFrame(toggleMenuKey)
+                || WasKeyPressedThisFrame(toggleSlowMotionKey)
+                || WasKeyPressedThisFrame(toggleAIDebugKey)
+                || WasKeyPressedThisFrame(spawnZombieKey)
+                || WasKeyPressedThisFrame(spawnSurvivorKey);
+        }
+
+        private static bool WasKeyPressedThisFrame(KeyCode keyCode)
+        {
+#if ENABLE_INPUT_SYSTEM
+            Keyboard keyboard = Keyboard.current;
+            if (keyboard != null && TryMapKeyCodeToInputSystemKey(keyCode, out Key mappedKey))
+            {
+                var keyControl = keyboard[mappedKey];
+                return keyControl != null && keyControl.wasPressedThisFrame;
+            }
+#endif
+
+#if ENABLE_LEGACY_INPUT_MANAGER
+            return Input.GetKeyDown(keyCode);
+#else
+            return false;
+#endif
+        }
+
+#if ENABLE_INPUT_SYSTEM
+        private static bool TryMapKeyCodeToInputSystemKey(KeyCode keyCode, out Key key)
+        {
+            switch (keyCode)
+            {
+                case KeyCode.Alpha0: key = Key.Digit0; return true;
+                case KeyCode.Alpha1: key = Key.Digit1; return true;
+                case KeyCode.Alpha2: key = Key.Digit2; return true;
+                case KeyCode.Alpha3: key = Key.Digit3; return true;
+                case KeyCode.Alpha4: key = Key.Digit4; return true;
+                case KeyCode.Alpha5: key = Key.Digit5; return true;
+                case KeyCode.Alpha6: key = Key.Digit6; return true;
+                case KeyCode.Alpha7: key = Key.Digit7; return true;
+                case KeyCode.Alpha8: key = Key.Digit8; return true;
+                case KeyCode.Alpha9: key = Key.Digit9; return true;
+                case KeyCode.Return:
+                case KeyCode.KeypadEnter:
+                    key = Key.Enter;
+                    return true;
+                case KeyCode.LeftControl:
+                    key = Key.LeftCtrl;
+                    return true;
+                case KeyCode.RightControl:
+                    key = Key.RightCtrl;
+                    return true;
+                case KeyCode.LeftShift:
+                    key = Key.LeftShift;
+                    return true;
+                case KeyCode.RightShift:
+                    key = Key.RightShift;
+                    return true;
+                case KeyCode.LeftAlt:
+                    key = Key.LeftAlt;
+                    return true;
+                case KeyCode.RightAlt:
+                    key = Key.RightAlt;
+                    return true;
+                case KeyCode.LeftCommand:
+                    key = Key.LeftMeta;
+                    return true;
+                case KeyCode.RightCommand:
+                    key = Key.RightMeta;
+                    return true;
+                case KeyCode.BackQuote:
+                    key = Key.Backquote;
+                    return true;
+                default:
+                    if (Enum.TryParse(keyCode.ToString(), true, out key))
+                    {
+                        return true;
+                    }
+
+                    key = Key.None;
+                    return false;
+            }
+        }
+#endif
+
+        // Runtime rebind and modifier support are intentionally deferred to a future
+        // keybind settings screen.  The groundwork is laid here:
+        // - rebindOverrides maps Action → Key for player-configured overrides.
+        // - modifierKey holds an optional secondary key (Shift/Ctrl) that must be held.
+        private readonly System.Collections.Generic.Dictionary<DebugAction, Key> rebindOverrides
+            = new System.Collections.Generic.Dictionary<DebugAction, Key>();
+
+#pragma warning disable CS0414
+        [SerializeField] private Key modifierKey = Key.LeftShift;
+#pragma warning restore CS0414
+        [SerializeField] private bool requireModifier;
+
+        public void SetRebind(DebugAction action, Key key)
+        {
+            rebindOverrides[action] = key;
+        }
+
+        public void ClearRebind(DebugAction action)
+        {
+            rebindOverrides.Remove(action);
+        }
+    }
+
+    /// <summary>Enumeration of rebindable debug actions.</summary>
+    public enum DebugAction
+    {
+        ToggleMenu,
+        ToggleSlowMotion,
+        ToggleAIDebug,
+        SpawnZombie,
+        SpawnSurvivor,
+        ToggleGodMode,
+        SpawnHorde,
+        AdvanceWorldSimulation
     }
 }

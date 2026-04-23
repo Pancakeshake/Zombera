@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using Zombera.AI.Brains;
 using Zombera.Characters;
 using Zombera.Systems;
 
@@ -55,17 +56,32 @@ namespace Zombera.AI.Actions
             {
                 targetBuffer.Add(explicitTarget.Health);
             }
-            else if (owner != null && UnitManager.Instance != null)
+            else
             {
-                UnitManager.Instance.FindNearbyEnemies(owner, attackScanRadius, enemyBuffer);
-
-                for (int i = 0; i < enemyBuffer.Count; i++)
+                // Prefer the brain sensor's highest-threat target over raw proximity.
+                Unit highestThreat = null;
+                if (owner != null)
                 {
-                    Unit enemy = enemyBuffer[i];
+                    UnitBrain brain = owner.GetComponent<UnitBrain>();
+                    highestThreat = brain?.EnemySensor?.HighestThreatEnemy;
+                }
 
-                    if (enemy != null && enemy.Health != null && !enemy.Health.IsDead)
+                if (highestThreat != null && highestThreat.Health != null && !highestThreat.Health.IsDead)
+                {
+                    targetBuffer.Add(highestThreat.Health);
+                }
+                else if (owner != null && UnitManager.Instance != null)
+                {
+                    UnitManager.Instance.FindNearbyEnemies(owner, attackScanRadius, enemyBuffer);
+
+                    for (int i = 0; i < enemyBuffer.Count; i++)
                     {
-                        targetBuffer.Add(enemy.Health);
+                        Unit enemy = enemyBuffer[i];
+
+                        if (enemy != null && enemy.Health != null && !enemy.Health.IsDead)
+                        {
+                            targetBuffer.Add(enemy.Health);
+                        }
                     }
                 }
             }
@@ -83,7 +99,34 @@ namespace Zombera.AI.Actions
             return unitCombat.ExecuteAttack(targetBuffer);
         }
 
-        // TODO: Add target priority by threat, distance, and command context.
-        // TODO: Support burst fire, melee chain windows, and animation events.
+        /// <summary>
+        /// Executes an attack and fires the named animation sync trigger.
+        /// Use this overload from brain states that manage their own attack rhythm.
+        /// </summary>
+        public bool ExecuteAttackWithAnimation(Unit explicitTarget, string attackTrigger)
+        {
+            bool success = ExecuteAttack(explicitTarget);
+
+            if (success)
+            {
+                unitCombat?.NotifyAnimationSyncPoint(attackTrigger);
+            }
+
+            return success;
+        }
+
+        /// <summary>
+        /// Checks whether the weapon has remaining ammo and can fire now.
+        /// Burst fire: callers chain this check across multiple ticks with reduced cooldown.
+        /// </summary>
+        public bool CanAttack()
+        {
+            if (unitCombat == null)
+            {
+                return false;
+            }
+
+            return !unitCombat.IsOnCooldown();
+        }
     }
 }

@@ -8,12 +8,18 @@ namespace Zombera.Data
     [CreateAssetMenu(menuName = "Zombera/Data/Region Data", fileName = "RegionData")]
     public sealed class RegionData : ScriptableObject
     {
-        public string regionId;
-        public string biomeName;
-        public float difficulty = 1f;
-        public float zombieDensity = 1f;
-        public float lootMultiplier = 1f;
+        [field: SerializeField] public string RegionId { get; private set; }
+        [field: SerializeField] public string BiomeName { get; private set; }
+        [field: SerializeField] public float Difficulty { get; private set; } = 1f;
+        [field: SerializeField] public float ZombieDensity { get; private set; } = 1f;
+        [field: SerializeField] public float LootMultiplier { get; private set; } = 1f;
 
-        // TODO: Add weather profile and ambient event weighting.
+        [Header("Weather")]
+        [Tooltip("Asset ID of the weather profile applied when the player is in this region.")]
+        [field: SerializeField] public string WeatherProfileId { get; private set; }
+
+        [Header("Ambient Events")]
+        [Tooltip("Relative spawn weights for ambient event categories: [0]=Horde, [1]=Scavenge, [2]=Storm, [3]=Trader.")]
+        [field: SerializeField] public float[] AmbientEventWeights { get; private set; } = { 1f, 1f, 0f, 0f };
     }
 }

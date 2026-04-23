@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Zombera.Characters;
+using Zombera.Core;
 
 namespace Zombera.AI.Sensors
 {
@@ -13,6 +14,8 @@ namespace Zombera.AI.Sensors
     {
         [SerializeField] private float hearingRadius = 10f;
         [SerializeField] private float noiseMemorySeconds = 4f;
+        [SerializeField] private LayerMask wallOcclusionMask;
+        [SerializeField, Range(0f, 1f)] private float occludedScoreMultiplier = 0.25f;
         [SerializeField] private bool drawHearingRadius;
 
         private static readonly List<NoiseSample> ActiveNoiseSamples = new List<NoiseSample>();
@@ -27,13 +30,19 @@ namespace Zombera.AI.Sensors
         /// </summary>
         public static void ReportNoise(Vector3 worldPosition, float radius, GameObject source = null, float intensity = 1f)
         {
+            ReportNoise(worldPosition, radius, NoiseType.Generic, source, intensity);
+        }
+
+        public static void ReportNoise(Vector3 worldPosition, float radius, NoiseType noiseType, GameObject source = null, float intensity = 1f)
+        {
             ActiveNoiseSamples.Add(new NoiseSample
             {
                 Position = worldPosition,
                 Radius = Mathf.Max(0f, radius),
                 Intensity = Mathf.Max(0.01f, intensity),
                 TimeCreated = Time.time,
-                Source = source
+                Source = source,
+                Category = noiseType
             });
         }
 
@@ -67,7 +76,14 @@ namespace Zombera.AI.Sensors
 
                 float closeness = 1f - Mathf.Clamp01(distance / Mathf.Max(0.01f, effectiveRadius));
                 float freshness = 1f - Mathf.Clamp01(age / Mathf.Max(0.01f, noiseMemorySeconds));
-                float score = closeness * 0.7f + freshness * 0.3f;
+                float categoryWeight = GetNoiseCategoryWeight(sample.Category);
+                float score = (closeness * 0.7f + freshness * 0.3f) * categoryWeight;
+
+                // Dampen noise that travels through solid walls.
+                if (wallOcclusionMask != 0 && Physics.Linecast(listenerPosition, sample.Position, wallOcclusionMask))
+                {
+                    score *= occludedScoreMultiplier;
+                }
 
                 if (score <= bestScore)
                 {
@@ -79,9 +95,22 @@ namespace Zombera.AI.Sensors
                 LastNoisePosition = sample.Position;
                 LastNoiseAge = age;
             }
+        }
 
-            // TODO: Add occlusion/dampening against walls and elevation.
-            // TODO: Add noise categories (combat, footsteps, alarms) for behavior weighting.
+        /// <summary>Returns a score modifier for a noise category.</summary>
+        private static float GetNoiseCategoryWeight(NoiseType noiseType)
+        {
+            switch (noiseType)
+            {
+                case NoiseType.Gunshot:
+                case NoiseType.Explosion:
+                    return 2.0f; // Combat noise: high urgency.
+                case NoiseType.Voice:
+                    return 1.3f; // Voice: moderate interest.
+                case NoiseType.Generic:
+                default:
+                    return 1.0f;
+            }
         }
 
         private void CleanupExpiredNoise()
@@ -113,6 +142,7 @@ namespace Zombera.AI.Sensors
             public float Intensity;
             public float TimeCreated;
             public GameObject Source;
+            public NoiseType Category;
         }
     }
 }

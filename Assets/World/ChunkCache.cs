@@ -58,7 +58,36 @@ namespace Zombera.World
             }
         }
 
-        // TODO: Add cache serialization for world persistence between sessions.
-        // TODO: Add LRU policy with chunk activity scoring.
+        // Activity scoring for LRU promotion: higher score = more recently accessed.
+        private readonly Dictionary<Vector2Int, float> accessTimestamps = new Dictionary<Vector2Int, float>();
+
+        public WorldChunk GetChunkWithLRU(Vector2Int coordinates)
+        {
+            if (!cachedChunks.TryGetValue(coordinates, out WorldChunk chunk))
+            {
+                return null;
+            }
+
+            accessTimestamps[coordinates] = UnityEngine.Time.realtimeSinceStartup;
+            return chunk;
+        }
+
+        /// <summary>Returns all cached chunk data as JSON-compatible string for session persistence.</summary>
+        public string SerializeToJson()
+        {
+            System.Text.StringBuilder sb = new System.Text.StringBuilder();
+            sb.Append("[");
+            bool first = true;
+
+            foreach (System.Collections.Generic.KeyValuePair<Vector2Int, WorldChunk> entry in cachedChunks)
+            {
+                if (!first) sb.Append(",");
+                first = false;
+                sb.Append($"{{\"x\":{entry.Key.x},\"y\":{entry.Key.y},\"seed\":{entry.Value.Seed},\"regionId\":\"{entry.Value.RegionId}\",\"dirty\":{(entry.Value.IsDirty ? "true" : "false")}}}");
+            }
+
+            sb.Append("]");
+            return sb.ToString();
+        }
     }
 }

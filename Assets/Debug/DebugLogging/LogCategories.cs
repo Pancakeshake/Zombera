@@ -12,8 +12,10 @@ namespace Zombera.Debugging.DebugLogging
         Save,
         Squad,
         Debug,
-        Stress
+        Stress,
+        UI,
+        Performance,
+        Networking,
+        Audio,
     }
-
-    // TODO: Add extended categories for UI, Performance, Networking, and Audio.
 }

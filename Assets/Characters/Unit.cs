@@ -26,13 +26,25 @@ namespace Zombera.Characters
 
         public string UnitId => unitId;
         public UnitRole Role => role;
+        public UnitFaction Faction => UnitFactionUtility.FromRole(role);
         public UnitController Controller => controller;
         public UnitHealth Health => health;
         public UnitCombat Combat => combat;
-        public UnitInventory Inventory => inventory;
+        public UnitInventory Inventory
+        {
+            get
+            {
+                if (inventory == null)
+                {
+                    inventory = GetComponent<UnitInventory>();
+                }
+
+                return inventory;
+            }
+        }
         public UnitStats Stats => stats;
         public MonoBehaviour OptionalAI => optionalAI;
-        public bool IsAlive => health != null && !health.IsDead;
+        public bool IsAlive => health == null || !health.IsDead;
 
         private void Reset()
         {

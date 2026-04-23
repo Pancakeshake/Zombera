@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
+using Zombera.Core;
+using Zombera.Inventory;
 
 namespace Zombera.Inventory
 {
@@ -14,6 +16,8 @@ namespace Zombera.Inventory
         public IReadOnlyList<ItemStack> Items => items;
         public float WeightLimit => weightLimit;
         public float CurrentWeight { get; private set; }
+
+        private EncumbranceState _prevEncumbrance = EncumbranceState.Light;
 
         public EncumbranceState Encumbrance
         {
@@ -143,7 +147,19 @@ namespace Zombera.Inventory
 
             CurrentWeight = total;
 
-            // TODO: Emit encumbrance change events to movement/combat systems.
+            EncumbranceState newEncumbrance = Encumbrance;
+            if (newEncumbrance != _prevEncumbrance)
+            {
+                EncumbranceState previous = _prevEncumbrance;
+                _prevEncumbrance = newEncumbrance;
+                EventSystem.PublishGlobal(new EncumbranceChangedEvent
+                {
+                    InventoryObject = gameObject,
+                    PreviousState = previous,
+                    NewState = newEncumbrance,
+                    CarryRatio = WeightLimit > 0f ? CurrentWeight / WeightLimit : 0f
+                });
+            }
         }
     }
 

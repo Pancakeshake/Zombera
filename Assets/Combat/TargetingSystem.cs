@@ -7,9 +7,17 @@ namespace Zombera.Combat
     /// <summary>
     /// Resolves combat targets using hybrid logic:
     /// prefer player-marked target, otherwise auto-select best enemy.
+    /// Scoring weighs proximity, line-of-sight, and threat level (low-HP preference).
     /// </summary>
     public sealed class TargetingSystem : MonoBehaviour
     {
+        [Header("Scoring Weights")]
+        [SerializeField] private float losBonus = 3f;
+        [SerializeField] private float losPenalty = 2f;
+        [SerializeField] private float lowHpBonusMax = 4f;
+        [Tooltip("Layer mask for line-of-sight obstruction checks.")]
+        [SerializeField] private LayerMask losObstructionMask = ~0;
+
         public IDamageable ResolveHybridTarget(IDamageable markedTarget, IReadOnlyList<IDamageable> candidates, Vector3 sourcePosition)
         {
             if (markedTarget != null && !markedTarget.IsDead)
@@ -39,8 +47,7 @@ namespace Zombera.Combat
                     continue;
                 }
 
-                float distance = Vector3.Distance(sourcePosition, targetComponent.transform.position);
-                float score = -distance;
+                float score = ScoreTarget(candidate, targetComponent.transform.position, sourcePosition);
 
                 if (score > bestScore)
                 {
@@ -49,7 +56,6 @@ namespace Zombera.Combat
                 }
             }
 
-            // TODO: Improve scoring with threat level, line-of-sight, and priority tags.
             return bestTarget;
         }
 
@@ -82,8 +88,7 @@ namespace Zombera.Combat
                     continue;
                 }
 
-                float distance = Vector3.Distance(sourcePosition, candidate.transform.position);
-                float score = -distance;
+                float score = ScoreTarget(candidate, candidate.transform.position, sourcePosition);
 
                 if (score > bestScore)
                 {
@@ -93,6 +98,31 @@ namespace Zombera.Combat
             }
 
             return bestTarget;
+        }
+
+        /// <summary>
+        /// Composite score = proximity + line-of-sight + low-HP threat bonus.
+        /// Higher is better.
+        /// </summary>
+        private float ScoreTarget(IDamageable candidate, Vector3 targetPos, Vector3 sourcePos)
+        {
+            float distance = Vector3.Distance(sourcePos, targetPos);
+            float score = -distance;
+
+            // Line-of-sight bonus/penalty.
+            Vector3 eyeSource = sourcePos + Vector3.up * 1.2f;
+            Vector3 eyeTarget = targetPos + Vector3.up * 1.2f;
+            bool hasLoS = !Physics.Linecast(eyeSource, eyeTarget, losObstructionMask);
+            score += hasLoS ? losBonus : -losPenalty;
+
+            // Low-HP preference: reward nearly-dead targets (easier kills).
+            if (candidate is UnitHealth uh && uh.MaxHealth > 0f)
+            {
+                float healthRatio = Mathf.Clamp01(uh.CurrentHealth / uh.MaxHealth);
+                score += (1f - healthRatio) * lowHpBonusMax;
+            }
+
+            return score;
         }
     }
 }

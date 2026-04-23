@@ -49,19 +49,39 @@ namespace Zombera.Systems
 
         public void ExecuteMoveCommand(IReadOnlyList<SquadMember> members, Vector3 destination)
         {
+            if (formationController == null || members == null || members.Count == 0)
+            {
+                // No formation — move everyone to the same point.
+                if (members == null) return;
+                for (int i = 0; i < members.Count; i++)
+                {
+                    SquadMember member = members[i];
+                    if (member == null || !member.IsAvailableForOrders()) continue;
+                    member.UnitController?.MoveTo(destination);
+                }
+                return;
+            }
+
+            // Slot each member into a formation centered on destination.
+            Vector3 groupForward = Vector3.forward;
+            if (members[0]?.UnitController != null)
+            {
+                Vector3 toTarget = destination - members[0].UnitController.transform.position;
+                toTarget.y = 0f;
+                if (toTarget.sqrMagnitude > 0.001f)
+                    groupForward = toTarget.normalized;
+            }
+
+            IReadOnlyList<Vector3> slots = formationController.CalculateFormationSlots(
+                destination, groupForward, members.Count);
+
             for (int i = 0; i < members.Count; i++)
             {
                 SquadMember member = members[i];
-
-                if (member == null || !member.IsAvailableForOrders())
-                {
-                    continue;
-                }
-
-                member.UnitController?.MoveTo(destination);
+                if (member == null || !member.IsAvailableForOrders()) continue;
+                Vector3 slotPos = (i < slots.Count) ? slots[i] : destination;
+                member.UnitController?.MoveTo(slotPos);
             }
-
-            // TODO: Support per-member slotting for ordered group move.
         }
 
         public void ExecuteAttackCommand(IReadOnlyList<SquadMember> members, Vector3 focusPosition)
@@ -134,16 +154,23 @@ namespace Zombera.Systems
                 }
 
                 member.UnitController?.Stop();
-            }
 
-            // TODO: Allow local auto-engagement while maintaining hold radius.
+                // While holding, allow local auto-engagement:
+                // mark no specific target so UnitCombat will auto-select the nearest threat.
+                member.UnitCombat?.ClearMarkedTarget();
+            }
         }
 
         public void ExecuteFollowCommand(IReadOnlyList<SquadMember> members)
         {
-            if (members == null)
+            if (members == null) return;
+
+            // Resolve the leader: use the player-controlled unit if found, else the first member.
+            Transform leaderTransform = null;
+            if (UnitManager.Instance != null)
             {
-                return;
+                Unit playerUnit = UnitManager.Instance.FindFirstUnitByRole(UnitRole.Player);
+                if (playerUnit != null) leaderTransform = playerUnit.transform;
             }
 
             for (int i = 0; i < members.Count; i++)
@@ -156,9 +183,13 @@ namespace Zombera.Systems
                 }
 
                 member.FollowController?.SetFollowStyle(FollowStyle.Loose);
-            }
 
-            // TODO: Bind active leader target for follow execution.
+                // Immediately begin moving toward leader.
+                if (leaderTransform != null)
+                {
+                    member.FollowController?.TickFollow(leaderTransform.position, leaderTransform.forward);
+                }
+            }
         }
 
         public void ExecuteDefendCommand(IReadOnlyList<SquadMember> members, Vector3 defendCenter)
@@ -183,17 +214,31 @@ namespace Zombera.Systems
                     continue;
                 }
 
-                Vector3 slotPosition = defendCenter;
-
-                if (defendSlots != null && i < defendSlots.Count)
-                {
-                    slotPosition = defendSlots[i];
-                }
+                // Assign a deterministic perimeter slot and navigate to it.
+                Vector3 slotPosition = (defendSlots != null && i < defendSlots.Count)
+                    ? defendSlots[i]
+                    : defendCenter;
 
                 member.UnitController?.MoveTo(slotPosition);
+
+                // Clear marked target so auto-engagement triggers from the perimeter.
+                member.UnitCombat?.ClearMarkedTarget();
+            }
+        }
+
+        /// <summary>
+        /// When a member leaves the squad mid-command, re-issues the current follow order
+        /// to the remaining roster so formation slots are recalculated cleanly.
+        /// </summary>
+        public void ReassignCommandsAwayFrom(SquadMember leavingMember, IReadOnlyList<SquadMember> remaining)
+        {
+            if (remaining == null || remaining.Count == 0)
+            {
+                return;
             }
 
-            // TODO: Assign defensive slots and maintain perimeter around defendCenter.
+            // Re-issue follow so survivors recompute formation without the gap.
+            ExecuteFollowCommand(remaining);
         }
     }
 

@@ -17,6 +17,7 @@ namespace Zombera.Characters
         public float WeightLimit => weightLimit;
         public float CurrentWeight { get; private set; }
         public bool IsEncumbered => CurrentWeight > WeightLimit;
+        public float CarryRatio => WeightLimit > 0f ? CurrentWeight / WeightLimit : 0f;
 
         public bool AddItem(ItemDefinition itemDefinition, int quantity)
         {
@@ -134,6 +135,61 @@ namespace Zombera.Characters
             return 0;
         }
 
+        public void SetWeightLimit(float value)
+        {
+            weightLimit = Mathf.Max(1f, value);
+            RecalculateWeight();
+        }
+
+        public bool IsHeavyCarry(float threshold01)
+        {
+            return Mathf.Clamp01(CarryRatio) >= Mathf.Clamp01(threshold01);
+        }
+
+        /// <summary>
+        /// Consumes one of <paramref name="itemDefinition"/> from this inventory,
+        /// applying its heal amount and awarding Constitution XP to <paramref name="owner"/>.
+        /// Returns false if the item is not in inventory.
+        /// </summary>
+        public bool ConsumeItem(ItemDefinition itemDefinition, UnitHealth health, UnitStats stats)
+        {
+            if (itemDefinition == null)
+            {
+                return false;
+            }
+
+            if (!RemoveItem(itemDefinition, 1))
+            {
+                return false;
+            }
+
+            if (health != null && itemDefinition.healAmount > 0f)
+            {
+                health.Heal(itemDefinition.healAmount, stats);
+            }
+
+            if (stats != null)
+            {
+                switch (itemDefinition.itemType)
+                {
+                    case ItemType.Food:
+                        stats.RecordMealConsumed(itemDefinition.mealQuality);
+                        break;
+                    case ItemType.Vitamin:
+                        stats.RecordVitaminConsumed();
+                        break;
+                }
+            }
+
+            return true;
+        }
+
+        /// <summary>
+        /// Raised whenever <see cref="CurrentWeight"/> changes (items added or removed).
+        /// Subscribe in <see cref="UnitController"/> to reactively refresh movement speed.
+        /// </summary>
+        public event System.Action OnInventoryChanged;
+
         private void RecalculateWeight()
         {
             float total = 0f;
@@ -151,8 +207,7 @@ namespace Zombera.Characters
             }
 
             CurrentWeight = total;
-
-            // TODO: Apply movement/combat penalties based on encumbrance thresholds.
+            OnInventoryChanged?.Invoke();
         }
     }
 }

@@ -41,3 +41,45 @@ desktop.ini
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
+
+# Large third-party content roots to keep local-only in this repo.
+Assets/ThirdParty/
+Assets/ThirdParty.meta
+Assets/Universal Sound FX/
+Assets/Universal Sound FX.meta
+Assets/UMA/
+Assets/UMA.meta
+Assets/Animations/
+Assets/Animations.meta
+
+# Common oversized distribution archives (Git cannot ignore by file size, so ignore by artifact type)
+*.unitypackage
+*.unitypackage.meta
+*.zip
+*.zip.meta
+*.7z
+*.7z.meta
+*.rar
+*.rar.meta
+*.tar
+*.tar.meta
+*.gz
+*.gz.meta
+*.tgz
+*.tgz.meta
+
+# Ignore raw third-party package archives; keep imported project assets tracked.
+Assets/ThirdParty/**/*.unitypackage
+Assets/ThirdParty/**/*.unitypackage.meta
+Assets/GameReady3D/**/*.unitypackage
+Assets/GameReady3D/**/*.unitypackage.meta
+
+# Explicit oversized assets previously seen as push blockers
+Assets/GameReady3D/NYC_Buildings_Volume2/HDRP/NYC_Building_Volume2_HDRP.unitypackage
+Assets/GameReady3D/NYC_Buildings_Volume2/HDRP/NYC_Building_Volume2_HDRP.unitypackage.meta
+Assets/GameReady3D/NYC_Buildings_Volume2/URP/NYC_Building_Volume2_URP.unitypackage
+Assets/GameReady3D/NYC_Buildings_Volume2/URP/NYC_Building_Volume2_URP.unitypackage.meta
+Assets/ThirdParty/Post_Apocalyptic_Asset_Pack/URP Render/PostApocalypticAssetPackURP.unitypackage
+Assets/ThirdParty/Post_Apocalyptic_Asset_Pack/URP Render/PostApocalypticAssetPackURP.unitypackage.meta
+Assets/ThirdParty/Post_Apocalyptic_Asset_Pack/Demo/Wet Ground/ground_0008_normal_opengl_4k.png
+Assets/ThirdParty/Post_Apocalyptic_Asset_Pack/Demo/Wet Ground/ground_0008_normal_opengl_4k.png.meta

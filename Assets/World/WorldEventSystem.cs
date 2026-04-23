@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using Zombera.Data;
 using Zombera.Systems;
@@ -35,18 +36,23 @@ namespace Zombera.World
         [Header("Debug")]
         [SerializeField] private bool logEvents = true;
 
+        [Header("Event Cooldowns")]
+        [SerializeField, Min(0f)] private float samEventCooldownSeconds = 60f;
+
         private float eventTickTimer;
+        private readonly Dictionary<WorldDynamicEventType, float> _eventLastFiredAt
+            = new Dictionary<WorldDynamicEventType, float>();
 
         private void Awake()
         {
             if (zombieManager == null)
             {
-                zombieManager = FindObjectOfType<ZombieManager>();
+                zombieManager = FindFirstObjectByType<ZombieManager>();
             }
 
             if (lootSpawner == null)
             {
-                lootSpawner = FindObjectOfType<LootSpawner>();
+                lootSpawner = FindFirstObjectByType<LootSpawner>();
             }
         }
 
@@ -71,7 +77,21 @@ namespace Zombera.World
 
         public void TriggerRandomEvent(Vector3 playerPosition)
         {
-            WorldDynamicEventType eventType = (WorldDynamicEventType)Random.Range(0, 3);
+            // Build a list of event types that are off cooldown.
+            var available = new System.Collections.Generic.List<WorldDynamicEventType>(3);
+            float now = Time.time;
+            for (int i = 0; i < 3; i++)
+            {
+                var evt = (WorldDynamicEventType)i;
+                _eventLastFiredAt.TryGetValue(evt, out float lastFired);
+                if (now - lastFired >= samEventCooldownSeconds)
+                    available.Add(evt);
+            }
+
+            if (available.Count == 0) return;
+
+            WorldDynamicEventType eventType = available[Random.Range(0, available.Count)];
+            _eventLastFiredAt[eventType] = now;
 
             switch (eventType)
             {
@@ -85,16 +105,13 @@ namespace Zombera.World
                     SpawnSupplyDrop(playerPosition);
                     break;
             }
-
-            // TODO: Bias event selection by region difficulty and player state.
-            // TODO: Integrate cooldowns and anti-repeat event protection.
         }
 
         public void SpawnZombieHorde(Vector3 nearPosition)
         {
             if (zombieManager == null)
             {
-                zombieManager = FindObjectOfType<ZombieManager>();
+                zombieManager = FindFirstObjectByType<ZombieManager>();
             }
 
             if (zombieManager == null)
@@ -141,7 +158,7 @@ namespace Zombera.World
         {
             if (lootSpawner == null)
             {
-                lootSpawner = FindObjectOfType<LootSpawner>();
+                lootSpawner = FindFirstObjectByType<LootSpawner>();
             }
 
             if (lootSpawner == null)

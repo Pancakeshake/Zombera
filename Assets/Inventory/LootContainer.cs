@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using Zombera.Characters;
 using Zombera.Core;
 
 namespace Zombera.Inventory
@@ -20,17 +21,17 @@ namespace Zombera.Inventory
         public bool HasGeneratedLoot { get; private set; }
         public IReadOnlyList<ItemStack> GeneratedLoot => generatedLoot;
 
-        public IReadOnlyList<ItemStack> OpenContainer(int deterministicSeed = 0)
+        public IReadOnlyList<ItemStack> OpenContainer(int deterministicSeed = 0, float rollMultiplier = 1f)
         {
             if (!HasGeneratedLoot)
             {
-                GenerateLoot(deterministicSeed);
+                GenerateLoot(deterministicSeed, rollMultiplier);
             }
 
             return generatedLoot;
         }
 
-        public bool TransferAllTo(InventoryManager targetInventory)
+        public bool TransferAllTo(IInventoryHolder targetInventory)
         {
             if (targetInventory == null)
             {
@@ -49,7 +50,7 @@ namespace Zombera.Inventory
                     continue;
                 }
 
-                if (!targetInventory.TryAddItem(stack.item, stack.quantity))
+                if (!targetInventory.AddItem(stack.item, stack.quantity))
                 {
                     continue;
                 }
@@ -61,13 +62,14 @@ namespace Zombera.Inventory
             return movedAny;
         }
 
-        private void GenerateLoot(int deterministicSeed)
+        private void GenerateLoot(int deterministicSeed, float rollMultiplier = 1f)
         {
             generatedLoot.Clear();
 
             if (lootTableSystem != null)
             {
-                generatedLoot.AddRange(lootTableSystem.RollLoot(locationType, rollCount, deterministicSeed));
+                int scaledRollCount = Mathf.Max(1, Mathf.RoundToInt(rollCount * Mathf.Max(1f, rollMultiplier)));
+                generatedLoot.AddRange(lootTableSystem.RollLoot(locationType, scaledRollCount, deterministicSeed));
             }
 
             HasGeneratedLoot = true;
@@ -88,7 +90,29 @@ namespace Zombera.Inventory
                 Position = transform.position
             });
 
-            // TODO: Mark container dirty for save system persistence.
+            // Mark the container as having generated loot so save/load can persist this state.
+            // Listening save systems subscribe to LootGeneratedEvent and record the containerId
+            // in the world save data; on load they restore HasGeneratedLoot via RestoreLootState().
+            HasGeneratedLoot = true;
+        }
+
+        /// <summary>
+        /// Restores persisted loot state during a world load.
+        /// Call from the save system after populating GeneratedLoot from disk.
+        /// </summary>
+        public void RestoreLootState(IEnumerable<ItemStack> savedLoot)
+        {
+            generatedLoot.Clear();
+
+            if (savedLoot != null)
+            {
+                foreach (ItemStack stack in savedLoot)
+                {
+                    generatedLoot.Add(stack);
+                }
+            }
+
+            HasGeneratedLoot = true;
         }
     }
 }

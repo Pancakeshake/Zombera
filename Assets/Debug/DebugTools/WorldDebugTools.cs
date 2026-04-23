@@ -48,8 +48,6 @@ namespace Zombera.Debugging.DebugTools
             });
 
             DebugLogger.Log(LogCategory.World, "Manual world simulation step requested", this);
-
-            // TODO: Hook into world manager simulation scheduler for deterministic stepping.
         }
 
         public void TeleportPlayerToDebugTarget()
@@ -65,8 +63,19 @@ namespace Zombera.Debugging.DebugTools
                 return;
             }
 
-            // TODO: Route teleport through gameplay-safe transition service.
-            playerTransform.position = teleportTarget.position;
+            // Route through the WorldManager if one is available so transition effects
+            // and chunk streaming are triggered correctly.
+            Zombera.World.WorldManager worldManager = FindFirstObjectByType<Zombera.World.WorldManager>();
+
+            if (worldManager != null)
+            {
+                worldManager.TeleportPlayer(playerTransform, teleportTarget.position);
+            }
+            else
+            {
+                playerTransform.position = teleportTarget.position;
+            }
+
             DebugLogger.Log(LogCategory.World, "Player teleported to debug target", this);
         }
     }

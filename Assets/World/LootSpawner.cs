@@ -24,7 +24,7 @@ namespace Zombera.World
         {
             if (lootManager == null)
             {
-                lootManager = FindObjectOfType<LootManager>();
+                lootManager = FindFirstObjectByType<LootManager>();
             }
         }
 
@@ -113,6 +113,21 @@ namespace Zombera.World
             }
 
             hasPrimedPrototypeLoot = false;
+        }
+
+        public void TickNearPlayer(Vector3 playerPosition)
+        {
+            // Activate loot containers within spawn radius that have not yet been primed.
+            for (int i = 0; i < activeLootContainers.Count; i++)
+            {
+                if (activeLootContainers[i] == null)
+                {
+                    continue;
+                }
+
+                float dist = Vector3.Distance(activeLootContainers[i].transform.position, playerPosition);
+                activeLootContainers[i].SetActive(dist < 60f);
+            }
         }
     }
 }

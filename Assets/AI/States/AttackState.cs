@@ -1,15 +1,19 @@
 using UnityEngine;
 using Zombera.AI.Brains;
 using Zombera.Characters;
+using Zombera.Combat;
 
 namespace Zombera.AI.States
 {
     /// <summary>
-    /// Combat pressure state that attacks in range and closes distance when needed.
+    /// Combat pressure state that attacks in range and closes or maintains distance based on weapon type.
     /// </summary>
     [DisallowMultipleComponent]
     public sealed class AttackState : MonoBehaviour, IUnitBrainState
     {
+        [SerializeField, Min(0f)] private float rangedStandoffMinDistance = 5f;
+        [SerializeField, Min(0f)] private float rangedStandoffMaxDistance = 12f;
+
         public UnitBrainStateType StateType => UnitBrainStateType.Attack;
 
         public void Enter(UnitBrain brain, UnitSensorFrame sensorFrame, UnitDecision decision)
@@ -35,28 +39,68 @@ namespace Zombera.AI.States
             }
 
             float distance = Vector3.Distance(brain.transform.position, target.transform.position);
+            bool isRanged = IsRangedWeaponEquipped(brain);
 
-            if (distance <= brain.AttackRange)
+            if (isRanged)
             {
-                bool attacked = brain.AttackAction != null && brain.AttackAction.ExecuteAttack(target);
-
-                if (!attacked)
+                // Ranged: attack when within max range; back off when too close;
+                // close in when too far.
+                if (distance <= brain.AttackRange)
                 {
-                    brain.ReloadAction?.ExecuteReload();
+                    bool attacked = brain.AttackAction != null && brain.AttackAction.ExecuteAttack(target);
+
+                    if (!attacked)
+                    {
+                        brain.ReloadAction?.ExecuteReload();
+                    }
+
+                    // Step back if inside minimum standoff.
+                    if (distance < rangedStandoffMinDistance)
+                    {
+                        Vector3 awayDir = (brain.transform.position - target.transform.position).normalized;
+                        Vector3 backoff = brain.transform.position + awayDir * rangedStandoffMinDistance;
+                        brain.MoveAction?.ExecuteMove(backoff);
+                    }
+                }
+                else if (distance > rangedStandoffMaxDistance)
+                {
+                    brain.MoveAction?.ExecuteMove(target.transform.position);
                 }
             }
             else
             {
-                brain.MoveAction?.ExecuteMove(target.transform.position);
-            }
+                // Melee: close in and attack.
+                if (distance <= brain.AttackRange)
+                {
+                    bool attacked = brain.AttackAction != null && brain.AttackAction.ExecuteAttack(target);
 
-            // TODO: Add strafe, cover peek, and burst cadence patterns.
-            // TODO: Split melee vs ranged timing windows.
+                    if (!attacked)
+                    {
+                        brain.ReloadAction?.ExecuteReload();
+                    }
+                }
+                else
+                {
+                    brain.MoveAction?.ExecuteMove(target.transform.position);
+                }
+            }
         }
 
         public void Exit(UnitBrain brain)
         {
             _ = brain;
+        }
+
+        private static bool IsRangedWeaponEquipped(UnitBrain brain)
+        {
+            WeaponSystem ws = brain.UnitCombat != null
+                ? brain.UnitCombat.GetComponent<WeaponSystem>()
+                : null;
+
+            if (ws?.EquippedWeapon == null) return false;
+
+            WeaponCategory cat = ws.EquippedWeapon.weaponCategory;
+            return WeaponSystem.IsRangedCategory(cat);
         }
     }
 }

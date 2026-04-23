@@ -48,16 +48,16 @@ namespace Zombera.World
     [Serializable]
     public sealed class RegionDefinition
     {
-        public string RegionId;
-        public Bounds Bounds;
-        public float BaseDifficulty = 1f;
-        public RegionData RegionData;
+        [field: SerializeField] public string RegionId { get; private set; }
+        [field: SerializeField] public Bounds Bounds { get; private set; }
+        [field: SerializeField] public float BaseDifficulty { get; private set; } = 1f;
+        [field: SerializeField] public RegionData RegionData { get; private set; }
 
         public float GetDifficulty()
         {
             if (RegionData != null)
             {
-                return RegionData.difficulty;
+                return RegionData.Difficulty;
             }
 
             return BaseDifficulty;

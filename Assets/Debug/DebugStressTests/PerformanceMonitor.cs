@@ -67,6 +67,10 @@ namespace Zombera.Debugging.DebugStressTests
 
             refreshTimer = 0f;
             RefreshReadout();
+
+            float ft = UnityEngine.Time.unscaledDeltaTime * 1000f; // ms
+            if (frametimeHistory.Count >= 120) frametimeHistory.Dequeue();
+            frametimeHistory.Enqueue(ft);
         }
 
         private void RefreshReadout()
@@ -90,7 +94,33 @@ namespace Zombera.Debugging.DebugStressTests
             }
         }
 
-        // TODO: Add frametime graphs and memory/GC metrics.
-        // TODO: Add CSV export for stress test sessions.
+        // Frametime history for a simple runtime graph.
+        private readonly System.Collections.Generic.Queue<float> frametimeHistory
+            = new System.Collections.Generic.Queue<float>(120);
+
+        public System.Collections.Generic.IReadOnlyCollection<float> FrametimeHistory => frametimeHistory;
+
+        /// <summary>Exports a CSV row of the last 120 frametime samples to a file.</summary>
+        public void ExportCsvSnapshot(string filePath)
+        {
+#if !UNITY_WEBGL
+            try
+            {
+                System.Text.StringBuilder sb = new System.Text.StringBuilder();
+                sb.AppendLine("frame_ms");
+
+                foreach (float ms in frametimeHistory)
+                {
+                    sb.AppendLine(ms.ToString("F3"));
+                }
+
+                System.IO.File.AppendAllText(filePath, sb.ToString());
+            }
+            catch (System.Exception e)
+            {
+                UnityEngine.Debug.LogWarning($"[PerformanceMonitor] CSV export failed: {e.Message}");
+            }
+#endif
+        }
     }
 }

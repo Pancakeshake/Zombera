@@ -56,12 +56,27 @@ Note: most references can be left empty initially; current manager code auto-res
 - Create UI root/canvas and place your menu buttons.
 - Add `MainMenuController`:
   - `World Scene Name` = `World`
-  - Wire button references (`Start`, `Character Creator`, `Settings`, `Quit`).
+  - Wire button references (`Start`, `Settings`, `Quit`).
 - Add/create optional:
   - `CharacterCreatorController`
   - `SettingsMenuController`
 
-`MainMenuController` now prefers `GameManager.StartNewGame()` if a `GameManager` exists.
+`CharacterCreatorController` expected UI:
+- `TMP_InputField` for character name (`3-16` chars, trimmed, non-empty).
+- `TMP_Dropdown` for appearance presets.
+- `Confirm`, `Back/Close`, and optional `Random Name` button.
+- Preview labels for:
+  - Stats (`HP`, `Damage`, `Speed`, `Stamina`, `Carry`)
+  - Starting loadout
+  - Flavor/tooltip text
+  - Validation message
+- Optional portrait `Image` for selected preset.
+
+`MainMenuController` flow:
+- `Start` opens `CharacterCreatorController` first (if assigned).
+- `Confirm` in character creator saves selection to runtime + profile, then calls `GameManager.StartNewGame()`.
+- `Back` closes character creator and returns to menu.
+- If no character creator panel is assigned, `Start` goes straight to `StartNewGame()`.
 
 ## 5) World scene (minimum gameplay)
 

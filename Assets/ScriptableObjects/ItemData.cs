@@ -1,7 +1,17 @@
+using System;
 using UnityEngine;
 
 namespace Zombera.Data
 {
+    public enum RarityTier
+    {
+        Common = 0,
+        Uncommon = 1,
+        Rare = 2,
+        Epic = 3,
+        Legendary = 4,
+    }
+
     /// <summary>
     /// Data-only item record used for content authoring and balancing.
     /// </summary>
@@ -14,6 +24,11 @@ namespace Zombera.Data
         public float weight = 1f;
         public int maxStack = 99;
 
-        // TODO: Add economy values, rarity tiers, and crafting tags.
+        [Header("Economy")]
+        [Tooltip("Base barter value in currency units.")]
+        [Min(0)] public int economyValue = 10;
+        public RarityTier rarity = RarityTier.Common;
+        [Tooltip("Freeform tags used to filter this item in crafting recipes and loot conditions.")]
+        public string[] craftingTags = Array.Empty<string>();
     }
 }

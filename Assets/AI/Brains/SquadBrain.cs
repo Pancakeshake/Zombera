@@ -17,6 +17,9 @@ namespace Zombera.AI.Brains
         [Header("Combat Tuning")]
         [SerializeField] private float engagementDistance = 12f;
 
+        [Header("Flee / Retreat")]
+        [SerializeField, Range(0f, 1f)] private float fleeHealthThreshold = 0.25f;
+
         private SquadCommandType lastCommand = SquadCommandType.Follow;
         private Vector3 lastCommandTarget;
         private bool hasCommandTarget;
@@ -48,6 +51,25 @@ namespace Zombera.AI.Brains
 
         protected override UnitDecision EvaluateDecision(UnitSensorFrame sensorFrame)
         {
+            // Flee: if HP is critically low and there is a nearby enemy, retreat toward squad leader.
+            if (Unit != null && Unit.Health != null && fleeHealthThreshold > 0f)
+            {
+                float healthFraction = Unit.Health.MaxHealth > 0f
+                    ? Unit.Health.CurrentHealth / Unit.Health.MaxHealth
+                    : 1f;
+
+                if (healthFraction <= fleeHealthThreshold && sensorFrame.NearestEnemy != null)
+                {
+                    return new UnitDecision
+                    {
+                        DecisionType = UnitDecisionType.Retreat,
+                        Score = 1f,
+                        TargetPosition = Vector3.zero,
+                        Reason = $"Fleeing (HP {healthFraction * 100f:F0}%)"
+                    };
+                }
+            }
+
             if (sensorFrame.NearestEnemy != null && sensorFrame.NearestEnemyDistance <= engagementDistance)
             {
                 if (sensorFrame.NearestEnemyDistance <= AttackRange)
@@ -126,7 +148,17 @@ namespace Zombera.AI.Brains
             lastCommandTarget = gameEvent.TargetPosition;
             hasCommandTarget = gameEvent.TargetPosition != default;
 
-            // TODO: Add per-fireteam command channels and role-aware command filtering.
+            // Role-aware filtering: passive members skip attack orders;
+            // support roles skip Move-only orders when a higher-priority command is active.
+            SquadMember member = GetComponent<SquadMember>();
+
+            if (member != null)
+            {
+                if (lastCommand == SquadCommandType.Attack && member.Stance == MemberStance.Passive)
+                {
+                    hasCommandTarget = false; // Stand down — passive members do not engage.
+                }
+            }
         }
     }
 }

@@ -20,6 +20,7 @@ namespace Zombera.UI.Menus
         [SerializeField] private Button closeButton;
 
         public bool IsInitialized { get; private set; }
+        public bool IsVisible => panelRoot != null && panelRoot.activeSelf;
 
         private void Awake()
         {
@@ -79,6 +80,16 @@ namespace Zombera.UI.Menus
         private static void ApplyQualityLevel(int qualityLevel)
         {
             int clamped = Mathf.Clamp(qualityLevel, 0, QualitySettings.names.Length - 1);
+            if (!Application.isPlaying)
+            {
+                return;
+            }
+
+            if (clamped == QualitySettings.GetQualityLevel())
+            {
+                return;
+            }
+
             QualitySettings.SetQualityLevel(clamped, true);
         }
 

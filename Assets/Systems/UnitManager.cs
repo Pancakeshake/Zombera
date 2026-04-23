@@ -18,14 +18,17 @@ namespace Zombera.Systems
 
         private void Awake()
         {
+            GameObject persistentRoot = transform.root.gameObject;
+
             if (Instance != null && Instance != this)
             {
-                Destroy(gameObject);
+                enabled = false;
+                Destroy(this);
                 return;
             }
 
             Instance = this;
-            DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(persistentRoot);
             RefreshRegistry();
             SceneManager.sceneLoaded += OnSceneLoaded;
         }
@@ -42,7 +45,7 @@ namespace Zombera.Systems
         public void RefreshRegistry()
         {
             activeUnits.Clear();
-            Unit[] units = FindObjectsOfType<Unit>();
+            Unit[] units = FindObjectsByType<Unit>(FindObjectsSortMode.None);
 
             for (int i = 0; i < units.Length; i++)
             {
@@ -139,6 +142,17 @@ namespace Zombera.Systems
             return GetUnitsByRole(UnitRole.SquadMember, result);
         }
 
+        /// <summary>Returns the first registered alive unit with the given role, or null.</summary>
+        public Unit FindFirstUnitByRole(UnitRole role)
+        {
+            foreach (Unit unit in activeUnits)
+            {
+                if (unit != null && unit.Role == role && unit.IsAlive)
+                    return unit;
+            }
+            return null;
+        }
+
         public List<Unit> FindNearbyUnits(Vector3 worldPosition, float radius, List<Unit> result = null)
         {
             float radiusSqr = radius * radius;
@@ -186,24 +200,34 @@ namespace Zombera.Systems
             return nearby;
         }
 
+        public List<Unit> FindNearbyAllies(Unit source, float radius, List<Unit> result = null)
+        {
+            List<Unit> nearby = FindNearbyUnits(source != null ? source.transform.position : Vector3.zero, radius, result);
+
+            if (source == null)
+            {
+                nearby.Clear();
+                return nearby;
+            }
+
+            for (int i = nearby.Count - 1; i >= 0; i--)
+            {
+                Unit candidate = nearby[i];
+
+                if (candidate == null || candidate == source || AreHostile(source.Role, candidate.Role))
+                {
+                    nearby.RemoveAt(i);
+                }
+            }
+
+            return nearby;
+        }
+
         private static bool AreHostile(UnitRole sourceRole, UnitRole targetRole)
         {
-            if (sourceRole == UnitRole.Bandit)
-            {
-                return targetRole != UnitRole.Bandit;
-            }
-
-            if (sourceRole == UnitRole.Zombie || sourceRole == UnitRole.Enemy)
-            {
-                return targetRole != UnitRole.Zombie && targetRole != UnitRole.Enemy;
-            }
-
-            if (targetRole == UnitRole.Zombie || targetRole == UnitRole.Enemy || targetRole == UnitRole.Bandit)
-            {
-                return true;
-            }
-
-            return false;
+            UnitFaction sourceFaction = UnitFactionUtility.FromRole(sourceRole);
+            UnitFaction targetFaction = UnitFactionUtility.FromRole(targetRole);
+            return UnitFactionUtility.AreHostile(sourceFaction, targetFaction);
         }
     }
 }

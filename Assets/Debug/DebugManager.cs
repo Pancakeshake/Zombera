@@ -38,14 +38,17 @@ namespace Zombera.Debugging
 
         private void Awake()
         {
+            GameObject persistentRoot = transform.root.gameObject;
+
             if (Instance != null && Instance != this)
             {
-                Destroy(gameObject);
+                enabled = false;
+                Destroy(this);
                 return;
             }
 
             Instance = this;
-            DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(persistentRoot);
             SceneManager.sceneLoaded += OnSceneLoaded;
 
             if (autoDiscoverTools)
@@ -175,7 +178,7 @@ namespace Zombera.Debugging
 
         private void DiscoverToolsInScene()
         {
-            MonoBehaviour[] behaviours = FindObjectsOfType<MonoBehaviour>();
+            MonoBehaviour[] behaviours = FindObjectsByType<MonoBehaviour>(FindObjectsSortMode.None);
 
             for (int i = 0; i < behaviours.Length; i++)
             {

@@ -6,25 +6,34 @@ namespace Zombera.Core
 {
     /// <summary>
     /// Lightweight event bus for decoupled game system communication.
+    /// Supports immediate dispatch and an optional queued mode for deterministic replay.
     /// </summary>
     public sealed class EventSystem : MonoBehaviour, IGameSystem
     {
         public static EventSystem Instance { get; private set; }
 
         private readonly Dictionary<Type, Delegate> listenersByType = new Dictionary<Type, Delegate>();
+        private readonly Queue<Action> pendingQueue = new Queue<Action>();
+
+        [SerializeField] private bool enableDiagnosticTracing;
+        [SerializeField] private bool useQueuedMode;
 
         public bool IsInitialized { get; private set; }
+        public bool UseQueuedMode => useQueuedMode;
 
         private void Awake()
         {
+            GameObject persistentRoot = transform.root.gameObject;
+
             if (Instance != null && Instance != this)
             {
-                Destroy(gameObject);
+                enabled = false;
+                Destroy(this);
                 return;
             }
 
             Instance = this;
-            DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(persistentRoot);
         }
 
         private void OnDestroy()
@@ -39,15 +48,27 @@ namespace Zombera.Core
         {
             IsInitialized = true;
 
-            // TODO: Register built-in event diagnostics and tracing.
+            if (enableDiagnosticTracing)
+            {
+                Debug.Log("[EventSystem] Diagnostic tracing enabled.");
+            }
         }
 
         public void Shutdown()
         {
             IsInitialized = false;
             listenersByType.Clear();
+            pendingQueue.Clear();
+        }
 
-            // TODO: Persist event analytics if needed.
+        /// <summary>Flushes all queued events in FIFO order. Call once per frame when useQueuedMode is true.</summary>
+        public void FlushQueue()
+        {
+            while (pendingQueue.Count > 0)
+            {
+                Action dispatch = pendingQueue.Dequeue();
+                dispatch?.Invoke();
+            }
         }
 
         public void Subscribe<TEvent>(Action<TEvent> listener) where TEvent : struct, IGameEvent
@@ -86,6 +107,29 @@ namespace Zombera.Core
 
         public void Publish<TEvent>(TEvent gameEvent) where TEvent : struct, IGameEvent
         {
+            if (enableDiagnosticTracing)
+            {
+                Debug.Log($"[EventSystem] Publishing {typeof(TEvent).Name}");
+            }
+
+            if (useQueuedMode)
+            {
+                // Capture value into closure for deferred dispatch.
+                TEvent captured = gameEvent;
+                pendingQueue.Enqueue(() => DispatchImmediate(captured));
+                return;
+            }
+
+            DispatchImmediate(gameEvent);
+        }
+
+        public static void PublishGlobal<TEvent>(TEvent gameEvent) where TEvent : struct, IGameEvent
+        {
+            Instance?.Publish(gameEvent);
+        }
+
+        private void DispatchImmediate<TEvent>(TEvent gameEvent) where TEvent : struct, IGameEvent
+        {
             Type eventType = typeof(TEvent);
 
             if (!listenersByType.TryGetValue(eventType, out Delegate eventDelegate))
@@ -95,13 +139,6 @@ namespace Zombera.Core
 
             Action<TEvent> callback = eventDelegate as Action<TEvent>;
             callback?.Invoke(gameEvent);
-
-            // TODO: Add queued event mode for deterministic replay/network sync.
-        }
-
-        public static void PublishGlobal<TEvent>(TEvent gameEvent) where TEvent : struct, IGameEvent
-        {
-            Instance?.Publish(gameEvent);
         }
     }
 

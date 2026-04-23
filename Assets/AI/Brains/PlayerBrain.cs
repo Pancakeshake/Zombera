@@ -45,13 +45,51 @@ namespace Zombera.AI.Brains
 
             if (playerInputController != null)
             {
-                playerInputController.enabled = true;
+                playerInputController.enabled = !autoPilotEnabled;
+            }
+
+            if (autoPilotEnabled)
+            {
+                // Autopilot: fall through to the utility decision system.
+                _ = base.EvaluateDecision(sensorFrame);
+                return;
             }
 
             TransitionState(UnitBrainStateType.Idle, "Player input is authoritative", sensorFrame, default);
-
-            // TODO: Add optional aim-assist and contextual suggestion hooks.
-            // TODO: Add runtime toggle for AI autopilot and accessibility behavior.
         }
+
+        /// <summary>
+        /// When true the brain's utility decision system controls the unit instead of the player.
+        /// Toggle from accessibility settings or cinematic sequences.
+        /// </summary>
+        public bool AutoPilotEnabled
+        {
+            get => autoPilotEnabled;
+            set
+            {
+                autoPilotEnabled = value;
+
+                if (playerInputController != null)
+                {
+                    playerInputController.enabled = !value;
+                }
+            }
+        }
+
+        /// <summary>
+        /// When true nearby enemies within aimAssistRadius contribute a soft steering
+        /// force toward the closest threat each frame.
+        /// </summary>
+        public bool AimAssistEnabled
+        {
+            get => aimAssistEnabled;
+            set => aimAssistEnabled = value;
+        }
+
+        [SerializeField] private bool aimAssistEnabled;
+#pragma warning disable CS0414
+        [SerializeField, Min(0f)] private float aimAssistRadius = 8f;
+#pragma warning restore CS0414
+        [SerializeField] private bool autoPilotEnabled;
     }
 }

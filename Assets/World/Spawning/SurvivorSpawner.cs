@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using UMA.CharacterSystem;
 using UnityEngine;
+using Zombera.Characters;
 using Zombera.Systems;
 using Zombera.World.Regions;
 using Zombera.World.Simulation;
@@ -21,6 +23,9 @@ namespace Zombera.World.Spawning
 
         [Header("Limits")]
         [SerializeField] private int maxRuntimeSurvivorsPerRegion = 48;
+
+        [Header("UMA Visuals")]
+        [SerializeField] private bool randomizeUmaVisualsOnSpawn = true;
 
         [Header("Debug")]
         [SerializeField] private bool logSpawnActions;
@@ -130,7 +135,6 @@ namespace Zombera.World.Spawning
                     groupId = 0,
                     regionId = region.regionId,
                     memberCount = aliveCount,
-                    morale = Mathf.Clamp01(1f - region.dangerLevel),
                     supplies = Mathf.Clamp01(region.lootLevel),
                     worldPosition = center
                 });
@@ -169,6 +173,11 @@ namespace Zombera.World.Spawning
             survivor.transform.SetPositionAndRotation(position, Quaternion.identity);
             survivor.transform.SetParent(runtimeParent != null ? runtimeParent : transform);
             survivor.gameObject.SetActive(true);
+
+            if (randomizeUmaVisualsOnSpawn)
+            {
+                ApplyRandomizedUmaVisual(survivor.gameObject);
+            }
 
             Zombera.Characters.UnitHealth health = survivor.GetComponent<Zombera.Characters.UnitHealth>();
             health?.ResetHealthToMax();
@@ -215,6 +224,27 @@ namespace Zombera.World.Spawning
                 Random.Range(bounds.min.x, bounds.max.x),
                 bounds.center.y,
                 Random.Range(bounds.min.z, bounds.max.z));
+        }
+
+        private static void ApplyRandomizedUmaVisual(GameObject survivorObject)
+        {
+            if (survivorObject == null)
+            {
+                return;
+            }
+
+            if (survivorObject.GetComponent<DynamicCharacterAvatar>() == null)
+            {
+                return;
+            }
+
+            NpcUmaVisualSpawner visualSpawner = survivorObject.GetComponent<NpcUmaVisualSpawner>();
+            if (visualSpawner == null)
+            {
+                visualSpawner = survivorObject.AddComponent<NpcUmaVisualSpawner>();
+            }
+
+            visualSpawner.ApplyRandomAppearanceNow(force: true);
         }
     }
 }

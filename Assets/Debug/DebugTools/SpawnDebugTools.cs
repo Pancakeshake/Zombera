@@ -210,22 +210,22 @@ namespace Zombera.Debugging.DebugTools
         {
             if (zombieManager == null)
             {
-                zombieManager = FindObjectOfType<ZombieManager>();
+                zombieManager = FindFirstObjectByType<ZombieManager>();
             }
 
             if (zombieSpawner == null)
             {
-                zombieSpawner = FindObjectOfType<ZombieSpawner>();
+                zombieSpawner = FindFirstObjectByType<ZombieSpawner>();
             }
 
             if (lootManager == null)
             {
-                lootManager = FindObjectOfType<LootManager>();
+                lootManager = FindFirstObjectByType<LootManager>();
             }
 
             if (worldLootSpawner == null)
             {
-                worldLootSpawner = FindObjectOfType<LootSpawner>();
+                worldLootSpawner = FindFirstObjectByType<LootSpawner>();
             }
         }
 

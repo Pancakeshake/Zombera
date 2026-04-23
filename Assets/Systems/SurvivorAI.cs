@@ -53,10 +53,13 @@ namespace Zombera.Systems
                     break;
             }
 
+            // Trait-based modifiers.
+            if (traits.Contains("Loyal"))      baseChance += 10;
+            if (traits.Contains("Distrustful")) baseChance -= 10;
+            if (traits.Contains("Desperate"))  baseChance += 20;
+
             int roll = Random.Range(0, 100);
             return roll < Mathf.Clamp(baseChance, 5, 95);
-
-            // TODO: Replace random check with relationship/faction/system-driven logic.
         }
 
         public void ApplyMoraleChange(int amount)
@@ -69,7 +72,17 @@ namespace Zombera.Systems
             IsRecruited = true;
             unit?.SetRole(UnitRole.SquadMember);
 
-            // TODO: Switch AI package from neutral survivor to squad behavior.
+            // Switch to squad-driven AI by disabling survivor autonomy and
+            // letting the SquadAI/FollowController take over from here.
+            SquadAI squadAI = GetComponent<SquadAI>();
+
+            if (squadAI == null)
+            {
+                squadAI = gameObject.AddComponent<SquadAI>();
+            }
+
+            squadAI.enabled = true;
+            enabled = false; // Survivor autonomy yields to squad package.
         }
     }
 }

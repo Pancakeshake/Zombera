@@ -1,0 +1,21 @@
+---
+description: Unity C# conventions for MapMagic streaming, spawn, and NavMesh
+globs: Assets/**/*.cs
+alwaysApply: false
+---
+
+# Unity streaming + NavMesh conventions
+
+- **Never spawn/initialize world systems in MainMenu**. Gate with `GameState` before doing MapMagic/NavMesh/chunk/zombie work.
+- **MapMagic events**:
+  - Use `TerrainTile.OnTileApplied` for tile-scoped updates (preferred).
+  - Use `TerrainTile.OnAllComplete` only for bootstrap/summary work (throttle).
+- **NavMesh**:
+  - Prefer `StreamingNavMeshTileService` for procedural streaming worlds.
+  - If using `NavMeshSurface`, treat it as authoritative and avoid double-building via `NavMeshBuilder` in the same flow.
+- **Spawn**:
+  - If MapMagic is terrain authority, don’t trust raw XZ until at least one active tile exists.
+  - Prefer “flatter” spawn selection (slope/normal sampling) over fixed points.
+- **Performance**:
+  - Avoid per-frame `FindObjectsByType` in `Update`; cache or run on ticks/events.
+

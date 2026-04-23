@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Zombera.Debugging;
 using Zombera.Debugging.DebugLogging;
 using Zombera.Debugging.DebugTools;
 
@@ -37,6 +38,7 @@ namespace Zombera.Debugging.DebugMenu
         [SerializeField] private SpawnDebugTools spawnDebugTools;
         [SerializeField] private WorldDebugTools worldDebugTools;
         [SerializeField] private AISimulationTools aiSimulationTools;
+        [SerializeField] private DebugSettings debugSettings;
 
         public bool IsMenuVisible { get; private set; }
 
@@ -110,7 +112,50 @@ namespace Zombera.Debugging.DebugMenu
             DebugLogger.Log(LogCategory.Debug, message, this);
         }
 
-        // TODO: Add tabbed sections for AI, World, Spawn, Performance.
-        // TODO: Add runtime value editing for debug settings and stress test parameters.
+        // Menu section helpers — wire buttons to these from editor-created tab panels.
+        // Each section tag matches a GameObject child named e.g. "Tab_AI", "Tab_World".
+        public void ShowSection(string sectionTag)
+        {
+            if (string.IsNullOrEmpty(sectionTag))
+            {
+                return;
+            }
+
+            Transform section = transform.Find(sectionTag);
+
+            if (section != null)
+            {
+                section.gameObject.SetActive(true);
+            }
+        }
+
+        public void HideSection(string sectionTag)
+        {
+            Transform section = transform.Find(sectionTag);
+
+            if (section != null)
+            {
+                section.gameObject.SetActive(false);
+            }
+        }
+
+        /// <summary>Applies a float debug setting at runtime by name.</summary>
+        public void SetFloatSetting(string settingName, float value)
+        {
+            if (debugSettings == null)
+            {
+                return;
+            }
+
+            switch (settingName)
+            {
+                case "slowMotionScale":
+                    debugSettings.slowMotionScale = UnityEngine.Mathf.Clamp(value, 0.05f, 1f);
+                    break;
+                default:
+                    DebugLogger.LogWarning(LogCategory.Debug, $"Unknown setting name: {settingName}", this);
+                    break;
+            }
+        }
     }
 }

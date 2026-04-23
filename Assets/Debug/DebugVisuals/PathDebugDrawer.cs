@@ -93,7 +93,40 @@ namespace Zombera.Debugging.DebugVisuals
             return points;
         }
 
-        // TODO: Add per-agent colors and waypoint index labels.
-        // TODO: Add frame capture export for path diagnostics.
+        // Per-agent color registry: pathId → Color.
+        private readonly Dictionary<int, Color> agentColors = new Dictionary<int, Color>();
+
+        private static readonly Color[] colorPalette =
+        {
+            Color.cyan, Color.yellow, Color.green, Color.magenta, new Color(1f, 0.5f, 0f)
+        };
+
+        public void SetAgentColor(int pathId, Color color)
+        {
+            agentColors[pathId] = color;
+        }
+
+        private Color GetAgentColor(int pathId)
+        {
+            return agentColors.TryGetValue(pathId, out Color c) ? c : pathColor;
+        }
+
+        /// <summary>Exports all active path data as a JSON-compatible string for offline diagnostics.</summary>
+        public string ExportPathSnapshot()
+        {
+            System.Text.StringBuilder sb = new System.Text.StringBuilder();
+            sb.Append("[");
+            bool first = true;
+
+            foreach (KeyValuePair<int, List<Vector3>> entry in pathsById)
+            {
+                if (!first) sb.Append(",");
+                first = false;
+                sb.Append($"{{\"id\":{entry.Key},\"points\":{entry.Value.Count}}}");
+            }
+
+            sb.Append("]");
+            return sb.ToString();
+        }
     }
 }

@@ -20,6 +20,9 @@ namespace Zombera.AI.Sensors
         public Unit NearestAlly { get; private set; }
         public float NearestAllyDistance { get; private set; } = float.PositiveInfinity;
         public IReadOnlyList<Unit> NearbyAllies => allyBuffer;
+        public Unit NearestMedic { get; private set; }
+        public Unit NearestLeader { get; private set; }
+        public Unit NearestShooter { get; private set; }
 
         public void Sense(Unit self)
         {
@@ -64,8 +67,54 @@ namespace Zombera.AI.Sensors
             }
 
             NearbyAlliesCount = allyBuffer.Count;
+            ClassifyAlliesByRole();
+        }
 
-            // TODO: Add role tags (medic/leader/shooter) for contextual support behaviors.
+        private void ClassifyAlliesByRole()
+        {
+            NearestMedic = null;
+            NearestLeader = null;
+            NearestShooter = null;
+
+            for (int i = 0; i < allyBuffer.Count; i++)
+            {
+                Unit ally = allyBuffer[i];
+
+                if (ally == null)
+                {
+                    continue;
+                }
+
+                switch (ally.Role)
+                {
+                    case UnitRole.SquadMember:
+                        // Use SquadMember.RolePreference for finer-grained tagging.
+                        SquadMember sm = ally.GetComponent<SquadMember>();
+
+                        if (sm == null)
+                        {
+                            break;
+                        }
+
+                        if (sm.RolePreference == MemberRolePreference.Medic && NearestMedic == null)
+                        {
+                            NearestMedic = ally;
+                        }
+                        else if (sm.RolePreference == MemberRolePreference.Assault && NearestShooter == null)
+                        {
+                            NearestShooter = ally;
+                        }
+
+                        break;
+                    case UnitRole.Player:
+                        if (NearestLeader == null)
+                        {
+                            NearestLeader = ally;
+                        }
+
+                        break;
+                }
+            }
         }
 
         private void ResetReadings()
@@ -74,6 +123,9 @@ namespace Zombera.AI.Sensors
             NearbyAlliesCount = 0;
             NearestAlly = null;
             NearestAllyDistance = float.PositiveInfinity;
+            NearestMedic = null;
+            NearestLeader = null;
+            NearestShooter = null;
         }
 
         private static bool AreAllied(UnitRole source, UnitRole target)

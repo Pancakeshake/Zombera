@@ -1,0 +1,2432 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efa4a587d69d2ad4f9ca3c26f410d829, type: 3}
+  m_Name: TownPrefabCatalog
+  m_EditorClassIdentifier: Assembly-CSharp::Zombera.World.TownPrefabCatalog
+  generationSeed: 12345
+  lotSize: 8
+  edgePadding: 1
+  randomPositionOffset: 0.75
+  randomYawJitterDegrees: 0
+  buildingLotChance: 0.6
+  propLotChance: 0.25
+  utilityLotChance: 0.1
+  emptyLotChance: 0.05
+  entries:
+  - id: SM_Shop_Window_Wall_D
+    prefab: {fileID: 3574125425894768497, guid: 13411214d75ad634192d7b040c3a03c3, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_StorefrontWindow_G_V2
+    prefab: {fileID: 5646091828566058844, guid: 4bc45795e260db84eb30469286fa3598, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Wall_Corner_L_2_D
+    prefab: {fileID: 279840241517582677, guid: a0867879e777e02489c9fbaa5dfbd26b, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Wall_JointSmall_C
+    prefab: {fileID: 1030986374, guid: abc00000000000049845245532041324, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_WallCornerTrim_G
+    prefab: {fileID: 1030986338, guid: abc00000000000223607134881034089, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_CornerWall_A_R
+    prefab: {fileID: 1030984716, guid: abc00000000000300727812186219716, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Roof_F_L
+    prefab: {fileID: 1030985335, guid: abc00000000000305400911592062308, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_CornerWindow_F_L
+    prefab: {fileID: 1030984958, guid: abc00000000000379308261093568705, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Wall_S_D
+    prefab: {fileID: 1030985565, guid: abc00000000000866993164899392543, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Wall_JointWide_C
+    prefab: {fileID: 1030985183, guid: abc00000000001108649582578714170, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_TopCornerWall_E_V2
+    prefab: {fileID: 1030985654, guid: abc00000000001122684120197426725, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Wall_AWindow_Corner_R_2_D
+    prefab: {fileID: 1030985493, guid: abc00000000001576415977697424233, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_FloorShadeCorner_B_R
+    prefab: {fileID: 1030984922, guid: abc00000000001624224386717033134, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_WindowWall_C_V3
+    prefab: {fileID: 1030985066, guid: abc00000000001714640826261851552, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_RoofShade_B
+    prefab: {fileID: 1030984913, guid: abc00000000001923434555679204338, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_CornerWall_B_L
+    prefab: {fileID: 1030984940, guid: abc00000000001993962155059523861, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Shop_Window_A_V2
+    prefab: {fileID: 1030985012, guid: abc00000000002005374607269028470, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Corner_Wall_R_C
+    prefab: {fileID: 1030985102, guid: abc00000000002454408669341841727, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Roof_G
+    prefab: {fileID: 1030985309, guid: abc00000000002582207588857073516, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Wall_Supported_D
+    prefab: {fileID: 1030985601, guid: abc00000000002663680642150570794, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Roof_F_V1
+    prefab: {fileID: 1030985353, guid: abc00000000002891558168745572059, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Shop_Window_B_V2
+    prefab: {fileID: 1030985030, guid: abc00000000002937571389518677979, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_TopCornerWall_A_L
+    prefab: {fileID: 1030984824, guid: abc00000000003074764909026175395, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Corner_Wall_L_C
+    prefab: {fileID: 1030985093, guid: abc00000000003194861623873008157, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Shop_Window_C_V2
+    prefab: {fileID: 1030985174, guid: abc00000000003258665246011097494, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_StorefrontDoor_G_V2
+    prefab: {fileID: 1030985228, guid: abc00000000003283065669869639289, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Wall_JointLong_C
+    prefab: {fileID: 1030986365, guid: abc00000000003331755227349975717, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_WindowWall_G_V1
+    prefab: {fileID: 1030985282, guid: abc00000000003934651076072179342, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_DoorWall_G_V2
+    prefab: {fileID: 1030985201, guid: abc00000000004057196489895145129, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Wall_A
+    prefab: {fileID: 1030984850, guid: abc00000000004159959178910232336, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_TopDecoration_G_V2
+    prefab: {fileID: 1030985255, guid: abc00000000004207911765551675796, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Wall_Support_Corner_R_D
+    prefab: {fileID: 1030985583, guid: abc00000000004310853726776507198, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Shop_Door_C_V2
+    prefab: {fileID: 1030985138, guid: abc00000000004704715603410512440, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_TopWall_E_V2
+    prefab: {fileID: 1030985681, guid: abc00000000004757101759955686672, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_CornerWall_A_L
+    prefab: {fileID: 1030984707, guid: abc00000000004794573071804229762, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Roof_F_V4
+    prefab: {fileID: 1030985377, guid: abc00000000004957594726059913950, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_DoorWall_B
+    prefab: {fileID: 1030984815, guid: abc00000000005159583968288847563, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Window_F_R
+    prefab: {fileID: 1030985421, guid: abc00000000005210815078022204172, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Shop_Door_C_V1
+    prefab: {fileID: 1030985129, guid: abc00000000005387222464605319107, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_TopWall_A
+    prefab: {fileID: 1030984841, guid: abc00000000005797378406897803945, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_StorefrontDoor_G_V1
+    prefab: {fileID: 1030985219, guid: abc00000000005893577513283159090, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Roof_Long_D
+    prefab: {fileID: 1030985430, guid: abc00000000006123768520281965906, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_RoofShadeCorner_B_L
+    prefab: {fileID: 1030984895, guid: abc00000000006269336754769801952, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_SmallRoof_F_L
+    prefab: {fileID: 1030985394, guid: abc00000000006321977743670280109, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Terrace_Floor_D
+    prefab: {fileID: 1030985610, guid: abc00000000006535823248274583140, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_TopDecoration_G_V1
+    prefab: {fileID: 1030985246, guid: abc00000000006566628651889778735, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_RoofWall_B
+    prefab: {fileID: 1030984985, guid: abc00000000006667467544662691929, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_ShadeCorner_L_C
+    prefab: {fileID: 1030986383, guid: abc00000000006701236114869991019, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Shop_Window_C_V1
+    prefab: {fileID: 1030985165, guid: abc00000000006863257981081222183, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_DoorWall_A
+    prefab: {fileID: 1030984698, guid: abc00000000006910512605221196864, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Bigwall_F
+    prefab: {fileID: 1030984788, guid: abc00000000007015667414065614917, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_LongRoof_F
+    prefab: {fileID: 1030985326, guid: abc00000000007061172085988029991, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Wall_Dec2_L_D
+    prefab: {fileID: 1030985529, guid: abc00000000007200545519182206757, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Wall_AWindow_Corner_L_2_D
+    prefab: {fileID: 1030985484, guid: abc00000000007231125251832927855, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Wall_C
+    prefab: {fileID: 1030985075, guid: abc00000000007580419364579348434, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_DoorWall_G
+    prefab: {fileID: 1030985192, guid: abc00000000007951452820318566030, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_SmallCornerWindow_F_L
+    prefab: {fileID: 1030986356, guid: abc00000000008189940419756113752, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_ShadeShort_C
+    prefab: {fileID: 1030986410, guid: abc00000000008261765891031514369, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Wall_Corner_R_2_D
+    prefab: {fileID: 1030985502, guid: abc00000000008798253632009733345, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_TopDecorationCorner_G_V1
+    prefab: {fileID: 1030985264, guid: abc00000000008838564626255224486, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_CornerWindow_F_R
+    prefab: {fileID: 1030984967, guid: abc00000000008911446451681947815, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Corner_WallSmall_R_C
+    prefab: {fileID: 1030985120, guid: abc00000000008998656287706016930, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_PlainWallCorner_G
+    prefab: {fileID: 1030985317, guid: abc00000000009047044853307283897, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Shop_SmallWindow_C
+    prefab: {fileID: 1030985156, guid: abc00000000009071894569308121530, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Wall_Window_Corner_R_2_D
+    prefab: {fileID: 1030986500, guid: abc00000000009096924993945635700, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_RoofC_Single_L_D
+    prefab: {fileID: 1030985466, guid: abc00000000009258170212515739460, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_WindowWall_C_V2
+    prefab: {fileID: 1030985057, guid: abc00000000009556352105233120169, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Shop_Door_D
+    prefab: {fileID: 1030985147, guid: abc00000000009837516360407899338, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_WindowWall_A_V1
+    prefab: {fileID: 1030984859, guid: abc00000000010008021841575919828, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_RoofShadeCorner_A_R
+    prefab: {fileID: 1030984770, guid: abc00000000010105044362211860777, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_WindowWall_B_V1
+    prefab: {fileID: 1030984868, guid: abc00000000010222564663409681873, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_TopCornerWall_B_R
+    prefab: {fileID: 1030986437, guid: abc00000000010409018284991897234, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_SmallRoof_F_R
+    prefab: {fileID: 1030985403, guid: abc00000000010421340376192411019, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_ShadeLong_C
+    prefab: {fileID: 1030986401, guid: abc00000000010595311040200199027, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Wall_AWindow_D
+    prefab: {fileID: 1030986464, guid: abc00000000010701852812491444109, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_SmallCornerWindow_F_R
+    prefab: {fileID: 1030985385, guid: abc00000000010837893487628611598, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_TopCornerWall_A_R
+    prefab: {fileID: 1030984833, guid: abc00000000010885256776721972565, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Wall_Pillar_L_D
+    prefab: {fileID: 1030985556, guid: abc00000000010885593876942225207, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Roof_Long_L_D
+    prefab: {fileID: 1030985439, guid: abc00000000010938605426623244359, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_FloorShadeCorner_A_L
+    prefab: {fileID: 1030984734, guid: abc00000000010943655967851030743, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Wall_Window_Corner_L_2_D
+    prefab: {fileID: 1030986509, guid: abc00000000010976738693129812418, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_FloorShadeCorner_B_L
+    prefab: {fileID: 1030984931, guid: abc00000000011072676420756283768, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_FloorShade_A
+    prefab: {fileID: 1030984725, guid: abc00000000011384954039389593713, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_PlainWall_G
+    prefab: {fileID: 1030985210, guid: abc00000000011613642161203541626, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Roof_Single_D
+    prefab: {fileID: 1030985457, guid: abc00000000011746423112320263368, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Corner_WallSmall_L_C
+    prefab: {fileID: 1030985111, guid: abc00000000012269811907026175784, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_RoofShadeCorner_B_R
+    prefab: {fileID: 1030984904, guid: abc00000000012273608645667469990, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_RoofSmall_C
+    prefab: {fileID: 1030985084, guid: abc00000000012329284690138869541, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_StorefrontWindow_G_V1
+    prefab: {fileID: 1030985237, guid: abc00000000012496539873707994278, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_BottomCornerWall_E
+    prefab: {fileID: 1030985618, guid: abc00000000012719333326925440666, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_BottomWall_E
+    prefab: {fileID: 1030985627, guid: abc00000000012719743354554935869, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_TopCornerWall_E_V3
+    prefab: {fileID: 1030985663, guid: abc00000000012911766469585724892, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Roof_F_V3
+    prefab: {fileID: 1030985369, guid: abc00000000013174601914636203609, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_RoofShade_A
+    prefab: {fileID: 1030984752, guid: abc00000000013290397846982249273, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_RoofC_Single_R_D
+    prefab: {fileID: 1030985475, guid: abc00000000013300468341332472046, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Shop_Door_B
+    prefab: {fileID: 1030985039, guid: abc00000000013324464507463131700, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Shop_Door_A
+    prefab: {fileID: 1030984994, guid: abc00000000013405204896749290063, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_WindowWall_G_V2
+    prefab: {fileID: 1030985291, guid: abc00000000013637394434539388821, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_FloorShade_B
+    prefab: {fileID: 1030986971, guid: abc00000000013804214308973611050, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_TopWall_B
+    prefab: {fileID: 1030984886, guid: abc00000000013899077227400240226, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Wall_Support_Corner_L_D
+    prefab: {fileID: 1030985574, guid: abc00000000013940346421769002228, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Roof_F_V2
+    prefab: {fileID: 1030985361, guid: abc00000000013991185560121155152, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Shop_Window_B_V1
+    prefab: {fileID: 1030985021, guid: abc00000000014037198780894261072, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_RoofShadeCorner_A_L
+    prefab: {fileID: 1030984761, guid: abc00000000014183527851746370111, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Window_F_L
+    prefab: {fileID: 1030985412, guid: abc00000000014488667903567389914, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_CornerWall_B_R
+    prefab: {fileID: 1030984949, guid: abc00000000014640217889959227491, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_ShadeCorner_R_C
+    prefab: {fileID: 1030986392, guid: abc00000000014670900174244503585, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_BigWindow_F_R
+    prefab: {fileID: 1030984806, guid: abc00000000014692696456267174990, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Roof_Long_R_D
+    prefab: {fileID: 1030985448, guid: abc00000000014953920306789680797, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_TopCornerWall_B_L
+    prefab: {fileID: 1030986428, guid: abc00000000015086207654897162676, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_TopCornerWall_E_V1
+    prefab: {fileID: 1030985645, guid: abc00000000015089898844362689950, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Shop_Window_A_V1
+    prefab: {fileID: 1030985003, guid: abc00000000015329349827018879581, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_WallCorner_G_V2
+    prefab: {fileID: 1030986347, guid: abc00000000015413392678889104576, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_FloorShadeCorner_A_R
+    prefab: {fileID: 1030984743, guid: abc00000000015416058783652816465, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_RoofWall_A
+    prefab: {fileID: 1030984976, guid: abc00000000015506683263652907538, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Wall_Dec3_L_D
+    prefab: {fileID: 1030985538, guid: abc00000000015700537147448706044, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_WindowWallAC_G
+    prefab: {fileID: 1030985300, guid: abc00000000015767508173169782930, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_RoofLong_C
+    prefab: {fileID: 1030986419, guid: abc00000000015795811546572582638, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_TopDecorationCorner_G_V2
+    prefab: {fileID: 1030985273, guid: abc00000000015837869769090956301, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Wall_L_D
+    prefab: {fileID: 1030985547, guid: abc00000000015940937415231061060, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Wall_Window_D
+    prefab: {fileID: 1030986518, guid: abc00000000016259272330976522294, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Entrance_E
+    prefab: {fileID: 1030985636, guid: abc00000000016615903266742469550, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Wall_AC_A
+    prefab: {fileID: 1030984689, guid: abc00000000016697416647692320747, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Roof_F_R
+    prefab: {fileID: 1030985344, guid: abc00000000017256484236614112546, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Wall_Support_D
+    prefab: {fileID: 1030985592, guid: abc00000000017492298465150094965, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_WindowWall_C_V1
+    prefab: {fileID: 1030985048, guid: abc00000000017658050925735556450, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Wall_B
+    prefab: {fileID: 1030984877, guid: abc00000000017741746574313246619, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Wall_Dec1_L_D
+    prefab: {fileID: 1030985520, guid: abc00000000017743964732036111654, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_TopWall_E_V3
+    prefab: {fileID: 1030985690, guid: abc00000000017923848297452179225, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Wall_AC_B
+    prefab: {fileID: 1030984779, guid: abc00000000018041221055146341600, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Roof_E
+    prefab: {fileID: 1030985699, guid: abc00000000018124460296344799918, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_BigWindow_F_L
+    prefab: {fileID: 1030984797, guid: abc00000000018139811679425216408, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_TopWall_E_V1
+    prefab: {fileID: 1030985672, guid: abc00000000018338889155358700955, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Wall_D
+    prefab: {fileID: 2156656624607430530, guid: f4b08a5e4c6aeb2498e6e5fa36a89519, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 260
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Container_A2
+    prefab: {fileID: 5596713879527689420, guid: 0190ce9d97bb3d74087998371a7f503a, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_SandBag
+    prefab: {fileID: 8967834595889320071, guid: 02e80dfaafab09f49be1f09729c63c5d, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Bench
+    prefab: {fileID: 8082762612062379789, guid: 069d33320e4bfbe48992cf1f7c87ba46, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Container_D4
+    prefab: {fileID: 761122750701713760, guid: 09ba1176739844341a6afb7a7cc67410, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Container_H2
+    prefab: {fileID: 7430121169506761289, guid: 0a22a017674c4c64c90044e7951ca286, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Living_Quarters_StairLanding_C
+    prefab: {fileID: 2053822316831187820, guid: 0abd0f8dabf011f45a699b707d8247d9, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 220
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Trees_C
+    prefab: {fileID: 578047255845552514, guid: 0ac2b1c3b64afa44c96ec4d166475234, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Container_G3
+    prefab: {fileID: 2928047513744004429, guid: 0b42702b678dc3947ad110726c1144e5, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_WoodenBox_A
+    prefab: {fileID: 3482824912136343210, guid: 0b8e66d8a31e899429b4d9587d09e691, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Container_D2
+    prefab: {fileID: 5587139223484276368, guid: 0e730b5eac03561408d4c2bd39e0c751, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_PipeModular_B
+    prefab: {fileID: 1803037652613671019, guid: 0e7ff651959a1034bbe3ad91c4a1d82f, type: 3}
+    weight: 0.9
+    category: 2
+    structureMaxHealth: 150
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 3
+  - id: SM_Container_F2
+    prefab: {fileID: 326008969861214628, guid: 11db4499c535f1842991e09d0b29cd5d, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Electricpost_C
+    prefab: {fileID: 4382332187772218716, guid: 1310b870c4c964d42b58dc90bee3494b, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Container_B1
+    prefab: {fileID: 4765952567377357920, guid: 1748c73f93ea24442bc8433a885742c5, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Bed_B
+    prefab: {fileID: 1222498422424406394, guid: 179b4e6705267454ea8457a2df092623, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Plastic_Barrel_A
+    prefab: {fileID: 3825429964198126321, guid: 18b7f37c1d649a34aacc01681ba4f404, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Living_Quarters_B
+    prefab: {fileID: 4759586299845941643, guid: 18c2e0e409afb184d923ba97650db471, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Container_A4
+    prefab: {fileID: 7380572352574166009, guid: 1affa67e055c5e34db4a9056948b4d29, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Drip_Stand
+    prefab: {fileID: 7287765561830544853, guid: 1d6d7c73422665647ae45774c6f67774, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Bed_A
+    prefab: {fileID: 2560449187030193148, guid: 1d842965401edf04ba80335fa7181fbd, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Pallet_Stack
+    prefab: {fileID: 6574026941297273907, guid: 1e6edbbaab49fe04da5882ca8d4bbd4d, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Container_B3
+    prefab: {fileID: 8870880965374741015, guid: 1ed07dc65a891984a800dccacf647d5c, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Pot
+    prefab: {fileID: 5692232233206709994, guid: 1fe923b55ec008c4ea89af52e5876ab3, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Fence_modular_A
+    prefab: {fileID: 673592473993040456, guid: 20ba6c388a708f74eb15f0c07f04604d, type: 3}
+    weight: 0.9
+    category: 2
+    structureMaxHealth: 150
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 3
+  - id: SM_Dum_Cart_Trolly_B
+    prefab: {fileID: 4416466519837061683, guid: 22b317aeb83732f4f88602451f7f0746, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Container_H4
+    prefab: {fileID: 1958799255594755206, guid: 23e70338c8624ec4682256d04946c788, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Container_C4
+    prefab: {fileID: 6093202204696031588, guid: 252685dd1d9711941a67820fce61870b, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Container_H1
+    prefab: {fileID: 3457825415411983751, guid: 2632c73c5ebff9149afdc6256c22036b, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_PipeModular_H
+    prefab: {fileID: 1564327231261343417, guid: 26fdae1031d0a1344a81600d987b1a35, type: 3}
+    weight: 0.9
+    category: 2
+    structureMaxHealth: 150
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 3
+  - id: SM_Trees_B1
+    prefab: {fileID: 3667709893817419044, guid: 2837061661b256f49ae131bb7150edc5, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Living_Quarters_StairLanding_A
+    prefab: {fileID: 5890343806133345589, guid: 292418c396c762e4b9c6cb55681ac486, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 220
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Mallet
+    prefab: {fileID: 2230752429334401712, guid: 292fa4b4ecb7fed41aa63cf05181328a, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Container_E4
+    prefab: {fileID: 538571662148828999, guid: 2a4676d23a48b9d4f951bfa0cc0a2a25, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Fence_modular_C
+    prefab: {fileID: 4974514386458307012, guid: 2abcfc3e7fff1bb4caf92767a77dbd25, type: 3}
+    weight: 0.9
+    category: 2
+    structureMaxHealth: 150
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 3
+  - id: SM_Container_C3
+    prefab: {fileID: 5388285057488604486, guid: 2b0310b60100c3249ad03579a03aecfb, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Container_J4
+    prefab: {fileID: 1361615728288165354, guid: 2b2a3cac7f971264c9a1ae961dfdabb2, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Spanner
+    prefab: {fileID: 7503883010882972109, guid: 2e701a1e667a28146b98580b9300d051, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Living_Quarters_Stair_D
+    prefab: {fileID: 137277104113000608, guid: 2eb98bc01946eb14da30f0ae5868be15, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 220
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_PipeModular_D
+    prefab: {fileID: 276823270770141558, guid: 2ec0f30919151274bbfc4fc7848bbf24, type: 3}
+    weight: 0.9
+    category: 2
+    structureMaxHealth: 150
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 3
+  - id: SM_PipeModular_C
+    prefab: {fileID: 3057337500256076456, guid: 3090d02cafdb8f643bbde29ee912a835, type: 3}
+    weight: 0.9
+    category: 2
+    structureMaxHealth: 150
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 3
+  - id: SM_Fence_modular_I
+    prefab: {fileID: 1037285938770187720, guid: 3127cc9e048d70a4b856f235fff0cf0b, type: 3}
+    weight: 0.9
+    category: 2
+    structureMaxHealth: 150
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 3
+  - id: SM_Fence_C
+    prefab: {fileID: 6652347243647758991, guid: 34def1bca4ab0684dbd8454420d935bc, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Bar_Stool
+    prefab: {fileID: 5914375635755016244, guid: 3667eca4922f56d43982f075993e9580, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Chair_A
+    prefab: {fileID: 6446434509473491225, guid: 37ed27d817dfbc74096b6880fee19d8c, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_WoodenBox_C
+    prefab: {fileID: 1844883549643314127, guid: 3952ffd865f16f34fa94bf40053f4f27, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Fence_modular_H
+    prefab: {fileID: 156694802818115038, guid: 3ae9c61b654b5be42b4a41ff87c4314d, type: 3}
+    weight: 0.9
+    category: 2
+    structureMaxHealth: 150
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 3
+  - id: SM_Watertank
+    prefab: {fileID: 4832234640282723733, guid: 3c2b1904ccdf43346953293f75dd2928, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Metal_Barrel_A
+    prefab: {fileID: 693506263849073066, guid: 3d3dd5f1df2136048862345855a18840, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Living_quarters_RadioMast
+    prefab: {fileID: 1958809653699469509, guid: 3d402ad8d9bafce44a4d4212e7f2d37e, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 220
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Container_J2
+    prefab: {fileID: 8360062530730276747, guid: 400aecd723169a743a4546312717c85e, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Grass_C
+    prefab: {fileID: 2639657864207348943, guid: 422226764c40b2246ac66e565fa42520, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Electricpost_A
+    prefab: {fileID: 117597563653066625, guid: 43969dacda6d8a34ca6d5ad58cd077d1, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Trees_B
+    prefab: {fileID: 5227111812504124988, guid: 43c5012f135e3a94183dcfdca273e261, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Container_D3
+    prefab: {fileID: 6135063954983939003, guid: 44aba611702be044c93e5cb373996144, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Pine_Tree_B1
+    prefab: {fileID: 2972091699777702753, guid: 46e131614631dda48ba886944c8d6c98, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Container_E1
+    prefab: {fileID: 6229857498182019700, guid: 48662fc005efa414ba463166da5946e1, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Container_G1
+    prefab: {fileID: 329540653470267433, guid: 4bda18a4ec98e4d45b3c58a083e92c63, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Container_C2
+    prefab: {fileID: 5560657244821703900, guid: 4fb73b4020fab7c4eb5fa012d8308751, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Fence_modular_D
+    prefab: {fileID: 4576766705265576497, guid: 4ff20224cc2b09b479139f84eca3e578, type: 3}
+    weight: 0.9
+    category: 2
+    structureMaxHealth: 150
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 3
+  - id: SM_Container_I4
+    prefab: {fileID: 5575194070536671, guid: 5154d3df7968e114d969eed6a82b9d6f, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Pallet_B
+    prefab: {fileID: 2778539425358284259, guid: 52914e128a3732445a4030b600c222ca, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Fence_A
+    prefab: {fileID: 881923352602237267, guid: 567ef3bf8fcd16d42bbc4f45e2325e43, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Ladder_B
+    prefab: {fileID: 8491387328555417260, guid: 5711bb7f6a535044f960556a87747227, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Ceilinglight_A
+    prefab: {fileID: 1350857169319561856, guid: 588bae9018ff28a4d85907c63bc91d25, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Watchtower
+    prefab: {fileID: 8504640319377059608, guid: 592ebe369be43ce40ae80c62a41aadbc, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Hammer
+    prefab: {fileID: 5322564912175373775, guid: 5a52dbb7066ddd44cb33b6135bec1b68, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Fence_B
+    prefab: {fileID: 392423567854442375, guid: 5a82ce188f89a744999a9dc582a86532, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Pine_Tree_A1
+    prefab: {fileID: 8801047878559317704, guid: 5abb697e8280b3949a836c01f1a969c1, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Plastic_Barrel_B
+    prefab: {fileID: 4106869866213416128, guid: 5bd083478da08194dbf3d21afa4568cc, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Container_I2
+    prefab: {fileID: 8890165378345630117, guid: 5c705372d2a6e9442be0c0bccf271665, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Can_C
+    prefab: {fileID: 8911155837800791541, guid: 5d44b7c8ce3e3124dacc6fab261cc650, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Container_G4
+    prefab: {fileID: 8207900430406292590, guid: 5d4dc74593a7fc6468122e38dcc7e31a, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Living_quarters_Canopy
+    prefab: {fileID: 8599042054246122682, guid: 6055c067814b5a24998fb2841ba731c4, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 220
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Plate
+    prefab: {fileID: 4990857100004178159, guid: 61037fed25f48a8428f8c70fe1194601, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Med_Pack_B
+    prefab: {fileID: 5527553738289809770, guid: 61582b09c8d97b540a48b22d239581bd, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_MetalStorageRack_B
+    prefab: {fileID: 8571234017497802557, guid: 62d266bd92be93f4889e6dc42b4d4380, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_WoodenTable_A
+    prefab: {fileID: 1760581329416581907, guid: 64a204f503d29b8448aefafed13fa284, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Electricpost_B
+    prefab: {fileID: 5245210295202818367, guid: 664dcfc11b751e14597fc6877524ba54, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Container_G2
+    prefab: {fileID: 199862460969038889, guid: 6906d4329477dec439df260299209ab0, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Living_Quarters_Container_B
+    prefab: {fileID: 6168743459695683009, guid: 6bae5f645449d1e4b9473abf05ea2158, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 220
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Container_I3
+    prefab: {fileID: 4509513022369086299, guid: 6c7efd06cdacc6941b5cba1b6b9e92cb, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_PipeModular_A
+    prefab: {fileID: 964484009970661777, guid: 6e3512fb87b6a9b43b74dd7d7188d670, type: 3}
+    weight: 0.9
+    category: 2
+    structureMaxHealth: 150
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 3
+  - id: SM_Ladder_A
+    prefab: {fileID: 609970015118142905, guid: 718d35ac95b86e841b8eb9ffef330045, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_MetalSheet_B
+    prefab: {fileID: 3615527325797454321, guid: 746eae848f3d7b44f8b5fda2012d6088, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Container_F3
+    prefab: {fileID: 2558113524853374039, guid: 7b89eef3798fc374ca56d7f3cf7807df, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Container_B2
+    prefab: {fileID: 5483431889783737323, guid: 7cb0e929f5bc1de458f461c2dbef5145, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Living_Quarters_Container_D
+    prefab: {fileID: 2670907338560210726, guid: 7d7222a5846a4a04093713efc9e9e7a2, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 220
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Trees_A
+    prefab: {fileID: 3068892470161582854, guid: 7da402f452098a64cbfab13adeff8014, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Med_Box
+    prefab: {fileID: 6052923048415815562, guid: 7dc89c49510418e4284d920bf1c2de4d, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Fence_modular_F
+    prefab: {fileID: 4736237099965288271, guid: 80a3f89236af7584d869e9614c96743a, type: 3}
+    weight: 0.9
+    category: 2
+    structureMaxHealth: 150
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 3
+  - id: SM_Living_Quarters_StairLanding_B
+    prefab: {fileID: 7859083606824984406, guid: 81464238884f8b54797838927c1dcc9c, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 220
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_PipeModular_G
+    prefab: {fileID: 2949621467008380813, guid: 81c89252e6823214bbac4f99a23eb03a, type: 3}
+    weight: 0.9
+    category: 2
+    structureMaxHealth: 150
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 3
+  - id: SM_Grass_A
+    prefab: {fileID: 6214952054595625659, guid: 8a5f155930b861542a72abd1835207d7, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_MetalStorageRack_A
+    prefab: {fileID: 5620584367088748398, guid: 8ffc193ab9e5cc1418301e87b037ca42, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Container_E3
+    prefab: {fileID: 6222348625045451507, guid: 9202a08988b8eb24d8d513469888e302, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Living_Quarters_MetalSheet
+    prefab: {fileID: 2754590820335703982, guid: 941e4d0c7e314f740b639779e38f89f0, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 220
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Axe
+    prefab: {fileID: 4137340210413175532, guid: 97630f225e4ef294bb87ddc99f5adc75, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Pine_Tree_B
+    prefab: {fileID: 3794600329702667245, guid: 98fb72436eb95bb46ae7d83b85e86675, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Fence_modular_B
+    prefab: {fileID: 1165231801968205034, guid: 99513b6a5edb44f4ea6feba7e1d56eb7, type: 3}
+    weight: 0.9
+    category: 2
+    structureMaxHealth: 150
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 3
+  - id: SM_Floodlight
+    prefab: {fileID: 7079952374332187281, guid: 9a57fcef03b16d64586cdf16adb5082a, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Pine_Tree_A
+    prefab: {fileID: 7937922576217384349, guid: 9c374fa22bbd7014ebb153d452cd99b0, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Pine_Tree_C1
+    prefab: {fileID: 507811603773618057, guid: 9d94c8f6cc917bc45828817f4dee9855, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Container_D1
+    prefab: {fileID: 8964838983047615985, guid: 9dfa846391433c84ba944fcc88a95dfd, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Med_Pack_A
+    prefab: {fileID: 1538577735089333752, guid: 9e684ebece7154a428a952f9f85e8cf9, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Grass_B1
+    prefab: {fileID: 2773050421709978804, guid: 9f8aa7a8bb4d2644b990367fd833c3b6, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Grass_A1
+    prefab: {fileID: 1156543249077362605, guid: a06e317d156964243815813e554111c8, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Stair_A
+    prefab: {fileID: 6413300503834295939, guid: a231608112dfb4f4c99ceb7eaa1cd22a, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Can_A
+    prefab: {fileID: 2404116703026034899, guid: a2b941890bb48734ca22bf1b058756b0, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Wastebin
+    prefab: {fileID: 3279101219528304144, guid: a31bdc300eec41441b948d356f6b8595, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Container_C1
+    prefab: {fileID: 5640668243599738208, guid: a395d7e8296d43440829296683208bc6, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Living_Quarters_A
+    prefab: {fileID: 194435582511924353, guid: a3b4eaba0a4cdcd43bb45dcf3db1f24b, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Container_I1
+    prefab: {fileID: 369832339054557465, guid: a7e204b3544c8ae44b25e76bf842bbad, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Trees_C1
+    prefab: {fileID: 6584154512449007987, guid: ac87e16c75febbd4d8b8c84a3ba7fe79, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_PipeModular_E
+    prefab: {fileID: 3890666212660904376, guid: b009069a714ff8c4b8d60b7b7b3fc7ce, type: 3}
+    weight: 0.9
+    category: 2
+    structureMaxHealth: 150
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 3
+  - id: SM_MetalSheet_A
+    prefab: {fileID: 2234436590922905122, guid: b024c588b23891d4e82ee87a8351f140, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Living_Quarters_Stair_C
+    prefab: {fileID: 7578934631699971584, guid: b208168015cf0ed43a97a1c8856e8c0b, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 220
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Pipe
+    prefab: {fileID: 8239247590343498167, guid: b65389d8391ced04c834ddc719c2a55e, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Med_Bottle_A
+    prefab: {fileID: 2187291273251536285, guid: b6e24f16c4b51254e90bdbe2b0dc9e57, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Pine_Tree_C
+    prefab: {fileID: 9069547751508276079, guid: b6ead62a9f552ce48af45b14ba460620, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Desk
+    prefab: {fileID: 3775568056328673362, guid: b7052a38bd42d7b429593bf311e2225c, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Living_Quarters_Stair_A
+    prefab: {fileID: 8157222047464575048, guid: b705576dd08a2e84abe67ee3db9cfd50, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 220
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Container_J3
+    prefab: {fileID: 1755789457830373048, guid: b9c7bb4b3a478cf4d9052a3bd9c838dd, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_PipeModular_F
+    prefab: {fileID: 9195041498387072161, guid: ba8d62d83d3469a4894b29089db980e9, type: 3}
+    weight: 0.9
+    category: 2
+    structureMaxHealth: 150
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 3
+  - id: SM_Living_Quarters_SymbolBoards_A
+    prefab: {fileID: 199965748173183522, guid: bbf7e6f0fdf793d4fa71545b014c9f48, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 220
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Container_A3
+    prefab: {fileID: 1116042601117962257, guid: bcea5bf52b834ee43acd7c57353b88be, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Living_Quarters_Container_A
+    prefab: {fileID: 4735738210980817826, guid: bd76a5b5d48284d439a72fd3295b32bf, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 220
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Container_B4
+    prefab: {fileID: 3957842879489756889, guid: bdaf1b8b41d371a419c814703be3ce8b, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Container_H3
+    prefab: {fileID: 3318794886960527837, guid: bfd1cb93b8f50b642be23ff526adaa4b, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Living_quarters_Dish
+    prefab: {fileID: 2647907212780742637, guid: c105beb61a926ec4c85731962a379aaf, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 220
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Pallets_Storage
+    prefab: {fileID: 7531765640305081735, guid: c2c8a2539af124849b298a84e0322558, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Container_A1
+    prefab: {fileID: 8426266758797353268, guid: c3f9cf32c6db6ac4c87edafe2ebee9c8, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Living_quarters_Piller
+    prefab: {fileID: 5916784183516826844, guid: c7dfa2dd05646b547bc56ff42a303b8b, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 220
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Trees_A1
+    prefab: {fileID: 7410702440112131406, guid: c844257185fe8d74a8395cc383528eb4, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Chair_B
+    prefab: {fileID: 7629949608601292590, guid: c8c26bd5bd1acb6479e18fbd2fe6baad, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Tyre_A
+    prefab: {fileID: 1438210376701933048, guid: c8f142e0c431b3b46a349209d58ae4cd, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Living_quarters_Balcony
+    prefab: {fileID: 1684120961678171901, guid: c9d9debcf24a08c4e92a7154a197cbbe, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 220
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Dum_Cart_Trolly_A
+    prefab: {fileID: 274679154739097721, guid: ccf51c645985b6349bca0e4ea33c6e93, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Med_Table
+    prefab: {fileID: 1964450515142174623, guid: cea9d594992858149a7d012c0f261b02, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Living_Quarters_SymbolBoards_C
+    prefab: {fileID: 517231343103896790, guid: cf7f4510a2af97d4ca1ee9abd4177f6d, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 220
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Fence_modular_G
+    prefab: {fileID: 7712644191197692691, guid: cf8e080057bd86144a865ed6bc1da621, type: 3}
+    weight: 0.9
+    category: 2
+    structureMaxHealth: 150
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 3
+  - id: SM_Cup
+    prefab: {fileID: 2713121019757800030, guid: cfab81b37336d344885c31e43b155e21, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Living_Quarters_SymbolBoards_D
+    prefab: {fileID: 343368150071760361, guid: cfb307eaaa6333e4081cf62e21b44912, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 220
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_WoodenTable_B
+    prefab: {fileID: 4806574185461162518, guid: d0e7f600ac942034aaf26fd81736d369, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Living_Quarters_Container_C
+    prefab: {fileID: 5920909644883167412, guid: d16672c9eb92f9143bd7ccdec02ff0ff, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 220
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Grass_B
+    prefab: {fileID: 2386632227998918701, guid: d1dfbeaf89437da4ba38dbdcc2b14135, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Container_F4
+    prefab: {fileID: 3629035857782846469, guid: d27852556b113514bb90ad5ec547eb1a, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Plastic_Crate
+    prefab: {fileID: 4398303701962151907, guid: d7a4ce64f34351743ab4a6df890ad7cf, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Tyre_B
+    prefab: {fileID: 3064595265888370127, guid: d85feb780db4de64da1b765a6fad4485, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Ceilinglight_B
+    prefab: {fileID: 4864408336416191104, guid: da0966475f31aa6428bcbd171692c29f, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Can_B
+    prefab: {fileID: 8068930451028096072, guid: e29af196029971442aaa7224c39bf86d, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Clothesline_A
+    prefab: {fileID: 3966834375349104851, guid: e41238123a716cf4dbec08411a94d6fa, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Clothesline_B
+    prefab: {fileID: 3066894997667327261, guid: ea110a71831a96b40b167d85aba67c18, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Fence_modular_E
+    prefab: {fileID: 3643672258185747621, guid: ea1b212138eff6445a824b0ab963f563, type: 3}
+    weight: 0.9
+    category: 2
+    structureMaxHealth: 150
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 3
+  - id: SM_Living_Quarters_Stair_B
+    prefab: {fileID: 1662920520140051692, guid: eb3e657af0c0acf43b41a2e6856f4e9f, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 220
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Container_F1
+    prefab: {fileID: 3190731803867129287, guid: ec6053ded84f08e43a917a5feef83134, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Pallet_A
+    prefab: {fileID: 6815343343837842314, guid: ef7dea41658b8c8459558bf5c654837f, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Grass_C1
+    prefab: {fileID: 5055619745902244238, guid: f2065f5876baead4ba2e3ff4b44d0b31, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Med_Bottle_C
+    prefab: {fileID: 6969475533298753848, guid: f60d70ec005ec0f4583a608154a35546, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Living_Quarters_Container_E
+    prefab: {fileID: 1845935001414047808, guid: f6b5caf0d8de0224cbdc8b3a11d31ddf, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 220
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_Metal_Barrel_B
+    prefab: {fileID: 1969647672252678400, guid: f7ab53f10bbc5354097b7c58ce8bb06e, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Med_Bottle_B
+    prefab: {fileID: 8513761496518160623, guid: f93a15d84cd25254195bfd628d986d11, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Living_Quarters_SymbolBoards_B
+    prefab: {fileID: 457917669926449091, guid: f986743af81f5bd4689f6b96aa3c6db0, type: 3}
+    weight: 1
+    category: 0
+    structureMaxHealth: 220
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 0
+  - id: SM_WoodenBox_B
+    prefab: {fileID: 8645984777030579950, guid: fbb6e5086383ab045a238cde4a42cb7e, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Container_J1
+    prefab: {fileID: 2991136968363429858, guid: fc64e831c7a43f64b9820630db2733f3, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Container_E2
+    prefab: {fileID: 212147336376514668, guid: fc8ba53ff4f95d2488e449908e7a7583, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Stair_B
+    prefab: {fileID: 8156440153277645864, guid: fcf016f075cc1b941a5bd7454a12b6cb, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4
+  - id: SM_Cardboardboxes
+    prefab: {fileID: 2090656057244022140, guid: ff8e61da896aeda41a4dd451a5a2612a, type: 3}
+    weight: 0.8
+    category: 1
+    structureMaxHealth: 90
+    destroyOnDeath: 1
+    addBuildPiece: 1
+    buildPieceCategory: 4

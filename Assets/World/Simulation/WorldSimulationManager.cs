@@ -69,7 +69,8 @@ namespace Zombera.World.Simulation
 
         public void RefreshSimulationLayers(Vector3 playerPosition)
         {
-            regionManager?.RefreshRegionLayers(playerPosition, fullSimulationRange, reducedSimulationRange);
+            int cap = Mathf.Max(1, maxRegionsTickedPerFrame);
+            regionManager?.RefreshRegionLayers(playerPosition, fullSimulationRange, reducedSimulationRange, cap);
         }
 
         public void TickSimulation(float deltaTime, Vector3 playerPosition)
@@ -99,9 +100,19 @@ namespace Zombera.World.Simulation
             }
 
             LogEvent($"Simulation tick complete at player position {playerPosition}.");
+        }
 
-            // TODO: Add deterministic seed-based simulation for reproducible world progression.
-            // TODO: Add simulation budget controls for low-end hardware.
+        [Header("Determinism & Budget")]
+        [SerializeField] private int simulationSeed = 54321;
+        [SerializeField, Min(1)] private int maxRegionsTickedPerFrame = 4;
+
+        public int SimulationSeed => simulationSeed;
+        public int MaxRegionsTickedPerFrame => maxRegionsTickedPerFrame;
+
+        public void SetSimulationSeed(int seed)
+        {
+            simulationSeed = seed;
+            Random.InitState(seed);
         }
 
         public void ForceSimulationTick(Vector3 playerPosition, float overrideDelta = -1f)

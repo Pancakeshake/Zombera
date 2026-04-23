@@ -44,8 +44,19 @@ namespace Zombera.UI
 
             SetSquadHeader("Squad", 0, 0);
             IsInitialized = true;
+            BindSquadRosterEvents();
+        }
 
-            // TODO: Bind squad roster events and instantiate row entries.
+        private void BindSquadRosterEvents()
+        {
+            Zombera.Core.EventSystem.Instance?.Subscribe<Zombera.Core.SquadRosterChangedEvent>(OnRosterChanged);
+        }
+
+        private void OnRosterChanged(Zombera.Core.SquadRosterChangedEvent evt)
+        {
+            // Let the HUDManager push a fresh member list when it's available.
+            // Direct access to SquadManager from here would create a cross-layer dependency.
+            _ = evt;
         }
 
         public void SetVisible(bool visible)
@@ -72,14 +83,48 @@ namespace Zombera.UI
             int maxCount = Mathf.Max(currentCount, 0);
             SetSquadHeader("Squad", currentCount, maxCount);
 
-            // TODO: Populate member UI rows from members data.
+            if (squadMemberEntryPrefab == null || membersContentRoot == null)
+            {
+                return;
+            }
+
+            // Pool existing rows: deactivate rather than destroy so they can be reused.
+            for (int i = 0; i < membersContentRoot.childCount; i++)
+            {
+                membersContentRoot.GetChild(i).gameObject.SetActive(false);
+            }
+
+            if (members == null)
+            {
+                return;
+            }
+
+            for (int i = 0; i < members.Count; i++)
+            {
+                Transform rowTransform = (i < membersContentRoot.childCount)
+                    ? membersContentRoot.GetChild(i)
+                    : Instantiate(squadMemberEntryPrefab, membersContentRoot).transform;
+
+                rowTransform.gameObject.SetActive(true);
+                SquadMemberRowView row = rowTransform.GetComponent<SquadMemberRowView>();
+                row?.Bind(members[i]);
+            }
         }
 
         public void ClearMembers()
         {
             SetSquadHeader("Squad", 0, 0);
 
-            // TODO: Destroy/pool instantiated member rows.
+            if (membersContentRoot == null)
+            {
+                return;
+            }
+
+            // Deactivate pooled rows rather than destroying them.
+            for (int i = 0; i < membersContentRoot.childCount; i++)
+            {
+                membersContentRoot.GetChild(i).gameObject.SetActive(false);
+            }
         }
     }
 

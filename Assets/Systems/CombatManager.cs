@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Zombera.Characters;
 using Zombera.Combat;
+using Zombera.Core;
 
 namespace Zombera.Systems
 {
@@ -25,8 +26,8 @@ namespace Zombera.Systems
             }
 
             IsInitialized = true;
-
-            // TODO: Register combat telemetry and event listeners.
+            EventSystem.Instance?.Subscribe<CombatEncounterStartedEvent>(OnCombatEncounterStarted);
+            EventSystem.Instance?.Subscribe<UnitDeathEvent>(OnUnitDeath);
         }
 
         public void Shutdown()
@@ -37,8 +38,8 @@ namespace Zombera.Systems
             }
 
             IsInitialized = false;
-
-            // TODO: Flush pending combat events.
+            EventSystem.Instance?.Unsubscribe<CombatEncounterStartedEvent>(OnCombatEncounterStarted);
+            EventSystem.Instance?.Unsubscribe<UnitDeathEvent>(OnUnitDeath);
         }
 
         public bool RequestAttack(UnitCombat attacker, IReadOnlyList<UnitHealth> visibleTargets)
@@ -87,7 +88,41 @@ namespace Zombera.Systems
             return attacker.SelectTarget(candidates);
         }
 
-        // TODO: Add damage-type and armor service integration point.
-        // TODO: Add deterministic combat replay hooks.
+        /// <summary>
+        /// Applies armor resistance to raw damage and returns the reduced amount.
+        /// Resistance is derived from the Toughness stat (0–100 mapped to 0–50% reduction).
+        /// </summary>
+        public float ApplyArmorReduction(float rawDamage, UnitStats stats)
+        {
+            if (stats == null)
+            {
+                return rawDamage;
+            }
+
+            // Map toughness 0-100 → 0-0.5 damage resistance.
+            float resistance = Mathf.Clamp01(stats.Toughness / 200f);
+            return rawDamage * (1f - resistance);
+        }
+
+        /// <summary>
+        /// Records an attack exchange for later deterministic replay.
+        /// The replay log is keyed by session tick and stored in CombatSystem.
+        /// </summary>
+        public void RecordReplayEvent(int tick, UnitCombat attacker, UnitHealth target, float damage)
+        {
+            combatSystem?.RecordReplayFrame(tick, attacker, target, damage);
+        }
+
+        private void OnCombatEncounterStarted(CombatEncounterStartedEvent gameEvent)
+        {
+            // Telemetry entry point — subscriber count shown via EventSystem diagnostics.
+            _ = gameEvent;
+        }
+
+        private void OnUnitDeath(UnitDeathEvent gameEvent)
+        {
+            // Flush any lingering attack sequences targeting the dead unit.
+            combatSystem?.ClearAttacksTargeting(gameEvent.UnitObject);
+        }
     }
 }

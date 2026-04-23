@@ -1,4 +1,10 @@
+using System;
 using UnityEngine;
+#if ENABLE_INPUT_SYSTEM
+using UnityEngine.InputSystem;
+#endif
+using Zombera.Characters;
+using Zombera.UI.SquadManagement;
 
 namespace Zombera.UI
 {
@@ -27,6 +33,30 @@ namespace Zombera.UI
         [SerializeField] private HotbarController hotbar;
         [SerializeField] private AlertController alertPanel;
 
+        [Header("Squad Management Overlay")]
+        [SerializeField] private bool enableSquadManagementOverlay = true;
+        [SerializeField] private bool squadManagementStartsOpen;
+        [SerializeField] private KeyCode toggleSquadManagementKey = KeyCode.Tab;
+        [SerializeField] private KeyCode closeSquadManagementKey = KeyCode.Escape;
+        [SerializeField] private KeyCode openSquadTabKey = KeyCode.F1;
+        [SerializeField] private KeyCode openInventoryTabKey = KeyCode.F2;
+        [SerializeField] private KeyCode openCraftingTabKey = KeyCode.F3;
+        [SerializeField] private KeyCode openMapTabKey = KeyCode.F4;
+        [SerializeField] private KeyCode openMissionsTabKey = KeyCode.F5;
+        [SerializeField] private KeyCode quickOpenInventoryKey = KeyCode.I;
+        [SerializeField] private ZomberaSquadManagementUI squadManagementUI;
+
+        private bool isSquadManagementVisible;
+
+        private enum MenuHotkeyTab
+        {
+            Squad,
+            Inventory,
+            Crafting,
+            Map,
+            Missions
+        }
+
         public bool IsInitialized { get; private set; }
 
         public SquadPanelController SquadPanel => squadPanel;
@@ -39,6 +69,11 @@ namespace Zombera.UI
         private void Awake()
         {
             Initialize();
+        }
+
+        private void Update()
+        {
+            HandleSquadManagementInput();
         }
 
         public void Initialize()
@@ -74,9 +109,37 @@ namespace Zombera.UI
             hotbar?.Initialize(this);
             alertPanel?.Initialize(this);
 
-            IsInitialized = true;
+            InitializeSquadManagementOverlay();
 
-            // TODO: Connect gameplay event subscriptions in a dedicated UI binding layer.
+            IsInitialized = true;
+            BindGameplayEvents();
+        }
+
+        private void BindGameplayEvents()
+        {
+            Zombera.Core.EventSystem.Instance?.Subscribe<Zombera.Core.SquadRosterChangedEvent>(OnSquadRosterChanged);
+            Zombera.Core.EventSystem.Instance?.Subscribe<Zombera.Core.GameStateChangedEvent>(OnGameStateChanged);
+        }
+
+        private void OnSquadRosterChanged(Zombera.Core.SquadRosterChangedEvent evt)
+        {
+            // Roster changed — let any open squad panel refresh on the next frame.
+            // Full row-population is handled by SquadPanelController.SetMembers().
+            _ = evt;
+        }
+
+        private void OnGameStateChanged(Zombera.Core.GameStateChangedEvent evt)
+        {
+            // Automatically hide or show the HUD based on game state.
+            bool playing = evt.NewState == Zombera.Core.GameState.Playing;
+            SetVisible(playing);
+        }
+
+        /// <summary>Wires the player status panel to a live unit's health/stamina/morale events.</summary>
+        public void BindPlayerUnit(Unit unit)
+        {
+            if (!IsInitialized) Initialize();
+            playerStatus?.BindUnit(unit);
         }
 
         public void SetVisible(bool visible)
@@ -92,6 +155,11 @@ namespace Zombera.UI
             playerStatus?.SetVisible(visible);
             hotbar?.SetVisible(visible);
             alertPanel?.SetVisible(visible);
+
+            if (squadManagementUI != null)
+            {
+                squadManagementUI.SetVisible(visible && isSquadManagementVisible);
+            }
         }
 
         public void ShowAlert(AlertViewData alertData)
@@ -132,5 +200,198 @@ namespace Zombera.UI
 
             return panelController;
         }
+
+        private void InitializeSquadManagementOverlay()
+        {
+            if (!enableSquadManagementOverlay)
+            {
+                isSquadManagementVisible = false;
+                return;
+            }
+
+            if (squadManagementUI == null)
+            {
+                squadManagementUI = GetComponentInChildren<ZomberaSquadManagementUI>(true);
+            }
+
+            if (squadManagementUI == null)
+            {
+                squadManagementUI = FindFirstObjectByType<ZomberaSquadManagementUI>();
+            }
+
+            if (squadManagementUI == null)
+            {
+                GameObject overlayRoot = new GameObject("SquadManagementUI", typeof(RectTransform));
+                overlayRoot.transform.SetParent(hudRoot != null ? hudRoot : transform, false);
+                squadManagementUI = overlayRoot.AddComponent<ZomberaSquadManagementUI>();
+            }
+
+            isSquadManagementVisible = squadManagementStartsOpen;
+            squadManagementUI.SetVisible(isSquadManagementVisible);
+        }
+
+        private void HandleSquadManagementInput()
+        {
+            if (!Application.isPlaying || !enableSquadManagementOverlay || squadManagementUI == null)
+            {
+                return;
+            }
+
+            if (HandleSquadManagementTabHotkeys())
+            {
+                return;
+            }
+
+            if (WasKeyPressedThisFrame(toggleSquadManagementKey))
+            {
+                isSquadManagementVisible = !isSquadManagementVisible;
+                squadManagementUI.SetVisible(isSquadManagementVisible);
+                return;
+            }
+
+            if (isSquadManagementVisible && WasKeyPressedThisFrame(closeSquadManagementKey))
+            {
+                isSquadManagementVisible = false;
+                squadManagementUI.SetVisible(false);
+            }
+        }
+
+        private bool HandleSquadManagementTabHotkeys()
+        {
+            if (WasKeyPressedThisFrame(openSquadTabKey))
+            {
+                OpenSquadManagementTab(MenuHotkeyTab.Squad);
+                return true;
+            }
+
+            if (WasKeyPressedThisFrame(openInventoryTabKey) || WasKeyPressedThisFrame(quickOpenInventoryKey))
+            {
+                OpenSquadManagementTab(MenuHotkeyTab.Inventory);
+                return true;
+            }
+
+            if (WasKeyPressedThisFrame(openCraftingTabKey))
+            {
+                OpenSquadManagementTab(MenuHotkeyTab.Crafting);
+                return true;
+            }
+
+            if (WasKeyPressedThisFrame(openMapTabKey))
+            {
+                OpenSquadManagementTab(MenuHotkeyTab.Map);
+                return true;
+            }
+
+            if (WasKeyPressedThisFrame(openMissionsTabKey))
+            {
+                OpenSquadManagementTab(MenuHotkeyTab.Missions);
+                return true;
+            }
+
+            return false;
+        }
+
+        private void OpenSquadManagementTab(MenuHotkeyTab tab)
+        {
+            switch (tab)
+            {
+                case MenuHotkeyTab.Squad:
+                    squadManagementUI.OpenSquadTab();
+                    break;
+                case MenuHotkeyTab.Inventory:
+                    squadManagementUI.OpenInventoryTab();
+                    break;
+                case MenuHotkeyTab.Crafting:
+                    squadManagementUI.OpenCraftingTab();
+                    break;
+                case MenuHotkeyTab.Map:
+                    squadManagementUI.OpenMapTab();
+                    break;
+                case MenuHotkeyTab.Missions:
+                    squadManagementUI.OpenMissionsTab();
+                    break;
+                default:
+                    squadManagementUI.OpenSquadTab();
+                    break;
+            }
+
+            isSquadManagementVisible = true;
+        }
+
+        private static bool WasKeyPressedThisFrame(KeyCode keyCode)
+        {
+#if ENABLE_INPUT_SYSTEM
+            Keyboard keyboard = Keyboard.current;
+            if (keyboard != null && TryMapKeyCodeToInputSystemKey(keyCode, out Key mappedKey))
+            {
+                var keyControl = keyboard[mappedKey];
+                return keyControl != null && keyControl.wasPressedThisFrame;
+            }
+#endif
+
+#if ENABLE_LEGACY_INPUT_MANAGER
+            return Input.GetKeyDown(keyCode);
+#else
+            return false;
+#endif
+        }
+
+#if ENABLE_INPUT_SYSTEM
+        private static bool TryMapKeyCodeToInputSystemKey(KeyCode keyCode, out Key key)
+        {
+            switch (keyCode)
+            {
+                case KeyCode.Alpha0: key = Key.Digit0; return true;
+                case KeyCode.Alpha1: key = Key.Digit1; return true;
+                case KeyCode.Alpha2: key = Key.Digit2; return true;
+                case KeyCode.Alpha3: key = Key.Digit3; return true;
+                case KeyCode.Alpha4: key = Key.Digit4; return true;
+                case KeyCode.Alpha5: key = Key.Digit5; return true;
+                case KeyCode.Alpha6: key = Key.Digit6; return true;
+                case KeyCode.Alpha7: key = Key.Digit7; return true;
+                case KeyCode.Alpha8: key = Key.Digit8; return true;
+                case KeyCode.Alpha9: key = Key.Digit9; return true;
+                case KeyCode.Return:
+                case KeyCode.KeypadEnter:
+                    key = Key.Enter;
+                    return true;
+                case KeyCode.LeftControl:
+                    key = Key.LeftCtrl;
+                    return true;
+                case KeyCode.RightControl:
+                    key = Key.RightCtrl;
+                    return true;
+                case KeyCode.LeftShift:
+                    key = Key.LeftShift;
+                    return true;
+                case KeyCode.RightShift:
+                    key = Key.RightShift;
+                    return true;
+                case KeyCode.LeftAlt:
+                    key = Key.LeftAlt;
+                    return true;
+                case KeyCode.RightAlt:
+                    key = Key.RightAlt;
+                    return true;
+                case KeyCode.LeftCommand:
+                    key = Key.LeftMeta;
+                    return true;
+                case KeyCode.RightCommand:
+                    key = Key.RightMeta;
+                    return true;
+                case KeyCode.BackQuote:
+                    key = Key.Backquote;
+                    return true;
+                default:
+                    if (Enum.TryParse(keyCode.ToString(), true, out key))
+                    {
+                        return true;
+                    }
+
+                    key = Key.None;
+                    return false;
+            }
+        }
+#endif
     }
 }

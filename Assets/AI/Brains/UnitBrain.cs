@@ -49,6 +49,7 @@ namespace Zombera.AI.Brains
         [SerializeField] private IdleState idleState;
         [SerializeField] private ChaseState chaseState;
         [SerializeField] private AttackState attackState;
+        [SerializeField] private AttackDoorState attackDoorState;
 
         [Header("Combat")]
         [SerializeField] private float defaultAttackRange = 2.25f;
@@ -330,6 +331,11 @@ namespace Zombera.AI.Brains
                     activeStateHandler?.Tick(this, sensorFrame, decision);
                     break;
 
+                case UnitDecisionType.AttackDoor:
+                    TransitionState(UnitBrainStateType.AttackDoor, decision.Reason, sensorFrame, decision);
+                    activeStateHandler?.Tick(this, sensorFrame, decision);
+                    break;
+
                 case UnitDecisionType.Idle:
                 default:
                     TransitionState(UnitBrainStateType.Idle, decision.Reason, sensorFrame, decision);
@@ -380,7 +386,9 @@ namespace Zombera.AI.Brains
 
         protected virtual void ConfigureDefaultRole()
         {
-            // TODO: Derived brains can force role defaults (Zombie, SquadMember, Player).
+            // Base implementation: no-op.
+            // Derived brains override this to pin the unit to a specific UnitRole
+            // (e.g. ZombieBrain sets Zombie, PlayerBrain sets Player).
         }
 
         private IUnitBrainState ResolveStateHandler(UnitBrainStateType stateType)
@@ -391,6 +399,8 @@ namespace Zombera.AI.Brains
                     return chaseState;
                 case UnitBrainStateType.Attack:
                     return attackState;
+                case UnitBrainStateType.AttackDoor:
+                    return attackDoorState;
                 case UnitBrainStateType.Idle:
                 default:
                     return idleState;
@@ -486,7 +496,7 @@ namespace Zombera.AI.Brains
 
             if (debugVisualizer == null)
             {
-                debugVisualizer = FindObjectOfType<AIDebugVisualizer>();
+                debugVisualizer = FindFirstObjectByType<AIDebugVisualizer>();
             }
 
             moveAction?.Initialize(unitController);
@@ -504,7 +514,7 @@ namespace Zombera.AI.Brains
 
             if (debugVisualizer == null)
             {
-                debugVisualizer = FindObjectOfType<AIDebugVisualizer>();
+                debugVisualizer = FindFirstObjectByType<AIDebugVisualizer>();
             }
 
             debugVisualizer?.SetAIState(transform, $"{GetType().Name}: {CurrentState}");
@@ -540,7 +550,8 @@ namespace Zombera.AI.Brains
     {
         Idle,
         Chase,
-        Attack
+        Attack,
+        AttackDoor
     }
 
     /// <summary>
@@ -554,7 +565,8 @@ namespace Zombera.AI.Brains
         Reload,
         Follow,
         Wander,
-        Chase
+        Chase,
+        AttackDoor
     }
 
     /// <summary>
@@ -585,5 +597,7 @@ namespace Zombera.AI.Brains
         public Unit TargetUnit;
         public Vector3 TargetPosition;
         public string Reason;
+        /// <summary>Set when DecisionType == AttackDoor.</summary>
+        public Zombera.BuildingSystem.DoorHealth TargetDoor;
     }
 }

@@ -1,0 +1,4 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement style="flex-grow: 1; justify-content: space-between; position: absolute; height: 172px; width: 1460px; top: 908px; bottom: -1px; left: 0; background-color: rgba(114, 0, 0, 0.95);"/>
+    <ui:TabView style="height: 57px; width: 1919px; position: absolute; top: 852px; left: 0; background-color: rgba(0, 0, 0, 0.98);"/>
+</ui:UXML>

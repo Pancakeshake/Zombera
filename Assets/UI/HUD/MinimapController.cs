@@ -47,8 +47,18 @@ namespace Zombera.UI
             SetRegionLabel("Unknown Region");
 
             IsInitialized = true;
+            BindMinimapCamera();
+        }
 
-            // TODO: Bind minimap camera and dynamic marker providers.
+        private void BindMinimapCamera()
+        {
+            // Find a Camera tagged "MinimapCamera" and assign its render texture to the UI.
+            Camera minimapCam = GameObject.FindWithTag("MinimapCamera")?.GetComponent<Camera>();
+
+            if (minimapCam != null && minimapImage != null && minimapCam.targetTexture != null)
+            {
+                minimapImage.texture = minimapCam.targetTexture;
+            }
         }
 
         public void SetVisible(bool visible)
@@ -81,7 +91,13 @@ namespace Zombera.UI
                 zoomSlider.value = CurrentZoom;
             }
 
-            // TODO: Push zoom state to minimap camera size.
+            // Push zoom level to the orthographic size of the minimap camera.
+            Camera minimapCam = GameObject.FindWithTag("MinimapCamera")?.GetComponent<Camera>();
+
+            if (minimapCam != null && minimapCam.orthographic)
+            {
+                minimapCam.orthographicSize = 40f / Mathf.Max(0.01f, CurrentZoom);
+            }
         }
 
         public void SetPlayerRotation(float yRotationDegrees)

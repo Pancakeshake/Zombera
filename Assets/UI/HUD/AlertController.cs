@@ -50,8 +50,65 @@ namespace Zombera.UI
 
             ClearAlert();
             IsInitialized = true;
+            StartCoroutine(AlertQueueRoutine());
+        }
 
-            // TODO: Add non-blocking alert queue and timed fade logic.
+        private readonly System.Collections.Generic.Queue<AlertViewData> alertQueue
+            = new System.Collections.Generic.Queue<AlertViewData>();
+
+        /// <summary>Enqueues an alert. If no alert is showing it plays immediately.</summary>
+        public void EnqueueAlert(AlertViewData alertData, float displaySeconds = 3f)
+        {
+            alertQueue.Enqueue(alertData);
+            _ = displaySeconds; // Consumed inside the coroutine.
+        }
+
+        private System.Collections.IEnumerator AlertQueueRoutine()
+        {
+            float displayDuration = 3f;
+            float fadeOutDuration = 0.4f;
+
+            while (true)
+            {
+                if (alertQueue.Count > 0 && (panelCanvasGroup == null || panelCanvasGroup.alpha < 0.05f))
+                {
+                    AlertViewData next = alertQueue.Dequeue();
+                    ShowAlert(next);
+
+                    if (panelCanvasGroup != null)
+                    {
+                        panelCanvasGroup.alpha = 1f;
+                    }
+
+                    yield return new UnityEngine.WaitForSeconds(displayDuration);
+
+                    // Fade out.
+                    float elapsed = 0f;
+
+                    while (elapsed < fadeOutDuration)
+                    {
+                        elapsed += Time.deltaTime;
+
+                        if (panelCanvasGroup != null)
+                        {
+                            panelCanvasGroup.alpha = 1f - (elapsed / fadeOutDuration);
+                        }
+
+                        yield return null;
+                    }
+
+                    ClearAlert();
+
+                    if (panelCanvasGroup != null)
+                    {
+                        panelCanvasGroup.alpha = 0f;
+                    }
+                }
+                else
+                {
+                    yield return null;
+                }
+            }
         }
 
         public void SetVisible(bool visible)

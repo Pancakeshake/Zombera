@@ -1,6 +1,7 @@
 using UnityEngine;
 using Zombera.AI.Brains;
 using Zombera.Characters;
+using Zombera.Combat;
 
 namespace Zombera.AI.Decisions
 {
@@ -147,8 +148,8 @@ namespace Zombera.AI.Decisions
                 return DecisionNone(UnitDecisionType.Reload, "Missing combat context");
             }
 
-            // TODO: Replace placeholder once weapon ammo exposure is available from WeaponSystem.
-            bool shouldReload = false;
+            WeaponSystem ws = brain.UnitCombat.GetComponent<WeaponSystem>();
+            bool shouldReload = ws != null && ws.NeedsReload;
 
             if (!shouldReload)
             {

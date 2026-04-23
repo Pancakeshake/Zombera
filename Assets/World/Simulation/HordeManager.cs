@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Zombera.World.Regions;
+using Random = UnityEngine.Random;
 
 namespace Zombera.World.Simulation
 {

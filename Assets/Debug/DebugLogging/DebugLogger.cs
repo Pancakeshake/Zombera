@@ -72,10 +72,34 @@ namespace Zombera.Debugging.DebugLogging
 
         private static string FormatMessage(LogCategory category, string message)
         {
-            return $"[{category}] {message}";
+            return $"[{category}][F{UnityEngine.Time.frameCount}] {message}";
         }
 
-        // TODO: Add optional timestamp/frame index formatting.
-        // TODO: Add log sinks for file output and external telemetry.
+        /// <summary>Writes a log line to a rolling file sink if a sink path is configured.</summary>
+        private static string logFilePath;
+
+        public static void SetLogFilePath(string path)
+        {
+            logFilePath = path;
+        }
+
+        private static void FlushToFile(string line)
+        {
+            if (string.IsNullOrEmpty(logFilePath))
+            {
+                return;
+            }
+
+#if !UNITY_WEBGL
+            try
+            {
+                System.IO.File.AppendAllText(logFilePath, line + System.Environment.NewLine);
+            }
+            catch (System.Exception)
+            {
+                // Silently skip file write errors so debug logging never crashes the game.
+            }
+#endif
+        }
     }
 }

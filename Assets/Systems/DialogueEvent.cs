@@ -15,8 +15,12 @@ namespace Zombera.Systems
         [TextArea(2, 6)] public string body;
         public List<DialogueOption> options = new List<DialogueOption>();
 
-        // TODO: Add branching conditions and consequence payloads.
-        // TODO: Add localization keys.
+        [Header("Branching")]
+        public List<DialogueBranch> branches = new List<DialogueBranch>();
+
+        [Header("Localization")]
+        public string titleLocKey;
+        public string bodyLocKey;
     }
 
     [Serializable]
@@ -25,5 +29,17 @@ namespace Zombera.Systems
         public string optionText;
         public int moraleImpact;
         public int recruitmentChanceModifier;
+    }
+
+    /// <summary>
+    /// Defines a conditional branch that fires a follow-up dialogue or outcome
+    /// when the player selects a specific option.
+    /// </summary>
+    [Serializable]
+    public sealed class DialogueBranch
+    {
+        public int triggerOptionIndex;
+        public DialogueEvent nextEvent;
+        public string consequenceTag; // e.g. "unlock_trade", "hostile_reaction"
     }
 }

@@ -29,7 +29,25 @@ namespace Zombera.AI
             return Mathf.Clamp01(inRangeFactor * aggression);
         }
 
-        // TODO: Add weighted context channels (hunger, group pressure, sound memory).
-        // TODO: Replace static formulas with data-driven curves per AI archetype.
+        /// <summary>
+        /// Computes an attack score with additional context pressure factors.
+        /// groupPressure: 0–1 representing how many nearby allies are also engaging.
+        /// soundMemory: 0–1 built up from recent high-weight noise events.
+        /// </summary>
+        public float ScoreAttackWithContext(float inRangeFactor, float aggression, float groupPressure, float soundMemory)
+        {
+            float baseScore = Mathf.Clamp01(inRangeFactor * aggression);
+            float pressureBonus = groupPressure * 0.25f;
+            float noiseBonus = soundMemory * 0.15f;
+            return Mathf.Clamp01(baseScore + pressureBonus + noiseBonus);
+        }
+
+        /// <summary>Evaluates an idle score boosted by the inverse of group pressure and noise.</summary>
+        public float ScoreIdleWithContext(float threatLevel, float groupPressure, float soundMemory)
+        {
+            float base01 = Mathf.Clamp01(1f - threatLevel);
+            float suppression = (groupPressure * 0.2f) + (soundMemory * 0.15f);
+            return Mathf.Clamp01(base01 - suppression);
+        }
     }
 }

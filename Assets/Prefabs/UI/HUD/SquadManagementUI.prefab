@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6766248420940900688
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4452919475347685565}
+  - component: {fileID: 7757128347096262329}
+  m_Layer: 0
+  m_Name: SquadManagementUI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4452919475347685565
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6766248420940900688}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7757128347096262329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6766248420940900688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ce539bfdaaebcf4ea228fa9f9134310, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Zombera.UI.SquadManagement.ZomberaSquadManagementUI
+  buildOnAwake: 1
+  forceRebuildOnAwake: 0
+  visibleOnStart: 0
+  targetCanvas: {fileID: 0}
+  useLiveGameData: 1
+  keepDemoFallbackWhenNoLiveData: 0
+  includePlayerInRoster: 1
+  liveRefreshInterval: 1
+  screenRoot: {fileID: 0}
+  squadNameText: {fileID: 0}
+  conditionValueText: {fileID: 0}
+  suppliesValueText: {fileID: 0}
+  moraleValueText: {fileID: 0}
+  threatValueText: {fileID: 0}
+  selectedPortraitImage: {fileID: 0}
+  selectedPortraitInitialText: {fileID: 0}
+  selectedNameText: {fileID: 0}
+  selectedConditionText: {fileID: 0}
+  selectedHealthText: {fileID: 0}
+  inventoryTabButton: {fileID: 0}
+  skillsTabButton: {fileID: 0}
+  squadCustomiserTabButton: {fileID: 0}
+  mapTabButton: {fileID: 0}
+  missionsTabButton: {fileID: 0}
+  inventoryTabRoot: {fileID: 0}
+  skillsTabRoot: {fileID: 0}
+  squadCustomiserTabRoot: {fileID: 0}
+  mapTabRoot: {fileID: 0}
+  missionsTabRoot: {fileID: 0}
+  squadListPanel: {fileID: 0}
+  inventoryTab: {fileID: 0}
+  skillsTab: {fileID: 0}
+  squadCustomiserTab: {fileID: 0}

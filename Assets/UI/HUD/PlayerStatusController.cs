@@ -2,6 +2,7 @@ using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Zombera.Characters;
 
 namespace Zombera.UI
 {
@@ -22,16 +23,16 @@ namespace Zombera.UI
         [SerializeField] private TextMeshProUGUI conditionText;
         [SerializeField] private TextMeshProUGUI healthValueText;
         [SerializeField] private TextMeshProUGUI staminaValueText;
-        [SerializeField] private TextMeshProUGUI moraleValueText;
 
         [Header("Bars")]
         [SerializeField] private Slider healthSlider;
         [SerializeField] private Slider staminaSlider;
-        [SerializeField] private Slider moraleSlider;
 
         public bool IsInitialized { get; private set; }
 
         private HUDManager hudManager;
+        private UnitHealth boundHealth;
+        private UnitStats  boundStats;
 
         public void Initialize(HUDManager manager)
         {
@@ -52,18 +53,81 @@ namespace Zombera.UI
                 playerName = "Player",
                 conditionText = "Stable",
                 health01 = 1f,
-                stamina01 = 1f,
-                morale01 = 1f
+                stamina01 = 1f
             });
 
             IsInitialized = true;
-
-            // TODO: Bind live player stat feed for health/stamina/morale.
         }
+
+        /// <summary>
+        /// Subscribes to live health, stamina, and morale events on the given unit.
+        /// Safe to call multiple times — unbinds the previous unit first.
+        /// </summary>
+        public void BindUnit(Unit unit)
+        {
+            UnbindUnit();
+
+            if (unit == null) return;
+
+            boundHealth = unit.Health;
+            boundStats  = unit.Stats;
+
+            if (boundHealth != null)
+            {
+                boundHealth.Damaged += OnHealthChanged;
+                boundHealth.Healed  += OnHealthChanged;
+            }
+
+            if (boundStats != null)
+            {
+                boundStats.StaminaChanged += OnStaminaChanged;
+            }
+
+            RefreshAll();
+        }
+
+        public void UnbindUnit()
+        {
+            if (boundHealth != null)
+            {
+                boundHealth.Damaged -= OnHealthChanged;
+                boundHealth.Healed  -= OnHealthChanged;
+                boundHealth = null;
+            }
+
+            if (boundStats != null)
+            {
+                boundStats.StaminaChanged -= OnStaminaChanged;
+                boundStats = null;
+            }
+        }
+
+        private void OnDestroy() => UnbindUnit();
 
         public void SetVisible(bool visible)
         {
             gameObject.SetActive(visible);
+        }
+
+        private void OnHealthChanged(float _) => RefreshAll();
+
+        private void OnStaminaChanged(float current, float max)
+        {
+            SetNormalizedValue(staminaSlider, staminaValueText,
+                max > 0f ? Mathf.Clamp01(current / max) : 0f);
+        }
+
+        private void RefreshAll()
+        {
+            float health01 = 1f;
+            if (boundHealth != null && boundHealth.MaxHealth > 0f)
+                health01 = Mathf.Clamp01(boundHealth.CurrentHealth / boundHealth.MaxHealth);
+            SetNormalizedValue(healthSlider, healthValueText, health01);
+
+            float stamina01 = 1f;
+            if (boundStats != null && boundStats.MaxStamina > 0f)
+                stamina01 = Mathf.Clamp01(boundStats.Stamina / boundStats.MaxStamina);
+            SetNormalizedValue(staminaSlider, staminaValueText, stamina01);
         }
 
         public void SetStatus(PlayerStatusViewData statusData)
@@ -80,7 +144,6 @@ namespace Zombera.UI
 
             SetNormalizedValue(healthSlider, healthValueText, statusData.health01);
             SetNormalizedValue(staminaSlider, staminaValueText, statusData.stamina01);
-            SetNormalizedValue(moraleSlider, moraleValueText, statusData.morale01);
 
             if (portraitImage != null)
             {
@@ -112,7 +175,6 @@ namespace Zombera.UI
         public string conditionText;
         [Range(0f, 1f)] public float health01;
         [Range(0f, 1f)] public float stamina01;
-        [Range(0f, 1f)] public float morale01;
         public Sprite portrait;
     }
 }

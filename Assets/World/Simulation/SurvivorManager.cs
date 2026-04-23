@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Zombera.World.Regions;
+using Random = UnityEngine.Random;
 
 namespace Zombera.World.Simulation
 {
@@ -100,7 +101,7 @@ namespace Zombera.World.Simulation
             }
 
             float hordeStrength = Mathf.Max(1f, horde.population * (0.8f + horde.aggression));
-            float groupStrength = Mathf.Max(1f, target.memberCount * (0.7f + target.morale));
+            float groupStrength = Mathf.Max(1f, target.memberCount);
 
             int survivorLosses;
             int zombieLosses;
@@ -109,13 +110,11 @@ namespace Zombera.World.Simulation
             {
                 survivorLosses = Mathf.Max(1, Mathf.RoundToInt(target.memberCount * Random.Range(0.35f, 0.75f)));
                 zombieLosses = Mathf.Max(0, Mathf.RoundToInt(horde.population * Random.Range(0.05f, 0.25f)));
-                target.morale = Mathf.Clamp01(target.morale - 0.15f);
             }
             else
             {
                 survivorLosses = Mathf.Max(0, Mathf.RoundToInt(target.memberCount * Random.Range(0.05f, 0.2f)));
                 zombieLosses = Mathf.Max(1, Mathf.RoundToInt(horde.population * Random.Range(0.15f, 0.4f)));
-                target.morale = Mathf.Clamp01(target.morale + 0.05f);
             }
 
             target.memberCount = Mathf.Max(0, target.memberCount - survivorLosses);
@@ -174,7 +173,6 @@ namespace Zombera.World.Simulation
                     groupId = nextGroupId++,
                     regionId = regionId,
                     memberCount = memberCount,
-                    morale = Random.Range(0.35f, 0.9f),
                     supplies = Random.Range(0.25f, 1f),
                     worldPosition = worldPosition
                 });
@@ -243,7 +241,6 @@ namespace Zombera.World.Simulation
                         groupId = nextGroupId++,
                         regionId = region.regionId,
                         memberCount = population,
-                        morale = Random.Range(0.3f, 0.9f),
                         supplies = Random.Range(0.3f, 1f),
                         worldPosition = GetRandomPointInBounds(region.bounds)
                     });
@@ -261,18 +258,14 @@ namespace Zombera.World.Simulation
             float forage = forageFactor * region.lootLevel * Mathf.Max(0.1f, deltaTime * 0.25f);
             group.supplies = Mathf.Clamp01(group.supplies + forage);
 
-            float moraleShift = (group.supplies - region.dangerLevel) * 0.15f * Mathf.Max(0.1f, deltaTime * 0.25f);
-            group.morale = Mathf.Clamp01(group.morale + moraleShift);
-
             if (group.supplies <= 0.05f)
             {
                 int starvationLoss = Mathf.Max(1, Mathf.RoundToInt(group.memberCount * 0.1f));
                 group.memberCount = Mathf.Max(0, group.memberCount - starvationLoss);
-                group.morale = Mathf.Clamp01(group.morale - 0.1f);
             }
 
             Vector2 drift = Random.insideUnitCircle;
-            Vector3 nextPosition = group.worldPosition + new Vector3(drift.x, 0f, drift.y) * Mathf.Lerp(1.5f, 7f, 1f - group.morale);
+            Vector3 nextPosition = group.worldPosition + new Vector3(drift.x, 0f, drift.y) * 4f;
             group.worldPosition = ClampToBounds(region.bounds, nextPosition);
         }
 
@@ -471,7 +464,6 @@ namespace Zombera.World.Simulation
         public int groupId;
         public string regionId;
         [Min(0)] public int memberCount = 4;
-        [Range(0f, 1f)] public float morale = 0.6f;
         [Range(0f, 1f)] public float supplies = 0.65f;
         public Vector3 worldPosition;
     }

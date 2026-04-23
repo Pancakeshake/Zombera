@@ -59,9 +59,34 @@ namespace Zombera.Debugging.DebugVisuals
 
             Gizmos.color = hearingColor;
             Gizmos.DrawWireSphere(center, hearingRadius);
+
+            DrawForwardVisionCone(center);
         }
 
-        // TODO: Add optional cone-based forward vision debug rendering.
-        // TODO: Add per-state dynamic radius visualization.
+        [SerializeField] private bool showForwardVisionCone = true;
+        [SerializeField, Range(0f, 180f)] private float visionConeAngleDegrees = 60f;
+        [SerializeField, Min(0f)] private float visionConeRange = 12f;
+        [SerializeField] private Color visionConeColor = new Color(1f, 1f, 0f, 0.4f);
+
+        private void DrawForwardVisionCone(Vector3 center)
+        {
+#if UNITY_EDITOR
+            if (!showForwardVisionCone || visionConeRange <= 0f)
+            {
+                return;
+            }
+
+            Gizmos.color = visionConeColor;
+            Vector3 forward = transform.forward;
+            float halfAngle = visionConeAngleDegrees * 0.5f * Mathf.Deg2Rad;
+            Vector3 leftEdge = Quaternion.Euler(0f, -visionConeAngleDegrees * 0.5f, 0f) * forward * visionConeRange;
+            Vector3 rightEdge = Quaternion.Euler(0f, visionConeAngleDegrees * 0.5f, 0f) * forward * visionConeRange;
+            Gizmos.DrawLine(center, center + leftEdge);
+            Gizmos.DrawLine(center, center + rightEdge);
+            UnityEditor.Handles.color = visionConeColor;
+            UnityEditor.Handles.DrawWireArc(center, Vector3.up, leftEdge.normalized, visionConeAngleDegrees, visionConeRange);
+            _ = halfAngle;
+#endif
+        }
     }
 }
