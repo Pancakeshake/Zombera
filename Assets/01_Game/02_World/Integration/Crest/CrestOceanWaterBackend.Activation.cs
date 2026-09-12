@@ -173,8 +173,25 @@ namespace Zombera.World.Crest
                 "[CrestOceanWaterBackend] Active ocean edge strips on sides: " + sides +
                 $". Map bounds ({bounds.xMin:0}, {bounds.yMin:0})-({bounds.xMax:0}, {bounds.yMax:0}). " +
                 $"Sample AABB center {aabb.center}, size {aabb.size}. " +
-                $"Ocean clip={clipEnabled}, default={clipDefault}.",
+                $"Ocean clip={clipEnabled}, default={clipDefault}, " +
+                $"clip includes={CountClipRegisteredWaterBodies()}/{_waterBodies.Count}.",
                 this);
+        }
+
+        /// <summary>
+        /// Counts bodies writing a clip <i>include</i> region. Under EverythingClipped this must be
+        /// non-zero or the whole ocean surface is discarded and no water renders.
+        /// </summary>
+        private int CountClipRegisteredWaterBodies()
+        {
+            var registered = 0;
+            for (var i = 0; i < _waterBodies.Count; i++)
+            {
+                if (CrestOceanConfigurator.IsWaterBodyRegisteredWithClipSurface(_waterBodies[i]))
+                    registered++;
+            }
+
+            return registered;
         }
     }
 }

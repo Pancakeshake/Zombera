@@ -38,6 +38,12 @@ namespace Zombera.Editor
         [SerializeField] private RoadBuildQualityMode roadBuildQuality = RoadBuildQualityMode.FastIteration;
         [SerializeField] private SurfacePaintQualityMode hubSurfacePaintQuality = SurfacePaintQualityMode.Quality;
         [SerializeField] private bool fastBuildFoldout = true;
+
+        [Tooltip(
+            "Hide Enviro atmosphere fog, built-in RenderSettings fog and Scene view fog while a run " +
+            "builds the world, and restore the previous state when the run ends or fails. The authored " +
+            "environment profile is untouched: its fog density feeds the world-state profile fingerprint.")]
+        [SerializeField] private bool suppressFogWhileGenerating = true;
         [SerializeField] private bool showFailureMarkers = true;
         [SerializeField] private bool showScatterGizmo = true;
         [SerializeField] private List<string> collapsedSections = new();

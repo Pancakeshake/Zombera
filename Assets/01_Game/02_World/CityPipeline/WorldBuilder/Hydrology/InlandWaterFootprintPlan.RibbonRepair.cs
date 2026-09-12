@@ -13,6 +13,13 @@ namespace Zombera.World.CityPipeline.WorldBuilder
     /// lowers the controls that shape an uphill run, and falls back to inserting a locally clamped
     /// control when the rise is pure spline curvature with nothing left to lower.
     /// </para>
+    /// <para>
+    /// Progress is judged on the measured defect <i>set</i> — flagged sample count plus total excess
+    /// over tolerance — and on the freshly re-sampled ribbon, never on the sample a sweep started
+    /// from. A sweep that splits one overshoot into two smaller ones keeps the count flat while the
+    /// ribbon is still converging; treating that flat count as a stall throws the repair away and
+    /// leaves the pass budget to fail on a few tenths of a metre.
+    /// </para>
     /// </summary>
     public sealed partial class InlandWaterFootprintPlan
     {
@@ -20,10 +27,14 @@ namespace Zombera.World.CityPipeline.WorldBuilder
         private const int MaxRibbonRepairInserts = 256;
 
         /// <summary>
-        /// Sweep budget for the uphill-overshoot fixpoint. The loop also stops as soon as a sweep
-        /// finds nothing left to repair or the insert budget is exhausted.
+        /// Sweep budget for the uphill-overshoot fixpoint. The loop also stops as soon as the ribbon
+        /// measures clean, a sweep finds nothing left to repair, the insert budget is exhausted, or a
+        /// sweep leaves both more flagged samples and more total excess than it found.
         /// </summary>
-        private const int MaxRibbonRepairSweeps = 16;
+        private const int MaxRibbonRepairSweeps = 32;
+
+        /// <summary>Excess below this is float noise, not convergence the loop should chase.</summary>
+        private const float OvershootProgressEpsilonMeters = 0.001f;
 
         /// <summary>One queued control insertion, applied after the sweep that collected it.</summary>
         private readonly struct RibbonInsert
@@ -39,6 +50,19 @@ namespace Zombera.World.CityPipeline.WorldBuilder
                 CenterXZ = centerXZ;
                 HalfWidthMeters = halfWidthMeters;
                 SurfaceWorldY = surfaceWorldY;
+            }
+        }
+
+        /// <summary>Measured defect set: flagged sample count plus total excess over tolerance.</summary>
+        private readonly struct UphillOvershootMeasurement
+        {
+            public readonly int Count;
+            public readonly float ExcessMeters;
+
+            public UphillOvershootMeasurement(int count, float excessMeters)
+            {
+                Count = count;
+                ExcessMeters = excessMeters;
             }
         }
 
@@ -62,8 +86,13 @@ namespace Zombera.World.CityPipeline.WorldBuilder
 
             var flattened = 0;
             var overshootInserts = 0;
+            var initial = MeasureUphillOvershoots(field, resolved, crest);
+            var current = initial;
             for (var sweep = 0; sweep < MaxRibbonRepairSweeps; sweep++)
             {
+                if (current.Count == 0)
+                    break;
+
                 var budget = MaxRibbonRepairInserts - overshootInserts;
                 if (budget <= 0)
                     break;
@@ -73,41 +102,86 @@ namespace Zombera.World.CityPipeline.WorldBuilder
                 overshootInserts += sweepResult.Inserted;
                 if (sweepResult.Lowered == 0 && sweepResult.Inserted == 0)
                     break;
+
+                // Re-sample after every sweep: the loop's progress measure is the freshly measured
+                // defect set, never the sample the sweep was derived from.
+                var measured = MeasureUphillOvershoots(field, resolved, crest);
+                if (IsWorseThan(measured, current))
+                    break;
+                current = measured;
             }
 
             var report = ValidateCrestRibbon(field, resolved, crest);
             report.InsertedPoints = inserted + overshootInserts;
             report.FlattenedRuns = flattened;
+            if (inserted > 0 || overshootInserts > 0 || flattened > 0)
+            {
+                Debug.Log(
+                    $"[InlandWaterFootprint] RepairCrestRibbon overshoots {initial.Count}→" +
+                    $"{report.CountOf(InlandWaterFootprintFailure.UphillOvershoot)} " +
+                    $"lowered={flattened} inserted={overshootInserts} driftInserts={inserted} " +
+                    $"excess={current.ExcessMeters:F2}m");
+            }
+
             return report;
         }
 
-        /// <summary>Inserts controls where the carved waterline drifted from the rendered ribbon.</summary>
-        private int RepairDriftedWidths(
+        /// <summary>
+        /// True only when a sweep left both more flagged samples and more total excess than it found.
+        /// Trading fewer, larger overshoots for more, smaller ones is progress, not regression.
+        /// </summary>
+        private static bool IsWorseThan(
+            in UphillOvershootMeasurement measured,
+            in UphillOvershootMeasurement previous) =>
+            measured.Count > previous.Count &&
+            measured.ExcessMeters > previous.ExcessMeters + OvershootProgressEpsilonMeters;
+
+        /// <summary>
+        /// Measures this plan's uphill runs without changing anything. Judged by the same predicate
+        /// the validator uses, so it is the fixpoint's progress measure.
+        /// </summary>
+        private UphillOvershootMeasurement MeasureUphillOvershoots(
             LandformField field,
-            CrestRibbonValidationSettings crest,
-            in InlandWaterFootprintOptions options)
+            in InlandWaterFootprintOptions options,
+            CrestRibbonValidationSettings crest)
         {
-            var inserted = 0;
+            var count = 0;
+            var excess = 0f;
             var sampler = new CrestRibbonSampler();
             for (var f = 0; f < _features.Count; f++)
             {
                 var feature = _features[f];
                 if (feature?.Points == null || feature.Points.Count < 2)
                     continue;
-
-                var radius = crest.SplineRadiusFor(feature.Kind);
-                if (!sampler.TrySample(
-                        BuildControlPositions(feature),
-                        BuildControlMultipliers(feature, radius),
-                        radius,
-                        crest.SubdivisionsFor(feature.Kind),
-                        feature.Closed))
+                if (!TrySampleFeature(feature, crest, sampler))
                     continue;
 
-                inserted += InsertDriftedControls(field, feature, sampler, options);
+                for (var i = 1; i < sampler.Count; i++)
+                {
+                    if (!IsUphillSample(feature, sampler, i, field, options))
+                        continue;
+                    count++;
+                    excess += sampler.Center(i).y - sampler.Center(i - 1).y
+                        - options.BankHeightToleranceMeters;
+                }
             }
 
-            return inserted;
+            return new UphillOvershootMeasurement(count, excess);
+        }
+
+        /// <summary>Samples one feature's Crest ribbon; false when it is too degenerate to render.</summary>
+        private static bool TrySampleFeature(
+            Feature feature,
+            CrestRibbonValidationSettings crest,
+            CrestRibbonSampler sampler)
+        {
+            var radius = crest.SplineRadiusFor(feature.Kind);
+            return sampler.TrySample(
+                BuildControlPositions(feature),
+                BuildControlMultipliers(feature, radius),
+                radius,
+                crest.SubdivisionsFor(feature.Kind),
+                feature.Closed);
         }
 
         /// <summary>
@@ -130,13 +204,7 @@ namespace Zombera.World.CityPipeline.WorldBuilder
                 if (feature?.Points == null || feature.Points.Count < 2)
                     continue;
 
-                var radius = crest.SplineRadiusFor(feature.Kind);
-                if (!sampler.TrySample(
-                        BuildControlPositions(feature),
-                        BuildControlMultipliers(feature, radius),
-                        radius,
-                        crest.SubdivisionsFor(feature.Kind),
-                        feature.Closed))
+                if (!TrySampleFeature(feature, crest, sampler))
                     continue;
 
                 var budget = insertBudget - inserted;
@@ -285,17 +353,6 @@ namespace Zombera.World.CityPipeline.WorldBuilder
             return Mathf.Clamp(Mathf.RoundToInt(t * (sampler.ControlCount - 1)), 0, sampler.ControlCount - 1);
         }
 
-        private int InsertDriftedControls(
-            LandformField field,
-            Feature feature,
-            CrestRibbonSampler sampler,
-            in InlandWaterFootprintOptions options)
-        {
-            var inserts = new List<RibbonInsert>();
-            CollectDriftedControls(field, feature, sampler, options, inserts);
-            return ApplyRepairInserts(feature, inserts, MaxRibbonRepairInserts);
-        }
-
         /// <summary>Applies queued inserts back-to-front so every queued index stays valid.</summary>
         private int ApplyRepairInserts(Feature feature, List<RibbonInsert> inserts, int maxInserts)
         {
@@ -320,99 +377,5 @@ namespace Zombera.World.CityPipeline.WorldBuilder
             return applied;
         }
 
-        private void CollectDriftedControls(
-            LandformField field,
-            Feature feature,
-            CrestRibbonSampler sampler,
-            in InlandWaterFootprintOptions options,
-            List<RibbonInsert> inserts)
-        {
-            for (var i = 0; i < sampler.Count; i++)
-            {
-                var center = sampler.Center(i);
-                var origin = new Vector2(center.x, center.z);
-                // Inserting controls for undug runoff or an ocean/lake-owned cell would chase an
-                // edge that was never carved.
-                if (IsRibbonSampleSkipped(feature, sampler, i, origin, field))
-                    continue;
-
-                var normal = ResolveRibbonNormal(sampler, i);
-                var clearance = ResolveRibbonClearance(feature, sampler, i, options);
-                var surfaceY = ResolveControlSurfaceY(feature, sampler, i, center.y);
-                var crossingTarget = surfaceY - clearance + options.BankHeightToleranceMeters;
-                var halfWidth = sampler.HalfWidthMeters(i);
-                var reach = Mathf.Max(halfWidth * 2f, halfWidth + options.MaximumBankExtensionMeters);
-                var step = Mathf.Max(0.25f, reach / EdgeValidationSamplesPerSide);
-
-                var left = FindBankCrossing(field, origin, normal, 1f, reach, step, crossingTarget);
-                var right = FindBankCrossing(field, origin, normal, -1f, reach, step, crossingTarget);
-                if (!IsOwnedRibbonCrossing(origin, normal, 1f, left))
-                    left = (false, 0f);
-                if (!IsOwnedRibbonCrossing(origin, normal, -1f, right))
-                    right = (false, 0f);
-
-                var centerHeight = LandformFieldSampling.SampleBilinear(field, origin.x, origin.y);
-                var softLeft = (found: false, distance: 0f);
-                var softRight = (found: false, distance: 0f);
-                TryResolveSoftBanks(
-                    field, origin, normal, centerHeight, surfaceY, reach, step, options,
-                    ref softLeft, ref softRight);
-                DiscardIncredibleBanks(ref softLeft, ref softRight);
-                if (softLeft.found && !IsOwnedRibbonCrossing(origin, normal, 1f, softLeft))
-                    softLeft = (false, 0f);
-                if (softRight.found && !IsOwnedRibbonCrossing(origin, normal, -1f, softRight))
-                    softRight = (false, 0f);
-                PreferNearerSoftBanks(softLeft, softRight, ref left, ref right, options.LateralToleranceMeters);
-                if (!left.found)
-                    left = softLeft;
-                if (!right.found)
-                    right = softRight;
-
-                if (!left.found && !right.found)
-                    continue;
-                if (!left.found)
-                    left = (true, right.distance);
-                if (!right.found)
-                    right = (true, left.distance);
-
-                var measuredHalf = (left.distance + right.distance) * 0.5f;
-                if (measuredHalf < MinCredibleBankMeters)
-                    continue;
-
-                var bedLevel = surfaceY - clearance;
-                var waterlineOffset = ResolveRibbonWaterlineOffset(
-                    field, feature, sampler, i, origin, normal, bedLevel, options);
-                var predictedHalf = halfWidth + waterlineOffset;
-                if (Mathf.Abs(measuredHalf - predictedHalf) <= options.LateralToleranceMeters)
-                    continue;
-
-                // Adopt the carved bed half-width on the owning control so the next carve digs the
-                // same span Crest will render — inserts alone cannot shrink SourceIndex widths.
-                var bedHalf = Mathf.Max(MinCredibleBankMeters, measuredHalf - waterlineOffset);
-                if (bedHalf >= halfWidth - options.LateralToleranceMeters)
-                    continue;
-                var control = ResolveControlIndex(i, sampler);
-                AdoptControlHalfWidth(feature, control, bedHalf);
-
-                inserts.Add(new RibbonInsert(
-                    control + 1,
-                    origin + normal * ((left.distance - right.distance) * 0.5f),
-                    bedHalf,
-                    surfaceY));
-            }
-        }
-
-        private static void AdoptControlHalfWidth(Feature feature, int controlIndex, float bedHalfWidth)
-        {
-            if (feature?.Points == null || feature.Points.Count == 0)
-                return;
-            if (bedHalfWidth < MinCredibleBankMeters)
-                return;
-            if (controlIndex < 0 || controlIndex >= feature.Points.Count)
-                return;
-
-            CapNeighbourhoodHalfWidth(feature, controlIndex, bedHalfWidth);
-            feature.Points[controlIndex].TargetWetHalfWidthMeters = bedHalfWidth;
-        }
     }
 }

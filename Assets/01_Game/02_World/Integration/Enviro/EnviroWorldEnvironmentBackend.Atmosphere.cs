@@ -90,16 +90,30 @@ namespace Zombera.World.Enviro
             var fog = GetMemberValue(manager, "Fog");
             if (fog == null) return;
 
-            TrySetMember(fog, "active", profile.EnableFog);
+            // The hub suppresses fog while it generates (see EnviroFogOverride): this apply runs from
+            // the Environment stages mid-run, so without honouring the flag it would put the authored
+            // density straight back and hide the terrain being built.
+            var suppress = EnviroFogOverride.SuppressFog;
+            TrySetMember(fog, "active", !suppress && profile.EnableFog);
             var settings = GetMemberValue(fog, "Settings");
             if (settings == null) return;
 
-            TrySetMember(settings, "fog", profile.EnableFog);
-            TrySetMember(settings, "volumetrics", profile.EnableVolumetricFog);
-            TrySetMember(settings, "fogDensity", profile.FogDensity);
+            TrySetMember(settings, "fog", !suppress && profile.EnableFog);
+            TrySetMember(settings, "volumetrics", !suppress && profile.EnableVolumetricFog);
+            TrySetMember(settings, "fogDensity", suppress ? 0f : profile.FogDensity);
             TrySetMember(settings, "fogHeightFalloff", profile.FogHeightFalloff);
             TrySetMember(settings, "fogHeight", profile.FogHeightWorldY);
             TrySetMember(settings, "globalFogHeight", profile.FogHeightWorldY);
+
+            // The profile drives only the first fog layer's density, so suppression has to clear what
+            // it does not own: Enviro renders a second layer (fogDensity2) and scales the whole effect
+            // by fogMaxOpacity (default 1 = fully opaque). Leaving those behind kept the scene foggy
+            // even with the authored density at zero.
+            if (!suppress)
+                return;
+
+            TrySetMember(settings, "fogDensity2", 0f);
+            TrySetMember(settings, "fogMaxOpacity", 0f);
         }
 
         private static void ApplyVolumetricCloudSettings(Component manager, WorldEnvironmentProfile profile)

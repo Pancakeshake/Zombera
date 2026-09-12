@@ -153,14 +153,24 @@ namespace Zombera.World.CityPipeline.WorldBuilder
                 // Contiguous Planning Field block — Run Section must stay unbroken.
                 D(WorldBuildStageId.GenerateBaseLandforms, "Planning Field", "Generate Base Landforms",
                     new[] { WorldBuildStageId.AllocateTerrainGrid }, new StageDescriptorOptions(true, true, new[] { "landforms" }, none)),
-                D(WorldBuildStageId.ErodeLandforms, "Planning Field", "Erode Landforms",
-                    new[] { WorldBuildStageId.GenerateBaseLandforms }, new StageDescriptorOptions(true, true, new[] { "landforms" }, none)),
-                D(WorldBuildStageId.SolveHydrology, "Planning Field", "Solve Hydrology",
-                    new[] { WorldBuildStageId.ErodeLandforms }, new StageDescriptorOptions(true, true, new[] { "hydrology" }, none)),
-                D(WorldBuildStageId.CarveWaterFeatures, "Planning Field", "Carve Water Features",
-                    new[] { WorldBuildStageId.SolveHydrology, WorldBuildStageId.AllocateTerrainGrid }, new StageDescriptorOptions(true, true, new[] { "hydrology", "landforms" }, none)),
+                // Pads are frozen flats, so they must exist before the terrain around them is sculpted:
+                // erosion freezes the cores+aprons and hydrology solves over the already-stamped flat,
+                // and CarveWaterFeatures re-asserts the cores after digging. With the pads resolved any
+                // later, all three pad-aware paths are dead on a fresh build (Artifacts.CityPads is
+                // nulled by ResetGeneratedWorld) and pads are flattened onto eroded, carved terrain.
                 D(WorldBuildStageId.ReserveCityPads, "Planning Field", "Reserve City Pads",
-                    new[] { WorldBuildStageId.CarveWaterFeatures }, new StageDescriptorOptions(true, true, new[] { "sites", "cityPads", "landforms" }, none)),
+                    new[] { WorldBuildStageId.GenerateBaseLandforms }, new StageDescriptorOptions(true, true, new[] { "sites", "cityPads", "landforms" }, none)),
+                D(WorldBuildStageId.ErodeLandforms, "Planning Field", "Erode Landforms",
+                    new[] { WorldBuildStageId.GenerateBaseLandforms, WorldBuildStageId.ReserveCityPads }, new StageDescriptorOptions(true, true, new[] { "landforms" }, none)),
+                D(WorldBuildStageId.SolveHydrology, "Planning Field", "Solve Hydrology",
+                    new[] { WorldBuildStageId.ErodeLandforms, WorldBuildStageId.ReserveCityPads }, new StageDescriptorOptions(true, true, new[] { "hydrology" }, none)),
+                D(WorldBuildStageId.CarveWaterFeatures, "Planning Field", "Carve Water Features",
+                    new[]
+                    {
+                        WorldBuildStageId.SolveHydrology,
+                        WorldBuildStageId.AllocateTerrainGrid,
+                        WorldBuildStageId.ReserveCityPads
+                    }, new StageDescriptorOptions(true, true, new[] { "hydrology", "landforms" }, none)),
                 D(WorldBuildStageId.ClassifyBiomesAndBuildability, "Planning Field", "Classify Biomes And Buildability",
                     new[] { WorldBuildStageId.CarveWaterFeatures, WorldBuildStageId.ReserveCityPads }, new StageDescriptorOptions(true, true, new[] { "biomes" }, none)),
                 // Contiguous Environment block — sky/weather right after Planning Field (Run Section must stay unbroken).

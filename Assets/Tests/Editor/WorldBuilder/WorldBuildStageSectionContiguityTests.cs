@@ -64,21 +64,32 @@ namespace Zombera.Tests.Editor.WorldBuilder
         }
 
         [Test]
-        public void PlanningField_OrdersHydrologyBeforeReserveCityPads()
+        public void PlanningField_ReservesCityPadsBeforeErosionAndHydrology()
         {
             var planning = CollectSection(WorldBuildStageRegistry.Default.Stages, "Planning Field");
             var gen = planning.IndexOf(WorldBuildStageId.GenerateBaseLandforms);
+            var reserve = planning.IndexOf(WorldBuildStageId.ReserveCityPads);
             var erode = planning.IndexOf(WorldBuildStageId.ErodeLandforms);
             var solve = planning.IndexOf(WorldBuildStageId.SolveHydrology);
             var carve = planning.IndexOf(WorldBuildStageId.CarveWaterFeatures);
-            var reserve = planning.IndexOf(WorldBuildStageId.ReserveCityPads);
             var classify = planning.IndexOf(WorldBuildStageId.ClassifyBiomesAndBuildability);
             Assert.GreaterOrEqual(gen, 0);
-            Assert.AreEqual(gen + 1, erode);
+            Assert.AreEqual(gen + 1, reserve);
+            Assert.AreEqual(reserve + 1, erode);
             Assert.AreEqual(erode + 1, solve);
             Assert.AreEqual(solve + 1, carve);
-            Assert.AreEqual(carve + 1, reserve);
-            Assert.AreEqual(reserve + 1, classify);
+            Assert.AreEqual(carve + 1, classify);
+        }
+
+        [Test]
+        public void PlanningField_ReservedPadsAreAHardPrerequisiteOfErosionHydrologyAndCarve()
+        {
+            // Order alone is not the contract: erosion's freeze mask, the hydrology solve and the
+            // post-carve core re-assert all read Artifacts.CityPads, so each must hard-depend on the
+            // reserve stage or a scoped run can execute them with no pads.
+            AssertPrerequisite(WorldBuildStageId.ErodeLandforms, WorldBuildStageId.ReserveCityPads);
+            AssertPrerequisite(WorldBuildStageId.SolveHydrology, WorldBuildStageId.ReserveCityPads);
+            AssertPrerequisite(WorldBuildStageId.CarveWaterFeatures, WorldBuildStageId.ReserveCityPads);
         }
 
         [Test]
@@ -150,6 +161,18 @@ namespace Zombera.Tests.Editor.WorldBuilder
             Assert.GreaterOrEqual(first, 0, section + " missing from registry");
             for (var i = first; i <= last; i++)
                 Assert.AreEqual(section, stages[i].Section, section + " must be contiguous");
+        }
+
+        private static void AssertPrerequisite(WorldBuildStageId stage, WorldBuildStageId prerequisite)
+        {
+            var prereqs = WorldBuildStageRegistry.Describe(stage).HardPrerequisites;
+            for (var i = 0; i < prereqs.Count; i++)
+            {
+                if (prereqs[i] == prerequisite)
+                    return;
+            }
+
+            Assert.Fail($"{stage} must hard-depend on {prerequisite}.");
         }
 
         private static List<WorldBuildStageId> CollectSection(

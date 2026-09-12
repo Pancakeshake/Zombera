@@ -260,6 +260,31 @@ namespace Zombera.Editor
             WorldBuildStageId lastStageInclusive,
             bool fastRoads)
         {
+            // Fog suppression spans the whole run: the Environment stages re-apply the authored fog
+            // mid-run, so this cannot be a one-shot toggle. try/finally restores the snapshot on
+            // completion, on a stage fault, and when the run is stopped/disposed mid-step.
+            var suppressFog = suppressFogWhileGenerating;
+            if (suppressFog)
+                WorldBuildFogSuppressor.Apply();
+
+            var stages = RunRegistryStagesCore(firstStageInclusive, lastStageInclusive, fastRoads);
+            try
+            {
+                while (stages.MoveNext())
+                    yield return stages.Current;
+            }
+            finally
+            {
+                if (suppressFog)
+                    WorldBuildFogSuppressor.Restore();
+            }
+        }
+
+        private IEnumerator RunRegistryStagesCore(
+            WorldBuildStageId firstStageInclusive,
+            WorldBuildStageId lastStageInclusive,
+            bool fastRoads)
+        {
             var registry = WorldBuildStageRegistry.Default;
             var log = new System.Text.StringBuilder();
             var pipelineWatch = Stopwatch.StartNew();

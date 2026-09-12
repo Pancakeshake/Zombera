@@ -280,11 +280,14 @@ namespace Zombera.World.Crest
                     continue;
                 }
 
-                // Cull tiles only — full-AABB clip include fights inland river/lake ribbons
-                // under Everything Clipped (Crest water-bodies docs: Clip Surface for edges).
+                // EverythingClipped discards every water pixel unless a WaterBody writes a clip
+                // "include" region (Crest water-bodies docs). Inland rivers/lakes no longer build
+                // clip-mesh ribbons, so nothing else un-clips the surface: without this the whole
+                // ocean is clipped away and no water renders even though the objects exist.
+                // Tile culling stays on independently via OceanRenderer._waterBodyCulling.
                 CrestOceanConfigurator.ConfigureWaterBodyClipRegistration(
                     waterBody,
-                    registerWithClipSurface: false);
+                    registerWithClipSurface: true);
 
                 _waterBodies.Add(waterBody);
             }

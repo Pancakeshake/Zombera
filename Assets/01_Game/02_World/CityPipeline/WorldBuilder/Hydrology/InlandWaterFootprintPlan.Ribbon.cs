@@ -11,6 +11,35 @@ namespace Zombera.World.CityPipeline.WorldBuilder
     {
         private const int EdgeValidationSamplesPerSide = 48;
 
+        /// <summary>
+        /// Largest lateral distance one fit pass may move a control. Recentring follows the measured
+        /// bank midpoint, and on flat or open ground that midpoint sits at the measurement reach —
+        /// tens of metres for a river plan — so an unbounded shift walks a control past its
+        /// neighbours and folds the control polyline back on itself. Crest's cubic then climbs metres
+        /// between neighbouring samples along the doubled-back leg, and no height-only repair can
+        /// undo that because the control heights are already correct. A control may only be nudged,
+        /// never reordered.
+        /// </summary>
+        private const float MaxControlRecentreMeters = 4f;
+
+        /// <summary>
+        /// How far <c>ApplyMeasuredSpan</c> may recentre a control: half the distance to its nearest
+        /// neighbour, so a recentred control can never reach, let alone pass, the control it follows.
+        /// </summary>
+        private static float ResolveRecentreLimit(System.Collections.Generic.List<Point> points, int index)
+        {
+            var toPrevious = index > 0
+                ? (points[index - 1].CenterXZ - points[index].CenterXZ).magnitude
+                : float.PositiveInfinity;
+            var toNext = index + 1 < points.Count
+                ? (points[index + 1].CenterXZ - points[index].CenterXZ).magnitude
+                : float.PositiveInfinity;
+            var nearest = Mathf.Min(toPrevious, toNext);
+            return float.IsPositiveInfinity(nearest)
+                ? MaxControlRecentreMeters
+                : Mathf.Min(MaxControlRecentreMeters, nearest * 0.5f);
+        }
+
         public InlandWaterFootprintReport ValidateCrestRibbon(
             LandformField field,
             InlandWaterFootprintOptions options,
@@ -118,9 +147,6 @@ namespace Zombera.World.CityPipeline.WorldBuilder
             if (softRight.found && !IsOwnedRibbonCrossing(originXZ, normal, -1f, softRight))
                 softRight = (false, 0f);
             PreferNearerSoftBanks(softLeft, softRight, ref left, ref right, options.LateralToleranceMeters);
-            var softPreferred =
-                (softLeft.found && left.found && Mathf.Abs(left.distance - softLeft.distance) < 0.01f) ||
-                (softRight.found && right.found && Mathf.Abs(right.distance - softRight.distance) < 0.01f);
             if (!left.found)
                 left = softLeft;
             if (!right.found)
@@ -139,32 +165,29 @@ namespace Zombera.World.CityPipeline.WorldBuilder
             if (measuredHalf < MinCredibleBankMeters)
                 return;
 
-            // Soft trench = wet waterline; skip dig-shoulder offset (mid leftover trench artifact).
-            var predictedHalf = halfWidth;
-            if (!softPreferred)
-            {
-                predictedHalf += ResolveRibbonWaterlineOffset(
-                    field, feature, sampler, index, originXZ, normal, surfaceY - clearance, options);
-            }
-
             // Only a channel NARROWER than the rendered ribbon is a failure. Every repair path in
             // this loop is shrink-only (CapFeatureHalfWidth / AdoptControlHalfWidth /
             // InsertDriftedControls) and the carve only ever digs deeper, so terrain that is wider
-            // than the waterline — a graded bank shoulder, or a leftover of an earlier, wider pass —
-            // cannot be refilled by any bounded pass. Raising EdgeMismatch for it fails the stage on
-            // a condition the loop can never change, while the ribbon still spans carved bed, not
-            // dry land. The narrow direction is both the real defect and the repairable one.
-            if (measuredHalf + options.LateralToleranceMeters >= predictedHalf)
+            // than the waterline — a graded bank shoulder, an open floodplain, or a leftover of an
+            // earlier wider pass — cannot be refilled by any bounded pass. Raising EdgeMismatch for
+            // it fails the stage on a condition the loop can never change, while the ribbon still
+            // spans carved bed, not dry land. The narrow direction is both the real defect and the
+            // repairable one.
+            //
+            // The rendered ribbon is the only span this check may fail on. Comparing against a
+            // modelled bank-shoulder offset instead let a bed dug a few tenths too shallow inflate
+            // the limit to tens of metres (51.7 m / 99.95 m against a three-metre ribbon), which no
+            // shrink-only repair can ever satisfy and which says nothing about water hanging over
+            // dry land.
+            if (measuredHalf + options.LateralToleranceMeters >= halfWidth)
                 return;
-            if (measuredHalf + options.LateralToleranceMeters < halfWidth)
-            {
-                CapFeatureHalfWidth(feature, measuredHalf);
-                SyncSourceRiverWidths(feature);
-            }
+
+            CapFeatureHalfWidth(feature, measuredHalf);
+            SyncSourceRiverWidths(feature);
 
             Report.Add(
                 feature.StableId, feature.Kind, index, originXZ,
-                InlandWaterFootprintFailure.EdgeMismatch, measuredHalf, predictedHalf);
+                InlandWaterFootprintFailure.EdgeMismatch, measuredHalf, halfWidth);
         }
 
         private static float ResolveControlSurfaceY(

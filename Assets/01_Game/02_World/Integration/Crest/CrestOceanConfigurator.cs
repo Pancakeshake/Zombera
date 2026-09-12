@@ -93,14 +93,33 @@ namespace Zombera.World.Crest
         }
 
         /// <summary>
-        /// Lakes keep clip registration (docs). River corridor WaterBodies cull tiles only;
-        /// precise include comes from Clip Surface ribbons.
+        /// Sets <c>WaterBody._registerWithClipSurfaceData</c>. Registration makes the body draw a
+        /// clip <i>include</i> region, which is required for any water to survive when the ocean is
+        /// configured with <see cref="OceanRenderer.DefaultClippingState.EverythingClipped"/>.
         /// </summary>
         public static void ConfigureWaterBodyClipRegistration(WaterBody waterBody, bool registerWithClipSurface)
         {
             if (waterBody == null)
                 return;
             SetPrivateField(waterBody, "_registerWithClipSurfaceData", registerWithClipSurface);
+        }
+
+        /// <summary>
+        /// Reads back <c>WaterBody._registerWithClipSurfaceData</c>. Under
+        /// <see cref="OceanRenderer.DefaultClippingState.EverythingClipped"/> a WaterBody that is not
+        /// registered contributes no clip include region, so the ocean surface stays fully clipped
+        /// and no water is drawn inside that body's AABB.
+        /// </summary>
+        public static bool IsWaterBodyRegisteredWithClipSurface(WaterBody waterBody)
+        {
+            if (waterBody == null)
+                return false;
+
+            var field = typeof(WaterBody).GetField(
+                "_registerWithClipSurfaceData",
+                BindingFlags.Instance | BindingFlags.NonPublic);
+            var value = field?.GetValue(waterBody);
+            return value is bool registered && registered;
         }
 
         /// <summary>

@@ -196,6 +196,14 @@ namespace Zombera.Editor
                         "Fastest option, but there is no live preview and Stop cannot interrupt mid-step."),
                     fastRoadsMode);
 
+                suppressFogWhileGenerating = EditorGUILayout.Toggle(
+                    new GUIContent(
+                        "Suppress Fog While Generating",
+                        "Hides Enviro atmosphere fog (authored density 0.034), built-in RenderSettings fog " +
+                        "and Scene view fog for the duration of a run, then restores the previous state when " +
+                        "the run ends or fails. Testing aid only — the environment profile is not modified."),
+                    suppressFogWhileGenerating);
+
                 if (builder != null)
                 {
                     var newFixedSeed = EditorGUILayout.IntField(

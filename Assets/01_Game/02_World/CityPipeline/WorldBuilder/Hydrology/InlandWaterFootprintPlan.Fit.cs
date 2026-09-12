@@ -237,7 +237,9 @@ namespace Zombera.World.CityPipeline.WorldBuilder
             float bedLevel,
             in InlandWaterFootprintOptions options)
         {
-            point.CenterXZ += normal * ((leftDistance - rightDistance) * 0.5f);
+            var recentreLimit = ResolveRecentreLimit(feature.Points, index);
+            point.CenterXZ += normal * Mathf.Clamp(
+                (leftDistance - rightDistance) * 0.5f, -recentreLimit, recentreLimit);
             var measuredHalf = (leftDistance + rightDistance) * 0.5f;
             if (measuredHalf < MinCredibleBankMeters)
                 return;
