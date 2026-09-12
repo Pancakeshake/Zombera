@@ -1,0 +1,136 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f43489fca6d0e946883f1e49ddefe5c, type: 3}
+  m_Name: LandformProfile
+  m_EditorClassIdentifier: Zombera.World.City::Zombera.World.CityPipeline.WorldBuilder.LandformProfile
+  continentalnessSeedOffset: 0
+  domainWarpSeedOffset: 17
+  hillsSeedOffset: 31
+  mountainSeedOffset: 53
+  continentalnessScale: 13000
+  domainWarpScale: 1600
+  hillsScale: 280
+  mountainScale: 920
+  continentalnessAmplitude: 210
+  domainWarpAmplitude: 240
+  hillsAmplitude: 175
+  mountainAmplitude: 520
+  plainsBias: 0.22
+  mainlandMaskLo: 0.28
+  mainlandMaskHi: 0.5
+  coastFalloffWidthMeters: 600
+  mountainMaskCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.55
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.78
+      value: 0.35
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.3
+      outWeight: 0.3
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  forceOceanOnAllEdges: 0
+  oceanEdgeChance: 0.55
+  allowLandlockedMaps: 0
+  useMacroBiomeRegions: 1
+  biomeForcedBoostScale: 1.2
+  biomeDominantThreshold: 0.62
+  edgeBarrierDepthMeters: 2200
+  edgeBarrierPeakMeters: 420
+  edgeBarrierFalloffMeters: 400
+  edgeBarrierNoiseScaleMeters: 1200
+  edgeBarrierNoiseAmplitudeMeters: 120
+  edgeBarrierSeedOffset: 89
+  oceanOffshoreWidthMeters: 160
+  oceanShoreShelfWidthMeters: 90
+  oceanBeachWidthMeters: 80
+  oceanBeachMaxElevationMeters: 7
+  oceanTrenchDepthMeters: 80
+  oceanTrenchSteepness: 1.55
+  oceanTrenchNoiseAmplitudeMeters: 18
+  oceanShelfOuterDepthMeters: 8
+  oceanShelfInnerDepthMeters: 1
+  oceanShelfReefNoiseScaleMeters: 180
+  oceanShelfReefNoiseAmplitudeMeters: 6
+  oceanShelfReefCoverage: 0.32
+  oceanCoastErosionAmplitudeMeters: 1200
+  oceanCoastErosionScaleMeters: 3500
+  inlandDryFloorMetersAboveSea: 4
+  inlandDryFloorBlendMeters: 180
+  islandNoiseScaleMeters: 2800
+  archipelagoNoiseScaleMeters: 1400
+  islandPeakThreshold: 0.58
+  archipelagoPeakThreshold: 0.64
+  interiorMountainsEnabled: 1
+  interiorMountainRangeCount: 3
+  interiorMountainPeakMeters: 1700
+  interiorMountainWidthMeters: 4000
+  interiorMountainRuggedness: 0.9
+  interiorMountainSeedOffset: 101
+  interiorRollingScaleMeters: 1800
+  interiorRollingAmplitudeMeters: 110
+  interiorReliefInsetMeters: 80
+  interiorHillsMultiplier: 1.85
+  interiorMountainPaintMinMask: 0.62
+  useLegacyCoastalBlend: 0
+  landformAlgorithmVersion: 7
+  residualMountainAmplitudeMeters: 45
+  foothillSkirtMeters: 850
+  crestSharpness: 3.1
+  saddleDepth: 0.55
+  orogenWarpFraction: 0.18
+  structuralValleyDepthMeters: 32
+  microDetailAmplitudeMeters: 14
+  maxOrogenCoverageFraction: 0.4
+  minLowlandSlope12Fraction: 0.38
+  minPassCountPerRange: 1
+  highwayPassMaxSlopeDegrees: 8
+  passCorridorHalfWidthMeters: 120
+  thermalErosionIterations: 36
+  thermalTalusAngleDegrees: 30
+  thermalTransferFraction: 0.34
+  cityPadAlgorithmVersion: 10
+  cityPadFlatMarginMeters: 30
+  cityPadPlateauSlopeMeters: 180
+  cityPadFalloffMinMeters: 160
+  cityPadFalloffMaxMeters: 220
+  cityPadCornerRadiusFraction: 0.2
+  cityPadHydrologyPruneMarginMeters: 16
+  cityPadApproachSlopeDegrees: 18
+  cityPadMaxContinuityDegrees: 25
+  cityPadEdgeRelaxEnabled: 1
+  cityPadEdgeRelaxMaxIterations: 40
+  cityPadMinClearanceAboveSeaMeters: 2
+  cityPadMaxReclaimDepthMeters: 8

@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 659ced1c2c0cc62438db33ae9948c9a9, type: 3}
+  m_Name: WorldNatureProfile
+  m_EditorClassIdentifier: Zombera.World.City::Zombera.World.CityPipeline.WorldBuilder.WorldNatureProfile
+  entries:
+  - StableId: Tree_A
+    Prefab: {fileID: 5231468288268269209, guid: 7ce099bbea9ec9e43a0854aba5fa2ae5, type: 3}
+    PlacementMode: 0
+    AllowedBiomeIds:
+    - Forest
+    - Hills
+    - Plains
+    - Taiga
+    - Savanna
+    - Scrubland
+    DensityPerKm2: 500
+    Weight: 1
+    ScaleRange: {x: 0.85, y: 1.2}
+    MaxSlopeDegrees: 35
+    ElevationRangeMeters: {x: 8, y: 320}
+    MinDistanceToWaterMeters: 4
+    ExclusionRadiusMeters: 2.5
+    MaxInstancesPerTile: 80
+    RequireGrassSurface: 1
+    MinGrassWeight: 0.35
+  - StableId: Tree_B
+    Prefab: {fileID: 1951530171983534479, guid: 688f1a969d736fe489b7377784b78d22, type: 3}
+    PlacementMode: 0
+    AllowedBiomeIds:
+    - Forest
+    - Hills
+    - Plains
+    - Wetland
+    DensityPerKm2: 500
+    Weight: 1
+    ScaleRange: {x: 0.8, y: 1.15}
+    MaxSlopeDegrees: 30
+    ElevationRangeMeters: {x: 5, y: 300}
+    MinDistanceToWaterMeters: 2
+    ExclusionRadiusMeters: 2.5
+    MaxInstancesPerTile: 64
+    RequireGrassSurface: 1
+    MinGrassWeight: 0.35
+  - StableId: Tree_C
+    Prefab: {fileID: 6511592647634188540, guid: 3d162de7e595f564197fefdfe15dbc69, type: 3}
+    PlacementMode: 0
+    AllowedBiomeIds:
+    - Hills
+    - Forest
+    DensityPerKm2: 500
+    Weight: 1
+    ScaleRange: {x: 0.75, y: 1.05}
+    MaxSlopeDegrees: 38
+    ElevationRangeMeters: {x: 40, y: 340}
+    MinDistanceToWaterMeters: 0
+    ExclusionRadiusMeters: 4
+    MaxInstancesPerTile: 40
+    RequireGrassSurface: 1
+    MinGrassWeight: 0.35

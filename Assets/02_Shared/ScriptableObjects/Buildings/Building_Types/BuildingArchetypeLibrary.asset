@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3db1543bc5996c49a1d34d96cd1025f, type: 3}
+  m_Name: BuildingArchetypeLibrary
+  m_EditorClassIdentifier: Zombera.Editor::Zombera.Editor.BuildingArchetypeLibrary
+  ResidentialTemplates:
+  - {fileID: 11400000, guid: a1000000000000000000000000000004, type: 2}
+  - {fileID: 11400000, guid: 5c57f10ebee7cdd459f8c14e50907513, type: 2}
+  - {fileID: 11400000, guid: 0cc11370f3afa6248b993462e49c34cb, type: 2}
+  - {fileID: 11400000, guid: 68dab5ab50b6eb94f94114f49eeb2438, type: 2}
+  CommercialTemplates:
+  - {fileID: 11400000, guid: ff253fc4d2f6cea4d8da97ee6f3c3dd9, type: 2}
+  - {fileID: 11400000, guid: aa95b6aa386b1b74da5505754a04dac5, type: 2}
+  - {fileID: 11400000, guid: a58969bbcba4ed343a1783099d2c95af, type: 2}
+  - {fileID: 11400000, guid: b044cbeed18c44b439f0c1906f89e768, type: 2}
+  - {fileID: 11400000, guid: 5b12dc9138c72a0449faf8461a8fa798, type: 2}
+  IndustrialTemplates:
+  - {fileID: 11400000, guid: f5ec0a738f8f5084cb12b0e957910113, type: 2}
+  HospitalTemplates:
+  - {fileID: 11400000, guid: 8fa708b33090b3a458adaeb0bef7ca3e, type: 2}
+  MilitaryTemplates:
+  - {fileID: 11400000, guid: 37736d973eddecf47829494b49692df2, type: 2}
+  CityCoreTemplates:
+  - {fileID: 11400000, guid: bfd1da40155fd3d4b94e7bc89b66fb8f, type: 2}
+  ParkTemplates: []
+  MixedTemplates: []

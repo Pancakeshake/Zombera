@@ -1,0 +1,851 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e01e79bed9fee8944a142995ef30b641, type: 3}
+  m_Name: BuildingSkinTable
+  m_EditorClassIdentifier: Zombera.Runtime::Zombera.Data.BuildingSkinTable
+  roomFloorSkinConfig: {fileID: 11400000, guid: fdc6a7d6c60d6a54790bfb6ade643146, type: 2}
+  fallback:
+    name: Fallback
+    weight: 1
+    floorMaterials:
+    - material: {fileID: 2100000, guid: f149ccbc585003147bfe0742ac9c43ae, type: 2}
+      weight: 0
+    - material: {fileID: 2100000, guid: 2a34eb7384a3463c99b398a8f67b8531, type: 2}
+      weight: 0
+    - material: {fileID: 2100000, guid: 25b0bcb2c6da49898da190f05e5f280e, type: 2}
+      weight: 0
+    - material: {fileID: 2100000, guid: f0256f5ffc834783847a97f5fc52d4ec, type: 2}
+      weight: 0
+    foundationMaterials:
+    - material: {fileID: 2100000, guid: daae2f0f3867f454eb167b80575f36c9, type: 2}
+      weight: 0
+    wallExteriorMaterials:
+    - material: {fileID: 2100000, guid: 17ef58f55b249f4479cb3027511e86df, type: 2}
+      weight: 0
+    - material: {fileID: 2100000, guid: f358fdef8077ce4499144f863e97fd62, type: 2}
+      weight: 0
+    - material: {fileID: 2100000, guid: 4ea6167319727ba48a8f00f066d92f7b, type: 2}
+      weight: 0
+    - material: {fileID: 2100000, guid: 4a069f9294c1957429e1aa605930c089, type: 2}
+      weight: 0
+    - material: {fileID: 2100000, guid: 7c7cbbc390908d94fa87e5f0e8f8cd72, type: 2}
+      weight: 0
+    wallInteriorMaterials:
+    - material: {fileID: 2100000, guid: 0d73183f24337c4489f23754aaf8c910, type: 2}
+      weight: 1
+    - material: {fileID: 2100000, guid: 0af7d81ac4af6f74a8cabdd090cf3026, type: 2}
+      weight: 1
+    - material: {fileID: 2100000, guid: ebdcb82d868b64540910994773a8f08e, type: 2}
+      weight: 1
+    - material: {fileID: 2100000, guid: 3c7d2f2a1900132419b9d28204871240, type: 2}
+      weight: 1
+    - material: {fileID: 2100000, guid: 27b8ff009cabf9b43aa4e65a006d193b, type: 2}
+      weight: 1
+    - material: {fileID: 2100000, guid: 2fac962e70dabc24e84cfb5013291e77, type: 2}
+      weight: 1
+    - material: {fileID: 2100000, guid: 9d5e5cd66f236d2479c6c417aa4a1f2c, type: 2}
+      weight: 1
+    - material: {fileID: 2100000, guid: b69c9561c6c6e3546b6def8cb3c3fcd8, type: 2}
+      weight: 1
+    - material: {fileID: 2100000, guid: b5754a88967b8b745b26b548f85b0442, type: 2}
+      weight: 1
+    - material: {fileID: 2100000, guid: cf415195f0fe2a14dbe05d774bef13dc, type: 2}
+      weight: 1
+    - material: {fileID: 2100000, guid: 58642e5cf2e8d4340948485f81cea9b0, type: 2}
+      weight: 1
+    - material: {fileID: 2100000, guid: 2ce54bafd8e50dd4dbaf9deffe78601c, type: 2}
+      weight: 1
+    - material: {fileID: 2100000, guid: bde581e5316db4b489cc55700d42d7a1, type: 2}
+      weight: 1
+    - material: {fileID: 2100000, guid: 1c2fa8d4bf4e3e94fb37e96803ed46be, type: 2}
+      weight: 1
+    - material: {fileID: 2100000, guid: 2f1bbc0236108824eb21abfeb3ef3ccc, type: 2}
+      weight: 1
+    - material: {fileID: 2100000, guid: 4f74fd30226996943b8b3ea7d9a6e7c5, type: 2}
+      weight: 1
+    - material: {fileID: 2100000, guid: de7374730bc51864e8e9ed24c8b40b92, type: 2}
+      weight: 1
+    - material: {fileID: 2100000, guid: 44889f53ad80a084e8b5b59128498202, type: 2}
+      weight: 1
+    - material: {fileID: 2100000, guid: 0da10dd55bb5ecb498796650436d67ee, type: 2}
+      weight: 1
+    - material: {fileID: 2100000, guid: 725d48f17e660de48a7967f45cf4d576, type: 2}
+      weight: 1
+    - material: {fileID: 2100000, guid: 6b22e92a22c97a34fba1fb1829ac1b41, type: 2}
+      weight: 1
+    roofMaterials:
+    - material: {fileID: 2100000, guid: 9c04e72f2d397a246b71344065c3ae09, type: 2}
+      weight: 0
+    - material: {fileID: 2100000, guid: 5af54e7d3034ef2418aea4b135538603, type: 2}
+      weight: 0
+    - material: {fileID: 2100000, guid: 6fd0cca8c6543a34287d8cbfd8b5c89f, type: 2}
+      weight: 0
+    - material: {fileID: 2100000, guid: 0b8959627c3b8614897d549e5b323e6b, type: 2}
+      weight: 0
+    - material: {fileID: 2100000, guid: 1861a337fa250094aa58b3307813ca35, type: 2}
+      weight: 0
+    - material: {fileID: 2100000, guid: df6976d727aa45e4c8de6a55919bb6c2, type: 2}
+      weight: 0
+    gableMaterials:
+    - material: {fileID: 2100000, guid: 17ef58f55b249f4479cb3027511e86df, type: 2}
+      weight: 0
+    stairMaterials:
+    - material: {fileID: 2100000, guid: daae2f0f3867f454eb167b80575f36c9, type: 2}
+      weight: 0
+    windowMaterials: []
+    gableMatchesExteriorWall: 1
+    differentExteriorChance: 0.15
+  zones:
+  - zoneName: Residential
+    defaultSkins:
+    - name: Residential Default
+      weight: 1
+      floorMaterials:
+      - material: {fileID: 2100000, guid: f149ccbc585003147bfe0742ac9c43ae, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: 2a34eb7384a3463c99b398a8f67b8531, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: 25b0bcb2c6da49898da190f05e5f280e, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: f0256f5ffc834783847a97f5fc52d4ec, type: 2}
+        weight: 0
+      foundationMaterials:
+      - material: {fileID: 2100000, guid: daae2f0f3867f454eb167b80575f36c9, type: 2}
+        weight: 0
+      wallExteriorMaterials:
+      - material: {fileID: 2100000, guid: 17ef58f55b249f4479cb3027511e86df, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: f358fdef8077ce4499144f863e97fd62, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: 4ea6167319727ba48a8f00f066d92f7b, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: 4a069f9294c1957429e1aa605930c089, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: 7c7cbbc390908d94fa87e5f0e8f8cd72, type: 2}
+        weight: 0
+      wallInteriorMaterials:
+      - material: {fileID: 2100000, guid: 0d73183f24337c4489f23754aaf8c910, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 0af7d81ac4af6f74a8cabdd090cf3026, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: ebdcb82d868b64540910994773a8f08e, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 3c7d2f2a1900132419b9d28204871240, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 27b8ff009cabf9b43aa4e65a006d193b, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 2fac962e70dabc24e84cfb5013291e77, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 9d5e5cd66f236d2479c6c417aa4a1f2c, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: b69c9561c6c6e3546b6def8cb3c3fcd8, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: b5754a88967b8b745b26b548f85b0442, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: cf415195f0fe2a14dbe05d774bef13dc, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 58642e5cf2e8d4340948485f81cea9b0, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 2ce54bafd8e50dd4dbaf9deffe78601c, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: bde581e5316db4b489cc55700d42d7a1, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 1c2fa8d4bf4e3e94fb37e96803ed46be, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 2f1bbc0236108824eb21abfeb3ef3ccc, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 4f74fd30226996943b8b3ea7d9a6e7c5, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: de7374730bc51864e8e9ed24c8b40b92, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 44889f53ad80a084e8b5b59128498202, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 0da10dd55bb5ecb498796650436d67ee, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 725d48f17e660de48a7967f45cf4d576, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 6b22e92a22c97a34fba1fb1829ac1b41, type: 2}
+        weight: 1
+      roofMaterials:
+      - material: {fileID: 2100000, guid: 9c04e72f2d397a246b71344065c3ae09, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: 5af54e7d3034ef2418aea4b135538603, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: 6fd0cca8c6543a34287d8cbfd8b5c89f, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: 0b8959627c3b8614897d549e5b323e6b, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: 1861a337fa250094aa58b3307813ca35, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: df6976d727aa45e4c8de6a55919bb6c2, type: 2}
+        weight: 0
+      gableMaterials:
+      - material: {fileID: 2100000, guid: 17ef58f55b249f4479cb3027511e86df, type: 2}
+        weight: 0
+      stairMaterials:
+      - material: {fileID: 2100000, guid: daae2f0f3867f454eb167b80575f36c9, type: 2}
+        weight: 0
+      windowMaterials: []
+      gableMatchesExteriorWall: 1
+      differentExteriorChance: 0.15
+    conditionOverrides: []
+  - zoneName: Commercial
+    defaultSkins:
+    - name: Commercial Default
+      weight: 1
+      floorMaterials:
+      - material: {fileID: 2100000, guid: f149ccbc585003147bfe0742ac9c43ae, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: 2a34eb7384a3463c99b398a8f67b8531, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: 25b0bcb2c6da49898da190f05e5f280e, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: f0256f5ffc834783847a97f5fc52d4ec, type: 2}
+        weight: 0
+      foundationMaterials:
+      - material: {fileID: 2100000, guid: daae2f0f3867f454eb167b80575f36c9, type: 2}
+        weight: 0
+      wallExteriorMaterials:
+      - material: {fileID: 2100000, guid: 17ef58f55b249f4479cb3027511e86df, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: f358fdef8077ce4499144f863e97fd62, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: 4ea6167319727ba48a8f00f066d92f7b, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: 4a069f9294c1957429e1aa605930c089, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: 7c7cbbc390908d94fa87e5f0e8f8cd72, type: 2}
+        weight: 0
+      wallInteriorMaterials:
+      - material: {fileID: 2100000, guid: 0d73183f24337c4489f23754aaf8c910, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 0af7d81ac4af6f74a8cabdd090cf3026, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: ebdcb82d868b64540910994773a8f08e, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 3c7d2f2a1900132419b9d28204871240, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 27b8ff009cabf9b43aa4e65a006d193b, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 2fac962e70dabc24e84cfb5013291e77, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 9d5e5cd66f236d2479c6c417aa4a1f2c, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: b69c9561c6c6e3546b6def8cb3c3fcd8, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: b5754a88967b8b745b26b548f85b0442, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: cf415195f0fe2a14dbe05d774bef13dc, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 58642e5cf2e8d4340948485f81cea9b0, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 2ce54bafd8e50dd4dbaf9deffe78601c, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: bde581e5316db4b489cc55700d42d7a1, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 1c2fa8d4bf4e3e94fb37e96803ed46be, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 2f1bbc0236108824eb21abfeb3ef3ccc, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 4f74fd30226996943b8b3ea7d9a6e7c5, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: de7374730bc51864e8e9ed24c8b40b92, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 44889f53ad80a084e8b5b59128498202, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 0da10dd55bb5ecb498796650436d67ee, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 725d48f17e660de48a7967f45cf4d576, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 6b22e92a22c97a34fba1fb1829ac1b41, type: 2}
+        weight: 1
+      roofMaterials:
+      - material: {fileID: 2100000, guid: 9c04e72f2d397a246b71344065c3ae09, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: 5af54e7d3034ef2418aea4b135538603, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: 6fd0cca8c6543a34287d8cbfd8b5c89f, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: 0b8959627c3b8614897d549e5b323e6b, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: 1861a337fa250094aa58b3307813ca35, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: df6976d727aa45e4c8de6a55919bb6c2, type: 2}
+        weight: 0
+      gableMaterials:
+      - material: {fileID: 2100000, guid: 17ef58f55b249f4479cb3027511e86df, type: 2}
+        weight: 0
+      stairMaterials:
+      - material: {fileID: 2100000, guid: daae2f0f3867f454eb167b80575f36c9, type: 2}
+        weight: 0
+      windowMaterials: []
+      gableMatchesExteriorWall: 1
+      differentExteriorChance: 0.15
+    conditionOverrides: []
+  - zoneName: Industrial
+    defaultSkins:
+    - name: Industrial Default
+      weight: 1
+      floorMaterials:
+      - material: {fileID: 2100000, guid: f149ccbc585003147bfe0742ac9c43ae, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: 2a34eb7384a3463c99b398a8f67b8531, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: 25b0bcb2c6da49898da190f05e5f280e, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: f0256f5ffc834783847a97f5fc52d4ec, type: 2}
+        weight: 0
+      foundationMaterials:
+      - material: {fileID: 2100000, guid: daae2f0f3867f454eb167b80575f36c9, type: 2}
+        weight: 0
+      wallExteriorMaterials:
+      - material: {fileID: 2100000, guid: 17ef58f55b249f4479cb3027511e86df, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: f358fdef8077ce4499144f863e97fd62, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: 4ea6167319727ba48a8f00f066d92f7b, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: 4a069f9294c1957429e1aa605930c089, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: 7c7cbbc390908d94fa87e5f0e8f8cd72, type: 2}
+        weight: 0
+      wallInteriorMaterials:
+      - material: {fileID: 2100000, guid: 0d73183f24337c4489f23754aaf8c910, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 0af7d81ac4af6f74a8cabdd090cf3026, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: ebdcb82d868b64540910994773a8f08e, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 3c7d2f2a1900132419b9d28204871240, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 27b8ff009cabf9b43aa4e65a006d193b, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 2fac962e70dabc24e84cfb5013291e77, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 9d5e5cd66f236d2479c6c417aa4a1f2c, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: b69c9561c6c6e3546b6def8cb3c3fcd8, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: b5754a88967b8b745b26b548f85b0442, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: cf415195f0fe2a14dbe05d774bef13dc, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 58642e5cf2e8d4340948485f81cea9b0, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 2ce54bafd8e50dd4dbaf9deffe78601c, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: bde581e5316db4b489cc55700d42d7a1, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 1c2fa8d4bf4e3e94fb37e96803ed46be, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 2f1bbc0236108824eb21abfeb3ef3ccc, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 4f74fd30226996943b8b3ea7d9a6e7c5, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: de7374730bc51864e8e9ed24c8b40b92, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 44889f53ad80a084e8b5b59128498202, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 0da10dd55bb5ecb498796650436d67ee, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 725d48f17e660de48a7967f45cf4d576, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 6b22e92a22c97a34fba1fb1829ac1b41, type: 2}
+        weight: 1
+      roofMaterials:
+      - material: {fileID: 2100000, guid: 9c04e72f2d397a246b71344065c3ae09, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: 5af54e7d3034ef2418aea4b135538603, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: 6fd0cca8c6543a34287d8cbfd8b5c89f, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: 0b8959627c3b8614897d549e5b323e6b, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: 1861a337fa250094aa58b3307813ca35, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: df6976d727aa45e4c8de6a55919bb6c2, type: 2}
+        weight: 0
+      gableMaterials:
+      - material: {fileID: 2100000, guid: 17ef58f55b249f4479cb3027511e86df, type: 2}
+        weight: 0
+      stairMaterials:
+      - material: {fileID: 2100000, guid: daae2f0f3867f454eb167b80575f36c9, type: 2}
+        weight: 0
+      windowMaterials: []
+      gableMatchesExteriorWall: 1
+      differentExteriorChance: 0.15
+    conditionOverrides: []
+  - zoneName: Hospital
+    defaultSkins:
+    - name: Hospital Default
+      weight: 1
+      floorMaterials:
+      - material: {fileID: 2100000, guid: f149ccbc585003147bfe0742ac9c43ae, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: 2a34eb7384a3463c99b398a8f67b8531, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: 25b0bcb2c6da49898da190f05e5f280e, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: f0256f5ffc834783847a97f5fc52d4ec, type: 2}
+        weight: 0
+      foundationMaterials:
+      - material: {fileID: 2100000, guid: daae2f0f3867f454eb167b80575f36c9, type: 2}
+        weight: 0
+      wallExteriorMaterials:
+      - material: {fileID: 2100000, guid: 17ef58f55b249f4479cb3027511e86df, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: f358fdef8077ce4499144f863e97fd62, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: 4ea6167319727ba48a8f00f066d92f7b, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: 4a069f9294c1957429e1aa605930c089, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: 7c7cbbc390908d94fa87e5f0e8f8cd72, type: 2}
+        weight: 0
+      wallInteriorMaterials:
+      - material: {fileID: 2100000, guid: 0d73183f24337c4489f23754aaf8c910, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 0af7d81ac4af6f74a8cabdd090cf3026, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: ebdcb82d868b64540910994773a8f08e, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 3c7d2f2a1900132419b9d28204871240, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 27b8ff009cabf9b43aa4e65a006d193b, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 2fac962e70dabc24e84cfb5013291e77, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 9d5e5cd66f236d2479c6c417aa4a1f2c, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: b69c9561c6c6e3546b6def8cb3c3fcd8, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: b5754a88967b8b745b26b548f85b0442, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: cf415195f0fe2a14dbe05d774bef13dc, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 58642e5cf2e8d4340948485f81cea9b0, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 2ce54bafd8e50dd4dbaf9deffe78601c, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: bde581e5316db4b489cc55700d42d7a1, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 1c2fa8d4bf4e3e94fb37e96803ed46be, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 2f1bbc0236108824eb21abfeb3ef3ccc, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 4f74fd30226996943b8b3ea7d9a6e7c5, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: de7374730bc51864e8e9ed24c8b40b92, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 44889f53ad80a084e8b5b59128498202, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 0da10dd55bb5ecb498796650436d67ee, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 725d48f17e660de48a7967f45cf4d576, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 6b22e92a22c97a34fba1fb1829ac1b41, type: 2}
+        weight: 1
+      roofMaterials:
+      - material: {fileID: 2100000, guid: 9c04e72f2d397a246b71344065c3ae09, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: 5af54e7d3034ef2418aea4b135538603, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: 6fd0cca8c6543a34287d8cbfd8b5c89f, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: 0b8959627c3b8614897d549e5b323e6b, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: 1861a337fa250094aa58b3307813ca35, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: df6976d727aa45e4c8de6a55919bb6c2, type: 2}
+        weight: 0
+      gableMaterials:
+      - material: {fileID: 2100000, guid: 17ef58f55b249f4479cb3027511e86df, type: 2}
+        weight: 0
+      stairMaterials:
+      - material: {fileID: 2100000, guid: daae2f0f3867f454eb167b80575f36c9, type: 2}
+        weight: 0
+      windowMaterials: []
+      gableMatchesExteriorWall: 1
+      differentExteriorChance: 0.15
+    conditionOverrides: []
+  - zoneName: Military
+    defaultSkins:
+    - name: Military Default
+      weight: 1
+      floorMaterials:
+      - material: {fileID: 2100000, guid: f149ccbc585003147bfe0742ac9c43ae, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: 2a34eb7384a3463c99b398a8f67b8531, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: 25b0bcb2c6da49898da190f05e5f280e, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: f0256f5ffc834783847a97f5fc52d4ec, type: 2}
+        weight: 0
+      foundationMaterials:
+      - material: {fileID: 2100000, guid: daae2f0f3867f454eb167b80575f36c9, type: 2}
+        weight: 0
+      wallExteriorMaterials:
+      - material: {fileID: 2100000, guid: 17ef58f55b249f4479cb3027511e86df, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: f358fdef8077ce4499144f863e97fd62, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: 4ea6167319727ba48a8f00f066d92f7b, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: 4a069f9294c1957429e1aa605930c089, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: 7c7cbbc390908d94fa87e5f0e8f8cd72, type: 2}
+        weight: 0
+      wallInteriorMaterials:
+      - material: {fileID: 2100000, guid: 0d73183f24337c4489f23754aaf8c910, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 0af7d81ac4af6f74a8cabdd090cf3026, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: ebdcb82d868b64540910994773a8f08e, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 3c7d2f2a1900132419b9d28204871240, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 27b8ff009cabf9b43aa4e65a006d193b, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 2fac962e70dabc24e84cfb5013291e77, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 9d5e5cd66f236d2479c6c417aa4a1f2c, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: b69c9561c6c6e3546b6def8cb3c3fcd8, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: b5754a88967b8b745b26b548f85b0442, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: cf415195f0fe2a14dbe05d774bef13dc, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 58642e5cf2e8d4340948485f81cea9b0, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 2ce54bafd8e50dd4dbaf9deffe78601c, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: bde581e5316db4b489cc55700d42d7a1, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 1c2fa8d4bf4e3e94fb37e96803ed46be, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 2f1bbc0236108824eb21abfeb3ef3ccc, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 4f74fd30226996943b8b3ea7d9a6e7c5, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: de7374730bc51864e8e9ed24c8b40b92, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 44889f53ad80a084e8b5b59128498202, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 0da10dd55bb5ecb498796650436d67ee, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 725d48f17e660de48a7967f45cf4d576, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 6b22e92a22c97a34fba1fb1829ac1b41, type: 2}
+        weight: 1
+      roofMaterials:
+      - material: {fileID: 2100000, guid: 9c04e72f2d397a246b71344065c3ae09, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: 5af54e7d3034ef2418aea4b135538603, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: 6fd0cca8c6543a34287d8cbfd8b5c89f, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: 0b8959627c3b8614897d549e5b323e6b, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: 1861a337fa250094aa58b3307813ca35, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: df6976d727aa45e4c8de6a55919bb6c2, type: 2}
+        weight: 0
+      gableMaterials:
+      - material: {fileID: 2100000, guid: 17ef58f55b249f4479cb3027511e86df, type: 2}
+        weight: 0
+      stairMaterials:
+      - material: {fileID: 2100000, guid: daae2f0f3867f454eb167b80575f36c9, type: 2}
+        weight: 0
+      windowMaterials: []
+      gableMatchesExteriorWall: 1
+      differentExteriorChance: 0.15
+    conditionOverrides: []
+  - zoneName: CityCore
+    defaultSkins:
+    - name: CityCore Default
+      weight: 1
+      floorMaterials:
+      - material: {fileID: 2100000, guid: f149ccbc585003147bfe0742ac9c43ae, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: 2a34eb7384a3463c99b398a8f67b8531, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: 25b0bcb2c6da49898da190f05e5f280e, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: f0256f5ffc834783847a97f5fc52d4ec, type: 2}
+        weight: 0
+      foundationMaterials:
+      - material: {fileID: 2100000, guid: daae2f0f3867f454eb167b80575f36c9, type: 2}
+        weight: 0
+      wallExteriorMaterials:
+      - material: {fileID: 2100000, guid: 17ef58f55b249f4479cb3027511e86df, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: f358fdef8077ce4499144f863e97fd62, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: 4ea6167319727ba48a8f00f066d92f7b, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: 4a069f9294c1957429e1aa605930c089, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: 7c7cbbc390908d94fa87e5f0e8f8cd72, type: 2}
+        weight: 0
+      wallInteriorMaterials:
+      - material: {fileID: 2100000, guid: 0d73183f24337c4489f23754aaf8c910, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 0af7d81ac4af6f74a8cabdd090cf3026, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: ebdcb82d868b64540910994773a8f08e, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 3c7d2f2a1900132419b9d28204871240, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 27b8ff009cabf9b43aa4e65a006d193b, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 2fac962e70dabc24e84cfb5013291e77, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 9d5e5cd66f236d2479c6c417aa4a1f2c, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: b69c9561c6c6e3546b6def8cb3c3fcd8, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: b5754a88967b8b745b26b548f85b0442, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: cf415195f0fe2a14dbe05d774bef13dc, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 58642e5cf2e8d4340948485f81cea9b0, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 2ce54bafd8e50dd4dbaf9deffe78601c, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: bde581e5316db4b489cc55700d42d7a1, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 1c2fa8d4bf4e3e94fb37e96803ed46be, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 2f1bbc0236108824eb21abfeb3ef3ccc, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 4f74fd30226996943b8b3ea7d9a6e7c5, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: de7374730bc51864e8e9ed24c8b40b92, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 44889f53ad80a084e8b5b59128498202, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 0da10dd55bb5ecb498796650436d67ee, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 725d48f17e660de48a7967f45cf4d576, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 6b22e92a22c97a34fba1fb1829ac1b41, type: 2}
+        weight: 1
+      roofMaterials:
+      - material: {fileID: 2100000, guid: 9c04e72f2d397a246b71344065c3ae09, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: 5af54e7d3034ef2418aea4b135538603, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: 6fd0cca8c6543a34287d8cbfd8b5c89f, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: 0b8959627c3b8614897d549e5b323e6b, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: 1861a337fa250094aa58b3307813ca35, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: df6976d727aa45e4c8de6a55919bb6c2, type: 2}
+        weight: 0
+      gableMaterials:
+      - material: {fileID: 2100000, guid: 17ef58f55b249f4479cb3027511e86df, type: 2}
+        weight: 0
+      stairMaterials:
+      - material: {fileID: 2100000, guid: daae2f0f3867f454eb167b80575f36c9, type: 2}
+        weight: 0
+      windowMaterials: []
+      gableMatchesExteriorWall: 1
+      differentExteriorChance: 0.15
+    conditionOverrides: []
+  - zoneName: Park
+    defaultSkins:
+    - name: Park Default
+      weight: 1
+      floorMaterials:
+      - material: {fileID: 2100000, guid: f149ccbc585003147bfe0742ac9c43ae, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: 2a34eb7384a3463c99b398a8f67b8531, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: 25b0bcb2c6da49898da190f05e5f280e, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: f0256f5ffc834783847a97f5fc52d4ec, type: 2}
+        weight: 0
+      foundationMaterials:
+      - material: {fileID: 2100000, guid: daae2f0f3867f454eb167b80575f36c9, type: 2}
+        weight: 0
+      wallExteriorMaterials:
+      - material: {fileID: 2100000, guid: 17ef58f55b249f4479cb3027511e86df, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: f358fdef8077ce4499144f863e97fd62, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: 4ea6167319727ba48a8f00f066d92f7b, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: 4a069f9294c1957429e1aa605930c089, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: 7c7cbbc390908d94fa87e5f0e8f8cd72, type: 2}
+        weight: 0
+      wallInteriorMaterials:
+      - material: {fileID: 2100000, guid: 0d73183f24337c4489f23754aaf8c910, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 0af7d81ac4af6f74a8cabdd090cf3026, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: ebdcb82d868b64540910994773a8f08e, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 3c7d2f2a1900132419b9d28204871240, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 27b8ff009cabf9b43aa4e65a006d193b, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 2fac962e70dabc24e84cfb5013291e77, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 9d5e5cd66f236d2479c6c417aa4a1f2c, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: b69c9561c6c6e3546b6def8cb3c3fcd8, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: b5754a88967b8b745b26b548f85b0442, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: cf415195f0fe2a14dbe05d774bef13dc, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 58642e5cf2e8d4340948485f81cea9b0, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 2ce54bafd8e50dd4dbaf9deffe78601c, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: bde581e5316db4b489cc55700d42d7a1, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 1c2fa8d4bf4e3e94fb37e96803ed46be, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 2f1bbc0236108824eb21abfeb3ef3ccc, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 4f74fd30226996943b8b3ea7d9a6e7c5, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: de7374730bc51864e8e9ed24c8b40b92, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 44889f53ad80a084e8b5b59128498202, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 0da10dd55bb5ecb498796650436d67ee, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 725d48f17e660de48a7967f45cf4d576, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 6b22e92a22c97a34fba1fb1829ac1b41, type: 2}
+        weight: 1
+      roofMaterials:
+      - material: {fileID: 2100000, guid: 9c04e72f2d397a246b71344065c3ae09, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: 5af54e7d3034ef2418aea4b135538603, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: 6fd0cca8c6543a34287d8cbfd8b5c89f, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: 0b8959627c3b8614897d549e5b323e6b, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: 1861a337fa250094aa58b3307813ca35, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: df6976d727aa45e4c8de6a55919bb6c2, type: 2}
+        weight: 0
+      gableMaterials:
+      - material: {fileID: 2100000, guid: 17ef58f55b249f4479cb3027511e86df, type: 2}
+        weight: 0
+      stairMaterials:
+      - material: {fileID: 2100000, guid: daae2f0f3867f454eb167b80575f36c9, type: 2}
+        weight: 0
+      windowMaterials: []
+      gableMatchesExteriorWall: 1
+      differentExteriorChance: 0.15
+    conditionOverrides: []
+  - zoneName: Mixed
+    defaultSkins:
+    - name: Mixed Default
+      weight: 1
+      floorMaterials:
+      - material: {fileID: 2100000, guid: f149ccbc585003147bfe0742ac9c43ae, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: 2a34eb7384a3463c99b398a8f67b8531, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: 25b0bcb2c6da49898da190f05e5f280e, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: f0256f5ffc834783847a97f5fc52d4ec, type: 2}
+        weight: 0
+      foundationMaterials:
+      - material: {fileID: 2100000, guid: daae2f0f3867f454eb167b80575f36c9, type: 2}
+        weight: 0
+      wallExteriorMaterials:
+      - material: {fileID: 2100000, guid: 17ef58f55b249f4479cb3027511e86df, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: f358fdef8077ce4499144f863e97fd62, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: 4ea6167319727ba48a8f00f066d92f7b, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: 4a069f9294c1957429e1aa605930c089, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: 7c7cbbc390908d94fa87e5f0e8f8cd72, type: 2}
+        weight: 0
+      wallInteriorMaterials:
+      - material: {fileID: 2100000, guid: 0d73183f24337c4489f23754aaf8c910, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 0af7d81ac4af6f74a8cabdd090cf3026, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: ebdcb82d868b64540910994773a8f08e, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 3c7d2f2a1900132419b9d28204871240, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 27b8ff009cabf9b43aa4e65a006d193b, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 2fac962e70dabc24e84cfb5013291e77, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 9d5e5cd66f236d2479c6c417aa4a1f2c, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: b69c9561c6c6e3546b6def8cb3c3fcd8, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: b5754a88967b8b745b26b548f85b0442, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: cf415195f0fe2a14dbe05d774bef13dc, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 58642e5cf2e8d4340948485f81cea9b0, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 2ce54bafd8e50dd4dbaf9deffe78601c, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: bde581e5316db4b489cc55700d42d7a1, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 1c2fa8d4bf4e3e94fb37e96803ed46be, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 2f1bbc0236108824eb21abfeb3ef3ccc, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 4f74fd30226996943b8b3ea7d9a6e7c5, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: de7374730bc51864e8e9ed24c8b40b92, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 44889f53ad80a084e8b5b59128498202, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 0da10dd55bb5ecb498796650436d67ee, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 725d48f17e660de48a7967f45cf4d576, type: 2}
+        weight: 1
+      - material: {fileID: 2100000, guid: 6b22e92a22c97a34fba1fb1829ac1b41, type: 2}
+        weight: 1
+      roofMaterials:
+      - material: {fileID: 2100000, guid: 9c04e72f2d397a246b71344065c3ae09, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: 5af54e7d3034ef2418aea4b135538603, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: 6fd0cca8c6543a34287d8cbfd8b5c89f, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: 0b8959627c3b8614897d549e5b323e6b, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: 1861a337fa250094aa58b3307813ca35, type: 2}
+        weight: 0
+      - material: {fileID: 2100000, guid: df6976d727aa45e4c8de6a55919bb6c2, type: 2}
+        weight: 0
+      gableMaterials:
+      - material: {fileID: 2100000, guid: 17ef58f55b249f4479cb3027511e86df, type: 2}
+        weight: 0
+      stairMaterials:
+      - material: {fileID: 2100000, guid: daae2f0f3867f454eb167b80575f36c9, type: 2}
+        weight: 0
+      windowMaterials: []
+      gableMatchesExteriorWall: 1
+      differentExteriorChance: 0.15
+    conditionOverrides: []

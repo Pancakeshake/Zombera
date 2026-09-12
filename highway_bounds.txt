@@ -1,0 +1,3 @@
+Road_Highway_8000_CityPrefab_22 : center=(1216, 13, -23) size=(2145, 0, 76)
+Road_Highway_8000_CityPrefab_23 : center=(2339, 13, -7) size=(81, 0, 16)
+Road_Highway_8000_CityPrefab_24 : center=(2340, 13, -7) size=(59, 0, 22)

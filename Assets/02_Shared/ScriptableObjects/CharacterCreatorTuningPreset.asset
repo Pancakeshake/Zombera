@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f71f5759f0f4e00a15f2ec64f2bf10f, type: 3}
+  m_Name: CharacterCreatorTuningPreset
+  m_EditorClassIdentifier: Assembly-CSharp::Zombera.UI.Menus.CharacterCreation.CharacterCreatorTuningPreset
+  canvasReferenceResolution: {x: 768, y: 1365}
+  canvasMatchWidthOrHeight: 0.5
+  enableRuntimeCustomizationUi: 1
+  panelTint: {r: 0.05, g: 0.04, b: 0.04, a: 0.88}
+  tabNormalTint: {r: 0.13, g: 0.12, b: 0.12, a: 0.96}
+  tabActiveTint: {r: 0.45, g: 0.18, b: 0.09, a: 0.99}
+  panelAnchorMin: {x: 0.14, y: 0.06}
+  panelAnchorMax: {x: 0.86, y: 0.95}
+  panelInnerPadding: 18
+  panelSpacing: 12
+  rowSpacing: 10
+  autoFramePreviewCamera: 0
+  titlePreferredHeight: 52
+  titleFontSize: 23
+  raceRowPreferredHeight: 56
+  raceRowSpacing: 12
+  genderButtonWidth: 54
+  genderButtonHeight: 34
+  genderGlyphFontSize: 23
+  tabRowPreferredHeight: 48
+  tabRowSpacing: 2
+  tabButtonPreferredHeight: 44
+  tabLabelFontSize: 18
+  bodySelectorRowPreferredHeight: 64
+  bodyLabelFontSize: 23
+  bodyValueFontSize: 22
+  bodySliderRowPreferredHeight: 56
+  bodySliderLabelFontSize: 16
+  bodySliderValueFontSize: 16

@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7a7462b9d53ed343bd875e4f4092af1, type: 3}
+  m_Name: T-Shirt1
+  m_EditorClassIdentifier: Zombera.Runtime::Zombera.Inventory.ItemDefinition
+  itemId: clothes_chest_t_shirt1_t_shirt1
+  displayName: T Shirt1
+  inventoryIcon: {fileID: 21300000, guid: 7edff6cf6295e51469bb38d8a85fd65a, type: 3}
+  equippedVisualPrefab: {fileID: 8643006902003285871, guid: 78a9e0a2066c8fd4881035b4b86a3a9c, type: 3}
+  equippedVisualLocalPosition: {x: 0, y: 0, z: 0}
+  equippedVisualLocalEulerAngles: {x: 0, y: 0, z: 0}
+  equippedVisualLocalScale: {x: 1, y: 1, z: 1}
+  hiddenBodyParts: []
+  worldPickupPrefab: {fileID: 8154771565557766838, guid: 93a7217a2ee54d3429304b880fe5eb16, type: 3}
+  equippedWeaponData: {fileID: 0}
+  equippedArmorData: {fileID: 11400000, guid: a43d191369dc3de47abead60ffdc9893, type: 2}
+  enforceSpecificEquipSlot: 1
+  forcedEquipSlot: 3
+  appearanceWardrobeRecipe: {fileID: 0}
+  appearanceWardrobeRecipeName: 
+  appearanceWardrobeSlotOverride: 
+  itemType: 0
+  weight: 1
+  stackable: 0
+  maxStack: 1
+  healAmount: 0
+  mealQuality: 1
+  economyValue: 10
+  rarity: 0
+  tags: []
+  statBonuses: []
+  slotOffsets: []

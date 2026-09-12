@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7a7462b9d53ed343bd875e4f4092af1, type: 3}
+  m_Name: Rocket_Propelled_Rifl
+  m_EditorClassIdentifier: Zombera.Runtime::Zombera.Inventory.ItemDefinition
+  itemId: weapon_rocket_propelled_rifl
+  displayName: Rocket Propelled Rifl
+  inventoryIcon: {fileID: 0}
+  equippedVisualPrefab: {fileID: 9068365389798074925, guid: 93cd56e7e2edd644cbbe45caf95b7951, type: 3}
+  equippedVisualLocalPosition: {x: 0, y: 0, z: 0}
+  equippedVisualLocalEulerAngles: {x: 0, y: 0, z: 0}
+  equippedVisualLocalScale: {x: 1, y: 1, z: 1}
+  hiddenBodyParts: []
+  worldPickupPrefab: {fileID: 9068365389798074925, guid: 93cd56e7e2edd644cbbe45caf95b7951, type: 3}
+  equippedWeaponData: {fileID: 11400000, guid: 21dc3531bcc17654e9b170abe37956bd, type: 2}
+  equippedArmorData: {fileID: 0}
+  enforceSpecificEquipSlot: 1
+  forcedEquipSlot: 0
+  appearanceWardrobeRecipe: {fileID: 0}
+  appearanceWardrobeRecipeName: 
+  appearanceWardrobeSlotOverride: 
+  itemType: 4
+  weight: 1
+  stackable: 0
+  maxStack: 1
+  healAmount: 0
+  mealQuality: 1
+  economyValue: 10
+  rarity: 0
+  tags: []
+  statBonuses: []
+  slotOffsets: []

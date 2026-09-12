@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7567515709194199866
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5156658867032995586, guid: 4390f8ecf29bf9149a37a4bc1b034d4d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5156658867032995586, guid: 4390f8ecf29bf9149a37a4bc1b034d4d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5156658867032995586, guid: 4390f8ecf29bf9149a37a4bc1b034d4d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5156658867032995586, guid: 4390f8ecf29bf9149a37a4bc1b034d4d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5156658867032995586, guid: 4390f8ecf29bf9149a37a4bc1b034d4d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5156658867032995586, guid: 4390f8ecf29bf9149a37a4bc1b034d4d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5156658867032995586, guid: 4390f8ecf29bf9149a37a4bc1b034d4d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5156658867032995586, guid: 4390f8ecf29bf9149a37a4bc1b034d4d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5156658867032995586, guid: 4390f8ecf29bf9149a37a4bc1b034d4d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5156658867032995586, guid: 4390f8ecf29bf9149a37a4bc1b034d4d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5538285456307711416, guid: 4390f8ecf29bf9149a37a4bc1b034d4d, type: 3}
+      propertyPath: m_Name
+      value: Fabric01_URP
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4390f8ecf29bf9149a37a4bc1b034d4d, type: 3}

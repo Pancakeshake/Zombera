@@ -1,0 +1,28 @@
+{
+  "name": "Zombera.World",
+  "rootNamespace": "Zombera.World",
+  "references": [
+    "Zombera.Core",
+    "Zombera.Gameplay",
+    "Zombera.Save",
+    "Zombera.UI",
+    "Zombera.AI",
+    "Zombera.EasyBuildAdapter",
+    "Zombera.World.City",
+    "Unity.AI.Navigation",
+    "Unity.TextMeshPro",
+    "Unity.InputSystem",
+    "UMA_Core",
+    "Unity.RenderPipelines.Universal.Runtime",
+    "JBooth.MicroSplat.Core"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

@@ -1,0 +1,20 @@
+{
+  "name": "Zombera.Development",
+  "rootNamespace": "Zombera",
+  "references": [
+    "Zombera.Core",
+    "Zombera.Gameplay",
+    "Zombera.World"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": false,
+  "defineConstraints": [
+    "UNITY_EDITOR || ZOMBERA_DEVELOPMENT"
+  ],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

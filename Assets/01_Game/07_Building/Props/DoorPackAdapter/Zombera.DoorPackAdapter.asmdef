@@ -1,0 +1,16 @@
+{
+  "name": "Zombera.DoorPackAdapter",
+  "rootNamespace": "Zombera.BuildingSystem",
+  "references": [
+    "FreeWoodDoorPack"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

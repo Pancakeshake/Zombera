@@ -1,0 +1,3 @@
+event: message
+data: {"result":{"content":[{"type":"text","text":"{\u0022result\u0022:{\u0022name\u0022:\u0022result\u0022,\u0022typeName\u0022:\u0022System.Void\u0022,\u0022value\u0022:\u0022Success\u0022}}"}],"structuredContent":{"result":{"name":"result","typeName":"System.Void","value":"Success"}},"isError":false},"id":11,"jsonrpc":"2.0"}
+

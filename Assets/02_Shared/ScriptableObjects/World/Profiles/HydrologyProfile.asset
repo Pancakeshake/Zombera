@@ -1,0 +1,134 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78c67cf64ae3f674a85211884cbb6045, type: 3}
+  m_Name: HydrologyProfile
+  m_EditorClassIdentifier: Zombera.World.City::Zombera.World.CityPipeline.WorldBuilder.HydrologyProfile
+  seaLevelWorldY: 0
+  cellSizeMeters: 16
+  riverFlowThreshold: 32
+  minimumRiverLengthMeters: 120
+  riverPlacementCoastBufferMeters: 0
+  riverPlacementObstacleBufferMeters: 10
+  maxRiverSystems: 2
+  maxVisibleRiverBranches: 6
+  outletClusterRadiusMeters: 400
+  secondarySystemScoreRatio: 0.45
+  primaryOutletSeparationMeters: 1500
+  primaryRiverMinimumLengthMeters: 3000
+  tributaryMinimumLengthMeters: 500
+  tributaryMinimumFlowFraction: 0.12
+  maxTributariesPerSystem: 4
+  visibleHeadwaterFlowThreshold: 48
+  valleyFlowPreference: 0.9
+  cityWaterSetbackMeters: 64
+  waterfrontPreferenceDistanceMeters: 500
+  minRiverWidthMeters: 4
+  maxRiverWidthMeters: 72
+  minRiverDepthMeters: 0.4
+  maxRiverDepthMeters: 4.5
+  riverWidthByAccumulation:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.05
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.5
+      value: 0.35
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  riverDepthByAccumulation:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.05
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.5
+      value: 0.35
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  lakeMinAreaMetersSq: 8000
+  lakeMinFillDepthMeters: 0.35
+  lakeMinimumVolumeMetersCubed: 8000
+  lakeMaximumAreaFraction: 0.08
+  lakeMaximumTotalAreaFraction: 0.15
+  lakeMaximumAspectRatio: 8
+  maxVisibleLakes: 3
+  lakeMinimumDepthMeters: 0.75
+  lakeMinimumCoastDistanceMeters: 0
+  requireLakeRiverConnection: 0
+  shoreBlendWidthMeters: 80
+  carveShoulderWidthMeters: 96
+  riverCarveStrength: 0.65
+  riverMouthFlareMultiplier: 1.5
+  riverMouthFlareFraction: 0.08
+  meanderMaximumBankWidths: 2.5
+  meanderMinimumValleySlopeDegrees: 5
+  meanderWavelengthMeters: 420
+  maxRiverLandElevationAboveSeaMeters: 120
+  minLakeBedDepthBelowSea: 4
+  minRiverBedDepthBelowSea: 2
+  hydrologyAlgorithmVersion: 10
+  waterCrossingAlgorithmVersion: 3
+  fordMaxDepthMeters: 0.3
+  fordMaxWidthMeters: 12
+  fordMaxBankSlopeDegrees: 5
+  causewayMaxDepthMeters: 1.5
+  causewayMaxWidthMeters: 40
+  bridgeCorridorMaxDepthMeters: 18
+  waterSoftCostPerMeterDepth: 28
+  bridgeDeckClearanceMeters: 1.5

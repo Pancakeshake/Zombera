@@ -1,0 +1,100 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fef1f83065c79924eb56f1ddd6797867, type: 3}
+  m_Name: DistrictLotTerrainLayout
+  m_EditorClassIdentifier: Zombera.World::Zombera.World.Roads.DistrictLotTerrainLayout
+  textureArrayConfig: {fileID: 11400000, guid: bc47bb6d5099bd541b8a185ca8f130f1, type: 2}
+  residential:
+    frontYardFractionOfLotDepth: 0.3
+    frontYardTextureIndex: 0
+    backyardTextureIndex: 0
+    sideYardFractionOfLotWidth: 0.15
+    sideYardTextureIndex: 0
+    generateDriveway: 1
+    drivewayWidthMeters: 3
+    drivewayDepthFractionOfLotDepth: 0.25
+    drivewaySideOffsetMeters: 1.5
+    drivewayTextureIndex: 13
+    generateBuildingPad: 1
+    buildingPadTextureIndex: 14
+    generateDoorFootpath: 1
+    footpathWidthMeters: 1.2
+    footpathTextureIndex: 15
+    varyYardTexturePerLot: 1
+  commercial:
+    frontYardFractionOfLotDepth: 0
+    frontYardTextureIndex: 14
+    backyardTextureIndex: 14
+    sideYardFractionOfLotWidth: 0
+    sideYardTextureIndex: 14
+    generateDriveway: 0
+    drivewayWidthMeters: 5
+    drivewayDepthFractionOfLotDepth: 0.25
+    drivewaySideOffsetMeters: 1.5
+    drivewayTextureIndex: 13
+    generateBuildingPad: 0
+    buildingPadTextureIndex: 14
+    generateDoorFootpath: 0
+    footpathWidthMeters: 1.2
+    footpathTextureIndex: 15
+    varyYardTexturePerLot: 0
+  industrial:
+    frontYardFractionOfLotDepth: 0.06
+    frontYardTextureIndex: 12
+    backyardTextureIndex: 12
+    sideYardFractionOfLotWidth: 0
+    sideYardTextureIndex: 12
+    generateDriveway: 1
+    drivewayWidthMeters: 4
+    drivewayDepthFractionOfLotDepth: 0.33
+    drivewaySideOffsetMeters: 1.5
+    drivewayTextureIndex: 13
+    generateBuildingPad: 1
+    buildingPadTextureIndex: 14
+    generateDoorFootpath: 1
+    footpathWidthMeters: 1.2
+    footpathTextureIndex: 15
+    varyYardTexturePerLot: 0
+  cityCore:
+    frontYardFractionOfLotDepth: 0
+    frontYardTextureIndex: 14
+    backyardTextureIndex: 14
+    sideYardFractionOfLotWidth: 0
+    sideYardTextureIndex: 14
+    generateDriveway: 0
+    drivewayWidthMeters: 3
+    drivewayDepthFractionOfLotDepth: 0.33
+    drivewaySideOffsetMeters: 1.5
+    drivewayTextureIndex: 14
+    generateBuildingPad: 0
+    buildingPadTextureIndex: 14
+    generateDoorFootpath: 0
+    footpathWidthMeters: 1.2
+    footpathTextureIndex: 14
+    varyYardTexturePerLot: 0
+  hospital:
+    frontYardFractionOfLotDepth: 0
+    frontYardTextureIndex: 14
+    backyardTextureIndex: 14
+    sideYardFractionOfLotWidth: 0
+    sideYardTextureIndex: 14
+    generateDriveway: 0
+    drivewayWidthMeters: 3
+    drivewayDepthFractionOfLotDepth: 0.33
+    drivewaySideOffsetMeters: 1.5
+    drivewayTextureIndex: 14
+    generateBuildingPad: 0
+    buildingPadTextureIndex: 14
+    generateDoorFootpath: 0
+    footpathWidthMeters: 1.2
+    footpathTextureIndex: 14
+    varyYardTexturePerLot: 0

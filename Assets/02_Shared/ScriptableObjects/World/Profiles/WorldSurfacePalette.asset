@@ -1,0 +1,115 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bb9518774a65c149997aca9522bae55, type: 3}
+  m_Name: WorldSurfacePalette
+  m_EditorClassIdentifier: Zombera.World.City::Zombera.World.CityPipeline.WorldBuilder.WorldSurfacePalette
+  microSplatWorldAsset: {fileID: 11400000, guid: bed1c10369234524e8c7c32a33b56c1f, type: 2}
+  microSplatTemplateMaterial: {fileID: 2100000, guid: 370247ffa56bae94d8efcfe87e56f6e2, type: 2}
+  microSplatPropData: {fileID: 11400000, guid: 2c593163918573e4c84347397927a513, type: 2}
+  terrainLayers: []
+  mappings:
+  - SemanticName: GrassGreen
+    LayerIndex: 0
+    IsInfrastructure: 0
+  - SemanticName: GrassYellow
+    LayerIndex: 1
+    IsInfrastructure: 0
+  - SemanticName: Sand01
+    LayerIndex: 2
+    IsInfrastructure: 0
+  - SemanticName: Grass
+    LayerIndex: 3
+    IsInfrastructure: 0
+  - SemanticName: SparseGrass
+    LayerIndex: 4
+    IsInfrastructure: 0
+  - SemanticName: CliffBright
+    LayerIndex: 5
+    IsInfrastructure: 0
+  - SemanticName: Sand
+    LayerIndex: 6
+    IsInfrastructure: 0
+  - SemanticName: CliffDark
+    LayerIndex: 7
+    IsInfrastructure: 0
+  - SemanticName: CliffRed
+    LayerIndex: 8
+    IsInfrastructure: 0
+  - SemanticName: CliffPink
+    LayerIndex: 9
+    IsInfrastructure: 0
+  - SemanticName: Snow
+    LayerIndex: 10
+    IsInfrastructure: 0
+  - SemanticName: SandCracks
+    LayerIndex: 11
+    IsInfrastructure: 0
+  - SemanticName: Dirt
+    LayerIndex: 12
+    IsInfrastructure: 0
+  - SemanticName: Asphalt
+    LayerIndex: 13
+    IsInfrastructure: 1
+  - SemanticName: RoughConcrete
+    LayerIndex: 14
+    IsInfrastructure: 1
+  - SemanticName: ConcreteTiles
+    LayerIndex: 15
+    IsInfrastructure: 1
+  - SemanticName: CleanAsphalt
+    LayerIndex: 16
+    IsInfrastructure: 1
+  - SemanticName: DesertSand
+    LayerIndex: 17
+    IsInfrastructure: 0
+  - SemanticName: LavaRock
+    LayerIndex: 18
+    IsInfrastructure: 0
+  - SemanticName: LavaGround
+    LayerIndex: 19
+    IsInfrastructure: 0
+  - SemanticName: BlackDirt
+    LayerIndex: 20
+    IsInfrastructure: 0
+  - SemanticName: BlackSand
+    LayerIndex: 21
+    IsInfrastructure: 0
+  - SemanticName: FrozenLake
+    LayerIndex: 22
+    IsInfrastructure: 0
+  - SemanticName: JungleFloor
+    LayerIndex: 23
+    IsInfrastructure: 0
+  - SemanticName: SnowRock
+    LayerIndex: 24
+    IsInfrastructure: 0
+  - SemanticName: SwampMud
+    LayerIndex: 25
+    IsInfrastructure: 0
+  - SemanticName: DryForestFloor
+    LayerIndex: 26
+    IsInfrastructure: 0
+  - SemanticName: MeadowGrass
+    LayerIndex: 27
+    IsInfrastructure: 0
+  - SemanticName: WetRock
+    LayerIndex: 28
+    IsInfrastructure: 0
+  - SemanticName: RiverSand
+    LayerIndex: 29
+    IsInfrastructure: 0
+  - SemanticName: Ice
+    LayerIndex: 30
+    IsInfrastructure: 0
+  - SemanticName: WetSand
+    LayerIndex: 31
+    IsInfrastructure: 0

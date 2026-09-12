@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f985e79c0a6bf644bb7f1128231c2af, type: 3}
+  m_Name: CityMathRoadLayoutAsset
+  m_EditorClassIdentifier: Zombera.World::Zombera.World.Roads.CityMathRoadLayoutAsset
+  data:
+    randomizeCityExtents: 1
+    randomizeBlockSpacing: 1
+    generateStreetGrid: 1
+    generateArterialRing: 1
+    clipLocalStreetsToArterialRing: 1
+    generateHighwayExits: 1
+    centerXZ: {x: 205, y: 531}
+    footprintShape: 0
+    cityRadiusMeters: 140
+    streetSpacingMeters: 80
+    cityHalfWidthMinMeters: 300
+    cityHalfWidthMaxMeters: 300
+    cityHalfDepthMinMeters: 300
+    cityHalfDepthMaxMeters: 300
+    blockSpacingMinMeters: 100
+    blockSpacingMaxMeters: 150
+    blockSpacingJitter: 0.22
+    arterialCornerRadiusMeters: 0
+    arterialRingRadiusNormalized: 0.72
+    arterialRingWobbleMeters: 0
+    highwayExitCount: 4
+    highwayExitAngleOffsetRadians: 0
+    highwayExitStartNormalized: 0.55
+    highwayExitEndNormalized: 1
+    layoutSeed: 476559299

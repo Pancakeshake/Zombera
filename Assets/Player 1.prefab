@@ -1,0 +1,1468 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1440895335120550602
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 3b9826caf535cd545b89f04862bb9db4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.03
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3b9826caf535cd545b89f04862bb9db4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.36001
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3b9826caf535cd545b89f04862bb9db4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -11.8151
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3b9826caf535cd545b89f04862bb9db4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3b9826caf535cd545b89f04862bb9db4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3b9826caf535cd545b89f04862bb9db4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3b9826caf535cd545b89f04862bb9db4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3b9826caf535cd545b89f04862bb9db4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3b9826caf535cd545b89f04862bb9db4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 3b9826caf535cd545b89f04862bb9db4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3b9826caf535cd545b89f04862bb9db4, type: 3}
+      propertyPath: m_Name
+      value: Player 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3b9826caf535cd545b89f04862bb9db4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4513795895996080546}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3b9826caf535cd545b89f04862bb9db4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1990924052532640620}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3b9826caf535cd545b89f04862bb9db4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 148027256756563091}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3b9826caf535cd545b89f04862bb9db4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7694430045826870066}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3b9826caf535cd545b89f04862bb9db4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8343686930285570448}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3b9826caf535cd545b89f04862bb9db4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5081553106488753593}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3b9826caf535cd545b89f04862bb9db4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3296552520449488899}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3b9826caf535cd545b89f04862bb9db4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4633034649725895538}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3b9826caf535cd545b89f04862bb9db4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4664281971439086793}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3b9826caf535cd545b89f04862bb9db4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 681264151727321837}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3b9826caf535cd545b89f04862bb9db4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7465693154123777152}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3b9826caf535cd545b89f04862bb9db4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5653015167062943022}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3b9826caf535cd545b89f04862bb9db4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5965977774987398896}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3b9826caf535cd545b89f04862bb9db4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 938120273425112112}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3b9826caf535cd545b89f04862bb9db4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2239166284392220803}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3b9826caf535cd545b89f04862bb9db4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1544373655612768297}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3b9826caf535cd545b89f04862bb9db4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4665536780767459007}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3b9826caf535cd545b89f04862bb9db4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5195684907110859463}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3b9826caf535cd545b89f04862bb9db4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2283665939017414485}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3b9826caf535cd545b89f04862bb9db4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7381806910819660277}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3b9826caf535cd545b89f04862bb9db4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5330676172670319561}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3b9826caf535cd545b89f04862bb9db4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 660224130347150544}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3b9826caf535cd545b89f04862bb9db4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2519484711262428954}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3b9826caf535cd545b89f04862bb9db4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2404281432779762516}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3b9826caf535cd545b89f04862bb9db4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8446428402205026245}
+  m_SourcePrefab: {fileID: 100100000, guid: 3b9826caf535cd545b89f04862bb9db4, type: 3}
+--- !u!1 &2251377041606543259 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 3b9826caf535cd545b89f04862bb9db4, type: 3}
+  m_PrefabInstance: {fileID: 1440895335120550602}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4513795895996080546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2251377041606543259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 471d9fb3d13873f4aa55fc104953f4bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Zombera.Runtime::Zombera.Characters.UnitInventory
+  weightLimit: 35
+--- !u!95 &1990924052532640620
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2251377041606543259}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 41689eb63a9a3094a85d9c117f16a60a, type: 3}
+  m_Controller: {fileID: 9100000, guid: f167c29d54bd7554185f508b1d21786b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &148027256756563091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2251377041606543259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7da4367cc0bccd4da5d38e8fbd1c5b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: MindCodeInteractive.EasyBuildSystem.Runtime::MindCodeInteractive.EasyBuildSystem.Framework.Code.Runtime.Systems.Controllers.Inputs.BuildingInput
+  m_validateActionRef: {fileID: 0}
+  m_cancelActionRef: {fileID: 0}
+  m_rotateActionRef: {fileID: 0}
+  m_selectActionRef: {fileID: 0}
+  m_placementModeActionRef: {fileID: 0}
+  m_destructionModeActionRef: {fileID: 0}
+  m_adjustmentModeActionRef: {fileID: 0}
+  m_blockWhenPointerOverUI: 1
+  m_enableDirectControls: 1
+  m_useCustomPartsSelection: 0
+  m_customPartReferences: []
+--- !u!114 &7694430045826870066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2251377041606543259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b0110f5db2664246bbd19e7d0bc9a8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: MindCodeInteractive.EasyBuildSystem.Runtime::MindCodeInteractive.EasyBuildSystem.Framework.Code.Runtime.Systems.Controllers.BuildingController
+  m_views:
+  - {fileID: 8343686930285570448}
+  m_activeView: {fileID: 8343686930285570448}
+  m_states:
+  - {fileID: 5081553106488753593}
+  - {fileID: 3296552520449488899}
+  - {fileID: 4633034649725895538}
+  - {fileID: 4664281971439086793}
+  m_audioData:
+    m_enterPlacementModeClip:
+      m_clip: {fileID: 0}
+      m_clips: []
+      m_select: 0
+      m_mixer: {fileID: 0}
+      m_mode: 0
+      m_volume: 1
+      m_volumeJitter: 0
+      m_pitch: 1
+      m_pitchJitter: 0
+      m_spatialBlend: 1
+      m_rolloff: 0
+      m_minDistance: 1
+      m_maxDistance: 500
+    m_placementValidClip:
+      m_clip: {fileID: 0}
+      m_clips: []
+      m_select: 0
+      m_mixer: {fileID: 0}
+      m_mode: 0
+      m_volume: 1
+      m_volumeJitter: 0
+      m_pitch: 1
+      m_pitchJitter: 0
+      m_spatialBlend: 1
+      m_rolloff: 0
+      m_minDistance: 1
+      m_maxDistance: 500
+    m_placementFailedClip:
+      m_clip: {fileID: 0}
+      m_clips: []
+      m_select: 0
+      m_mixer: {fileID: 0}
+      m_mode: 0
+      m_volume: 1
+      m_volumeJitter: 0
+      m_pitch: 1
+      m_pitchJitter: 0
+      m_spatialBlend: 1
+      m_rolloff: 0
+      m_minDistance: 1
+      m_maxDistance: 500
+    m_cancelPlacementClip:
+      m_clip: {fileID: 0}
+      m_clips: []
+      m_select: 0
+      m_mixer: {fileID: 0}
+      m_mode: 0
+      m_volume: 1
+      m_volumeJitter: 0
+      m_pitch: 1
+      m_pitchJitter: 0
+      m_spatialBlend: 1
+      m_rolloff: 0
+      m_minDistance: 1
+      m_maxDistance: 500
+    m_exitPlacementModeClip:
+      m_clip: {fileID: 0}
+      m_clips: []
+      m_select: 0
+      m_mixer: {fileID: 0}
+      m_mode: 0
+      m_volume: 1
+      m_volumeJitter: 0
+      m_pitch: 1
+      m_pitchJitter: 0
+      m_spatialBlend: 1
+      m_rolloff: 0
+      m_minDistance: 1
+      m_maxDistance: 500
+    m_enterDestructionModeClip:
+      m_clip: {fileID: 0}
+      m_clips: []
+      m_select: 0
+      m_mixer: {fileID: 0}
+      m_mode: 0
+      m_volume: 1
+      m_volumeJitter: 0
+      m_pitch: 1
+      m_pitchJitter: 0
+      m_spatialBlend: 1
+      m_rolloff: 0
+      m_minDistance: 1
+      m_maxDistance: 500
+    m_destructionValidClip:
+      m_clip: {fileID: 0}
+      m_clips: []
+      m_select: 0
+      m_mixer: {fileID: 0}
+      m_mode: 0
+      m_volume: 1
+      m_volumeJitter: 0
+      m_pitch: 1
+      m_pitchJitter: 0
+      m_spatialBlend: 1
+      m_rolloff: 0
+      m_minDistance: 1
+      m_maxDistance: 500
+    m_destructionFailedClip:
+      m_clip: {fileID: 0}
+      m_clips: []
+      m_select: 0
+      m_mixer: {fileID: 0}
+      m_mode: 0
+      m_volume: 1
+      m_volumeJitter: 0
+      m_pitch: 1
+      m_pitchJitter: 0
+      m_spatialBlend: 1
+      m_rolloff: 0
+      m_minDistance: 1
+      m_maxDistance: 500
+    m_cancelDestructionClip:
+      m_clip: {fileID: 0}
+      m_clips: []
+      m_select: 0
+      m_mixer: {fileID: 0}
+      m_mode: 0
+      m_volume: 1
+      m_volumeJitter: 0
+      m_pitch: 1
+      m_pitchJitter: 0
+      m_spatialBlend: 1
+      m_rolloff: 0
+      m_minDistance: 1
+      m_maxDistance: 500
+    m_exitDestructionModeClip:
+      m_clip: {fileID: 0}
+      m_clips: []
+      m_select: 0
+      m_mixer: {fileID: 0}
+      m_mode: 0
+      m_volume: 1
+      m_volumeJitter: 0
+      m_pitch: 1
+      m_pitchJitter: 0
+      m_spatialBlend: 1
+      m_rolloff: 0
+      m_minDistance: 1
+      m_maxDistance: 500
+    m_enterAdjustmentModeClip:
+      m_clip: {fileID: 0}
+      m_clips: []
+      m_select: 0
+      m_mixer: {fileID: 0}
+      m_mode: 0
+      m_volume: 1
+      m_volumeJitter: 0
+      m_pitch: 1
+      m_pitchJitter: 0
+      m_spatialBlend: 1
+      m_rolloff: 0
+      m_minDistance: 1
+      m_maxDistance: 500
+    m_adjustmentValidClip:
+      m_clip: {fileID: 0}
+      m_clips: []
+      m_select: 0
+      m_mixer: {fileID: 0}
+      m_mode: 0
+      m_volume: 1
+      m_volumeJitter: 0
+      m_pitch: 1
+      m_pitchJitter: 0
+      m_spatialBlend: 1
+      m_rolloff: 0
+      m_minDistance: 1
+      m_maxDistance: 500
+    m_adjustmentFailedClip:
+      m_clip: {fileID: 0}
+      m_clips: []
+      m_select: 0
+      m_mixer: {fileID: 0}
+      m_mode: 0
+      m_volume: 1
+      m_volumeJitter: 0
+      m_pitch: 1
+      m_pitchJitter: 0
+      m_spatialBlend: 1
+      m_rolloff: 0
+      m_minDistance: 1
+      m_maxDistance: 500
+    m_cancelAdjustmentClip:
+      m_clip: {fileID: 0}
+      m_clips: []
+      m_select: 0
+      m_mixer: {fileID: 0}
+      m_mode: 0
+      m_volume: 1
+      m_volumeJitter: 0
+      m_pitch: 1
+      m_pitchJitter: 0
+      m_spatialBlend: 1
+      m_rolloff: 0
+      m_minDistance: 1
+      m_maxDistance: 500
+    m_exitAdjustmentModeClip:
+      m_clip: {fileID: 0}
+      m_clips: []
+      m_select: 0
+      m_mixer: {fileID: 0}
+      m_mode: 0
+      m_volume: 1
+      m_volumeJitter: 0
+      m_pitch: 1
+      m_pitchJitter: 0
+      m_spatialBlend: 1
+      m_rolloff: 0
+      m_minDistance: 1
+      m_maxDistance: 500
+    m_enterUpgradeModeClip:
+      m_clip: {fileID: 0}
+      m_clips: []
+      m_select: 0
+      m_mixer: {fileID: 0}
+      m_mode: 0
+      m_volume: 1
+      m_volumeJitter: 0
+      m_pitch: 1
+      m_pitchJitter: 0
+      m_spatialBlend: 1
+      m_rolloff: 0
+      m_minDistance: 1
+      m_maxDistance: 500
+    m_upgradeValidClip:
+      m_clip: {fileID: 0}
+      m_clips: []
+      m_select: 0
+      m_mixer: {fileID: 0}
+      m_mode: 0
+      m_volume: 1
+      m_volumeJitter: 0
+      m_pitch: 1
+      m_pitchJitter: 0
+      m_spatialBlend: 1
+      m_rolloff: 0
+      m_minDistance: 1
+      m_maxDistance: 500
+    m_upgradeFailedClip:
+      m_clip: {fileID: 0}
+      m_clips: []
+      m_select: 0
+      m_mixer: {fileID: 0}
+      m_mode: 0
+      m_volume: 1
+      m_volumeJitter: 0
+      m_pitch: 1
+      m_pitchJitter: 0
+      m_spatialBlend: 1
+      m_rolloff: 0
+      m_minDistance: 1
+      m_maxDistance: 500
+    m_cancelUpgradeClip:
+      m_clip: {fileID: 0}
+      m_clips: []
+      m_select: 0
+      m_mixer: {fileID: 0}
+      m_mode: 0
+      m_volume: 1
+      m_volumeJitter: 0
+      m_pitch: 1
+      m_pitchJitter: 0
+      m_spatialBlend: 1
+      m_rolloff: 0
+      m_minDistance: 1
+      m_maxDistance: 500
+    m_exitUpgradeModeClip:
+      m_clip: {fileID: 0}
+      m_clips: []
+      m_select: 0
+      m_mixer: {fileID: 0}
+      m_mode: 0
+      m_volume: 1
+      m_volumeJitter: 0
+      m_pitch: 1
+      m_pitchJitter: 0
+      m_spatialBlend: 1
+      m_rolloff: 0
+      m_minDistance: 1
+      m_maxDistance: 500
+--- !u!114 &8343686930285570448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2251377041606543259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af8d2cb382f9db244825ffe647f1c2cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: MindCodeInteractive.EasyBuildSystem.Runtime::MindCodeInteractive.EasyBuildSystem.Framework.Code.Runtime.Systems.Controllers.Views.Implementations.FirstPersonBuildingView
+  m_raycastCamera: {fileID: 0}
+  m_raycastDistance: 100
+  m_raycastLayer:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_raycastOffset: {x: 0, y: 0, z: 0}
+  m_constrainValidDistance: 1
+  m_minValidDistance: 0
+  m_maxValidDistance: 8
+  m_snapRadius: 1
+  m_snapMaxAngle: 15
+  m_snapObstructionCheck: 0
+  m_snapObstructionLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_originTransform: {fileID: 0}
+--- !u!114 &5081553106488753593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2251377041606543259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95ed15c2aced0db438863c7de18c5a84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: MindCodeInteractive.EasyBuildSystem.Runtime::MindCodeInteractive.EasyBuildSystem.Framework.Code.Runtime.Systems.Controllers.States.Implementations.PlacementBuildingState
+  m_buildingController: {fileID: 0}
+  m_cancelStateAfterValidation: 0
+  m_showLogs: 0
+  m_snapOnlyIfValid: 1
+  m_avoidOccupiedCells: 1
+  m_lockRotation: 0
+  m_invertPreviewRotation: 0
+  m_preservePreviewRotation: 1
+--- !u!114 &3296552520449488899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2251377041606543259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db103e93fcb889440bb03a723e31a46d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: MindCodeInteractive.EasyBuildSystem.Runtime::MindCodeInteractive.EasyBuildSystem.Framework.Code.Runtime.Systems.Controllers.States.Implementations.AdjustmentBuildingState
+  m_buildingController: {fileID: 0}
+  m_cancelStateAfterValidation: 0
+  m_showLogs: 0
+  m_snapOnlyIfValid: 1
+  m_avoidOccupiedCells: 1
+  m_lockRotation: 0
+  m_invertPreviewRotation: 0
+  m_preservePreviewRotation: 1
+  m_resetRotationOnAdjust: 0
+--- !u!114 &4633034649725895538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2251377041606543259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f1aceac1696a144cbbf3eb9012e298b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: MindCodeInteractive.EasyBuildSystem.Runtime::MindCodeInteractive.EasyBuildSystem.Framework.Code.Runtime.Systems.Controllers.States.Implementations.DestructionBuildingState
+  m_buildingController: {fileID: 0}
+  m_cancelStateAfterValidation: 0
+  m_showLogs: 0
+--- !u!114 &4664281971439086793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2251377041606543259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b6148f7da40b3143919f01598e8ce9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: MindCodeInteractive.EasyBuildSystem.Runtime::MindCodeInteractive.EasyBuildSystem.Framework.Code.Runtime.Systems.Controllers.States.Implementations.UpgradeBuildingState
+  m_buildingController: {fileID: 0}
+  m_cancelStateAfterValidation: 0
+  m_showLogs: 0
+--- !u!136 &681264151727321837
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2251377041606543259}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.3
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &7465693154123777152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2251377041606543259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80ee58f4ab510084183aa5f03b49aa21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Zombera.Systems.CursorManager
+  defaultCursor: {fileID: 2800000, guid: 39e70fbb039fcb74e9f18a5927d11552, type: 3}
+  attackCursor: {fileID: 2800000, guid: cce8b720bacde2a43a185d7f9b6f3aef, type: 3}
+  defaultHotspot: {x: 0, y: 0}
+  attackHotspot: {x: 0, y: 0}
+  autoCenterDefaultHotspotWhenUnset: 0
+  autoCenterAttackHotspotWhenUnset: 0
+  defaultHotspotOffset: {x: 0, y: 0}
+  attackHotspotOffset: {x: 0, y: 0}
+  forceTopLeftDefaultHotspotWhenUnset: 1
+  autoDetectDefaultHotspotWhenUnset: 1
+  defaultAutoHotspotAnchor: 0
+  autoDetectAttackHotspotWhenUnset: 1
+  attackAutoHotspotAnchor: 1
+  autoDetectAlphaThreshold: 0.2
+  disableAutoHotspotDetectionInPlayMode: 1
+  worldCamera: {fileID: 0}
+  enableRuntimeHotspotCalibration: 1
+  runtimeCalibrationStepPixels: 1
+  runtimeCalibrationFastStepPixels: 5
+  calibrationNudgeLeftKey: 276
+  calibrationNudgeRightKey: 275
+  calibrationNudgeUpKey: 273
+  calibrationNudgeDownKey: 274
+  calibrationToggleCursorTargetKey: 96
+  calibrationResetOffsetKey: 8
+  calibrationLogValuesKey: 13
+  logCalibrationChanges: 1
+--- !u!114 &5653015167062943022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2251377041606543259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 252325f140a9c6540a495e928a177741, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Zombera.BuildingSystem.DoorInteractor
+  interactRadius: 2.5
+  doorLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  doorScanIntervalSeconds: 0.12
+  pollNearbyDoorsForPrompt: 0
+  autoNarrowDoorLayerMask: 1
+--- !u!114 &5965977774987398896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2251377041606543259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c40e1cf08ff2c684da5f2dba64781879, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Zombera.Runtime::Zombera.Inventory.EquipmentSystem
+  equippedItems: []
+  unitStats: {fileID: 0}
+  unitHealth: {fileID: 0}
+  weaponSystem: {fileID: 0}
+  syncEquipmentAppearanceFromEquipment: 1
+  headItem: {fileID: 0}
+  chestItem: {fileID: 0}
+  backItem: {fileID: 0}
+  legsItem: {fileID: 0}
+  feetItem: {fileID: 0}
+  leftHandItem: {fileID: 0}
+  rightHandItem: {fileID: 0}
+--- !u!114 &938120273425112112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2251377041606543259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb2816c76b7f8164ca68db80e1143167, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Zombera.Runtime::Zombera.BuildingSystem.EasyBuildRadialMenuInputBridge
+  rightClickTogglesRadialMenu: 1
+  ignoreRightClickWhenPointerOverUi: 0
+  toggleRadialMenuKey: 16
+  toggleRadialMenuWithKeyboard: 1
+  buildPlacementController: {fileID: 0}
+  requireLocalBuilderModeForRadialToggle: 1
+  enforceBKeyOnlyMenuAccess: 1
+  enableHoldRotatePreview: 1
+  holdRotatePreviewKey: 36
+  holdRotateRepeatSeconds: 0.08
+  enableRealtimeHeightHotkeys: 1
+  heightUpPrimaryKey: 63
+  heightDownPrimaryKey: 64
+  heightUpAlternateKey: 14
+  heightDownAlternateKey: 13
+  heightUpNumpadKey: 80
+  heightDownNumpadKey: 81
+  realtimeHeightStep: 0.25
+  realtimeHeightRepeatSeconds: 0.08
+  placementHeightStep: 0.25
+  placementHeightRange: {x: -6, y: 6}
+  removeSampleBuildingGroupCubeOnPlay: 1
+  sampleArtifactCleanupDelaySeconds: 6
+  sampleArtifactCleanupScanBatchSize: 256
+  restrictCatalogToExtensionFolders: 1
+  buildPrefabSpriteLibrary: {fileID: 11400000, guid: 0df3f8bf63d3ab9458e59c3deddd916a, type: 2}
+  deferExtensionCatalogBuildUntilBuildUiActive: 1
+  extensionCatalogFolders:
+  - Assets/Prefabs/Prefab_Modular
+  - Assets/ThirdParty/Mind Code Interactive/Easy Build System/Packages/Extensions/Survival
+    Blueprint
+  - Assets/ThirdParty/Mind Code Interactive/Easy Build System/Packages/Extensions/Survival
+    Upgradable
+  radialMenuVerticalScreenOffsetPercent: 0.1
+  radialMenuUsesUnscaledTime: 1
+  enableBridgeDebugLogs: 1
+  verboseBridgeDebugLogs: 0
+  disableBridgeDiagnosticsInPlayMode: 1
+  enableFilteredPlacementDiagnostics: 1
+  placementDiagnosticsPartFilter: barrel
+  placementDiagnosticsRepeatIntervalSeconds: 0.4
+  ensureSelectedPartDiagnosticsIntervalSeconds: 2
+--- !u!114 &2239166284392220803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2251377041606543259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d775bc30a196d97488bd0f0f8d95c82b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Zombera.Characters.UnitController
+  role: 0
+  moveSpeed: 4
+  rotationSpeed: 10
+  stoppingDistance: 0.15
+  animDampTime: 0.1
+  useRigidbodyMovement: 1
+  movementBody: {fileID: 0}
+  unitHealth: {fileID: 0}
+  unitInventory: {fileID: 0}
+  unitStats: {fileID: 0}
+  sprintSpeedMultiplier: 1.65
+  sprintBuildUpSeconds: 0.35
+  logMoveToCalls: 0
+  logMoveToCallsForPlayerOnly: 1
+  moveToLogCooldownSeconds: 0.1
+  includeMoveToStackTrace: 0
+  nonPlayerAgentEnableRetrySeconds: 1.5
+  agentRebindRetrySeconds: 0.5
+--- !u!114 &1544373655612768297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2251377041606543259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0f66738a7c77e14786a6702e8e8aa9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Zombera.Characters.UnitHealth
+  maxHealth: 100
+  initializeOnAwake: 1
+  damageResistances:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+--- !u!114 &4665536780767459007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2251377041606543259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f5e105be4fb85042bfe08f75527ed2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Zombera.Characters.UnitCombat
+  weaponSystem: {fileID: 0}
+  targetingSystem: {fileID: 0}
+  unarmedFallbackDamage: 10
+  unarmedFallbackRange: 1.65
+  requireFacingForUnarmedFallback: 1
+  unarmedFallbackFacingAngleDegrees: 65
+  unitStats: {fileID: 0}
+  unitInventory: {fileID: 0}
+  enableFriendlyFireGuard: 1
+  attackCooldownSeconds: 0.5
+--- !u!114 &5195684907110859463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2251377041606543259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8091ead0ce5e8a6459328eb12753cc65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Zombera.Characters.UnitStats
+  strength: 5
+  shooting: 5
+  melee: 5
+  medical: 5
+  engineering: 5
+  toughness: 1
+  constitution: 1
+  agility: 1
+  endurance: 1
+  scavenging: 1
+  stealth: 1
+  stamina: 100
+  baseMaxStamina: 100
+  staminaDrainPerSecondSprint: 15
+  staminaRegenPerSecondIdle: 8
+  staminaRegenPerSecondWalk: 4
+  staminaRegenDelaySeconds: 1.5
+  unitHealth: {fileID: 1544373655612768297}
+  strengthXpBaseRequirement: 20
+  strengthXpRequirementGrowthPerLevel: 4
+  strengthDamageMultiplierAtLevel100: 3
+  strengthHealthBonusPerLevelPercent: 0.2
+  heavyCarryThreshold01: 0.7
+  encumbranceSpeedPenaltyMax: 0.35
+  strengthXpPerMeterHeavyCarry: 0.2
+  strengthXpPerWeightedCombatHit: 2.5
+  weightedUnarmedXpMultiplier: 1.15
+  strengthXpPerWeightTrainingRep: 8
+  toughnessXpBaseRequirement: 25
+  toughnessXpRequirementGrowthPerLevel: 5
+  toughnessDamageReductionAtLevel100: 0.5
+  toughnessHealthBonusPerLevelPercent: 0.1
+  toughnessXpPerDamagePoint: 0.05
+  constitutionXpBaseRequirement: 30
+  constitutionXpRequirementGrowthPerLevel: 6
+  constitutionHealthBonusPerLevelPercent: 0.5
+  constitutionXpPerMeal: 10
+  constitutionXpPerVitamin: 5
+  constitutionXpPerDamagePoint: 0.02
+  shootingXpBaseRequirement: 20
+  shootingXpRequirementGrowthPerLevel: 4
+  shootingDamageMultiplierAtLevel100: 1.5
+  shootingRangeBonusAtLevel100: 0.5
+  shootingHitChanceBonusAtLevel100: 0.3
+  shootingXpPerRangedHit: 3
+  meleeXpBaseRequirement: 20
+  meleeXpRequirementGrowthPerLevel: 4
+  meleeDamageMultiplierAtLevel100: 1.75
+  meleeXpPerHit: 3
+  meleeAttackSpeedBonusAtLevel100: 0.4
+  meleeKnockbackChanceAtLevel100: 0.3
+  agilityXpBaseRequirement: 22
+  agilityXpRequirementGrowthPerLevel: 4
+  agilityMoveSpeedBonusAtLevel100: 0.4
+  agilityDodgeBonusAtLevel100: 0.25
+  agilityXpPerMeterSprinted: 0.1
+  enduranceXpBaseRequirement: 22
+  enduranceXpRequirementGrowthPerLevel: 4
+  enduranceStaminaBonusAtLevel100: 1
+  enduranceRegenBonusAtLevel100: 0.75
+  enduranceXpPerSecondExertion: 0.05
+  medicalXpBaseRequirement: 25
+  medicalXpRequirementGrowthPerLevel: 5
+  medicalHealBonusAtLevel100: 0.5
+  medicalXpPerHealPoint: 0.08
+  engineeringXpBaseRequirement: 25
+  engineeringXpRequirementGrowthPerLevel: 5
+  engineeringXpPerPiecePlaced: 12
+  engineeringBuildSpeedBonusAtLevel100: 0.4
+  strengthKnockbackChanceBonusAtLevel100: 0.25
+  scavengingXpBaseRequirement: 18
+  scavengingXpRequirementGrowthPerLevel: 3
+  scavengingLootBonusAtLevel100: 0.5
+  scavengingXpPerContainer: 8
+  stealthXpBaseRequirement: 20
+  stealthXpRequirementGrowthPerLevel: 4
+  stealthDetectionRadiusReductionAtLevel100: 0.6
+  stealthXpPerSecondUndetected: 0.04
+  crouchSpeedAtLevel1: 0.275
+  crouchSpeedAtLevel100: 1.1
+  crawlSpeedAtLevel1: 0.14
+  crawlSpeedAtLevel100: 0.56
+  crouchDetectionMultiplier: 0.65
+  crawlDetectionMultiplier: 0.35
+  crouchStealthXpMultiplier: 2
+  crawlStealthXpMultiplier: 4
+  strengthExperience: 0
+  toughnessExperience: 0
+  constitutionExperience: 0
+  shootingExperience: 0
+  meleeExperience: 0
+  agilityExperience: 0
+  enduranceExperience: 0
+  medicalExperience: 0
+  engineeringExperience: 0
+  scavengingExperience: 0
+  stealthExperience: 0
+  enableLiveXpDebug: 0
+  logOnlyPlayerXp: 0
+  liveXpDebugCombatSkillsOnly: 0
+--- !u!114 &2283665939017414485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2251377041606543259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc105e9d80aeef448abd5723c8880184, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Zombera.Characters.Unit
+  unitId: 8f2282a89e6d4a5292956b240a15e1d7
+  role: 0
+  controller: {fileID: 2239166284392220803}
+  health: {fileID: 1544373655612768297}
+  combat: {fileID: 4665536780767459007}
+  inventory: {fileID: 4513795895996080546}
+  stats: {fileID: 5195684907110859463}
+  optionalAI: {fileID: 0}
+--- !u!195 &7381806910819660277
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2251377041606543259}
+  m_Enabled: 0
+  m_AgentTypeID: 0
+  m_Radius: 0.3
+  m_Speed: 4
+  m_Acceleration: 20
+  avoidancePriority: 50
+  m_AngularSpeed: 200
+  m_StoppingDistance: 0.2
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 1
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &5330676172670319561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2251377041606543259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a96405de58c1b6e4287b75346d07dc25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Zombera.Systems.PlayerInputController
+  allowMoveCommandToCancelAttack: 1
+  allowMoveWhileHoldingLeftMouse: 0
+  attackScanRadius: 20
+  autoEngageEnemyDistanceMeters: 2
+  autoEngageSuppressAfterPlayerMoveSeconds: 1
+  bowAimInitiationMaxSpeedMetersPerSecond: 0.08
+  bowChargeDurationAtLevel100Seconds: 1
+  bowChargeDurationAtLevel1Seconds: 5
+  bowDrawDurationSeconds: 0.16
+  bowMaximumAttackRangeMeters: 30
+  bowMeleeFallbackDistanceMeters: 2
+  bowPreferredMaxDistanceMeters: 12
+  bowPreferredMinDistanceMeters: 6
+  bowRepositionIntervalSeconds: 0.25
+  bowRepositionStepMeters: 1.6
+  bowShotCadencePaddingSeconds: 0.03
+  bowShotProgressWorldUI: {fileID: 0}
+  bowStartFacingToleranceDegrees: 12
+  easyBuildCursorPlacementBinder: {fileID: 0}
+  autoAttachEasyBuildCursorPlacementBinder: 0
+  easyBuildRadialMenuInputBridge: {fileID: 0}
+  autoAttachEasyBuildRadialMenuInputBridge: 1
+  legacyBuildPlacementController: {fileID: 0}
+  autoAttachBuildPlacementControllerForHudBuilds: 1
+  combatFaceAssistCompleteAngleDegrees: 4
+  combatFaceAssistDurationSeconds: 0.4
+  combatFaceTurnSpeedDegreesPerSecond: 720
+  combatFootwork: {fileID: 0}
+  combatManager: {fileID: 0}
+  combatSystem: {fileID: 0}
+  containerInteractor: {fileID: 0}
+  crawlKey: 40
+  crawlTransitionLockSeconds: 0.4
+  crouchKey: 17
+  crouchTransitionLockSeconds: 0.35
+  cursorManager: {fileID: 0}
+  diggingSystem: {fileID: 0}
+  digProgressWorldUI: {fileID: 0}
+  doorInteractor: {fileID: 5653015167062943022}
+  dragSelectionBorderColor: {r: 0.3, g: 0.78, b: 1, a: 0.95}
+  dragSelectionBorderThickness: 2
+  dragSelectionFillColor: {r: 0.16, g: 0.55, b: 0.82, a: 0.16}
+  dragSelectionScreenPaddingPixels: 8
+  dragSelectionThresholdPixels: 16
+  enableBowRangedCombatState: 1
+  enableDragBoxSquadSelection: 1
+  enableClickSquadSelection: 1
+  allowAdditiveSelectionModifier: 1
+  enableSprinting: 1
+  enableWeightTrainingHotkey: 1
+  encounterManager: {fileID: 0}
+  encounterStartFacingToleranceDegrees: 12
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  interactKey: 19
+  issueSquadMoveOnRightClick: 1
+  itemPickupInteractor: {fileID: 0}
+  lockMovementDuringPostureTransitions: 1
+  maintainBowPreferredStandoffDistance: 0
+  minimumAttackMovementLockSeconds: 0.65
+  playerAnimationController: {fileID: 0}
+  playerUnit: {fileID: 0}
+  playFacingTurnAnimationOnHostileClick: 0
+  postAttackMovementLockSeconds: 0.2
+  postStandJogBuildUpSeconds: 0.3
+  postStandJogStartSpeedMultiplier: 0.35
+  preferredEncounterStartDistanceFactor: 0.5
+  requireHeavyCarryForWeightTraining: 1
+  requireHostileTargetsForCursorAndClick: 1
+  requireNoCombatTarget: 1
+  rightClickDigEnabled: 1
+  sprintToggleStartsEnabled: 0
+  squadManager: {fileID: 0}
+  standUpDurationSeconds: 0.5
+  standUpFromCrawlLockSeconds: 0.55
+  standUpFromCrouchLockSeconds: 0.45
+  suspendGameplayInputWhileBuilding: 1
+  targetableMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  targetingQueryTriggerInteraction: 2
+  targetingRayDistance: 1000
+  unitCombat: {fileID: 0}
+  unitController: {fileID: 0}
+  weaponSystem: {fileID: 0}
+  weightTrainingRepCooldownSeconds: 0.6
+  worldCamera: {fileID: 0}
+  zombieHoverAssistRadius: 0.35
+  externalMouseInputOverride: 0
+--- !u!114 &660224130347150544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2251377041606543259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a762b5df7e2b5d4d9425ddd8e52496f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Zombera.Characters.PlayerAnimationController
+  unit: {fileID: 0}
+  unitHealth: {fileID: 0}
+  weaponSystem: {fileID: 0}
+  attackTriggerParameter: AttackTrigger
+  dodgeLeftTriggerParameter: DodgeLeftTrigger
+  dodgeRightTriggerParameter: DodgeRightTrigger
+  hitTriggerParameter: HitTrigger
+  dieTriggerParameter: DieTrigger
+  isDeadParameter: IsDead
+  triggerDodgeFromCombatTicks: 1
+  maxAttackWindupAnimationDistance: 1.6
+  suppressDefensiveReactionsWhileAttacking: 1
+  defensiveReactionSuppressAfterAttackTriggerSeconds: 0.18
+  combatStateHoldSeconds: 1.1
+  weightedAttackOptions:
+  - attackStyle: 1
+    weight: 3
+    triggerParameter: AttackJabTrigger
+    fallbackStateName: Attack_Jab
+    preferredReactionArea: 1
+    clipNameKeywords:
+    - jab
+  - attackStyle: 2
+    weight: 2.25
+    triggerParameter: AttackCrossTrigger
+    fallbackStateName: Attack_Cross
+    preferredReactionArea: 2
+    clipNameKeywords:
+    - cross
+  - attackStyle: 3
+    weight: 1.75
+    triggerParameter: AttackHookTrigger
+    fallbackStateName: Attack_Hook
+    preferredReactionArea: 4
+    clipNameKeywords:
+    - hook
+  - attackStyle: 4
+    weight: 1.35
+    triggerParameter: AttackUppercutTrigger
+    fallbackStateName: Attack_Uppercut
+    preferredReactionArea: 2
+    clipNameKeywords:
+    - uppercut
+  - attackStyle: 5
+    weight: 1.1
+    triggerParameter: AttackKneeTrigger
+    fallbackStateName: Attack_Knee
+    preferredReactionArea: 5
+    clipNameKeywords:
+    - knee
+  - attackStyle: 7
+    weight: 0.95
+    triggerParameter: AttackComboTrigger
+    fallbackStateName: Attack_Combo
+    preferredReactionArea: 1
+    clipNameKeywords:
+    - combo
+  - attackStyle: 6
+    weight: 0.8
+    triggerParameter: AttackLowKickTrigger
+    fallbackStateName: Attack_LowKick
+    preferredReactionArea: 2
+    clipNameKeywords:
+    - kick
+  attackReactionTimelines:
+  - attackStyle: 7
+    fallbackReactionArea: 1
+    timedReactions:
+    - hitTimeSeconds: 0.14
+      reactionArea: 1
+    - hitTimeSeconds: 1.04
+      reactionArea: 1
+    - hitTimeSeconds: 1.17
+      reactionArea: 2
+  - attackStyle: 3
+    fallbackReactionArea: 1
+    timedReactions:
+    - hitTimeSeconds: 0.08
+      reactionArea: 1
+  - attackStyle: 4
+    fallbackReactionArea: 2
+    timedReactions:
+    - hitTimeSeconds: 0.1
+      reactionArea: 2
+  - attackStyle: 6
+    fallbackReactionArea: 2
+    timedReactions:
+    - hitTimeSeconds: 0.11
+      reactionArea: 2
+  combatEntryTriggerParameter: CombatEntryTrigger
+  combatEntryStateName: CombatEntry
+  combatEntryTriggerCooldownSeconds: 0.4
+  playRandomTurnOnFacing: 1
+  turnLeftStateName: TurnLeft
+  turnRightStateName: TurnRight
+  biasTurnDirectionTowardTargetSide: 1
+  oppositeTurnDirectionChance: 0.05
+  minimumFacingTurnAngleDegrees: 8
+  maximumFacingTurnAnimationAngleDegrees: 85
+  turnAnimationCooldownSeconds: 0.1
+  locomotionStateName: Locomotion
+  idleStateName: Idle
+  turnAroundAngleDegrees: 100
+  forceStateFallbackWhenTriggerSet: 0
+  attackStateName: Attack
+  dodgeLeftStateName: DodgeLeft
+  dodgeRightStateName: DodgeRight
+  dodgeStepDistance: 0.24
+  dodgeStepDurationSeconds: 0.18
+  dodgeFaceLockTurnSpeedDegreesPerSecond: 1080
+  dodgeFaceLockExtraSeconds: 0.08
+  hitStateName: Hit
+  deadStateName: Dead
+  fallbackCrossFadeSeconds: 0.04
+  enableCombatEyeFocus: 1
+  combatLookAtHeightOffset: 1.5
+  combatLookAtOverallWeight: 0.75
+  combatLookAtBodyWeight: 0.12
+  combatLookAtHeadWeight: 0.85
+  combatLookAtEyesWeight: 1
+  combatLookAtClampWeight: 0.55
+  combatLookAtWeightLerpSpeed: 7
+  combatLookAtPositionLerpSpeed: 9
+  combatLookTargetSwitchDelaySeconds: 0.15
+  enableFolderClipVariants: 1
+  playerFolderClips:
+  - {fileID: -203655887218126122, guid: 019397f39d7f04548869c2f9ee9899bc, type: 3}
+  - {fileID: -203655887218126122, guid: bef993512736ff449b5cda888fe5e1c7, type: 3}
+  - {fileID: -203655887218126122, guid: 6aa4d6ac0b42db54788a532f8664ea26, type: 3}
+  - {fileID: -203655887218126122, guid: efbaf67ddab9f664b8d09bd78582dd17, type: 3}
+  - {fileID: -203655887218126122, guid: b6a629364ff194e4095bb1955160c180, type: 3}
+  - {fileID: -203655887218126122, guid: d4a70b0acec10ea48a85438317d30145, type: 3}
+  - {fileID: -203655887218126122, guid: db4cf8b37c1045f44861bf4777f5ea23, type: 3}
+  - {fileID: -203655887218126122, guid: 8c24071df98756741ad8d2938664f0d2, type: 3}
+  - {fileID: -203655887218126122, guid: 3d51369860fba744b8719072dccf7cfa, type: 3}
+  - {fileID: -203655887218126122, guid: 18f7ca758b6adce4e9edc2f1146c680b, type: 3}
+  - {fileID: -203655887218126122, guid: 21c8316caf7b94049a489a21b577c9d3, type: 3}
+  - {fileID: -203655887218126122, guid: 5deb99455804ce144b936200a550e9e2, type: 3}
+  - {fileID: -203655887218126122, guid: 0239a5610e4e21841af1d660a7f53bda, type: 3}
+  - {fileID: -203655887218126122, guid: b28ed1316004c8e48ba1a08896e938c9, type: 3}
+  - {fileID: -203655887218126122, guid: 99e29bc2df35024419679426e0479f73, type: 3}
+  - {fileID: -203655887218126122, guid: e7117e2d1b2c92e4e8016be71fe0e9ed, type: 3}
+  - {fileID: -203655887218126122, guid: 0ff2afc0f6b75f345aaec0bee4739e92, type: 3}
+  - {fileID: -203655887218126122, guid: 4091fb4e60cafaa4dbbb7bdaae498932, type: 3}
+  speedParameter: Speed
+  velocityXParameter: VelocityX
+  velocityZParameter: VelocityZ
+  isSprintingParameter: IsSprinting
+  isCrouchingParameter: IsCrouching
+  isCrawlingParameter: IsCrawling
+  isSittingParameter: IsSitting
+  isInCombatParameter: IsInCombat
+  locomotionSpeedDampTime: 0.12
+  locomotionVelocityDampTime: 0.1
+  locomotionIdleVelocityDeadZone: 0.12
+  applyAnimatorCullDefaults: 1
+  animatorCullingMode: 2
+  bowEquippedParameter: BowEquipped
+  bowAimYParameter: BowAimY
+  bowNotchParameter: BowNotch
+  bowShootParameter: BowShoot
+  bowRapidFireParameter: BowRapidFire
+  bowAimHeightOffset: 1.45
+  bowAimActivationMaxSpeedMetersPerSecond: 0.08
+  bowAimFacingToleranceDegrees: 12
+  bowAnimationMaxNormalizedMoveSpeed: 0.18
+  bowNotchStateName: BowNotch
+  bowShootStateName: BowShoot
+  bowShootFallbackCrossFadeSeconds: 0.05
+  driveBowVisualRig: 1
+  bowVisualNameContains: Wooden Bow
+  bowVisualClipName: Armature.001Action.003
+  bowVisualClipAssetPath: Assets/ThirdParty/Free medieval weapons/Models/Wooden Bow.fbx
+  bowVisualHoldNormalizedTime: 0.62
+  bowVisualDrawPlaybackSpeed: 1
+  bowVisualReleasePlaybackSpeed: 2.2
+  baseIdleClip: {fileID: 7400020, guid: ce448a8080b4e934b8473badd27be402, type: 3}
+  baseLocomotionClip: {fileID: 7400024, guid: b35bea543177b624b8e504a16956614d, type: 3}
+  baseAttackClip: {fileID: -203655887218126122, guid: b28ed1316004c8e48ba1a08896e938c9, type: 3}
+  baseDodgeClip: {fileID: 7400024, guid: b35bea543177b624b8e504a16956614d, type: 3}
+  baseHitClip: {fileID: -203655887218126122, guid: 6d45f60e5fe02304788503cecaeccca6, type: 3}
+  baseDeadClip: {fileID: -203655887218126122, guid: e7117e2d1b2c92e4e8016be71fe0e9ed, type: 3}
+  baseTurnLeftClip: {fileID: -203655887218126122, guid: 18f7ca758b6adce4e9edc2f1146c680b, type: 3}
+  baseTurnRightClip: {fileID: -203655887218126122, guid: 5deb99455804ce144b936200a550e9e2, type: 3}
+--- !u!114 &2519484711262428954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2251377041606543259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7da4367cc0bccd4da5d38e8fbd1c5b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: MindCodeInteractive.EasyBuildSystem.Runtime::MindCodeInteractive.EasyBuildSystem.Framework.Code.Runtime.Systems.Controllers.Inputs.BuildingInput
+  m_validateActionRef: {fileID: 0}
+  m_cancelActionRef: {fileID: 0}
+  m_rotateActionRef: {fileID: 0}
+  m_selectActionRef: {fileID: 0}
+  m_placementModeActionRef: {fileID: 0}
+  m_destructionModeActionRef: {fileID: 0}
+  m_adjustmentModeActionRef: {fileID: 0}
+  m_blockWhenPointerOverUI: 1
+  m_enableDirectControls: 1
+  m_useCustomPartsSelection: 0
+  m_customPartReferences: []
+--- !u!114 &2404281432779762516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2251377041606543259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c062167d0d125c94bb08febd1c4a8e3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Zombera.Runtime::Zombera.Combat.WeaponSystem
+  equippedWeapon: {fileID: 0}
+  secondaryWeapon: {fileID: 0}
+  muzzlePoint: {fileID: 0}
+  projectilePrefab: {fileID: 0}
+  slotHandR: {fileID: 0}
+  slotHandL: {fileID: 0}
+  slotBack: {fileID: 0}
+  slotHipR: {fileID: 0}
+  slotHipL: {fileID: 0}
+  slotChest: {fileID: 0}
+  requireFacingForCloseRangeHits: 1
+  closeRangeFacingAngleDegrees: 65
+  unarmedRange: 2.25
+  meleeRange: 1.5
+  knockbackForce: 6
+  bowProjectileArcHeight: 1.2
+  bowProjectileGravityScale: 1.35
+  bowProjectileEmbeddedLifetimeSeconds: 18
+  bowProjectilesStickToTargets: 1
+  bowProjectilesEmbedInEnvironment: 1
+  bowMaximumRangeMeters: 100
+  bowHitChanceAtMaxRange: 0.35
+  bowArrowVisualPrefab: {fileID: 1959729250425484, guid: 5187dfa4d8f19524e8bbf7c6894b7de7, type: 3}
+  preferBowArrowVisualPrefab: 1
+  enableRuntimeBowProjectileFallback: 1
+  runtimeBowProjectileThickness: 0.025
+  runtimeBowProjectileLength: 0.35
+  runtimeBowProjectileColor: {r: 0.58, g: 0.42, b: 0.24, a: 1}
+  bowReleaseArrowClip: {fileID: 8300000, guid: 16021114b5e455449ad4606efedc25e1, type: 3}
+  bowReleaseArrowVolume: 0.9
+  arrowHitBodyClip: {fileID: 8300000, guid: 15eae020bd24ec64caaa44908156c7a7, type: 3}
+  arrowHitBodyVolume: 0.9
+--- !u!114 &8446428402205026245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2251377041606543259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcffb0a198605474c8a4d1c67c1515fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UMA_Core::UMA.CharacterSystem.DynamicCharacterAvatar
+  context: {fileID: 0}
+  umaData: {fileID: 0}
+  defaultRendererAsset: {fileID: 0}
+  umaRecipe: {fileID: 0}
+  umaAdditionalRecipes: []
+  umaGenerator: {fileID: 0}
+  animationController: {fileID: 0}
+  CharacterCreated:
+    m_PersistentCalls:
+      m_Calls: []
+  CharacterBegun:
+    m_PersistentCalls:
+      m_Calls: []
+  CharacterDestroyed:
+    m_PersistentCalls:
+      m_Calls: []
+  CharacterUpdated:
+    m_PersistentCalls:
+      m_Calls: []
+  CharacterDnaUpdated:
+    m_PersistentCalls:
+      m_Calls: []
+  AnimatorStateSaved:
+    m_PersistentCalls:
+      m_Calls: []
+  AnimatorStateRestored:
+    m_PersistentCalls:
+      m_Calls: []
+  DelayUnload: 2
+  BundleCheck: 1
+  KeepAnimatorController: 0
+  RecreateAnimatorOnRaceChange: 1
+  userInformation: 
+  RecipeUpdated:
+    m_PersistentCalls:
+      m_Calls: []
+  WardrobeAdded:
+    m_PersistentCalls:
+      m_Calls: []
+  WardrobeRemoved:
+    m_PersistentCalls:
+      m_Calls: []
+  CharacterStart:
+    m_PersistentCalls:
+      m_Calls: []
+  BuildCharacterBegun:
+    m_PersistentCalls:
+      m_Calls: []
+  SlotsHidden:
+    m_PersistentCalls:
+      m_Calls: []
+  WardrobeSuppressed:
+    m_PersistentCalls:
+      m_Calls: []
+  hide: 0
+  markNotReadable: 1
+  markDynamic: 1
+  loadBlendShapes: 0
+  loadOnlyUsedBlendshapes: 1
+  loadBlendshapeNormals: 1
+  loadBlendshapeTangents: 1
+  loadAllFrames: 1
+  forceKeepBlendshapes: []
+  keepAvatar: 0
+  rawAvatar: 0
+  keepPredefinedDNA: 0
+  activeRace:
+    name: HumanMale
+  defaultChangeRaceOptions: 8
+  cacheCurrentState: 1
+  rebuildSkeleton: 0
+  alwaysRebuildSkeleton: 0
+  forceRebindAnimator: 0
+  preloadWardrobeRecipes:
+    loadDefaultRecipes: 1
+    recipes: []
+  raceAnimationControllers:
+    defaultAnimationController: {fileID: 0}
+    animators: []
+    dynamicallyAddFromResources: 0
+    resourcesFolderPath: 
+  characterColors:
+    _colors: []
+  predefinedDNA:
+    PreloadValues: []
+  loadPathType: 0
+  loadPath: 
+  loadFilename: 
+  loadString: 
+  loadFileOnStart: 0
+  forceSlotMaterials: 0
+  AtlasResolutionScale: 1
+  defaultLoadOptions: 31
+  savePathType: 0
+  savePath: 
+  saveFilename: 
+  makeUniqueFilename: 0
+  ensureSharedColors: 0
+  defaultSaveOptions: 15
+  BoundsOffset: {x: 0, y: 0, z: 0}
+  editorTimeGeneration: 1
+  showPlaceholder: 1
+  previewModel: 0
+  customModel: {fileID: 0}
+  customRotation: {x: 0, y: 0, z: 0}
+  previewColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  _buildCharacterEnabled: 1
+  nextBuildSlotsOnly: 0
+  debugVertexes: 1

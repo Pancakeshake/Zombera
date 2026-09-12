@@ -1,0 +1,3 @@
+event: message
+data: {"result":{"content":[{"type":"text","text":"{\u0022result\u0022:\u0022[Success] Method not found. With request:\\nProfilerDriver.GetThreadIdentifiers()\u0022}"}],"structuredContent":{"result":"[Success] Method not found. With request:\nProfilerDriver.GetThreadIdentifiers()"},"isError":false},"id":10,"jsonrpc":"2.0"}
+

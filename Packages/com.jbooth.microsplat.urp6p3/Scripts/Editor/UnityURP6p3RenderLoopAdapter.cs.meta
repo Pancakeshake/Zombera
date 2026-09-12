@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: a4714fa2943761b4dbc0f230d4a8d865
+AssetOrigin:
+  serializedVersion: 1
+  productId: 344006
+  packageName: MicroSplat - URP for Unity 6.3
+  packageVersion: 1.0.1
+  assetPath: Packages/com.jbooth.microsplat.urp6p3/Scripts/Editor/UnityURP6p3RenderLoopAdapter.cs
+  uploadId: 830628

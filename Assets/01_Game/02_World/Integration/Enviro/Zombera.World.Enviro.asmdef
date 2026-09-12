@@ -1,0 +1,17 @@
+{
+  "name": "Zombera.World.Enviro",
+  "rootNamespace": "Zombera.World.Enviro",
+  "references": [
+    "Zombera.World.City",
+    "Zombera.Core"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

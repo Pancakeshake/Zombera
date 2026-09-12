@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1153882a1c31aa479830f76066dec2f, type: 3}
+  m_Name: Commercial_Kitchen
+  m_EditorClassIdentifier: Zombera.Editor::Zombera.Editor.ResidentialHouseTemplate
+  RoomSettings: {fileID: 0}
+  DisplayName: Commercial Kitchen
+  LotType: 1
+  PreferOpenPlan: 0
+  PreferredFloorCount: 1
+  MinFootprintWidth: 4
+  MaxFootprintWidth: 8
+  MinFootprintDepth: 4
+  MaxFootprintDepth: 4
+  RequiredRooms:
+  - RoomType: 10
+    MinCount: 1
+    MaxCount: 1
+  - RoomType: 12
+    MinCount: 1
+    MaxCount: 1
+  OptionalRooms:
+  - RoomType: 11
+    MinCount: 0
+    MaxCount: 1
+  AllowedRoofTypes: []
+  MinExteriorDoors: 1
+  MaxExteriorDoors: 1
+  AllowSideWindows: 0

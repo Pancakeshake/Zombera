@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e2ce7d4a15110b43bbbf4f012a379b7, type: 3}
+  m_Name: DistrictLotTerrainConfig
+  m_EditorClassIdentifier: Zombera.World::Zombera.World.Roads.DistrictLotTerrainConfig
+  textureArrayConfig: {fileID: 11400000, guid: bc47bb6d5099bd541b8a185ca8f130f1, type: 2}
+  residential:
+    textureLayerIndex: 0
+    heightOffsetMeters: 0.05
+  commercial:
+    textureLayerIndex: 14
+    heightOffsetMeters: 0.05
+  industrial:
+    textureLayerIndex: 13
+    heightOffsetMeters: 0.05
+  hospital:
+    textureLayerIndex: 14
+    heightOffsetMeters: 0.05
+  military:
+    textureLayerIndex: 0
+    heightOffsetMeters: 0.05
+  cityCore:
+    textureLayerIndex: 14
+    heightOffsetMeters: 0.05
+  park:
+    textureLayerIndex: 0
+    heightOffsetMeters: 0.05
+  mixed:
+    textureLayerIndex: 0
+    heightOffsetMeters: 0.05

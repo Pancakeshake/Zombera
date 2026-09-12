@@ -1,0 +1,342 @@
+# Multi-Agent Plan Critique
+
+You are the **lead technical architect** reviewing an implementation plan for a large-scale Unity procedural world-generation system.
+
+Your job is **not to approve the plan**. Your job is to find weaknesses, contradictions, missing requirements, unnecessary complexity, performance problems, architectural risks, and implementation traps before any code is written.
+
+Use multiple independent subagents to critique the plan from different specialist perspectives.
+
+**Build pipeline reference:** When the plan touches the Development Hub Build tab / `WorldBuildStageRegistry`, ground critique in [`Build_Pipeline_Reference_Prompt.md`](Build_Pipeline_Reference_Prompt.md) (stage responsibilities, interaction/efficiency contracts, incorrect-implementations log). Flag plans that violate registry list order, contiguous Run Sections, or artifact-reuse contracts.
+
+## 1. First: Understand the Existing Architecture
+
+Before judging the plan, inspect the existing project architecture and relevant code.
+
+Identify:
+
+* Existing terrain-generation systems
+* World-generation pipeline
+* Terrain data structures
+* Biome systems
+* World seed/randomization
+* Chunk/streaming architecture
+* Editor tooling
+* Runtime generation
+* Save/load systems
+* Existing third-party terrain/world tools
+* Dependencies between systems
+* Existing conventions and abstractions
+
+Do not recommend replacing existing systems unless there is a concrete technical reason.
+
+---
+
+# 2. Spawn Independent Reviewers
+
+Create separate subagents with these roles.
+
+### Agent A — Senior Unity Architect
+
+Review:
+
+* Overall architecture
+* Separation of responsibilities
+* Coupling
+* Extensibility
+* Dependency direction
+* Data flow
+* Integration with existing systems
+* Maintainability
+
+Ask:
+
+> Is this architecture actually appropriate for a large procedural Unity game?
+
+---
+
+### Agent B — Procedural Terrain Specialist
+
+Review:
+
+* Heightmap generation
+* Noise algorithms
+* Mountain formation
+* Hill formation
+* Ridgelines
+* Valleys
+* Erosion
+* Domain warping
+* Geological plausibility
+* Scale consistency
+* Terrain transitions
+
+Ask:
+
+> Will this actually produce convincing terrain, or merely technically valid procedural noise?
+
+Identify mathematical or algorithmic weaknesses.
+
+---
+
+### Agent C — Unity Performance Engineer
+
+Assume the world can become extremely large.
+
+Review:
+
+* CPU cost
+* GPU cost
+* Memory usage
+* Heightmap resolution
+* Terrain resolution
+* Chunk generation
+* Generation frequency
+* Runtime generation
+* Editor generation
+* Garbage allocation
+* Multithreading/job opportunities
+* Burst opportunities
+* Async processing
+* Streaming implications
+
+Identify anything that could cause:
+
+* Editor freezes
+* Frame-time spikes
+* Memory explosions
+* Long generation times
+* GC spikes
+
+Provide approximate complexity where possible.
+
+---
+
+### Agent D — Gameplay / World Simulation Engineer
+
+Review whether the generated terrain will actually support gameplay.
+
+Consider:
+
+* Roads
+* Cities
+* Buildings
+* NPC navigation
+* Vehicles
+* Rivers
+* Settlements
+* POIs
+* Farming
+* Exploration
+* Zombie gameplay
+* Line of sight
+* Traversability
+
+Identify terrain characteristics that could make downstream systems difficult.
+
+---
+
+### Agent E — Data / Save-System Engineer
+
+Review:
+
+* Deterministic generation
+* Seeds
+* Serialization
+* Regeneration
+* Persistence
+* Modified terrain
+* Save/load
+* Versioning
+* Reproducibility
+
+Ask:
+
+> Can the exact same world be regenerated reliably months later after the project changes?
+
+Identify risks around generated state versus source parameters.
+
+---
+
+### Agent F — Testing / QA Engineer
+
+Attempt to break the plan.
+
+Look for:
+
+* Edge cases
+* Invalid seeds
+* Extreme parameter values
+* Tiny worlds
+* Huge worlds
+* Flat worlds
+* Extremely mountainous worlds
+* Terrain boundaries
+* Chunk boundaries
+* Floating-point problems
+* Determinism failures
+* Generation-order bugs
+* Streaming bugs
+
+Design tests that would expose these problems.
+
+---
+
+### Agent G — Adversarial Reviewer
+
+Assume the plan is wrong.
+
+Try to prove it wrong.
+
+Look specifically for:
+
+* Overengineering
+* Unnecessary abstractions
+* Redundant systems
+* Hidden assumptions
+* Technical debt
+* Systems that should be simplified
+* Systems that are missing entirely
+* Features that should be deferred
+* Third-party tools being duplicated unnecessarily
+
+Do not be polite. Find actual problems.
+
+---
+
+# 3. Cross-Examine the Results
+
+After all agents finish, act as the **lead architect**.
+
+Compare their findings.
+
+Do not simply concatenate their reports.
+
+Classify every finding:
+
+### CRITICAL
+
+Could cause architectural failure, severe performance problems, corrupted state, or major rework.
+
+### HIGH
+
+Likely to cause significant implementation or maintenance problems.
+
+### MEDIUM
+
+Worth fixing but unlikely to invalidate the architecture.
+
+### LOW
+
+Minor improvement or preference.
+
+### FALSE POSITIVE
+
+The reviewer identified something that is not actually a problem after considering the existing architecture.
+
+---
+
+# 4. Resolve Conflicts
+
+When subagents disagree:
+
+1. Inspect the actual code.
+2. Determine which assumption is correct.
+3. Explain why.
+4. Do not average conflicting opinions.
+5. Prefer evidence from the existing project over generic best practices.
+
+---
+
+# 5. Produce a Revised Plan
+
+Create a corrected implementation plan.
+
+For every change include:
+
+* What changes
+* Why it changes
+* Which existing system it integrates with
+* Files/classes likely affected
+* Dependencies
+* Data flow
+* Performance implications
+* Testing requirements
+
+Keep the architecture as simple as possible while satisfying the requirements.
+
+---
+
+# 6. Identify Missing Work
+
+Create a section called:
+
+## Missing Requirements
+
+List anything the original plan failed to account for.
+
+Do not invent requirements that are unrelated to the system.
+
+---
+
+# 7. Identify Risks
+
+Create:
+
+## Risk Register
+
+| Risk | Severity | Probability | Impact | Mitigation |
+| ---- | -------- | ----------- | ------ | ---------- |
+
+Prioritize risks that could require rewriting substantial portions of the system.
+
+---
+
+# 8. Implementation Readiness
+
+Give the final plan one of these statuses:
+
+### READY
+
+The plan is sufficiently specified to begin implementation.
+
+### READY WITH CHANGES
+
+The architecture is sound but specific changes should be made before implementation.
+
+### NOT READY
+
+Major architectural or technical problems remain.
+
+If the result is anything other than READY, explicitly list what must be changed before coding begins.
+
+---
+
+# 9. Final Architecture Review
+
+Finish with:
+
+### What the original plan got right
+
+### What the original plan got wrong
+
+### What was missing
+
+### What should be simplified
+
+### What should be added
+
+### Final recommended architecture
+
+### Implementation order
+
+### Biggest technical risk
+
+### Biggest performance risk
+
+### Biggest maintainability risk
+
+### Confidence level
+
+Do not start implementing code.
+
+The objective is to produce the **best possible implementation plan after adversarial multi-agent review**, not to defend the original plan.

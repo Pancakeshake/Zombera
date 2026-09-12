@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1153882a1c31aa479830f76066dec2f, type: 3}
+  m_Name: Residential_1BR
+  m_EditorClassIdentifier: Zombera.Editor::Zombera.Editor.ResidentialHouseTemplate
+  RoomSettings: {fileID: 11400000, guid: de04645d567914d48907cb781fdba6ad, type: 2}
+  DisplayName: 1 Bedroom
+  LotType: 0
+  PreferOpenPlan: 1
+  PreferredFloorCount: 1
+  MinFootprintWidth: 2
+  MaxFootprintWidth: 6
+  MinFootprintDepth: 4
+  MaxFootprintDepth: 4
+  RequiredRooms:
+  - RoomType: 0
+    MinCount: 1
+    MaxCount: 1
+  - RoomType: 1
+    MinCount: 1
+    MaxCount: 1
+  - RoomType: 2
+    MinCount: 1
+    MaxCount: 1
+  - RoomType: 3
+    MinCount: 1
+    MaxCount: 1
+  - RoomType: 4
+    MinCount: 1
+    MaxCount: 1
+  OptionalRooms:
+  - RoomType: 5
+    MinCount: 0
+    MaxCount: 1
+  AllowedRoofTypes:
+  - {fileID: 11400000, guid: 73a577b2f204dca41ad6926408281fa7, type: 2}
+  - {fileID: 11400000, guid: 9cbf7ae8b5f74ddb8deef6b7f3ea5a4d, type: 2}
+  - {fileID: 11400000, guid: 7e32c8a18bfbf8c45adfde7e69abb0f7, type: 2}
+  - {fileID: 11400000, guid: 097c892be99b41c6b1d110bfc35c1119, type: 2}
+  - {fileID: 11400000, guid: 4e241908434d2864b8c08c89752aa1b9, type: 2}
+  - {fileID: 11400000, guid: 231bf53b0a3af2c458d796dc8675f664, type: 2}
+  - {fileID: 11400000, guid: abfe305ebb804654982b0f97c0ce80fc, type: 2}
+  - {fileID: 11400000, guid: 3c8cd5e46ab149a2b5a99dc67146f51c, type: 2}
+  MinExteriorDoors: 1
+  MaxExteriorDoors: 2

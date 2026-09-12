@@ -1,0 +1,270 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad1e963803903e548945da21f982d342, type: 3}
+  m_Name: StreamedCityCatalog
+  m_EditorClassIdentifier: Zombera.Runtime::Zombera.World.City.StreamedCityCatalog
+  entries:
+  - id: CityCore_114642
+    prefab: {fileID: 376853701383047704, guid: fd97dbaebcf05cc48a4c3c4837b373c2, type: 3}
+    weight: 1
+    footprintWidthMeters: 25.050001
+    footprintDepthMeters: 24.100002
+    yawOffsetDegrees: 0
+    allowedRoadCityZones: 07000000
+    useProxySwap: 1
+    proxyPrefab: {fileID: 4651272657157636869, guid: 3b1c721cf9f445b49b1c241ea07dc6e1, type: 3}
+    proxySwapDistanceMeters: 10
+    proxySwapOnFirstDamage: 1
+    ensureStructureHealth: 1
+    structureMaxHealth: 250
+    ensureBuildPiece: 1
+    buildPieceCategory: 4
+  - id: CityCore_282089
+    prefab: {fileID: 8457125087093893611, guid: b94c8df6299181a4a8e37e9eb38d039a, type: 3}
+    weight: 1
+    footprintWidthMeters: 18.100002
+    footprintDepthMeters: 19.050001
+    yawOffsetDegrees: 0
+    allowedRoadCityZones: 07000000
+    useProxySwap: 1
+    proxyPrefab: {fileID: 7301339596424836459, guid: 6ad273add0aaa0d419c94287f92477d4, type: 3}
+    proxySwapDistanceMeters: 10
+    proxySwapOnFirstDamage: 1
+    ensureStructureHealth: 1
+    structureMaxHealth: 250
+    ensureBuildPiece: 1
+    buildPieceCategory: 4
+  - id: CityCore_384073
+    prefab: {fileID: 2390058591637268381, guid: 63aad1dc72e26934aa9cd5b96c5183be, type: 3}
+    weight: 1
+    footprintWidthMeters: 52.050003
+    footprintDepthMeters: 51.1
+    yawOffsetDegrees: 0
+    allowedRoadCityZones: 07000000
+    useProxySwap: 1
+    proxyPrefab: {fileID: 1569578773218637907, guid: 67ba37ca62987be4bb0c30b50da1d0b0, type: 3}
+    proxySwapDistanceMeters: 10
+    proxySwapOnFirstDamage: 1
+    ensureStructureHealth: 1
+    structureMaxHealth: 250
+    ensureBuildPiece: 1
+    buildPieceCategory: 4
+  - id: CityCore_746574
+    prefab: {fileID: 7116351259958579522, guid: e21c9bd7e9260e046aa57593b34de587, type: 3}
+    weight: 1
+    footprintWidthMeters: 36.1
+    footprintDepthMeters: 31.050001
+    yawOffsetDegrees: 0
+    allowedRoadCityZones: 07000000
+    useProxySwap: 1
+    proxyPrefab: {fileID: 7154009061450850823, guid: 2c7a57e65a1f6b94498f3dfbf78c82cd, type: 3}
+    proxySwapDistanceMeters: 10
+    proxySwapOnFirstDamage: 1
+    ensureStructureHealth: 1
+    structureMaxHealth: 250
+    ensureBuildPiece: 1
+    buildPieceCategory: 4
+  - id: CityCore_877332
+    prefab: {fileID: 3457066861003013679, guid: 2ccc96033a7b08f40826b7973750908e, type: 3}
+    weight: 1
+    footprintWidthMeters: 24.100002
+    footprintDepthMeters: 25.050001
+    yawOffsetDegrees: 0
+    allowedRoadCityZones: 07000000
+    useProxySwap: 1
+    proxyPrefab: {fileID: 7647293302251621156, guid: 7429f3b2cac24af4eae3a03034ef023a, type: 3}
+    proxySwapDistanceMeters: 10
+    proxySwapOnFirstDamage: 1
+    ensureStructureHealth: 1
+    structureMaxHealth: 250
+    ensureBuildPiece: 1
+    buildPieceCategory: 4
+  - id: CityCore_934404
+    prefab: {fileID: 2701810079751536997, guid: 2c2b4718db318db48ab7e0b25e32d250, type: 3}
+    weight: 1
+    footprintWidthMeters: 36.1
+    footprintDepthMeters: 13.050001
+    yawOffsetDegrees: 0
+    allowedRoadCityZones: 07000000
+    useProxySwap: 1
+    proxyPrefab: {fileID: 1965260343862039858, guid: f4e3d9253f1bd814184cbad5cdd99286, type: 3}
+    proxySwapDistanceMeters: 10
+    proxySwapOnFirstDamage: 1
+    ensureStructureHealth: 1
+    structureMaxHealth: 250
+    ensureBuildPiece: 1
+    buildPieceCategory: 4
+  - id: Commercial_406176
+    prefab: {fileID: 446692017057513959, guid: 123c2dcb205f92a479e1605b9083235a, type: 3}
+    weight: 1
+    footprintWidthMeters: 22.050001
+    footprintDepthMeters: 8
+    yawOffsetDegrees: 0
+    allowedRoadCityZones: 03000000
+    useProxySwap: 1
+    proxyPrefab: {fileID: 548678202982122248, guid: e28281c66e94b2b4f92eb9789fb18cfd, type: 3}
+    proxySwapDistanceMeters: 10
+    proxySwapOnFirstDamage: 1
+    ensureStructureHealth: 1
+    structureMaxHealth: 250
+    ensureBuildPiece: 1
+    buildPieceCategory: 4
+  - id: Commercial_491735
+    prefab: {fileID: 6337125136794233700, guid: 8b3d603906d0d0a43b4ae6dcae7f8815, type: 3}
+    weight: 1
+    footprintWidthMeters: 11
+    footprintDepthMeters: 11
+    yawOffsetDegrees: 0
+    allowedRoadCityZones: 03000000
+    useProxySwap: 1
+    proxyPrefab: {fileID: 8663162481080869133, guid: 46818895189768049a3ad7c0a1685a0d, type: 3}
+    proxySwapDistanceMeters: 10
+    proxySwapOnFirstDamage: 1
+    ensureStructureHealth: 1
+    structureMaxHealth: 250
+    ensureBuildPiece: 1
+    buildPieceCategory: 4
+  - id: Commercial_629657
+    prefab: {fileID: 3809728511343823800, guid: 119390b9367c0834e8885df1b916e941, type: 3}
+    weight: 1
+    footprintWidthMeters: 11
+    footprintDepthMeters: 8
+    yawOffsetDegrees: 0
+    allowedRoadCityZones: 03000000
+    useProxySwap: 1
+    proxyPrefab: {fileID: 4790643117649854034, guid: cdd3cf5e7ed0d4d48aa84953de7f84f4, type: 3}
+    proxySwapDistanceMeters: 10
+    proxySwapOnFirstDamage: 1
+    ensureStructureHealth: 1
+    structureMaxHealth: 250
+    ensureBuildPiece: 1
+    buildPieceCategory: 4
+  - id: Commercial_807234
+    prefab: {fileID: 7453478046558296814, guid: 0948ae104430eea4486f390069832152, type: 3}
+    weight: 1
+    footprintWidthMeters: 15.100001
+    footprintDepthMeters: 8
+    yawOffsetDegrees: 0
+    allowedRoadCityZones: 03000000
+    useProxySwap: 1
+    proxyPrefab: {fileID: 7993056635363249372, guid: d4c35cf564b861443a14729bc7499fff, type: 3}
+    proxySwapDistanceMeters: 10
+    proxySwapOnFirstDamage: 1
+    ensureStructureHealth: 1
+    structureMaxHealth: 250
+    ensureBuildPiece: 1
+    buildPieceCategory: 4
+  - id: Commercial_810006
+    prefab: {fileID: 8704603781844577604, guid: e05733d945731914d98ba5f46d05d977, type: 3}
+    weight: 1
+    footprintWidthMeters: 10.050001
+    footprintDepthMeters: 10.050001
+    yawOffsetDegrees: 0
+    allowedRoadCityZones: 03000000
+    useProxySwap: 1
+    proxyPrefab: {fileID: 661049794001816222, guid: c940cd480747c3342b5bb5a8bd32e177, type: 3}
+    proxySwapDistanceMeters: 10
+    proxySwapOnFirstDamage: 1
+    ensureStructureHealth: 1
+    structureMaxHealth: 250
+    ensureBuildPiece: 1
+    buildPieceCategory: 4
+  - id: Hospital_788205
+    prefab: {fileID: 2226973002018267231, guid: c5645e4d49b755c469350e2fd0cf8744, type: 3}
+    weight: 1
+    footprintWidthMeters: 30.100002
+    footprintDepthMeters: 34.05
+    yawOffsetDegrees: 0
+    allowedRoadCityZones: 05000000
+    useProxySwap: 1
+    proxyPrefab: {fileID: 3669688550546136518, guid: 02e9bf485d4a5f64caf527fb81c9bbb2, type: 3}
+    proxySwapDistanceMeters: 10
+    proxySwapOnFirstDamage: 1
+    ensureStructureHealth: 1
+    structureMaxHealth: 250
+    ensureBuildPiece: 1
+    buildPieceCategory: 4
+  - id: Industrial_198263
+    prefab: {fileID: 3753864160667887238, guid: cdb117ade17cf114db0a437d3884a5cc, type: 3}
+    weight: 1
+    footprintWidthMeters: 31.050001
+    footprintDepthMeters: 33.100002
+    yawOffsetDegrees: 0
+    allowedRoadCityZones: 04000000
+    useProxySwap: 1
+    proxyPrefab: {fileID: 3329960451004172728, guid: cd8a74be646e3534c85784138faa09eb, type: 3}
+    proxySwapDistanceMeters: 10
+    proxySwapOnFirstDamage: 1
+    ensureStructureHealth: 1
+    structureMaxHealth: 250
+    ensureBuildPiece: 1
+    buildPieceCategory: 4
+  - id: Industrial_276390
+    prefab: {fileID: 7010538049025832479, guid: e760c5fed210a634fa23233bffdc7cc7, type: 3}
+    weight: 1
+    footprintWidthMeters: 19.050001
+    footprintDepthMeters: 18.100002
+    yawOffsetDegrees: 0
+    allowedRoadCityZones: 04000000
+    useProxySwap: 1
+    proxyPrefab: {fileID: 3688167312580316633, guid: 662edf6752f83dd438476b8b1af0ded1, type: 3}
+    proxySwapDistanceMeters: 10
+    proxySwapOnFirstDamage: 1
+    ensureStructureHealth: 1
+    structureMaxHealth: 250
+    ensureBuildPiece: 1
+    buildPieceCategory: 4
+  - id: Residential_289227
+    prefab: {fileID: 5695736956600599653, guid: 34834e27f5dfa6849b0af695d2932189, type: 3}
+    weight: 1
+    footprintWidthMeters: 15.100001
+    footprintDepthMeters: 16.05
+    yawOffsetDegrees: 0
+    allowedRoadCityZones: 02000000
+    useProxySwap: 1
+    proxyPrefab: {fileID: 9123545575079662112, guid: 12193b2a8b9960a4f8a224141a89a41f, type: 3}
+    proxySwapDistanceMeters: 10
+    proxySwapOnFirstDamage: 1
+    ensureStructureHealth: 1
+    structureMaxHealth: 250
+    ensureBuildPiece: 1
+    buildPieceCategory: 4
+  - id: Residential_314611
+    prefab: {fileID: 7325513939514891060, guid: 6dc8c1c883c8192438a5ec10a4212351, type: 3}
+    weight: 1
+    footprintWidthMeters: 7.050001
+    footprintDepthMeters: 6.1000023
+    yawOffsetDegrees: 0
+    allowedRoadCityZones: 02000000
+    useProxySwap: 1
+    proxyPrefab: {fileID: 7649749254837911493, guid: f0bd2403e2420a84d89a958b59c9f652, type: 3}
+    proxySwapDistanceMeters: 10
+    proxySwapOnFirstDamage: 1
+    ensureStructureHealth: 1
+    structureMaxHealth: 250
+    ensureBuildPiece: 1
+    buildPieceCategory: 4
+  - id: Residential_587833
+    prefab: {fileID: 8029101946425979228, guid: d4f189e623a8e554d9504ed306b390fb, type: 3}
+    weight: 1
+    footprintWidthMeters: 10.050001
+    footprintDepthMeters: 9.100002
+    yawOffsetDegrees: 0
+    allowedRoadCityZones: 02000000
+    useProxySwap: 1
+    proxyPrefab: {fileID: 5981498951913614448, guid: d85bb9ff830b6204caa9691bb304429a, type: 3}
+    proxySwapDistanceMeters: 10
+    proxySwapOnFirstDamage: 1
+    ensureStructureHealth: 1
+    structureMaxHealth: 250
+    ensureBuildPiece: 1
+    buildPieceCategory: 4

@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8ccdf31a89611e44b3d2a5046512f13, type: 3}
+  m_Name: CityAreaRuntimeConfig
+  m_EditorClassIdentifier: Zombera.World::Zombera.World.City.CityAreaRuntimeConfig
+  layout:
+    centerXZ: {x: 500, y: 500}
+    footprintShape: 0
+    cityRadiusMeters: 280
+    streetSpacingMeters: 80
+    randomizeCityExtents: 0
+    cityHalfWidthMinMeters: 400
+    cityHalfWidthMaxMeters: 400
+    cityHalfDepthMinMeters: 400
+    cityHalfDepthMaxMeters: 400
+    randomizeBlockSpacing: 1
+    blockSpacingMinMeters: 55
+    blockSpacingMaxMeters: 95
+    blockSpacingJitter: 0.22
+    generateStreetGrid: 1
+    generateArterialRing: 1
+    clipLocalStreetsToArterialRing: 1
+    arterialCornerRadiusMeters: 0
+    arterialRingRadiusNormalized: 0.72
+    arterialRingWobbleMeters: 0
+    generateHighwayExits: 0
+    highwayExitCount: 4
+    highwayExitAngleOffsetRadians: 0
+    highwayExitStartNormalized: 0.55
+    highwayExitEndNormalized: 1
+    layoutSeed: 0
+  roadNetworkSettings: {fileID: 11400000, guid: c7475783b26f2d24bace80fa498c2307, type: 2}
+  buildingCatalog: {fileID: 11400000, guid: 9bcfb91feeb2dad44a15786f37b63fe6, type: 2}
+  buildingLayoutSettings:
+    gridCellMeters: 3
+    streetSetbackMeters: 7
+    polygonSafetyMarginMeters: 2
+    minBuildingSpacingMeters: 1.5
+    footprintPaddingMeters: 1.5
+    rowsPerRoadSide: 1
+    rowSpacingMeters: 3
+    fillInterior: 1
+    placePerimeterRows: 1
+  useProxyPrefabs: 1
+  terrainFlattenPaddingMeters: 0.35
+  terrainFlattenBlendMeters: 3
+  waitForMainTerrainBeforeBuild: 1
+  biomeDominanceThreshold: 0.35
+  forceBuildOnSingleTileStressSession: 1
+  layoutSeed: 12345
+  useWorldSeedForLayout: 0
+  spawnCityRoadMeshes: 1
+  createJunctionConnectors: 1
+  tIntersectionsOnly: 0

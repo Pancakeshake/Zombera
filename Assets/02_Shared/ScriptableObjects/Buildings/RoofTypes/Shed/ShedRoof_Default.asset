@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 130cfd4ec3e954742b24228dbc1a7131, type: 3}
+  m_Name: ShedRoof_Default
+  m_EditorClassIdentifier: Zombera.Editor::Zombera.Editor.RoofTypeConfig
+  DisplayName: Shed Roof (Default)
+  Style: 2
+  RidgePrefab: {fileID: 0}
+  PanelPrefab: {fileID: 3049977835313473714, guid: 0943fee6435f4084386d4d263fcfe09a, type: 3}
+  GablePrefab: {fileID: 6568056880382460409, guid: 87cfdc1b65ab5a34c97970c44ed01131, type: 3}
+  TilePrefab: {fileID: 0}
+  PeakHeightMultiplier: 1
+  PanelDiagonalNorm: 2.2
+  PanelWidthMultiplier: 0.5
+  PanelZOverhang: 0.1
+  GableXSnugness: 0.98
+  GableYBaseHeight: 1.5
+  RidgeYOffset: 0.04
+  RidgeYScale: 2
+  RidgeZOverhang: 0.11
+  PanelXOffset: 0.07
+  PanelYOffset: 0.04
+  PanelXPositionMultiplier: 0.5
+  PanelYPositionMultiplier: 0.5
+  GableYPositionMultiplier: 0.5
+  FlatRoofYOffset: 0
+  FlatRoofYRotation: 0
+  FlatRoofZRotation: 0
+  FlatRoofXScale: 1
+  FlatRoofYScale: 1
+  FlatRoofZScale: 1
+  FlatRoofUvTiling: 1
+  ParapetYScale: 0
+  ParapetZScale: 1
+  ParapetInset: 0
+  ShedLowEdge: 1
+  ShedHighScale: 0.3333
+  ShedLowScale: 0
+  ShedPanelXScale: 0.3333
+  FlatRoofGutterXOffset: 0
+  FlatRoofGutterYOffset: 0
+  FlatRoofGutterZOffset: 0

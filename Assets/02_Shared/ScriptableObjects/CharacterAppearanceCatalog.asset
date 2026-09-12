@@ -1,0 +1,77 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e204ad1239d146040b68f7b1aab9df85, type: 3}
+  m_Name: CharacterAppearanceCatalog
+  m_EditorClassIdentifier: Zombera.Runtime::Zombera.UI.Menus.CharacterCreation.CharacterAppearanceCatalog
+  races:
+  - name: HumanFemale
+    displayName: Human Female
+    isMale: 0
+  - name: HumanMale
+    displayName: Human Male
+    isMale: 1
+  wardrobeOptions: []
+  dnaControls:
+  - dnaName: height
+    displayName: Height
+    defaultValue: 0.5
+    outputRange: {x: 0.4, y: 0.6}
+    isLocked: 0
+    lockedOutputRange: {x: 0.45, y: 0.55}
+  - dnaName: upperMuscle
+    displayName: Upper Muscle
+    defaultValue: 0.5
+    outputRange: {x: 0.4, y: 0.6}
+    isLocked: 0
+    lockedOutputRange: {x: 0.45, y: 0.55}
+  - dnaName: lowerMuscle
+    displayName: Lower Muscle
+    defaultValue: 0.5
+    outputRange: {x: 0.4, y: 0.6}
+    isLocked: 0
+    lockedOutputRange: {x: 0.45, y: 0.55}
+  - dnaName: belly
+    displayName: Belly
+    defaultValue: 0.5
+    outputRange: {x: 0.4, y: 0.6}
+    isLocked: 0
+    lockedOutputRange: {x: 0.45, y: 0.55}
+  - dnaName: headSize
+    displayName: Head Size
+    defaultValue: 0.5
+    outputRange: {x: 0.4, y: 0.6}
+    isLocked: 1
+    lockedOutputRange: {x: 0.45, y: 0.55}
+  - dnaName: armLength
+    displayName: Arm Length
+    defaultValue: 0.5
+    outputRange: {x: 0.4, y: 0.6}
+    isLocked: 1
+    lockedOutputRange: {x: 0.45, y: 0.55}
+  - dnaName: forearmLength
+    displayName: Forearm Length
+    defaultValue: 0.5
+    outputRange: {x: 0.4, y: 0.6}
+    isLocked: 1
+    lockedOutputRange: {x: 0.45, y: 0.55}
+  - dnaName: legSeparation
+    displayName: Leg Separation
+    defaultValue: 0.5
+    outputRange: {x: 0.4, y: 0.6}
+    isLocked: 0
+    lockedOutputRange: {x: 0.45, y: 0.55}
+  - dnaName: feetSize
+    displayName: Feet Size
+    defaultValue: 0.5
+    outputRange: {x: 0.4, y: 0.6}
+    isLocked: 1
+    lockedOutputRange: {x: 0.45, y: 0.55}

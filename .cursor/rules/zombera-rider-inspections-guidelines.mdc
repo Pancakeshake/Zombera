@@ -1,0 +1,54 @@
+---
+description: C# + Unity coding guidelines aligned with Rider/Qodana inspections; SARIF triage for rider-inspections.sarif
+globs: Assets/**/*.cs
+alwaysApply: false
+---
+
+# Rider/Qodana-aligned C# guidelines (Unity)
+
+## `rider-inspections.sarif` (Rider / InspectCode export)
+
+- Root-level **`rider-inspections.sarif`** is SARIF 2.1 and is usually **too large** to read inline in chat or to scroll through in the IDE. Use it as the **source export**, not the primary working document.
+- **Regenerate actionable TSVs** (from repo root):
+
+  ```text
+  python scripts/sort_rider_sarif_for_action.py
+  python scripts/sort_rider_sarif_for_action.py rider-inspections.sarif artifacts/rider-sarif-action
+  ```
+
+- **Work from** `artifacts/rider-sarif-action/*.tsv` — especially `rider-inspections.sorted.by-file-line-issue.tsv` and the summary files. For huge queues, use `python scripts/split_rider_sarif_into_thirds.py` and the `artifacts/rider-sarif-thirds/` parts.
+- **Triage**: compiler/asmdef errors first → `Assets/Scripts` → `Assets/Editor` → style/`note` → avoid bulk edits under `Assets/ThirdParty` unless trivial or intentional package work.
+- **Copilot** users: the same workflow is summarized in **`.github/copilot-instructions.md`** (section *Rider inspections and rider-inspections.sarif*).
+- **Architecture / streaming** while fixing issues: keep **`.cursor/rules/zombera-architecture.mdc`** and **`.cursor/rules/unity-csharp-streaming-navmesh.mdc`** in mind for anything touching world load, spawn, MapMagic, or NavMesh.
+
+## Inspection-driven C# fixes
+
+- **Address warnings first**: Treat `warning` inspections as must-fix. `note` inspections are desirable style improvements; batch them via refactors/cleanup when safe.
+- **Performance-critical code (Update/FixedUpdate/ticks)**:
+  - Avoid per-frame allocations: no LINQ, no `ToList`, no string concatenations, no `new` in tight loops unless unavoidable.
+  - Prefer `NonAlloc` physics queries (`Physics.OverlapSphereNonAlloc`, etc.) and reuse buffers.
+  - Cache component lookups (`GetComponent`) outside hot paths.
+  - Minimize repeated `UnityEngine.Object` null checks in tight loops; hoist checks out of loops when possible.
+- **Type style (`SuggestVarOrType_*`, `ArrangeObjectCreationWhenTypeEvident`)**:
+  - Prefer `var` when the RHS makes the type obvious.
+  - Prefer target-typed `new()` when the declared type is explicit.
+  - Prefer explicit types when it improves readability or the RHS is not obvious.
+
+```csharp
+// ✅ good
+var hitCount = Physics.OverlapSphereNonAlloc(pos, r, _hits, mask);
+List<Unit> allies = new(8);
+ZombieController zombie = Instantiate(zombiePrefab);
+```
+
+- **Control flow (`InvertIf`, `ConvertIfStatementToReturnStatement`)**:
+  - Prefer guard-clauses and early returns to reduce nesting.
+  - Keep state machines explicit; do not hide transitions in clever expressions.
+- **Naming (`InconsistentNaming`)**:
+  - Public API: `PascalCase`. Private fields: `_camelCase`. Serialized fields: keep private, still `_camelCase` (Unity supports `[SerializeField]`).
+  - Avoid abbreviations unless they are domain-standard (e.g., `NavMesh`, `UMA`).
+- **Dead code (`UnusedMember.*`, `NotAccessedField.*`, `CollectionNeverQueried.*`)**:
+  - If a field is only assigned, either use it (if it’s intentional) or delete it.
+  - If a collection is only updated, either query it for real behavior or remove it.
+  - Prefer deleting unused private helpers over suppressing warnings.
+

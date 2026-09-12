@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 933f46740338118429f9d3d0ca3c3efa, type: 3}
+  m_Name: RoomSettings
+  m_EditorClassIdentifier: Zombera.Editor::Zombera.Editor.RoomSettings
+  PropConfig: {fileID: 11400000, guid: fbb9b0d678c34d458d63069febc4b238, type: 2}
+  RoomTypes:
+  - Type: 0
+    AllowOpenPlan: 1
+    BlockFrontDoor: 0
+    FloorPercentageMin: 10
+    FloorPercentageMax: 40
+  - Type: 1
+    AllowOpenPlan: 1
+    BlockFrontDoor: 0
+    FloorPercentageMin: 10
+    FloorPercentageMax: 20
+  - Type: 2
+    AllowOpenPlan: 0
+    BlockFrontDoor: 1
+    FloorPercentageMin: 10
+    FloorPercentageMax: 25
+  - Type: 3
+    AllowOpenPlan: 0
+    BlockFrontDoor: 1
+    FloorPercentageMin: 5
+    FloorPercentageMax: 10
+  - Type: 4
+    AllowOpenPlan: 1
+    BlockFrontDoor: 0
+    FloorPercentageMin: 5
+    FloorPercentageMax: 10
+  - Type: 5
+    AllowOpenPlan: 1
+    BlockFrontDoor: 0
+    FloorPercentageMin: 10
+    FloorPercentageMax: 20
+  - Type: 6
+    AllowOpenPlan: 0
+    BlockFrontDoor: 1
+    FloorPercentageMin: 5
+    FloorPercentageMax: 10
+  - Type: 7
+    AllowOpenPlan: 0
+    BlockFrontDoor: 0
+    FloorPercentageMin: 10
+    FloorPercentageMax: 30
+  - Type: 8
+    AllowOpenPlan: 0
+    BlockFrontDoor: 0
+    FloorPercentageMin: 5
+    FloorPercentageMax: 10
+  AdjacencyRules:
+  - RoomA: 0
+    RoomB: 1
+    Adjacency: 0
+  - RoomA: 1
+    RoomB: 5
+    Adjacency: 1
+  - RoomA: 2
+    RoomB: 3
+    Adjacency: 1
+  - RoomA: 3
+    RoomB: 4
+    Adjacency: 0
+  - RoomA: 3
+    RoomB: 1
+    Adjacency: 2
+  - RoomA: 7
+    RoomB: 8
+    Adjacency: 0

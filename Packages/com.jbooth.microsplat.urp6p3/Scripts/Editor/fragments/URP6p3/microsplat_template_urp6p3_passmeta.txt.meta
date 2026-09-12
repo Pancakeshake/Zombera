@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 8b4e888b00268aa409dfefa0de11a1cb
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 344006
+  packageName: MicroSplat - URP for Unity 6.3
+  packageVersion: 1.0.1
+  assetPath: Packages/com.jbooth.microsplat.urp6p3/Scripts/Editor/fragments/URP6p3/microsplat_template_urp6p3_passmeta.txt
+  uploadId: 830628

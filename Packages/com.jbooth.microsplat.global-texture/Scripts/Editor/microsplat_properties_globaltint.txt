@@ -1,0 +1,18 @@
+
+      _GlobalTintTex("Global Tint", 2D) = "white" {}
+      _GlobalTintFade("Global Normal Fade", Vector) = (50, 150, 1, 1)
+      _GlobalTintUVScale("UV Scale", Vector) = (1, 1, 0, 0)
+
+      _GlobalTintBlends("Global Tint Blends", Vector) = (1, 1, 1, 1)
+      _GlobalTintTex2("Global Tint2", 2D) = "white" {}
+      _GlobalTintFade2("Global Normal Fade2", Vector) = (50, 150, 1, 1)
+      _GlobalTintUVScale2("UV Scale2", Vector) = (1, 1, 0, 0)
+      _GlobalTintTex3("Global Tint3", 2D) = "white" {}
+      _GlobalTintFade3("Global Normal Fade3", Vector) = (50, 150, 1, 1)
+      _GlobalTintUVScale3("UV Scale3", Vector) = (1, 1, 0, 0)
+      _GlobalTintTex4("Global Tint4", 2D) = "white" {}
+      _GlobalTintFade4("Global Normal Fade4", Vector) = (50, 150, 1, 1)
+      _GlobalTintUVScale4("UV Scale4", Vector) = (1, 1, 0, 0)
+      _GlobalTintTex5("Global Tint5", 2D) = "white" {}
+      _GlobalTintFade5("Global Normal Fade5", Vector) = (50, 150, 1, 1)
+      _GlobalTintUVScale5("UV Scale5", Vector) = (1, 1, 0, 0)

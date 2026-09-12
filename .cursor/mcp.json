@@ -1,0 +1,35 @@
+{
+  "mcpServers": {
+    "unity-mcp-gateway": {
+      "command": "A:\\Zombera\\Library\\PackageCache\\com.unity.ai.assistant@e1f49a972172\\RelayApp~\\relay_win.exe",
+      "args": [
+        "--mcp",
+        "--log-dir",
+        "A:\\Zombera\\Logs"
+      ],
+      "env": {
+        "UNITY_ACP_SESSION_TOKEN": "5f0babe918c45111cb105af11457a186dda1f4a79a3f7170ba89a8681eca7885",
+        "UNITY_INSTANCE_ID": "22072"
+      }
+    },
+    "sigmap": {
+      "command": "node",
+      "args": [
+        "C:\\Users\\codyc\\AppData\\Roaming\\npm\\node_modules\\sigmap\\gen-context.js",
+        "--mcp"
+      ]
+    },
+    "ai-game-developer": {
+      "type": "http",
+      "url": "http://localhost:24566/p/4d2e853b"
+    },
+    "blender": {
+      "command": "cmd",
+      "args": [
+        "/c",
+        "uvx",
+        "blender-mcp"
+      ]
+    }
+  }
+}

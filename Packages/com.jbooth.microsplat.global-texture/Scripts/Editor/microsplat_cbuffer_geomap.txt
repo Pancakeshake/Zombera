@@ -1,0 +1,52 @@
+﻿
+      half4 _GlobalTextureParams;
+      float4 _GlobalTintFade;
+      float4 _GlobalNormalFade;
+      float4 _GlobalSAOMFade;
+      float4 _GlobalEmisFade;
+      float3 _GeoParams;
+      float4 _GeoRange;
+      float4 _GeoCurveParams;
+      float4 _GlobalTintUVScale;
+      float4 _GlobalNormalUVScale;
+      float4 _GlobalSAOMUVScale;
+      float4 _GlobalEmisUVScale;
+      half _GeoHeightContrast;
+      half _GeoNormalStrength;
+
+      float4 _GlobalSpecularFade;
+      float4 _GlobalSpecularUVScale;
+      
+      float _GlobalSpecularBlend;
+
+      float4 _GlobalTintTex_TexelSize;
+      float4 _GlobalNormalTex_TexelSize;
+      float4 _GlobalSAOMTex_TexelSize;
+      float4 _GlobalEmisTex_TexelSize;
+      float4 _GlobalSpecularTex_TexelSize;
+
+      #if _GLOBALNOISEUV
+         float2 _GlobalTexNoiseUVParams;
+      #endif
+
+#if _GLOBALTINT2 || _GLOBALTINT3 || _GLOBALTINT4 || _GLOBALTINT5
+      float4 _GlobalTintBlends;
+      float4 _GlobalTintFade2;
+      float4 _GlobalTintTex2_TexelSize;
+      float4 _GlobalTintUVScale2;
+#endif
+#if _GLOBALTINT3 || _GLOBALTINT4 || _GLOBALTINT5
+      float4 _GlobalTintFade3;
+      float4 _GlobalTintTex3_TexelSize;
+      float4 _GlobalTintUVScale3;
+#endif
+#if _GLOBALTINT4 || _GLOBALTINT5
+      float4 _GlobalTintFade4;
+      float4 _GlobalTintTex4_TexelSize;
+      float4 _GlobalTintUVScale4;
+#endif
+#if _GLOBALTINT5
+      float4 _GlobalTintFade5;
+      float4 _GlobalTintTex5_TexelSize;
+      float4 _GlobalTintUVScale5;
+#endif

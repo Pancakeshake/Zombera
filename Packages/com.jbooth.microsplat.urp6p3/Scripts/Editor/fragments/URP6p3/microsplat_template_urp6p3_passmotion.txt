@@ -1,0 +1,134 @@
+﻿
+        Pass
+        {
+            Name "MotionVectors"
+            Tags
+            {
+                "LightMode" = "MotionVectors"
+            }
+        
+        // Render State
+        Cull Back
+        ZTest LEqual
+        ZWrite On
+        ColorMask RG
+
+        %PASSMOTION%
+
+        HLSLPROGRAM
+
+        %PRAGMAS%
+
+        #define _PASSMOTIONVECTOR 1
+
+        #pragma target 3.5
+        #pragma multi_compile_instancing
+        #pragma multi_compile _ DOTS_INSTANCING_ON
+        #pragma vertex vert
+        #pragma fragment frag
+
+        #define SHADERPASS SHADERPASS_MOTION_VECTORS
+        #define RAYTRACING_SHADER_GRAPH_DEFAULT
+        #define VARYINGS_NEED_PASS
+        #define _PASSMOTIONVECTOR 1
+        
+        %DEFINES%
+
+        // includes
+        #include_with_pragmas "Packages/com.unity.render-pipelines.universal/ShaderLibrary/DOTS.hlsl"
+        #include_with_pragmas "Packages/com.unity.render-pipelines.universal/ShaderLibrary/RenderingLayers.hlsl"
+        #include "Packages/com.unity.render-pipelines.core/ShaderLibrary/Color.hlsl"
+        #include "Packages/com.unity.render-pipelines.core/ShaderLibrary/Texture.hlsl"
+        #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
+        #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Lighting.hlsl"
+        #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Input.hlsl"
+        #include "Packages/com.unity.render-pipelines.core/ShaderLibrary/TextureStack.hlsl"
+        #include_with_pragmas "Packages/com.unity.render-pipelines.core/ShaderLibrary/FoveatedRenderingKeywords.hlsl"
+        #include "Packages/com.unity.render-pipelines.core/ShaderLibrary/DebugMipmapStreamingMacros.hlsl"
+        #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/ShaderGraphFunctions.hlsl"
+        #include "Packages/com.unity.render-pipelines.universal/Editor/ShaderGraph/Includes/ShaderPass.hlsl"
+        #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/UnityInput.hlsl"
+        #include "Packages/com.unity.render-pipelines.core/ShaderLibrary/UnityDOTSInstancing.hlsl"
+         
+        %URPINCLUDE%
+        
+        %TEMPLATE_SHARED%
+
+        CBUFFER_START(UnityPerMaterial)
+
+               %CBUFFER%
+
+        CBUFFER_END
+
+        %CUSTOMCBUFFER%
+
+        %CUSTOMINSTANCEPROPS%
+
+        %CODE%
+
+        %SHADERDESC%
+
+        %VERT%
+
+        %TESSELLATION%
+        
+        // Using parts of com.unity.render-pipelines.universal\Editor\ShaderGraph\Includes\MotionVectorPass.hlsl
+        //                com.unity.render-pipelines.universal\ShaderLibrary\MotionVectorsCommon.hlsl
+        //                com.unity.render-pipelines.universal\Editor\ShaderGraph\Includes\Varyings.hlsl
+
+        float2 CalcNdcMotionVectorFromCsPositions(float4 posCS, float4 prevPosCS)
+        {
+          // Note: unity_MotionVectorsParams.y is 0 is forceNoMotion is enabled
+          bool forceNoMotion = unity_MotionVectorsParams.y == 0.0;
+          if (forceNoMotion)
+            return float2(0.0, 0.0);
+
+          // Non-uniform raster needs to keep the posNDC values in float to avoid additional conversions
+          // since uv remap functions use floats
+          float2 posNDC = posCS.xy * rcp(posCS.w);
+          float2 prevPosNDC = prevPosCS.xy * rcp(prevPosCS.w);
+
+          float2 velocity;
+          #if defined(SUPPORTS_FOVEATED_RENDERING_NON_UNIFORM_RASTER)
+            UNITY_BRANCH if (_FOVEATED_RENDERING_NON_UNIFORM_RASTER)
+            {
+              // Convert velocity from NDC space (-1..1) to screen UV 0..1 space since FoveatedRendering remap needs that range.
+              float2 posUV = RemapFoveatedRenderingResolve(posNDC * 0.5 + 0.5);
+              float2 prevPosUV = RemapFoveatedRenderingPrevFrameLinearToNonUniform(prevPosNDC * 0.5 + 0.5);
+
+              // Calculate forward velocity
+              velocity = (posUV - prevPosUV);
+              #if UNITY_UV_STARTS_AT_TOP
+                velocity.y = -velocity.y;
+              #endif
+            }
+            else
+          #endif
+            {
+              // Calculate forward velocity
+              velocity = (posNDC.xy - prevPosNDC.xy);
+              #if UNITY_UV_STARTS_AT_TOP
+                velocity.y = -velocity.y;
+              #endif
+
+              // Convert velocity from NDC space (-1..1) to UV 0..1 space
+              // Note: It doesn't mean we don't have negative values, we store negative or positive offset in UV space.
+              // Note: ((posNDC * 0.5 + 0.5) - (prevPosNDC * 0.5 + 0.5)) = (velocity * 0.5)
+              velocity.xy *= 0.5;
+            }
+
+          return velocity;
+        }
+
+        float4 Frag(
+          VertexToPixel input) : SV_Target
+          {
+            UNITY_SETUP_INSTANCE_ID(input);
+
+            float4 motionVector = float4(CalcNdcMotionVectorFromCsPositions(input.positionCS, input.previousPositionCS), 0, 0);
+    
+            return motionVector;
+          }
+
+        ENDHLSL
+        }

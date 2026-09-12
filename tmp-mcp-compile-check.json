@@ -1,0 +1,1 @@
+{"csharpCode":"using Zombera.Editor; using System.Reflection; public static class C { public static string Run() { var m = typeof(WorldBuilderHubPipelineRunner).GetMethod(\"TryRunHydrologyWaterVerifySync\"); var body = m.GetMethodBody(); return \"ok il=\" + (body != null ? body.GetILAsByteArray().Length : -1); } }","className":"C","methodName":"Run","isMethodBody":false}

@@ -1,0 +1,101 @@
+Implementation Plan (Project-Specific)
+
+Lock the authoritative runtime path
+
+Use the WorldManager provisioning path as the only bootstrap source:
+WorldManager.RuntimeReferences.cs:65
+WorldManager.RuntimeReferences.cs:112
+WorldManager.RuntimeReferences.cs:189
+
+Keep duplicate stack instances disabled via:
+WorldManager.RuntimeReferences.cs:223
+
+Ensure legacy runtime remains off:
+RoadNetworkSystem.cs:19
+RoadNetworkSystem.cs:67
+
+Confirm tile event handoff stability
+
+MapMagic tile apply event is the trigger contract:
+MapMagicTileStreamBridge.cs:94
+MapMagicTileStreamBridge.cs:121
+
+ProceduralRoadSystem must stay subscribed and auto-generate on tile apply:
+ProceduralRoadSystem.Lifecycle.cs:159
+ProceduralRoadSystem.TileBuild.cs:18
+
+Make MapMagic spline source deterministic per tile
+
+Keep spline-first source resolution:
+ProceduralRoadSystem.SourceExtraction.cs:13
+
+Validate all three spline retrieval paths in this order:
+ProceduralRoadSystem.SourceExtraction.cs:146
+ProceduralRoadSystem.SourceExtraction.cs:131
+ProceduralRoadSystem.SourceExtraction.cs:167
+
+Keep fallback behavior explicit for missing spline data:
+RoadNetworkSettings.cs:60
+RoadNetworkSettings.cs:66
+
+Tune spline-to-road conversion for your world scale
+
+Start with current controls and tune with diagnostics:
+RoadNetworkSettings.cs:70
+RoadNetworkSettings.cs:74
+
+Practical tuning pass:
+
+Increase sampling density only until curves stop faceting.
+
+Adjust width so lane/junction prefabs look correct against terrain scale.
+
+Keep fallback on during rollout, then disable once spline coverage is complete.
+
+Verify EasyRoads build and gameplay sync separation
+
+ProceduralRoadSystem is responsible for creating EasyRoads roads per tile and publishing samples:
+ProceduralRoadSystem.TileBuild.cs:188
+ProceduralRoadSystem.GameplayAndDiagnostics.cs:91
+
+EasyRoadsRoadGameplayBridge then mirrors EasyRoads runtime geometry into gameplay graph:
+EasyRoadsRoadGameplayBridge.cs:211
+EasyRoadsRoadGameplayBridge.cs:225
+EasyRoadsRoadGameplayBridge.cs:502
+
+Keep debounce/hash skip in place to avoid tile-burst thrash:
+EasyRoadsRoadGameplayBridge.cs:345
+
+Add rollout diagnostics and acceptance gates
+
+Enable and watch focused generation diagnostics:
+ProceduralRoadSystem.cs:26
+ProceduralRoadSystem.GameplayAndDiagnostics.cs:256
+
+Acceptance criteria per tile:
+
+sourceMode reports MapMagicSpline for spline-authored tiles.
+
+roadsCreated and runtimeSamples are non-zero where spline lines exist.
+
+No duplicate roads after tile reload/unload cycle.
+
+Junction creation is stable and no repeated instantiate/connect failures.
+
+Gameplay bridge shows Synced, then Skipped unchanged under idle tile state.
+
+Hardening tasks after first playable pass
+
+Add a lightweight runtime assert/log when spline source missing but tile has expected spline graph output.
+
+Add a one-shot smoke test scene flow:
+
+Spawn into world.
+
+Wait for N tile applies.
+
+Verify at least one road per expected tile band.
+
+Verify road samples available from RoadGameplayService.
+
+Persist final tuned RoadNetworkSettings as your baseline asset for world generation profiles.

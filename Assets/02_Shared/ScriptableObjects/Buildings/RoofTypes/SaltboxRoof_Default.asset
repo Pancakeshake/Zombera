@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 130cfd4ec3e954742b24228dbc1a7131, type: 3}
+  m_Name: SaltboxRoof_Default
+  m_EditorClassIdentifier: Zombera.Editor::Zombera.Editor.RoofTypeConfig
+  DisplayName: Saltbox Roof
+  Style: 3
+  RidgePrefab: {fileID: 1689511864178661152, guid: 61e72198bf04f8341a1bff5ce6386de6, type: 3}
+  PanelPrefab: {fileID: 6590739586254916484, guid: efd0fc91f89bebd4c81cd98e29af788f, type: 3}
+  GablePrefab: {fileID: 0}
+  TilePrefab: {fileID: 0}
+  PeakHeightMultiplier: 1
+  PanelDiagonalNorm: 2.2
+  PanelWidthMultiplier: 0.5
+  PanelZOverhang: 0.1
+  GableXSnugness: 0.98
+  GableYBaseHeight: 1.5
+  RidgeYOffset: 0.04
+  RidgeYScale: 2
+  RidgeZOverhang: 0.11
+  PanelXOffset: 0.07
+  PanelYOffset: 0.04
+  PanelXPositionMultiplier: 0.5
+  PanelYPositionMultiplier: 0.5
+  GableYPositionMultiplier: 0.5
+  FlatRoofYOffset: 0
+  FlatRoofYRotation: 0
+  FlatRoofZRotation: 0
+  FlatRoofXScale: 1
+  FlatRoofYScale: 1
+  FlatRoofZScale: 1
+  FlatRoofUvTiling: 1
+  ParapetYScale: 0
+  ParapetZScale: 1
+  ParapetInset: 0
+  SaltboxGablePrefab: {fileID: 6568056880382460409, guid: 87cfdc1b65ab5a34c97970c44ed01131, type: 3}
+  SaltboxRidgeOffset: 0.33
+  SaltboxRidgeTowardPositiveX: 1
+  ShedLowEdge: 1
+  ShedHighScale: 0.75
+  ShedLowScale: 0.25
+  ShedPanelXScale: 0.3333
+  GambrelGablePrefab: {fileID: 0}
+  GambrelBreakHeight: 0.45
+  GambrelBreakWidth: 0.55
+  GambrelRidgeWidth: 0.1
+  FlatRoofGutterXOffset: 0
+  FlatRoofGutterYOffset: 0
+  FlatRoofGutterZOffset: 0

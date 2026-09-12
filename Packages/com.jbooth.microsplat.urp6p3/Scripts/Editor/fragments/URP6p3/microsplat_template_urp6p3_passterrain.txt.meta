@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: cb9d2a701c3bcf2499b84ff3b1272a73
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 344006
+  packageName: MicroSplat - URP for Unity 6.3
+  packageVersion: 1.0.1
+  assetPath: Packages/com.jbooth.microsplat.urp6p3/Scripts/Editor/fragments/URP6p3/microsplat_template_urp6p3_passterrain.txt
+  uploadId: 830628

@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50018f38022984c458b511a636f55911, type: 3}
+  m_Name: WorldGenerationProfile
+  m_EditorClassIdentifier: Zombera.World.City::Zombera.World.CityPipeline.WorldBuilder.WorldGenerationProfile
+  profileVersion: 3
+  surfacePaintAlgorithmVersion: 6
+  mapSizeSettings: {fileID: 11400000, guid: 62ce1c1388940644a900fc076eebc8d0, type: 2}
+  terrainGrid: {fileID: 11400000, guid: e714860227e719f4ca27f6cd1f08d923, type: 2}
+  landforms: {fileID: 11400000, guid: 6533ac7462cf6494ca4379dc484a448f, type: 2}
+  hydrology: {fileID: 11400000, guid: bdcbc92e2cd3f8246b421d58b3dfdf7a, type: 2}
+  water: {fileID: 11400000, guid: 04a2c0f2aa71b694f933d0f51eb47d24, type: 2}
+  biomes: {fileID: 11400000, guid: 9c7b154421ad1814d9b1718976d73308, type: 2}
+  surfaces: {fileID: 11400000, guid: ec19fb56a5b5f0f44b87815e70b01293, type: 2}
+  nature: {fileID: 11400000, guid: 628d7b3c520442b4f869a7c2361e21f4, type: 2}
+  pois: {fileID: 11400000, guid: 265ab26abc58d844e8ec5fe52140ad31, type: 2}
+  environment: {fileID: 11400000, guid: aace10fc8da479b489e6e2533d171c3f, type: 2}
+  roadNetworkSettings: {fileID: 11400000, guid: c7475783b26f2d24bace80fa498c2307, type: 2}
+  cityRegion: {fileID: 11400000, guid: 87445daf6f11f774f83803e18da30db9, type: 2}

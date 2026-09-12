@@ -1,0 +1,17 @@
+{
+  "name": "Zombera.EasyBuildAdapter",
+  "rootNamespace": "Zombera.EasyBuildAdapter",
+  "references": [
+    "MindCodeInteractive.EasyBuildSystem.Runtime",
+    "MindCodeInteractive.Runtime"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

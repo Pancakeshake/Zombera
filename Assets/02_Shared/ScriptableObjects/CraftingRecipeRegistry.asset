@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae61f0ece2ea07d48b76cf1ca439efe6, type: 3}
+  m_Name: CraftingRecipeRegistry
+  m_EditorClassIdentifier: Zombera.Runtime::Zombera.Inventory.Crafting.CraftingRecipeRegistry
+  allRecipes:
+  - {fileID: 11400000, guid: 088af99ed606f6647a184f56aac7924b, type: 2}
+  - {fileID: 11400000, guid: 425f3f3f1e221cc4a85630acdc7555c0, type: 2}

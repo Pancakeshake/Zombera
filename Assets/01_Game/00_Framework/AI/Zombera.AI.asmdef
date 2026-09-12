@@ -1,0 +1,20 @@
+{
+  "name": "Zombera.AI",
+  "rootNamespace": "Zombera.AI",
+    "references": [
+        "Zombera.Core",
+        "Zombera.Gameplay",
+        "Unity.AI.Navigation",
+        "Unity.TextMeshPro",
+        "UMA_Core"
+    ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

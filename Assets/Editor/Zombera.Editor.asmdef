@@ -1,0 +1,35 @@
+{
+  "name": "Zombera.Editor",
+  "rootNamespace": "Zombera.Editor",
+  "references": [
+    "Zombera.Core",
+    "Zombera.Gameplay",
+    "Zombera.World",
+    "Zombera.World.City",
+    "Zombera.World.City.Editor",
+    "Zombera.UI",
+    "Zombera.AI",
+    "MapMagic",
+    "MapMagic.MicroSplat",
+    "JBooth.MicroSplat.Core",
+    "JBooth.MicroSplat.Core.Editor",
+    "Den.Tools",
+    "UMA_Core",
+    "Unity.TextMeshPro",
+    "Unity.RenderPipelines.Core.Runtime",
+    "Unity.RenderPipelines.Universal.Runtime",
+    "Unity.AI.Navigation",
+    "Unity.ProBuilder"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": false,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66b16bba3b575b34abe2576462a4d592, type: 3}
+  m_Name: CityRegion
+  m_EditorClassIdentifier: Zombera.World::Zombera.World.Roads.CityRegionAsset
+  displayName: Region
+  regionSeed: 1
+  generateRegionHighways: 1
+  highwayMinLinkDistanceMeters: 600
+  sites:
+  - displayName: Deadspring
+    siteType: 3
+    centerXZ: {x: -378.9826, y: -1518.3501}
+    districtMix:
+    - district: 0
+      weight: 45
+    - district: 1
+      weight: 14
+    - district: 2
+      weight: 15
+    - district: 6
+      weight: 8
+    - district: 5
+      weight: 12
+    - district: 3
+      weight: 5
+    - district: 4
+      weight: 2
+    layoutSeed: 0
+    halfWidthMeters: 760
+    halfDepthMeters: 660
+    generateStreetGrid: 1
+    generateArterialRing: 1
+    generateHighwayExits: 1
+    guaranteedHighwayExitCount: 3
+    connectToRegionHighways: 1
+  - displayName: Blackspring
+    siteType: 1
+    centerXZ: {x: -543.5407, y: 417.72592}
+    districtMix:
+    - district: 0
+      weight: 62
+    - district: 1
+      weight: 10
+    - district: 2
+      weight: 8
+    - district: 6
+      weight: 13
+    - district: 5
+      weight: 7
+    - district: 3
+      weight: 0
+    - district: 4
+      weight: 0
+    layoutSeed: 0
+    halfWidthMeters: 200
+    halfDepthMeters: 180
+    generateStreetGrid: 1
+    generateArterialRing: 1
+    generateHighwayExits: 1
+    guaranteedHighwayExitCount: 1
+    connectToRegionHighways: 1
+  mapTilesPerSide: 12
+  autoScatterOnBuild: 0
+  randomizeRegionSeedPerBuild: 0
+  scatterSiteCount: 5
+  randomizeCityNames: 1
+  scatterHalfExtentMeters: 2000
+  scatterCenterXZ: {x: 0, y: 0}
+  minSiteClearanceMeters: 200
+  scatterSeed: 0

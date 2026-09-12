@@ -1,0 +1,139 @@
+# Unity generated folders
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+[Mm]emoryCaptures/
+
+# Unity cache and generated files
+Assets/AssetStoreTools*
+Assets/StreamingAssets/aa.meta
+Assets/StreamingAssets/aa/
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# Visual Studio / Rider
+.vs/
+.idea/
+*.sln
+*.csproj
+*.user
+*.userprefs
+*.unityproj
+*.suo
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# VS Code
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+
+# Large third-party content roots — ignore assets but keep .meta for GUID preservation.
+Assets/UMA/
+Assets/UMA.meta
+Assets/03_ThirdParty/**
+!Assets/03_ThirdParty/**/*.meta
+
+# Common oversized distribution archives (Git cannot ignore by file size, so ignore by artifact type)
+*.unitypackage
+*.unitypackage.meta
+*.zip
+*.zip.meta
+*.7z
+*.7z.meta
+*.rar
+*.rar.meta
+*.tar
+*.tar.meta
+*.gz
+*.gz.meta
+*.tgz
+*.tgz.meta
+
+# Ignore raw third-party package archives; keep imported project assets tracked.
+Assets/GameReady3D/**/*.unitypackage
+Assets/GameReady3D/**/*.unitypackage.meta
+
+# Untracked third-party demo/scene content — keep local but never commit
+Assets/03_ThirdParty/EasyRoads3D scenes/
+
+# CodeWhale / editor session state
+.context/
+.continue/
+
+# Python virtualenv
+.venv/
+
+# Unity auto-generated artifacts (should never be committed)
+UIElementsSchema/
+GeneratedAssets/
+
+# Tool output and profiling
+qodana-results/
+ProfilerCaptures/
+
+# Local game save data
+Saves/
+
+# Generated building-complete proxy assets — local only
+Assets/02_Shared/Proxies/Buildings_Complete/
+Assets/02_Shared/Proxies/Buildings_Complete.meta
+
+# CGAxis Downtown kit — local only (large third-party content)
+Assets/02_Shared/CG_Downtown/
+Assets/02_Shared/CG_Downtown.meta
+My project (1)
+
+# Local Unity recovery / scratch scenes — never commit (multi-GB)
+Assets/_Recovery/
+Assets/_Recovery.meta
+Assets/00_Scenes/01_Backups/
+Assets/00_Scenes/01_Backups.meta
+Assets/00_Scenes/02_System Dev Scenes/
+Assets/00_Scenes/02_System Dev Scenes.meta
+
+# Heavy shared art dumps — local only (keep Prefabs/SOs/Scripts/Shaders)
+Assets/02_Shared/Textures/
+Assets/02_Shared/Textures.meta
+Assets/02_Shared/Animations/
+Assets/02_Shared/Animations.meta
+Assets/02_Shared/Proxies/
+Assets/02_Shared/Proxies.meta
+Assets/02_Shared/CG_Downtown/
+Assets/02_Shared/CG_Downtown.meta
+Assets/02_Shared/Art/
+Assets/02_Shared/Art.meta
+
+# AI / import scratch
+Assets/AI Toolkit/_Recovery/
+Assets/AI Toolkit/_Recovery.meta
+Assets/MeshyImports/
+Assets/MeshyImports.meta
+
+# Tooling / temp outputs
+artifacts/
+tmp/
+*.sarif
+rider-inspections*.sarif
+qodana.yaml
+
+# Package sample scenes (often huge)
+Packages/**/Samples~/
+
+# Ensure entire third-party tree stays local (metas optional)
+Assets/03_ThirdParty/
+

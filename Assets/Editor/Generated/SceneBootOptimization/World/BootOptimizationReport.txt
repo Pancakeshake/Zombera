@@ -1,0 +1,42 @@
+Boot Optimization Report
+Generated: 2026-05-11 11:19:52
+Scene Name: World
+Scene Path: Assets/Scenes/World.unity
+
+Totals
+- Root Objects: 20
+- GameObjects: 1252
+- Components: 3717
+- MonoBehaviours: 1488
+- Missing Components: 3
+- Enabled Cameras: 3
+- Enabled Lights: 4
+- Enabled Canvases: 0
+- NavMeshSurface Components: 0
+- Terrains: 4
+- Reflection Probes: 1
+- AudioSource PlayOnAwake: 5
+- ParticleSystem PlayOnAwake: 3
+
+Recommended Actions
+- Disable non-critical heavy roots: 5
+  - Environment
+  - Player
+  - UMA_GLIB
+  - Enviro 3
+  - Crest Ocean
+- Disable AudioSource PlayOnAwake: 5
+- Disable ParticleSystem PlayOnAwake: 3
+- Set Animator culling to CullCompletely: 2
+
+Top Root Cost Buckets
+- WorldHUDCanvas | Score=2602 | Critical=False | RecommendDisable=False | GO=767 | Comp=2817 | Mono=1301 | Cameras=0 | Lights=0 | Canvases=0 | AudioPOA=0 | ParticlePOA=0 | Animators=0 | NavMeshSurface=0 | MissingComp=0
+- Crest Ocean | Score=268 | Critical=False | RecommendDisable=True | GO=92 | Comp=358 | Mono=90 | Cameras=0 | Lights=0 | Canvases=0 | AudioPOA=0 | ParticlePOA=0 | Animators=0 | NavMeshSurface=0 | MissingComp=0
+- MapMagic | Score=116 | Critical=False | RecommendDisable=False | GO=15 | Comp=51 | Mono=28 | Cameras=0 | Lights=0 | Canvases=0 | AudioPOA=0 | ParticlePOA=0 | Animators=0 | NavMeshSurface=0 | MissingComp=0
+- Enviro 3 | Score=70 | Critical=False | RecommendDisable=True | GO=22 | Comp=48 | Mono=5 | Cameras=0 | Lights=1 | Canvases=0 | AudioPOA=5 | ParticlePOA=3 | Animators=0 | NavMeshSurface=0 | MissingComp=0
+- Player | Score=55 | Critical=False | RecommendDisable=True | GO=163 | Comp=195 | Mono=23 | Cameras=0 | Lights=0 | Canvases=0 | AudioPOA=0 | ParticlePOA=0 | Animators=1 | NavMeshSurface=0 | MissingComp=0
+- Environment | Score=35 | Critical=False | RecommendDisable=True | GO=3 | Comp=18 | Mono=12 | Cameras=1 | Lights=1 | Canvases=0 | AudioPOA=0 | ParticlePOA=0 | Animators=0 | NavMeshSurface=0 | MissingComp=0
+- UMA_GLIB | Score=30 | Critical=False | RecommendDisable=True | GO=161 | Comp=172 | Mono=8 | Cameras=1 | Lights=0 | Canvases=0 | AudioPOA=0 | ParticlePOA=0 | Animators=1 | NavMeshSurface=0 | MissingComp=0
+- BuildingIconRenderRig | Score=16 | Critical=False | RecommendDisable=False | GO=5 | Comp=9 | Mono=1 | Cameras=1 | Lights=2 | Canvases=0 | AudioPOA=0 | ParticlePOA=0 | Animators=0 | NavMeshSurface=0 | MissingComp=0
+- Road Gameplay Stack | Score=9 | Critical=False | RecommendDisable=False | GO=10 | Comp=13 | Mono=3 | Cameras=0 | Lights=0 | Canvases=0 | AudioPOA=0 | ParticlePOA=0 | Animators=0 | NavMeshSurface=0 | MissingComp=3
+- Player_Buildings | Score=6 | Critical=False | RecommendDisable=False | GO=4 | Comp=11 | Mono=2 | Cameras=0 | Lights=0 | Canvases=0 | AudioPOA=0 | ParticlePOA=0 | Animators=0 | NavMeshSurface=0 | MissingComp=0

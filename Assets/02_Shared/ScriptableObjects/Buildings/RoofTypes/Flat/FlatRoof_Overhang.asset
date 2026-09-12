@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 130cfd4ec3e954742b24228dbc1a7131, type: 3}
+  m_Name: FlatRoof_Overhang
+  m_EditorClassIdentifier: Zombera.Editor::Zombera.Editor.RoofTypeConfig
+  DisplayName: Flat Roof (Overhang)
+  Style: 1
+  RidgePrefab: {fileID: 1689511864178661152, guid: 61e72198bf04f8341a1bff5ce6386de6, type: 3}
+  PanelPrefab: {fileID: 6590739586254916484, guid: efd0fc91f89bebd4c81cd98e29af788f, type: 3}
+  GablePrefab: {fileID: 6522343069212043068, guid: a24dadead8c1b9347bc22e4585942df9, type: 3}
+  TilePrefab: {fileID: 6590739586254916484, guid: 5510feed9057b304f80fa8caf31ba008, type: 3}
+  PeakHeightMultiplier: 1
+  PanelDiagonalNorm: 2.2
+  PanelWidthMultiplier: 0.5
+  PanelZOverhang: 0.1
+  GableXSnugness: 0.98
+  GableYBaseHeight: 1.5
+  RidgeYOffset: 0.04
+  RidgeYScale: 2
+  RidgeZOverhang: 0.11
+  PanelXOffset: 0.07
+  PanelYOffset: 0.04
+  PanelXPositionMultiplier: 0.5
+  PanelYPositionMultiplier: 0.5
+  GableYPositionMultiplier: 0.5
+  FlatRoofYOffset: 0.04
+  FlatRoofYRotation: 0
+  FlatRoofZRotation: 0
+  FlatRoofXScale: 1
+  FlatRoofYScale: 1.01
+  FlatRoofZScale: 1.01
+  FlatRoofUvTiling: 1
+  FlatRoofGutterXOffset: -0.01
+  FlatRoofGutterYOffset: 0.011
+  FlatRoofGutterZOffset: 0

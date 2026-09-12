@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 3657b68ec64f8694297c2db483b123f1
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 344006
+  packageName: MicroSplat - URP for Unity 6.3
+  packageVersion: 1.0.1
+  assetPath: Packages/com.jbooth.microsplat.urp6p3/Documentation/MicroSplat - URP.pdf
+  uploadId: 830628

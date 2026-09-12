@@ -1,0 +1,521 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &274279266312604345
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5930672435917894387}
+  - component: {fileID: 9103092632695318389}
+  m_Layer: 0
+  m_Name: Wind Zone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5930672435917894387
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 274279266312604345}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.99701387, z: -0, w: 0.077223316}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6774297095695979243}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!182 &9103092632695318389
+WindZone:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 274279266312604345}
+  m_Enabled: 1
+  m_Mode: 0
+  m_Radius: 20
+  m_WindMain: 0.5
+  m_WindTurbulence: 0.2
+  m_WindPulseMagnitude: 0.5
+  m_WindPulseFrequency: 0.01
+--- !u!1 &1173908964700104636
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6774297095695979243}
+  - component: {fileID: 5988154432237193762}
+  - component: {fileID: 500850558010263250}
+  m_Layer: 2
+  m_Name: Enviro 3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6774297095695979243
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1173908964700104636}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.00001, z: -9.999985}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8932253267830427711}
+  - {fileID: 4650606858361847114}
+  - {fileID: 3017540329422344682}
+  - {fileID: 6550603603968609523}
+  - {fileID: 5411283537735745583}
+  - {fileID: 5930672435917894387}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5988154432237193762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1173908964700104636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43b4e18e1baccc642a82a5e642fd6997, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  configuration: {fileID: 11400000, guid: 7a73ce8546b211f40bdf7de5a0f06be5, type: 2}
+  lastConfiguration: {fileID: 11400000, guid: 7a73ce8546b211f40bdf7de5a0f06be5, type: 2}
+  Time: {fileID: 3679749505529115402, guid: 7a73ce8546b211f40bdf7de5a0f06be5, type: 2}
+  Lighting: {fileID: 495546225280835574, guid: 7a73ce8546b211f40bdf7de5a0f06be5, type: 2}
+  Reflections: {fileID: -3831032795633986024, guid: 7a73ce8546b211f40bdf7de5a0f06be5, type: 2}
+  Sky: {fileID: -1480058932494092946, guid: 7a73ce8546b211f40bdf7de5a0f06be5, type: 2}
+  Fog: {fileID: -4569962550386686345, guid: 7a73ce8546b211f40bdf7de5a0f06be5, type: 2}
+  VolumetricClouds: {fileID: 9035494006185753007, guid: 7a73ce8546b211f40bdf7de5a0f06be5, type: 2}
+  FlatClouds: {fileID: 5604889007555484423, guid: 7a73ce8546b211f40bdf7de5a0f06be5, type: 2}
+  Weather: {fileID: 8956970292728354092, guid: 7a73ce8546b211f40bdf7de5a0f06be5, type: 2}
+  Aurora: {fileID: 4011421771873438716, guid: 7a73ce8546b211f40bdf7de5a0f06be5, type: 2}
+  Audio: {fileID: 4425945063387538756, guid: 7a73ce8546b211f40bdf7de5a0f06be5, type: 2}
+  Effects: {fileID: 1501335556145410821, guid: 7a73ce8546b211f40bdf7de5a0f06be5, type: 2}
+  Lightning: {fileID: -1420550187111102359, guid: 7a73ce8546b211f40bdf7de5a0f06be5, type: 2}
+  Quality: {fileID: 6421799545293165390, guid: 7a73ce8546b211f40bdf7de5a0f06be5, type: 2}
+  Environment: {fileID: -545848037823017146, guid: 7a73ce8546b211f40bdf7de5a0f06be5, type: 2}
+  Objects:
+    sun: {fileID: 5282567273349664035}
+    moon: {fileID: 1346855790396431380}
+    stars: {fileID: 2554426045034589682}
+    directionalLight: {fileID: 1616601596660431133}
+    additionalDirectionalLight: {fileID: 0}
+    globalReflectionProbe: {fileID: 2512359650215978054}
+    effects: {fileID: 0}
+    audio: {fileID: 0}
+    windZone: {fileID: 9103092632695318389}
+    worldAnchor: {fileID: 0}
+  dontDestroyOnLoad: 0
+  Camera: {fileID: 0}
+  CameraTag: MainCamera
+  Cameras: []
+  optionalFollowTransform: {fileID: 0}
+  showSetup: 0
+  showModules: 0
+  showEvents: 0
+  showThirdParty: 0
+  dayNightSwitch: 0.45
+  isNight: 0
+  solarTime: 0.640447
+  lunarTime: 0.31235537
+  notFirstFrame: 1
+  removalZones: []
+  sunRotationX: 0
+  sunRotationY: 0
+  moonRotationX: 0
+  moonRotationY: 0
+  showNonTimeControls: 0
+  Events:
+    onHourPassedActions:
+      m_PersistentCalls:
+        m_Calls: []
+    onDayPassedActions:
+      m_PersistentCalls:
+        m_Calls: []
+    onYearPassedActions:
+      m_PersistentCalls:
+        m_Calls: []
+    onWeatherChangedActions:
+      m_PersistentCalls:
+        m_Calls: []
+    onSeasonChangedActions:
+      m_PersistentCalls:
+        m_Calls: []
+    onNightActions:
+      m_PersistentCalls:
+        m_Calls: []
+    onDayActions:
+      m_PersistentCalls:
+        m_Calls: []
+    onZoneChangedActions:
+      m_PersistentCalls:
+        m_Calls: []
+  currentZone: {fileID: 0}
+  defaultZone: {fileID: 0}
+  zones: []
+  updateSkyAndLighting: 1
+  updateSkyAndLightingHDRP: 0
+--- !u!114 &500850558010263250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1173908964700104636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b82f6b79ed01ccb4cb83aff34b604311, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Zombera.Runtime::Zombera.Environment.EnviroWeatherCycleController
+  disableZoneAutoWeather: 1
+  startOnPlay: 1
+  minSecondsBetweenChanges: 180
+  maxSecondsBetweenChanges: 420
+  autoFixPurpleRain: 1
+  rainFixRescanIntervalSeconds: 8
+  suppressEnviroAudioOnPlay: 1
+  keepSuppressingEnviroAudio: 1
+  audioSuppressionRescanIntervalSeconds: 4
+  logEnviroAudioSuppression: 1
+--- !u!1 &1346855790396431380
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4650606858361847114}
+  m_Layer: 2
+  m_Name: Moon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4650606858361847114
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346855790396431380}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.17273535, y: 0.68385434, z: 0.17175588, w: 0.6877541}
+  m_LocalPosition: {x: -0.8813106, y: -0.47251087, z: -0.0050111865}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6774297095695979243}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2075180100252720728
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6550603603968609523}
+  - component: {fileID: 1616601596660431133}
+  - component: {fileID: 5903586976948259081}
+  - component: {fileID: 6415525891211772451}
+  m_Layer: 2
+  m_Name: Sun/Moon Directional Light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6550603603968609523
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2075180100252720728}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.17175582, y: -0.6877541, z: 0.17273529, w: 0.68385434}
+  m_LocalPosition: {x: 14.555425, y: -6.115484, z: 2.5310612}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6774297095695979243}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!108 &1616601596660431133
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2075180100252720728}
+  m_Enabled: 1
+  serializedVersion: 12
+  m_Type: 1
+  m_Color: {r: 0.91764706, g: 0.79865277, b: 0.67324924, a: 1}
+  m_Intensity: 1.9418571
+  m_Range: 10
+  m_SpotAngle: 30
+  m_InnerSpotAngle: 21.80208
+  m_CookieSize2D: {x: 10, y: 10}
+  m_Shadows:
+    m_Type: 2
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ForceVisible: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+  m_LightUnit: 1
+  m_LuxAtDistance: 1
+  m_EnableSpotReflector: 1
+--- !u!114 &5903586976948259081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2075180100252720728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.Runtime::UnityEngine.Rendering.Universal.UniversalAdditionalLightData
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_CustomShadowLayers: 0
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
+  m_RenderingLayersMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_ShadowRenderingLayersMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_Version: 4
+  m_LightLayerMask: 1
+  m_ShadowLayerMask: 1
+  m_RenderingLayers: 1
+  m_ShadowRenderingLayers: 1
+--- !u!114 &6415525891211772451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2075180100252720728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84329a1a5ad77384a9c3bb7ed65d8506, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Enviro3.Runtime::Enviro.EnviroVolumetricFogLight
+  intensity: 1
+  range: 1
+--- !u!1 &2244317047955353434
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5411283537735745583}
+  - component: {fileID: 2407787763142640894}
+  - component: {fileID: 2512359650215978054}
+  m_Layer: 0
+  m_Name: Global Reflection Probe
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5411283537735745583
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2244317047955353434}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6774297095695979243}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!215 &2407787763142640894
+ReflectionProbe:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2244317047955353434}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Type: 0
+  m_Mode: 1
+  m_RefreshMode: 2
+  m_TimeSlicingMode: 0
+  m_Resolution: 128
+  m_UpdateFrequency: 0
+  m_BoxSize: {x: 10000, y: 10000, z: 10000}
+  m_BoxOffset: {x: 0, y: 0, z: 0}
+  m_NearClip: 0.3
+  m_FarClip: 1000
+  m_ShadowDistance: 100
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 0
+  m_IntensityMultiplier: 1
+  m_BlendDistance: 1
+  m_HDR: 1
+  m_BoxProjection: 0
+  m_RenderDynamicObjects: 0
+  m_UseOcclusionCulling: 1
+  m_Importance: 1
+  m_CustomBakedTexture: {fileID: 0}
+--- !u!114 &2512359650215978054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2244317047955353434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 766b1caed0279ea4281500fc502a2853, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Enviro3.Runtime::Enviro.EnviroReflectionProbe
+  standalone: 0
+  updateReflectionOnGameTime: 1
+  reflectionsUpdateTreshhold: 0.025
+  useTimeSlicing: 1
+  renderCam: {fileID: 0}
+  myProbe: {fileID: 2407787763142640894}
+  customRendering: 0
+  useFog: 0
+  bakingCam: {fileID: 0}
+  renderId: 630
+--- !u!1 &2554426045034589682
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3017540329422344682}
+  m_Layer: 2
+  m_Name: Stars
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3017540329422344682
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2554426045034589682}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.35962686, y: -0.6088255, z: -0.6088255, w: -0.35962686}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6774297095695979243}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5282567273349664035
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8932253267830427711}
+  m_Layer: 2
+  m_Name: Sun
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8932253267830427711
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5282567273349664035}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.17175582, y: -0.6877541, z: 0.17273529, w: 0.68385434}
+  m_LocalPosition: {x: 0.8813107, y: 0.4725107, z: 0.0050111874}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6774297095695979243}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

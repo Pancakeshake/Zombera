@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: b61d7d6fbc7a86b48b522eeac1f539ac
+AssemblyDefinitionReferenceImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 344006
+  packageName: MicroSplat - URP for Unity 6.3
+  packageVersion: 1.0.1
+  assetPath: Packages/com.jbooth.microsplat.urp6p3/Scripts/Editor/JBooth.MicroSplat.CoreURP6p3.Editor.asmref
+  uploadId: 830628

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54bffb31d514dca4f8e849468b9e4623, type: 3}
+  m_Name: ZT_Civilian_Shambler
+  m_EditorClassIdentifier:
+  zombieTypeId: zombie.civilian.shambler
+  displayName: Civilian Shambler
+  baseHealth: 50
+  moveSpeed: 1.6
+  attackDamage: 7
+  defaultAiTickInterval: 0.42
+  perceptionRadius: 14
+  aggressionMultiplier: 0.9
+  hordeAffinity: 0.55

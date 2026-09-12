@@ -1,0 +1,21 @@
+{
+  "name": "Zombera.Gameplay",
+  "rootNamespace": "Zombera",
+  "references": [
+    "Zombera.Core",
+    "Zombera.DoorPackAdapter",
+    "UMA_Core",
+    "Unity.InputSystem",
+    "Unity.TextMeshPro",
+    "Unity.AI.Navigation"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

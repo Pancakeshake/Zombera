@@ -1,0 +1,17 @@
+{
+  "name": "Zombera.Save",
+  "rootNamespace": "Zombera",
+  "references": [
+    "Zombera.Core",
+    "Zombera.Gameplay"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

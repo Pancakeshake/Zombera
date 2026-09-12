@@ -1,0 +1,228 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3879436338811734700
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1149326423862395040}
+  - component: {fileID: 5495911495998922932}
+  - component: {fileID: 9218296850309407480}
+  - component: {fileID: 4683243649114572311}
+  - component: {fileID: 2970153502931671733}
+  - component: {fileID: 7465425972991886084}
+  m_Layer: 0
+  m_Name: Gutter_Corner_90
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1149326423862395040
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3879436338811734700}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &5495911495998922932
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3879436338811734700}
+  m_Mesh: {fileID: 4090874147731205212, guid: 768400b481c1ba240b383a820ac650db, type: 3}
+--- !u!23 &9218296850309407480
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3879436338811734700}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 5902619013666387521, guid: 768400b481c1ba240b383a820ac650db, type: 3}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &4683243649114572311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3879436338811734700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a8b032277fccd248821188e10d38f9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Zombera.Gameplay::Zombera.BuildingSystem.BuildPiece
+  category: 4
+  wallType: 0
+  snapPoints: []
+  structureHealth: {fileID: 7465425972991886084}
+--- !u!114 &2970153502931671733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3879436338811734700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f60545a826167c14686381106d411449, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: MindCodeInteractive.EasyBuildSystem.Runtime::MindCodeInteractive.EasyBuildSystem.Framework.Code.Runtime.Systems.Parts.BuildingPart
+  m_prefabId: c9cc8e07cc004884faa9c8bd8324afb7
+  m_uniqueId: 86c6-07c5-773e
+  name: 
+  m_description: 
+  m_category: 
+  m_thumbnail: {fileID: 0}
+  m_isSaveable: 1
+  m_rendererSystem:
+    m_variants: []
+    m_activeIndex: 0
+  m_placementSystem:
+    m_settings:
+      m_enablePreviewMaterial: 1
+      m_previewStateMaterials:
+      - m_state: 2
+        m_materialMode: 0
+        m_customMaterial: {fileID: 0}
+        m_color: {r: 1, g: 1, b: 1, a: 0.5}
+        m_colorPropertyName: _Color
+      - m_state: 3
+        m_materialMode: 0
+        m_customMaterial: {fileID: 0}
+        m_color: {r: 0, g: 1, b: 0, a: 0.5}
+        m_colorPropertyName: _Color
+      - m_state: 4
+        m_materialMode: 0
+        m_customMaterial: {fileID: 0}
+        m_color: {r: 1, g: 1, b: 1, a: 0.5}
+        m_colorPropertyName: _Color
+      - m_state: 5
+        m_materialMode: 0
+        m_customMaterial: {fileID: 0}
+        m_color: {r: 1, g: 0, b: 0, a: 0.5}
+        m_colorPropertyName: _Color
+      m_previewMaterialTransition: 0
+      m_pulseMinAlpha: 0.2
+      m_pulseMaxAlpha: 0.8
+      m_pulseFrequency: 1
+      m_previewOffsetPosition: {x: 0, y: 0, z: 0}
+      m_previewClampPosition: 0
+      m_previewClampMinPosition: {x: 0, y: 0, z: 0}
+      m_previewClampMaxPosition: {x: 0, y: 0, z: 0}
+      m_previewSmoothMovement: 0
+      m_previewMovementSmoothSpeed: 10
+      m_previewSnappingPositionThreshold: 0.1
+      m_previewSnappingRotationThreshold: 5
+      m_previewRoundMovement: 0
+      m_previewRoundCellSize: {x: 1, y: 1}
+      m_previewSurfaceAlignment: 0
+      m_previewSurfaceAlignmentAxis: {x: 0, y: 1, z: 0}
+      m_previewRotationStep: {x: 0, y: 45, z: 0}
+      m_previewClampRotation: 0
+      m_previewClampMinRotation: {x: 0, y: 0, z: 0}
+      m_previewClampMaxRotation: {x: 0, y: 0, z: 0}
+      m_previewAllowSnappedRotation: 0
+      m_previewSnappedRotationStep: {x: 0, y: 45, z: 0}
+      m_previewUseGridSnapping: 0
+      m_previewCellSize: {x: 1, y: 1}
+      m_previewLockToGrid: 1
+      m_previewForceGrounding: 0
+      m_previewGroundingLayer:
+        serializedVersion: 2
+        m_Bits: 1
+      m_previewGroundingElevation: 0
+      m_previewGroundingElevationStartRatio: 0.8
+      m_previewGroundingElevationMaxHeight: 0.5
+      m_previewUseDirectionIndicator: 0
+      m_previewDirectionIndicatorPrefab: {fileID: 0}
+      m_previewDirectionIndicatorPosition: {x: 0, y: 0, z: 0}
+      m_previewDirectionIndicatorRotation: {x: 0, y: 0, z: 0}
+      m_previewDirectionIndicatorScale: {x: 1, y: 1, z: 1}
+      m_stateGameObjects: []
+  m_behaviorSystem:
+    m_behaviors: []
+  m_conditionSystem:
+    m_conditions: []
+  m_cacheSystem:
+    m_cachedSockets: []
+    m_cachedRigidbodies: []
+  m_linkedPreset: {fileID: 0}
+  m_attachedCollection: {fileID: 0}
+  m_attachedGroup: {fileID: 0}
+  m_attachedSocket: {fileID: 0}
+  m_lastState: 0
+  m_state: 0
+  m_isRuntimeInstantiated: 0
+  m_debugFlags: 1
+--- !u!114 &7465425972991886084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3879436338811734700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c66e26a2347c344c871cefba406f047, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Zombera.Gameplay::Zombera.BuildingSystem.StructureHealth
+  maxHealth: 100
+  initializeOnAwake: 1
+  destroyGameObjectOnDeath: 1
+  onDestroyed:
+    m_PersistentCalls:
+      m_Calls: []

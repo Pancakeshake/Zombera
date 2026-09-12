@@ -1,0 +1,19 @@
+---
+description: Zombera architecture, ownership boundaries, and state gating
+alwaysApply: true
+---
+
+# Zombera architecture rules
+
+- **Terrain authority**: Runtime world surface is **Unity Terrain** (`Terrain` / `TerrainData`). Do **not** treat MapMagic as the active terrain system. MapMagic packages/Legacy bridges may still exist in the repo — ignore them for new terrain/tunnel/cave work unless explicitly migrating legacy code.
+- **World vs Menu gating**: If behavior must not run in menus, gate by `GameManager.Instance.CurrentState`.
+  - **Allowed**: `LoadingWorld`, `Playing`, `Paused`
+  - **Blocked**: `MainMenu`
+- **Ownership** (prefer changing the owner, not adding new side effects elsewhere):
+  - `WorldManager`: world-session lifecycle + chunk streaming tick + simulation tick
+  - `PlayerSpawner`: spawn/bootstrap + world-tile stabilization + initial NavMesh readiness
+  - `StreamingNavMeshTileService`: per-tile NavMesh build/removal (world tile stream events)
+  - `CombatEncounterManager`: encounter rules and attack resolution
+- **Avoid hidden runtime wiring**: prefer scene-visible refs/components; if auto-add is needed, make it idempotent and log once.
+- **Tuning**: if a value is adjusted repeatedly, promote it to a serialized field or config asset (don’t duplicate constants).
+

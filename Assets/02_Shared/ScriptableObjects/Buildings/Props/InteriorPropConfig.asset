@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11a7d5a2e9fc986499b31d7ba3f3e1d8, type: 3}
+  m_Name: InteriorPropConfig
+  m_EditorClassIdentifier: Zombera.Editor::Zombera.Editor.InteriorPropConfig
+  roomSettings: {fileID: 11400000, guid: de04645d567914d48907cb781fdba6ad, type: 2}
+  roomEntries:
+  - roomType: 2
+    spawnAttempts: 0
+    arrangements: []
+    props: []
+  - roomType: 1
+    spawnAttempts: 0
+    arrangements: []
+    props:
+    - prefab: {fileID: 527829617707691708, guid: 7ed569e2c3a899d4eba42658ffff4125, type: 3}
+      weight: 10
+      maxPerRoom: 1
+      guaranteedCount: 1
+      randomiseYaw: 1
+      yawSnapDegrees: 90
+      yOffset: 0
+      wallAlignment: 1
+      minWallDistance: 0
+      minDoorDistance: 0
+      footprintRadius: 2.5
+      scaleOverride: 1
+  - roomType: 0
+    spawnAttempts: 0
+    arrangements: []
+    props: []
+  - roomType: 3
+    spawnAttempts: 0
+    arrangements: []
+    props: []
+  - roomType: 4
+    spawnAttempts: 0
+    arrangements: []
+    props: []
+  - roomType: 5
+    spawnAttempts: 0
+    arrangements: []
+    props: []
+  - roomType: 6
+    spawnAttempts: 0
+    arrangements: []
+    props: []
+  - roomType: 7
+    spawnAttempts: 0
+    arrangements: []
+    props: []
+  - roomType: 8
+    spawnAttempts: 0
+    arrangements: []
+    props: []
+  - roomType: 0
+    spawnAttempts: 0
+    arrangements: []
+    props: []
+  doorClearanceRadius: 1.5
+  fallbackProps: []
+  fallbackSpawnAttempts: 4

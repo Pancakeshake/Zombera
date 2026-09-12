@@ -1,0 +1,99 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0e1d2c3b4a59687c8d9e0f1a2b3c4d5, type: 3}
+  m_Name: CityBuildConfig
+  m_EditorClassIdentifier: Zombera.World::Zombera.World.Roads.CityBuildConfig
+  alignLayoutCenterToTransform: 1
+  autoEnsureMinimalRoadStack: 1
+  autoGenerateNamedAreas: 0
+  buildingLayoutSeed: 12345
+  buildingLayoutSettings:
+    gridCellMeters: 3
+    streetSetbackMeters: 0
+    polygonSafetyMarginMeters: 1
+    minBuildingSpacingMeters: 1.5
+    footprintPaddingMeters: 0.5
+    rowsPerRoadSide: 1
+    rowSpacingMeters: 3
+    fillInterior: 1
+    placePerimeterRows: 1
+  useProxyPrefabs: 1
+  cityCoreLotSize:
+    min: 48
+    max: 96
+  commercialLotSize:
+    min: 28
+    max: 56
+  industrialLotSize:
+    min: 32
+    max: 64
+  residentialLotSize:
+    min: 16
+    max: 32
+  gasStationChance: 0.15
+  createEditorFloorVisuals: 1
+  showDistrictFillColors: 1
+  floorVisualHeight: 0.06
+  generateResidentialLots: 1
+  lotFrontYardFraction: 0.2
+  parkScatterSettings:
+    treeCountMin: 6
+    treeCountMax: 18
+    benchCountMin: 1
+    benchCountMax: 4
+    loopPathWidthMeters: 1.4
+    loopPathInsetMeters: 3
+    surfaceLiftMeters: 0.05
+  scatterSettings:
+    minSpacingMeters: 1.8
+    buildingClearanceMeters: 1.2
+    lotEdgeMarginMeters: 0.6
+    positionJitterMeters: 0.35
+    yawJitterDegrees: 180
+    maxPlacementAttemptsPerItem: 12
+    treeHeightOffsetMeters: 0
+    foliageHeightOffsetMeters: 0
+    propHeightOffsetMeters: 0
+    residential:
+      trees: 3
+      foliage: 4
+      props: 1
+    commercial:
+      trees: 1
+      foliage: 1
+      props: 3
+    industrial:
+      trees: 0
+      foliage: 2
+      props: 5
+    cityCore:
+      trees: 1
+      foliage: 2
+      props: 2
+    park:
+      trees: 5
+      foliage: 8
+      props: 1
+    hospital:
+      trees: 1
+      foliage: 2
+      props: 2
+    military:
+      trees: 1
+      foliage: 2
+      props: 2
+    mixed:
+      trees: 1
+      foliage: 2
+      props: 2
+  tTestArmLengthMeters: 45
+  useTIntersectionTestLayout: 0

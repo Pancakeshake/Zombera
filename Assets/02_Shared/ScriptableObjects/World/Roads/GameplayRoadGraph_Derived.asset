@@ -1,0 +1,654 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 088d109bdd8be3f4a8cfaa39edf74137, type: 3}
+  m_Name: GameplayRoadGraph_Derived
+  m_EditorClassIdentifier: Zombera.Runtime::Zombera.World.Roads.GameplayRoadDerivedData
+  sampleSpacingMeters: 4
+  samples:
+  - position: {x: -30, y: 0, z: 0}
+    tangent: {x: 0.66736484, y: 0.74473095, z: 0}
+    segmentId: segment_main
+    roadType: 2
+    widthMeters: 6
+    laneCount: 2
+    laneWidthMeters: 3
+    speedModifier: 1
+    noiseLevel: 0.2
+    navArea: 1
+    contributesPathArea: 1
+    fromBiomeId: 
+    toBiomeId: 
+    biomeTransition01: 0
+    patrolRoute: 1
+    vehicleRoute: 0
+    lootZone: 0
+    lootZoneWeight: 0.25
+    supportsSidewalks: 0
+    sidewalkWidthMeters: 1.5
+    supportsDecals: 0
+    decalDensity: 0.5
+    roadsideLotEligible: 1
+    roadsideLotWeight: 1
+    roadsideLotSpacingMeters: 16
+    roadsideLotDepthMeters: 14
+  - position: {x: -27.391304, y: 2.911116, z: 0}
+    tangent: {x: 0.66736484, y: 0.74473095, z: 0}
+    segmentId: segment_main
+    roadType: 2
+    widthMeters: 6
+    laneCount: 2
+    laneWidthMeters: 3
+    speedModifier: 1
+    noiseLevel: 0.2
+    navArea: 1
+    contributesPathArea: 1
+    fromBiomeId: 
+    toBiomeId: 
+    biomeTransition01: 0.04347826
+    patrolRoute: 1
+    vehicleRoute: 0
+    lootZone: 0
+    lootZoneWeight: 0.25
+    supportsSidewalks: 0
+    sidewalkWidthMeters: 1.5
+    supportsDecals: 0
+    decalDensity: 0.5
+    roadsideLotEligible: 1
+    roadsideLotWeight: 1
+    roadsideLotSpacingMeters: 16
+    roadsideLotDepthMeters: 14
+  - position: {x: -24.782608, y: 5.822232, z: 0}
+    tangent: {x: 0.66736484, y: 0.74473095, z: 0}
+    segmentId: segment_main
+    roadType: 2
+    widthMeters: 6
+    laneCount: 2
+    laneWidthMeters: 3
+    speedModifier: 1
+    noiseLevel: 0.2
+    navArea: 1
+    contributesPathArea: 1
+    fromBiomeId: 
+    toBiomeId: 
+    biomeTransition01: 0.08695652
+    patrolRoute: 1
+    vehicleRoute: 0
+    lootZone: 0
+    lootZoneWeight: 0.25
+    supportsSidewalks: 0
+    sidewalkWidthMeters: 1.5
+    supportsDecals: 0
+    decalDensity: 0.5
+    roadsideLotEligible: 1
+    roadsideLotWeight: 1
+    roadsideLotSpacingMeters: 16
+    roadsideLotDepthMeters: 14
+  - position: {x: -22.173914, y: 8.733348, z: 0}
+    tangent: {x: 0.66736484, y: 0.74473095, z: 0}
+    segmentId: segment_main
+    roadType: 2
+    widthMeters: 6
+    laneCount: 2
+    laneWidthMeters: 3
+    speedModifier: 1
+    noiseLevel: 0.2
+    navArea: 1
+    contributesPathArea: 1
+    fromBiomeId: 
+    toBiomeId: 
+    biomeTransition01: 0.13043478
+    patrolRoute: 1
+    vehicleRoute: 0
+    lootZone: 0
+    lootZoneWeight: 0.25
+    supportsSidewalks: 0
+    sidewalkWidthMeters: 1.5
+    supportsDecals: 0
+    decalDensity: 0.5
+    roadsideLotEligible: 1
+    roadsideLotWeight: 1
+    roadsideLotSpacingMeters: 16
+    roadsideLotDepthMeters: 14
+  - position: {x: -19.565218, y: 11.644464, z: 0}
+    tangent: {x: 0.66736484, y: 0.74473095, z: 0}
+    segmentId: segment_main
+    roadType: 2
+    widthMeters: 6
+    laneCount: 2
+    laneWidthMeters: 3
+    speedModifier: 1
+    noiseLevel: 0.2
+    navArea: 1
+    contributesPathArea: 1
+    fromBiomeId: 
+    toBiomeId: 
+    biomeTransition01: 0.17391305
+    patrolRoute: 1
+    vehicleRoute: 0
+    lootZone: 0
+    lootZoneWeight: 0.25
+    supportsSidewalks: 0
+    sidewalkWidthMeters: 1.5
+    supportsDecals: 0
+    decalDensity: 0.5
+    roadsideLotEligible: 1
+    roadsideLotWeight: 1
+    roadsideLotSpacingMeters: 16
+    roadsideLotDepthMeters: 14
+  - position: {x: -16.956522, y: 14.555579, z: 0}
+    tangent: {x: 0.66736484, y: 0.74473095, z: 0}
+    segmentId: segment_main
+    roadType: 2
+    widthMeters: 6
+    laneCount: 2
+    laneWidthMeters: 3
+    speedModifier: 1
+    noiseLevel: 0.2
+    navArea: 1
+    contributesPathArea: 1
+    fromBiomeId: 
+    toBiomeId: 
+    biomeTransition01: 0.2173913
+    patrolRoute: 1
+    vehicleRoute: 0
+    lootZone: 0
+    lootZoneWeight: 0.25
+    supportsSidewalks: 0
+    sidewalkWidthMeters: 1.5
+    supportsDecals: 0
+    decalDensity: 0.5
+    roadsideLotEligible: 1
+    roadsideLotWeight: 1
+    roadsideLotSpacingMeters: 16
+    roadsideLotDepthMeters: 14
+  - position: {x: -14.347826, y: 17.466696, z: 0}
+    tangent: {x: 0.66736484, y: 0.74473095, z: 0}
+    segmentId: segment_main
+    roadType: 2
+    widthMeters: 6
+    laneCount: 2
+    laneWidthMeters: 3
+    speedModifier: 1
+    noiseLevel: 0.2
+    navArea: 1
+    contributesPathArea: 1
+    fromBiomeId: 
+    toBiomeId: 
+    biomeTransition01: 0.26086956
+    patrolRoute: 1
+    vehicleRoute: 0
+    lootZone: 0
+    lootZoneWeight: 0.25
+    supportsSidewalks: 0
+    sidewalkWidthMeters: 1.5
+    supportsDecals: 0
+    decalDensity: 0.5
+    roadsideLotEligible: 1
+    roadsideLotWeight: 1
+    roadsideLotSpacingMeters: 16
+    roadsideLotDepthMeters: 14
+  - position: {x: -11.739131, y: 20.37781, z: 0}
+    tangent: {x: 0.66736484, y: 0.74473095, z: 0}
+    segmentId: segment_main
+    roadType: 2
+    widthMeters: 6
+    laneCount: 2
+    laneWidthMeters: 3
+    speedModifier: 1
+    noiseLevel: 0.2
+    navArea: 1
+    contributesPathArea: 1
+    fromBiomeId: 
+    toBiomeId: 
+    biomeTransition01: 0.3043478
+    patrolRoute: 1
+    vehicleRoute: 0
+    lootZone: 0
+    lootZoneWeight: 0.25
+    supportsSidewalks: 0
+    sidewalkWidthMeters: 1.5
+    supportsDecals: 0
+    decalDensity: 0.5
+    roadsideLotEligible: 1
+    roadsideLotWeight: 1
+    roadsideLotSpacingMeters: 16
+    roadsideLotDepthMeters: 14
+  - position: {x: -9.130434, y: 23.288927, z: 0}
+    tangent: {x: 0.66736484, y: 0.74473095, z: 0}
+    segmentId: segment_main
+    roadType: 2
+    widthMeters: 6
+    laneCount: 2
+    laneWidthMeters: 3
+    speedModifier: 1
+    noiseLevel: 0.2
+    navArea: 1
+    contributesPathArea: 1
+    fromBiomeId: 
+    toBiomeId: 
+    biomeTransition01: 0.3478261
+    patrolRoute: 1
+    vehicleRoute: 0
+    lootZone: 0
+    lootZoneWeight: 0.25
+    supportsSidewalks: 0
+    sidewalkWidthMeters: 1.5
+    supportsDecals: 0
+    decalDensity: 0.5
+    roadsideLotEligible: 1
+    roadsideLotWeight: 1
+    roadsideLotSpacingMeters: 16
+    roadsideLotDepthMeters: 14
+  - position: {x: -6.5217376, y: 26.200045, z: 0}
+    tangent: {x: 0.66736484, y: 0.74473095, z: 0}
+    segmentId: segment_main
+    roadType: 2
+    widthMeters: 6
+    laneCount: 2
+    laneWidthMeters: 3
+    speedModifier: 1
+    noiseLevel: 0.2
+    navArea: 1
+    contributesPathArea: 1
+    fromBiomeId: 
+    toBiomeId: 
+    biomeTransition01: 0.39130434
+    patrolRoute: 1
+    vehicleRoute: 0
+    lootZone: 0
+    lootZoneWeight: 0.25
+    supportsSidewalks: 0
+    sidewalkWidthMeters: 1.5
+    supportsDecals: 0
+    decalDensity: 0.5
+    roadsideLotEligible: 1
+    roadsideLotWeight: 1
+    roadsideLotSpacingMeters: 16
+    roadsideLotDepthMeters: 14
+  - position: {x: -3.9130445, y: 29.111158, z: 0}
+    tangent: {x: 0.66736484, y: 0.74473095, z: 0}
+    segmentId: segment_main
+    roadType: 2
+    widthMeters: 6
+    laneCount: 2
+    laneWidthMeters: 3
+    speedModifier: 1
+    noiseLevel: 0.2
+    navArea: 1
+    contributesPathArea: 1
+    fromBiomeId: 
+    toBiomeId: 
+    biomeTransition01: 0.4347826
+    patrolRoute: 1
+    vehicleRoute: 0
+    lootZone: 0
+    lootZoneWeight: 0.25
+    supportsSidewalks: 0
+    sidewalkWidthMeters: 1.5
+    supportsDecals: 0
+    decalDensity: 0.5
+    roadsideLotEligible: 1
+    roadsideLotWeight: 1
+    roadsideLotSpacingMeters: 16
+    roadsideLotDepthMeters: 14
+  - position: {x: -1.3043475, y: 32.022274, z: 0}
+    tangent: {x: 0.66736484, y: 0.74473095, z: 0}
+    segmentId: segment_main
+    roadType: 2
+    widthMeters: 6
+    laneCount: 2
+    laneWidthMeters: 3
+    speedModifier: 1
+    noiseLevel: 0.2
+    navArea: 1
+    contributesPathArea: 1
+    fromBiomeId: 
+    toBiomeId: 
+    biomeTransition01: 0.47826087
+    patrolRoute: 1
+    vehicleRoute: 0
+    lootZone: 0
+    lootZoneWeight: 0.25
+    supportsSidewalks: 0
+    sidewalkWidthMeters: 1.5
+    supportsDecals: 0
+    decalDensity: 0.5
+    roadsideLotEligible: 1
+    roadsideLotWeight: 1
+    roadsideLotSpacingMeters: 16
+    roadsideLotDepthMeters: 14
+  - position: {x: 1.3043475, y: 34.93339, z: 0}
+    tangent: {x: 0.66736484, y: 0.74473095, z: 0}
+    segmentId: segment_main
+    roadType: 2
+    widthMeters: 6
+    laneCount: 2
+    laneWidthMeters: 3
+    speedModifier: 1
+    noiseLevel: 0.2
+    navArea: 1
+    contributesPathArea: 1
+    fromBiomeId: 
+    toBiomeId: 
+    biomeTransition01: 0.5217391
+    patrolRoute: 1
+    vehicleRoute: 0
+    lootZone: 0
+    lootZoneWeight: 0.25
+    supportsSidewalks: 0
+    sidewalkWidthMeters: 1.5
+    supportsDecals: 0
+    decalDensity: 0.5
+    roadsideLotEligible: 1
+    roadsideLotWeight: 1
+    roadsideLotSpacingMeters: 16
+    roadsideLotDepthMeters: 14
+  - position: {x: 3.9130425, y: 37.844505, z: 0}
+    tangent: {x: 0.66736484, y: 0.74473095, z: 0}
+    segmentId: segment_main
+    roadType: 2
+    widthMeters: 6
+    laneCount: 2
+    laneWidthMeters: 3
+    speedModifier: 1
+    noiseLevel: 0.2
+    navArea: 1
+    contributesPathArea: 1
+    fromBiomeId: 
+    toBiomeId: 
+    biomeTransition01: 0.5652174
+    patrolRoute: 1
+    vehicleRoute: 0
+    lootZone: 0
+    lootZoneWeight: 0.25
+    supportsSidewalks: 0
+    sidewalkWidthMeters: 1.5
+    supportsDecals: 0
+    decalDensity: 0.5
+    roadsideLotEligible: 1
+    roadsideLotWeight: 1
+    roadsideLotSpacingMeters: 16
+    roadsideLotDepthMeters: 14
+  - position: {x: 6.5217376, y: 40.75562, z: 0}
+    tangent: {x: 0.66736484, y: 0.74473095, z: 0}
+    segmentId: segment_main
+    roadType: 2
+    widthMeters: 6
+    laneCount: 2
+    laneWidthMeters: 3
+    speedModifier: 1
+    noiseLevel: 0.2
+    navArea: 1
+    contributesPathArea: 1
+    fromBiomeId: 
+    toBiomeId: 
+    biomeTransition01: 0.6086956
+    patrolRoute: 1
+    vehicleRoute: 0
+    lootZone: 0
+    lootZoneWeight: 0.25
+    supportsSidewalks: 0
+    sidewalkWidthMeters: 1.5
+    supportsDecals: 0
+    decalDensity: 0.5
+    roadsideLotEligible: 1
+    roadsideLotWeight: 1
+    roadsideLotSpacingMeters: 16
+    roadsideLotDepthMeters: 14
+  - position: {x: 9.130436, y: 43.66674, z: 0}
+    tangent: {x: 0.66736484, y: 0.74473095, z: 0}
+    segmentId: segment_main
+    roadType: 2
+    widthMeters: 6
+    laneCount: 2
+    laneWidthMeters: 3
+    speedModifier: 1
+    noiseLevel: 0.2
+    navArea: 1
+    contributesPathArea: 1
+    fromBiomeId: 
+    toBiomeId: 
+    biomeTransition01: 0.65217394
+    patrolRoute: 1
+    vehicleRoute: 0
+    lootZone: 0
+    lootZoneWeight: 0.25
+    supportsSidewalks: 0
+    sidewalkWidthMeters: 1.5
+    supportsDecals: 0
+    decalDensity: 0.5
+    roadsideLotEligible: 1
+    roadsideLotWeight: 1
+    roadsideLotSpacingMeters: 16
+    roadsideLotDepthMeters: 14
+  - position: {x: 11.739131, y: 46.577854, z: 0}
+    tangent: {x: 0.66736484, y: 0.74473095, z: 0}
+    segmentId: segment_main
+    roadType: 2
+    widthMeters: 6
+    laneCount: 2
+    laneWidthMeters: 3
+    speedModifier: 1
+    noiseLevel: 0.2
+    navArea: 1
+    contributesPathArea: 1
+    fromBiomeId: 
+    toBiomeId: 
+    biomeTransition01: 0.6956522
+    patrolRoute: 1
+    vehicleRoute: 0
+    lootZone: 0
+    lootZoneWeight: 0.25
+    supportsSidewalks: 0
+    sidewalkWidthMeters: 1.5
+    supportsDecals: 0
+    decalDensity: 0.5
+    roadsideLotEligible: 1
+    roadsideLotWeight: 1
+    roadsideLotSpacingMeters: 16
+    roadsideLotDepthMeters: 14
+  - position: {x: 14.347826, y: 49.48897, z: 0}
+    tangent: {x: 0.66736484, y: 0.74473095, z: 0}
+    segmentId: segment_main
+    roadType: 2
+    widthMeters: 6
+    laneCount: 2
+    laneWidthMeters: 3
+    speedModifier: 1
+    noiseLevel: 0.2
+    navArea: 1
+    contributesPathArea: 1
+    fromBiomeId: 
+    toBiomeId: 
+    biomeTransition01: 0.73913044
+    patrolRoute: 1
+    vehicleRoute: 0
+    lootZone: 0
+    lootZoneWeight: 0.25
+    supportsSidewalks: 0
+    sidewalkWidthMeters: 1.5
+    supportsDecals: 0
+    decalDensity: 0.5
+    roadsideLotEligible: 1
+    roadsideLotWeight: 1
+    roadsideLotSpacingMeters: 16
+    roadsideLotDepthMeters: 14
+  - position: {x: 16.956524, y: 52.40009, z: 0}
+    tangent: {x: 0.66736484, y: 0.74473095, z: 0}
+    segmentId: segment_main
+    roadType: 2
+    widthMeters: 6
+    laneCount: 2
+    laneWidthMeters: 3
+    speedModifier: 1
+    noiseLevel: 0.2
+    navArea: 1
+    contributesPathArea: 1
+    fromBiomeId: 
+    toBiomeId: 
+    biomeTransition01: 0.7826087
+    patrolRoute: 1
+    vehicleRoute: 0
+    lootZone: 0
+    lootZoneWeight: 0.25
+    supportsSidewalks: 0
+    sidewalkWidthMeters: 1.5
+    supportsDecals: 0
+    decalDensity: 0.5
+    roadsideLotEligible: 1
+    roadsideLotWeight: 1
+    roadsideLotSpacingMeters: 16
+    roadsideLotDepthMeters: 14
+  - position: {x: 19.565216, y: 55.3112, z: 0}
+    tangent: {x: 0.66736484, y: 0.74473095, z: 0}
+    segmentId: segment_main
+    roadType: 2
+    widthMeters: 6
+    laneCount: 2
+    laneWidthMeters: 3
+    speedModifier: 1
+    noiseLevel: 0.2
+    navArea: 1
+    contributesPathArea: 1
+    fromBiomeId: 
+    toBiomeId: 
+    biomeTransition01: 0.82608694
+    patrolRoute: 1
+    vehicleRoute: 0
+    lootZone: 0
+    lootZoneWeight: 0.25
+    supportsSidewalks: 0
+    sidewalkWidthMeters: 1.5
+    supportsDecals: 0
+    decalDensity: 0.5
+    roadsideLotEligible: 1
+    roadsideLotWeight: 1
+    roadsideLotSpacingMeters: 16
+    roadsideLotDepthMeters: 14
+  - position: {x: 22.173912, y: 58.222317, z: 0}
+    tangent: {x: 0.66736484, y: 0.74473095, z: 0}
+    segmentId: segment_main
+    roadType: 2
+    widthMeters: 6
+    laneCount: 2
+    laneWidthMeters: 3
+    speedModifier: 1
+    noiseLevel: 0.2
+    navArea: 1
+    contributesPathArea: 1
+    fromBiomeId: 
+    toBiomeId: 
+    biomeTransition01: 0.8695652
+    patrolRoute: 1
+    vehicleRoute: 0
+    lootZone: 0
+    lootZoneWeight: 0.25
+    supportsSidewalks: 0
+    sidewalkWidthMeters: 1.5
+    supportsDecals: 0
+    decalDensity: 0.5
+    roadsideLotEligible: 1
+    roadsideLotWeight: 1
+    roadsideLotSpacingMeters: 16
+    roadsideLotDepthMeters: 14
+  - position: {x: 24.782614, y: 61.13344, z: 0}
+    tangent: {x: 0.66736484, y: 0.74473095, z: 0}
+    segmentId: segment_main
+    roadType: 2
+    widthMeters: 6
+    laneCount: 2
+    laneWidthMeters: 3
+    speedModifier: 1
+    noiseLevel: 0.2
+    navArea: 1
+    contributesPathArea: 1
+    fromBiomeId: 
+    toBiomeId: 
+    biomeTransition01: 0.9130435
+    patrolRoute: 1
+    vehicleRoute: 0
+    lootZone: 0
+    lootZoneWeight: 0.25
+    supportsSidewalks: 0
+    sidewalkWidthMeters: 1.5
+    supportsDecals: 0
+    decalDensity: 0.5
+    roadsideLotEligible: 1
+    roadsideLotWeight: 1
+    roadsideLotSpacingMeters: 16
+    roadsideLotDepthMeters: 14
+  - position: {x: 27.391304, y: 64.04455, z: 0}
+    tangent: {x: 0.66736484, y: 0.74473095, z: 0}
+    segmentId: segment_main
+    roadType: 2
+    widthMeters: 6
+    laneCount: 2
+    laneWidthMeters: 3
+    speedModifier: 1
+    noiseLevel: 0.2
+    navArea: 1
+    contributesPathArea: 1
+    fromBiomeId: 
+    toBiomeId: 
+    biomeTransition01: 0.95652175
+    patrolRoute: 1
+    vehicleRoute: 0
+    lootZone: 0
+    lootZoneWeight: 0.25
+    supportsSidewalks: 0
+    sidewalkWidthMeters: 1.5
+    supportsDecals: 0
+    decalDensity: 0.5
+    roadsideLotEligible: 1
+    roadsideLotWeight: 1
+    roadsideLotSpacingMeters: 16
+    roadsideLotDepthMeters: 14
+  - position: {x: 30, y: 66.955666, z: 0}
+    tangent: {x: 0.66736484, y: 0.74473095, z: 0}
+    segmentId: segment_main
+    roadType: 2
+    widthMeters: 6
+    laneCount: 2
+    laneWidthMeters: 3
+    speedModifier: 1
+    noiseLevel: 0.2
+    navArea: 1
+    contributesPathArea: 1
+    fromBiomeId: 
+    toBiomeId: 
+    biomeTransition01: 1
+    patrolRoute: 1
+    vehicleRoute: 0
+    lootZone: 0
+    lootZoneWeight: 0.25
+    supportsSidewalks: 0
+    sidewalkWidthMeters: 1.5
+    supportsDecals: 0
+    decalDensity: 0.5
+    roadsideLotEligible: 1
+    roadsideLotWeight: 1
+    roadsideLotSpacingMeters: 16
+    roadsideLotDepthMeters: 14
+  resolvedSpawnPoints:
+  - spawnId: spawn_ambient_01
+    segmentId: segment_main
+    position: {x: 0, y: 33.477833, z: 0}
+    tangent: {x: 0.66736484, y: 0.74473095, z: 0}
+    role: 0
+    radiusMeters: 10
+    weight: 1
+    requiresNavMesh: 1
+    tag: starter
+  sourceGraphName: GameplayRoadGraph
+  sourceNodeCount: 2
+  sourceSegmentCount: 1
+  sourceSpawnPointCount: 1

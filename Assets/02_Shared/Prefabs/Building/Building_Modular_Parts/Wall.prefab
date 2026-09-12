@@ -1,0 +1,148 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7353262966569479338
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 145134673854874550, guid: c025898837d27004486a54cf85275231, type: 3}
+      propertyPath: m_uniqueId
+      value: 181d-674c-ffb3
+      objectReference: {fileID: 0}
+    - target: {fileID: 454846552843963274, guid: c025898837d27004486a54cf85275231, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 5139442083506219791, guid: 17fee590fe1321442bae7815c23095f3, type: 3}
+    - target: {fileID: 1883189293855185082, guid: c025898837d27004486a54cf85275231, type: 3}
+      propertyPath: m_uniqueId
+      value: 9884-ee0b-8219
+      objectReference: {fileID: 0}
+    - target: {fileID: 2426041406746509120, guid: c025898837d27004486a54cf85275231, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: e24e24a4945b5a647987fb87d1788f7c, type: 2}
+    - target: {fileID: 2426041406746509120, guid: c025898837d27004486a54cf85275231, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 64d2b73e9f95a544693bd3017abe7198, type: 2}
+    - target: {fileID: 4038407415812120502, guid: c025898837d27004486a54cf85275231, type: 3}
+      propertyPath: m_uniqueId
+      value: 8ac6-468e-ff9b
+      objectReference: {fileID: 0}
+    - target: {fileID: 4200022630182257576, guid: c025898837d27004486a54cf85275231, type: 3}
+      propertyPath: m_showGizmos
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5889470066239348946, guid: c025898837d27004486a54cf85275231, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5889470066239348946, guid: c025898837d27004486a54cf85275231, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 5889470066239348946, guid: c025898837d27004486a54cf85275231, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5889470066239348946, guid: c025898837d27004486a54cf85275231, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5889470066239348946, guid: c025898837d27004486a54cf85275231, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5889470066239348946, guid: c025898837d27004486a54cf85275231, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5889470066239348946, guid: c025898837d27004486a54cf85275231, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5889470066239348946, guid: c025898837d27004486a54cf85275231, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5889470066239348946, guid: c025898837d27004486a54cf85275231, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5889470066239348946, guid: c025898837d27004486a54cf85275231, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5889470066239348946, guid: c025898837d27004486a54cf85275231, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5889470066239348946, guid: c025898837d27004486a54cf85275231, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7316052942748918516, guid: c025898837d27004486a54cf85275231, type: 3}
+      propertyPath: m_prefabId
+      value: 01863bc4720187241b8b2ff7714bbf41
+      objectReference: {fileID: 0}
+    - target: {fileID: 7316052942748918516, guid: c025898837d27004486a54cf85275231, type: 3}
+      propertyPath: m_uniqueId
+      value: 8c88-2dd2-f06b
+      objectReference: {fileID: 0}
+    - target: {fileID: 7919763777044644118, guid: c025898837d27004486a54cf85275231, type: 3}
+      propertyPath: m_Name
+      value: Wall
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7919763777044644118, guid: c025898837d27004486a54cf85275231, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6270367685698428117}
+    - targetCorrespondingSourceObject: {fileID: 7919763777044644118, guid: c025898837d27004486a54cf85275231, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5666816629543281570}
+  m_SourcePrefab: {fileID: 100100000, guid: c025898837d27004486a54cf85275231, type: 3}
+--- !u!1 &857001714248068540 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7919763777044644118, guid: c025898837d27004486a54cf85275231, type: 3}
+  m_PrefabInstance: {fileID: 7353262966569479338}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6270367685698428117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 857001714248068540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a8b032277fccd248821188e10d38f9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Zombera.Gameplay::Zombera.BuildingSystem.BuildPiece
+  category: 0
+  wallType: 0
+  snapPoints: []
+  structureHealth: {fileID: 5666816629543281570}
+--- !u!114 &5666816629543281570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 857001714248068540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c66e26a2347c344c871cefba406f047, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Zombera.Gameplay::Zombera.BuildingSystem.StructureHealth
+  maxHealth: 150
+  initializeOnAwake: 1
+  destroyGameObjectOnDeath: 1
+  onDestroyed:
+    m_PersistentCalls:
+      m_Calls: []

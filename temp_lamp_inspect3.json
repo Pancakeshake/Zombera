@@ -1,0 +1,5 @@
+{
+  "csharpCode": "using UnityEngine; using System.Collections.Generic; public class CheckRoad2002 { public static string Run() { var sb = new System.Text.StringBuilder(); var roadLamps = GameObject.Find(\"Road Lamps\"); if (roadLamps == null) return \"no lamps\"; float minX = float.MaxValue, maxX = float.MinValue, minZ = float.MaxValue, maxZ = float.MinValue; int count = 0; float sumX = 0, sumZ = 0; foreach (Transform t in roadLamps.transform) { if (!t.name.Contains(\"Road2002\")) continue; count++; Vector3 p = t.position; sumX += p.x; sumZ += p.z; if (p.x < minX) minX = p.x; if (p.x > maxX) maxX = p.x; if (p.z < minZ) minZ = p.z; if (p.z > maxZ) maxZ = p.z; if (count <= 3) sb.AppendLine(t.name.Substring(0,7) + \"... \" + p); } if (count == 0) return \"no Road2002 lamps\"; float avgZ = sumZ / count; float halfSpan = (maxZ - minZ) / 2f; sb.AppendLine(\"count=\" + count + \" avgZ=\" + avgZ.ToString(\"F2\") + \" halfSpan=\" + halfSpan.ToString(\"F2\")); sb.AppendLine(\"z range: \" + minZ.ToString(\"F2\") + \" to \" + maxZ.ToString(\"F2\")); return sb.ToString(); } }",
+  "className": "CheckRoad2002",
+  "methodName": "Run"
+}

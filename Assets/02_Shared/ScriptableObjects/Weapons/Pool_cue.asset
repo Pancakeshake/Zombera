@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a28e0dc24681074abff58604dd23369, type: 3}
+  m_Name: Pool_cue
+  m_EditorClassIdentifier: Zombera.Runtime::Zombera.Data.WeaponData
+  weaponId: weapon_pool_cue_pool_cue_default
+  displayName: Pool cue
+  weaponCategory: 3
+  baseDamage: 18
+  effectiveRange: 2
+  fireRate: 1.4
+  magazineSize: 1
+  recoilForce: 0
+  spreadAngle: 0
+  reloadTimeSeconds: 0
+  animationProfileId: melee

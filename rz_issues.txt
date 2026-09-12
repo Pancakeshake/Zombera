@@ -1,0 +1,1594 @@
+
+=== Assets/Scripts/AI/Actions/ReloadAction.cs ===
+  L29 [UnusedMember.Global] Property 'ReloadDurationSeconds' is never used
+  L32 [MemberCanBePrivate.Global] Property 'IsReloading' can be made private
+  L55 [UnusedMethodReturnValue.Global] Method 'ExecuteReload' return value is never used
+  L75 [InvertIf] Invert 'if' statement to reduce nesting
+
+=== Assets/Scripts/AI/Brains/SquadBrain.cs ===
+  L23 [InconsistentNaming] Name 'lastCommand' does not match rule 'Instance fields (private)'. Suggested name is '_lastCommand'
+  L24 [InconsistentNaming] Name 'lastCommandTarget' does not match rule 'Instance fields (private)'. Suggested name is '_lastCo
+  L25 [InconsistentNaming] Name 'hasCommandTarget' does not match rule 'Instance fields (private)'. Suggested name is '_hasComm
+  L100 [SwitchStatementMissingSomeEnumCasesNoDefault] Some values of the enum are not processed inside switch: Attack, Follow, default
+  L126 [InvertIf] Invert 'if' statement to reduce nesting
+  L155 [InvertIf] Invert 'if' statement to reduce nesting
+
+=== Assets/Scripts/AI/Brains/UnitBrain.cs ===
+  L61 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L64 [InconsistentNaming] Name 'activeStateHandler' does not match rule 'Instance fields (private)'. Suggested name is '_activ
+  L65 [InconsistentNaming] Name 'tickTimer' does not match rule 'Instance fields (private)'. Suggested name is '_tickTimer'.
+  L67 [MemberCanBePrivate.Global] Property 'IsBrainActive' can be made private
+  L68 [MemberCanBePrivate.Global] Property 'CurrentState' can be made private
+  L69 [UnusedAutoPropertyAccessor.Global] Auto-property accessor 'CurrentDecision.get' is never used
+  L70 [UnusedAutoPropertyAccessor.Global] Auto-property accessor 'LastSensorFrame.get' is never used
+  L73 [UnusedMember.Global] Property 'UnitController' is never used
+  L74 [UnusedMember.Global] Property 'UnitHealth' is never used
+  L76 [UnusedMember.Global] Property 'UnitInventory' is never used
+  L77 [UnusedMember.Global] Property 'UnitStats' is never used
+  L80 [UnusedMember.Global] Property 'AllySensor' is never used
+  L81 [UnusedMember.Global] Property 'NoiseSensor' is never used
+  L82 [UnusedMember.Global] Property 'UtilityEvaluator' is never used
+  L87 [UnusedMember.Global] Property 'FollowAction' is never used
+  L176 [VirtualMemberNeverOverridden.Global] Virtual method 'TickBrain' is never overridden
+  L191 [VirtualMemberNeverOverridden.Global] Virtual method 'CollectSensorFrame' is never overridden
+  L266 [VirtualMemberNeverOverridden.Global] Virtual method 'ApplyDecision' is never overridden
+  L274 [ExtractCommonBranchingCode] Extract common code after 'switch' statement
+  L369 [MemberCanBePrivate.Global] Method 'GetFallbackWanderPosition' can be made private
+  L540 [UnusedMember.Global] Property 'StateType' is never used
+  L577 [NotAccessedField.Global] Field 'Self' is assigned but its value is never used
+  L578 [NotAccessedField.Global] Field 'SelfPosition' is assigned but its value is never used
+  L601 [RedundantNameQualifier] Qualifier is redundant
+  L601 [UnassignedField.Global] Field 'TargetDoor' is never assigned
+
+=== Assets/Scripts/AI/Decisions/UtilityEvaluator.cs ===
+  L100 [InvertIf] Invert 'if' statement to reduce nesting
+  L176 [MergeIntoLogicalPattern] Merge into logical pattern
+
+=== Assets/Scripts/AI/UtilitySystem.cs ===
+  L10 [UnusedMember.Global] Method 'ScoreIdle' is never used
+  L15 [UnusedMember.Global] Method 'ScoreInvestigate' is never used
+  L21 [UnusedMember.Global] Method 'ScoreChase' is never used
+  L27 [UnusedMember.Global] Method 'ScoreAttack' is never used
+  L37 [UnusedMember.Global] Method 'ScoreAttackWithContext' is never used
+  L46 [UnusedMember.Global] Method 'ScoreIdleWithContext' is never used
+  L49 [ArrangeRedundantParentheses] Redundant parentheses
+  L49 [ArrangeRedundantParentheses] Redundant parentheses
+
+=== Assets/Scripts/AI/ZombieAnimationController.cs ===
+  L21 [UseArrayEmptyMethod] Use 'Array.Empty<string>()' to avoid array allocation
+  L23 [RedundantDefaultMemberInitializer] Initializing serialised field by default value is redundant
+  L24 [RedundantDefaultMemberInitializer] Initializing serialised field by default value is redundant
+  L54 [RedundantDefaultMemberInitializer] Initializing serialised field by default value is redundant
+  L65 [RedundantArrayCreationExpression] Redundant array creation expression
+  L65 [RedundantExplicitArrayCreation] Redundant explicit array type specification
+  L67 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L76 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L85 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L111 [UseArrayEmptyMethod] Use 'Array.Empty<AnimationClip>()' to avoid array allocation
+  L114 [UseArrayEmptyMethod] Use 'Array.Empty<AnimationClip>()' to avoid array allocation
+  L115 [UseArrayEmptyMethod] Use 'Array.Empty<AnimationClip>()' to avoid array allocation
+  L116 [UseArrayEmptyMethod] Use 'Array.Empty<AnimationClip>()' to avoid array allocation
+  L132 [InconsistentNaming] Name 'attackTriggerHash' does not match rule 'Instance fields (private)'. Suggested name is '_attack
+  L133 [InconsistentNaming] Name 'altAttackTriggerHash' does not match rule 'Instance fields (private)'. Suggested name is '_alt
+  L134 [InconsistentNaming] Name 'dodgeTriggerHash' does not match rule 'Instance fields (private)'. Suggested name is '_dodgeTr
+  L135 [InconsistentNaming] Name 'hitTriggerHash' does not match rule 'Instance fields (private)'. Suggested name is '_hitTrigge
+  L136 [InconsistentNaming] Name 'dieTriggerHash' does not match rule 'Instance fields (private)'. Suggested name is '_dieTrigge
+  L137 [InconsistentNaming] Name 'spawnTriggerHash' does not match rule 'Instance fields (private)'. Suggested name is '_spawnTr
+  L138 [InconsistentNaming] Name 'isDeadHash' does not match rule 'Instance fields (private)'. Suggested name is '_isDeadHash'.
+  L139 [InconsistentNaming] Name 'isInCombatHash' does not match rule 'Instance fields (private)'. Suggested name is '_isInComba
+  L140 [InconsistentNaming] Name 'velocityXHash' does not match rule 'Instance fields (private)'. Suggested name is '_velocityXH
+  L141 [InconsistentNaming] Name 'velocityZHash' does not match rule 'Instance fields (private)'. Suggested name is '_velocityZH
+  L142 [InconsistentNaming] Name 'deathRollHash' does not match rule 'Instance fields (private)'. Suggested name is '_deathRollH
+  L144 [InconsistentNaming] Name 'hasAttackTrigger' does not match rule 'Instance fields (private)'. Suggested name is '_hasAtta
+  L145 [InconsistentNaming] Name 'hasAltAttackTrigger' does not match rule 'Instance fields (private)'. Suggested name is '_hasA
+  L146 [InconsistentNaming] Name 'hasDodgeTrigger' does not match rule 'Instance fields (private)'. Suggested name is '_hasDodge
+  L147 [InconsistentNaming] Name 'hasHitTrigger' does not match rule 'Instance fields (private)'. Suggested name is '_hasHitTrig
+  L148 [InconsistentNaming] Name 'hasDieTrigger' does not match rule 'Instance fields (private)'. Suggested name is '_hasDieTrig
+  L149 [InconsistentNaming] Name 'hasSpawnTrigger' does not match rule 'Instance fields (private)'. Suggested name is '_hasSpawn
+  L150 [InconsistentNaming] Name 'hasIsDeadBool' does not match rule 'Instance fields (private)'. Suggested name is '_hasIsDeadB
+  L151 [InconsistentNaming] Name 'hasIsInCombatBool' does not match rule 'Instance fields (private)'. Suggested name is '_hasIsI
+  L152 [InconsistentNaming] Name 'hasSpeedFloat' does not match rule 'Instance fields (private)'. Suggested name is '_hasSpeedFl
+  L153 [InconsistentNaming] Name 'hasVelocityX' does not match rule 'Instance fields (private)'. Suggested name is '_hasVelocity
+  L154 [InconsistentNaming] Name 'hasVelocityZ' does not match rule 'Instance fields (private)'. Suggested name is '_hasVelocity
+  L155 [InconsistentNaming] Name 'hasDeathRoll' does not match rule 'Instance fields (private)'. Suggested name is '_hasDeathRol
+  L156 [InconsistentNaming] Name 'speedFloatHash' does not match rule 'Instance fields (private)'. Suggested name is '_speedFloa
+  L157 [InconsistentNaming] Name 'lastForcedLocomotionRestartFrame' does not match rule 'Instance fields (private)'. Suggested n
+  L159 [InconsistentNaming] Name 'healthSubscribed' does not match rule 'Instance fields (private)'. Suggested name is '_healthS
+  L160 [InconsistentNaming] Name 'combatTickSubscribed' does not match rule 'Instance fields (private)'. Suggested name is '_com
+  L161 [InconsistentNaming] Name 'lastHitTriggerFrame' does not match rule 'Instance fields (private)'. Suggested name is '_last
+  L162 [InconsistentNaming] Name 'lastDodgeTriggerFrame' does not match rule 'Instance fields (private)'. Suggested name is '_la
+  L163 [InconsistentNaming] Name 'hasAppliedDeathPresentation' does not match rule 'Instance fields (private)'. Suggested name i
+  L165 [InconsistentNaming] Name 'zombieAi' does not match rule 'Instance fields (private)'. Suggested name is '_zombieAi'.
+  L166 [InconsistentNaming] Name 'zombieStateMachine' does not match rule 'Instance fields (private)'. Suggested name is '_zombi
+  L167 [InconsistentNaming] Name 'unitController' does not match rule 'Instance fields (private)'. Suggested name is '_unitContr
+  L168 [InconsistentNaming] Name 'navMeshAgent' does not match rule 'Instance fields (private)'. Suggested name is '_navMeshAgen
+  L169 [InconsistentNaming] Name 'mainCollider' does not match rule 'Instance fields (private)'. Suggested name is '_mainCollide
+  L170 [InconsistentNaming] Name 'rootRigidbody' does not match rule 'Instance fields (private)'. Suggested name is '_rootRigidb
+  L171 [InconsistentNaming] Name 'ragdollRigidbodies' does not match rule 'Instance fields (private)'. Suggested name is '_ragdo
+  L172 [InconsistentNaming] Name 'ragdollColliders' does not match rule 'Instance fields (private)'. Suggested name is '_ragdoll
+  L173 [InconsistentNaming] Name 'ragdollRigCached' does not match rule 'Instance fields (private)'. Suggested name is '_ragdoll
+  L174 [InconsistentNaming] Name 'hasRagdollRig' does not match rule 'Instance fields (private)'. Suggested name is '_hasRagdoll
+  L175 [InconsistentNaming] Name 'pendingRagdollCoroutine' does not match rule 'Instance fields (private)'. Suggested name is '_
+  L177 [InconsistentNaming] Name 'runtimeOverrideController' does not match rule 'Instance fields (private)'. Suggested name is 
+  L178 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L178 [InconsistentNaming] Name 'runtimeOverrides' does not match rule 'Instance fields (private)'. Suggested name is '_runtime
+  L180 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L180 [InconsistentNaming] Name 'idleVariants' does not match rule 'Instance fields (private)'. Suggested name is '_idleVariant
+  L181 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L181 [InconsistentNaming] Name 'locomotionVariants' does not match rule 'Instance fields (private)'. Suggested name is '_locom
+  L182 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L182 [InconsistentNaming] Name 'attackVariants' does not match rule 'Instance fields (private)'. Suggested name is '_attackVar
+  L183 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L183 [InconsistentNaming] Name 'dodgeVariants' does not match rule 'Instance fields (private)'. Suggested name is '_dodgeVaria
+  L184 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L184 [InconsistentNaming] Name 'hitVariants' does not match rule 'Instance fields (private)'. Suggested name is '_hitVariants'
+  L185 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L185 [InconsistentNaming] Name 'deathVariants' does not match rule 'Instance fields (private)'. Suggested name is '_deathVaria
+  L186 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L186 [InconsistentNaming] Name 'combatIdleVariants' does not match rule 'Instance fields (private)'. Suggested name is '_comba
+  L187 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L187 [InconsistentNaming] Name 'filteredHitVariants' does not match rule 'Instance fields (private)'. Suggested name is '_filt
+  L188 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L188 [InconsistentNaming] Name 'filteredHitVariantWeights' does not match rule 'Instance fields (private)'. Suggested name is 
+  L189 [InconsistentNaming] Name 'folderVariantCategoriesBuilt' does not match rule 'Instance fields (private)'. Suggested name 
+  L190 [InconsistentNaming] Name 'cachedIncomingHitDamage' does not match rule 'Instance fields (private)'. Suggested name is '_
+  L191 [InconsistentNaming] Name 'cachedIncomingHitStunChance01' does not match rule 'Instance fields (private)'. Suggested name
+  L192 [InconsistentNaming] Name 'cachedIncomingHitReactionArea' does not match rule 'Instance fields (private)'. Suggested name
+  L193 [InconsistentNaming] Name 'cachedIncomingHitContextExpiresAt' does not match rule 'Instance fields (private)'. Suggested 
+  L222 [InvertIf] Invert 'if' statement to reduce nesting
+  L378 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L378 [LoopCanBeConvertedToQuery] Loop can be converted into LINQ-expression
+  L395 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L395 [LoopCanBeConvertedToQuery] Loop can be converted into LINQ-expression
+  L397 [LocalVariableHidesMember] Local variable 'collider' hides property 'UnityEngine.Component.collider'
+  L419 [ParameterHidesMember] Parameter 'enabled' hides property 'UnityEngine.Behaviour.enabled'
+  L426 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L438 [InvertIf] Invert 'if' statement to reduce nesting
+  L445 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L447 [LocalVariableHidesMember] Local variable 'collider' hides property 'UnityEngine.Component.collider'
+  L628 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L628 [LoopCanBeConvertedToQuery] Loop can be converted into LINQ-expression
+  L997 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L1008 [MergeIntoPattern] Merge into pattern
+  L1015 [InvertIf] Invert 'if' statement to reduce nesting
+  L1022 [MergeIntoPattern] Merge into pattern
+  L1024 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L1034 [InvertIf] Invert 'if' statement to reduce nesting
+  L1083 [InvertIf] Invert 'if' statement to reduce nesting
+  L1092 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L1095 [InvertIf] Invert 'if' statement to reduce nesting
+  L1144 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L1194 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L1194 [LoopCanBeConvertedToQuery] Loop can be converted into LINQ-expression
+  L1216 [UseIndexFromEndExpression] Use index from end expression
+  L1221 [ConvertSwitchStatementToSwitchExpression] Convert 'switch' statement to 'switch' expression
+  L1221 [SwitchStatementHandlesSomeKnownEnumValuesWithDefault] Some values of the enum are not processed inside switch: Default
+  L1278 [MergeIntoLogicalPattern] Merge into logical pattern
+  L1315 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L1323 [LocalVariableHidesMember] Local variable 'name' hides property 'UnityEngine.Object.name'
+  L1326 [ConvertIfStatementToConditionalTernaryExpression] Convert into method call with '?:' expression inside
+  L1369 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L1419 [MergeIntoPattern] Merge into pattern
+  L1424 [InvertIf] Invert 'if' statement to reduce nesting
+  L1533 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L1533 [LoopCanBeConvertedToQuery] Loop can be converted into LINQ-expression
+  L1585 [ReplaceSubstringWithRangeIndexer] Use range indexer
+  L1589 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L1602 [ReplaceSubstringWithRangeIndexer] Use range indexer
+  L1625 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L1640 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L1640 [LoopCanBeConvertedToQuery] Loop can be converted into LINQ-expression
+
+=== Assets/Scripts/AI/ZombieAttackSlotManager.cs ===
+  L31 [MemberCanBeMadeStatic.Global] Method 'RequestSlot' can be made static
+  L31 [UnusedParameter.Global] Parameter 'requester' is never used
+  L35 [UnusedMember.Global] Method 'HasSlot' is never used
+  L35 [UnusedParameter.Global] Parameter 'requester' is never used
+
+=== Assets/Scripts/AI/ZombieController.cs ===
+  L27 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L30 [UnusedMember.Global] Property 'AITickInterval' is never used
+  L31 [MemberCanBePrivate.Global] Property 'IsActive' can be made private
+  L33 [InconsistentNaming] Name 'tickTimer' does not match rule 'Instance fields (private)'. Suggested name is '_tickTimer'.
+  L34 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L34 [InconsistentNaming] Name 'nearbyEnemyBuffer' does not match rule 'Instance fields (private)'. Suggested name is '_nearby
+  L35 [InconsistentNaming] Name 'unitController' does not match rule 'Instance fields (private)'. Suggested name is '_unitContr
+  L36 [InconsistentNaming] Name 'navMeshAgent' does not match rule 'Instance fields (private)'. Suggested name is '_navMeshAgen
+  L121 [MergeIntoLogicalPattern] Merge into logical pattern
+  L125 [InvertIf] Invert 'if' statement to reduce nesting
+  L162 [VirtualMemberNeverOverridden.Global] Virtual method 'TickAI' is never overridden
+  L207 [InvertIf] Invert 'if' statement to reduce nesting
+  L226 [MergeIntoLogicalPattern] Merge into logical pattern
+  L240 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L249 [InvertIf] Invert 'if' statement to reduce nesting
+  L293 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L302 [InvertIf] Invert 'if' statement to reduce nesting
+
+=== Assets/Scripts/AI/ZombieHordeManager.cs ===
+  L11 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L11 [InconsistentNaming] Name 'hordes' does not match rule 'Instance fields (private)'. Suggested name is '_hordes'.
+  L12 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L12 [InconsistentNaming] Name 'leaders' does not match rule 'Instance fields (private)'. Suggested name is '_leaders'.
+  L13 [InconsistentNaming] Name 'nextHordeId' does not match rule 'Instance fields (private)'. Suggested name is '_nextHordeId'
+  L19 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L19 [LoopCanBeConvertedToQuery] Loop can be converted into LINQ-expression
+  L37 [UnusedMember.Global] Method 'GetLeader' is never used
+  L69 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L82 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+
+=== Assets/Scripts/AI/ZombieSpawner.cs ===
+  L32 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L32 [InconsistentNaming] Name 'zombiePool' does not match rule 'Instance fields (private)'. Suggested name is '_zombiePool'.
+  L33 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L33 [CollectionNeverQueried.Local] Content of collection 'activeZombies' is only updated but never used
+  L33 [InconsistentNaming] Name 'activeZombies' does not match rule 'Instance fields (private)'. Suggested name is '_activeZomb
+  L34 [InconsistentNaming] Name 'hasLoggedMissingPrefabWarning' does not match rule 'Instance fields (private)'. Suggested name
+  L103 [InvertIf] Invert 'if' statement to reduce nesting
+  L208 [InvertIf] Invert 'if' statement to reduce nesting
+  L230 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L394 [LocalVariableHidesMember] Local variable 'collider' hides property 'UnityEngine.Component.collider'
+
+=== Assets/Scripts/AI/ZombieStateMachine.cs ===
+  L53 [NotAccessedField.Local] Field '_navMeshAgent' is assigned but its value is never used
+  L67 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L121 [SwitchStatementHandlesSomeKnownEnumValuesWithDefault] Some cases are not processed: default
+  L152 [SwitchStatementMissingSomeEnumCasesNoDefault] Some values of the enum are not processed inside switch: CallHorde, default
+  L186 [ConvertIfStatementToSwitchStatement] Convert 'if' statement into 'switch' statement
+  L198 [MemberCanBeMadeStatic.Local] Property 'SlotManager' can be made static
+  L211 [UnusedMethodReturnValue.Local] Method 'TryAcquireAttackSlot' return value is never used
+  L219 [InvertIf] Invert 'if' statement to reduce nesting
+  L345 [InvertIf] Invert 'if' statement to reduce nesting
+  L379 [InvertIf] Invert 'if' statement to reduce nesting
+  L404 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L418 [InvertIf] Invert 'if' statement to reduce nesting
+  L442 [DuplicatedSequentialIfBodies] Duplicated 'if' branches
+  L512 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L517 [InvertIf] Invert 'if' statement to reduce nesting
+
+=== Assets/Scripts/AI/ZombieUmaAppearance.cs ===
+  L22 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L33 [InconsistentNaming] Name 'suppressFurtherAppearanceChanges' does not match rule 'Instance fields (private)'. Suggested n
+  L34 [InconsistentNaming] Name 'loggedUmaApplyFailure' does not match rule 'Instance fields (private)'. Suggested name is '_lo
+  L36 [InconsistentNaming] Name 'callbacksBound' does not match rule 'Instance fields (private)'. Suggested name is '_callbacks
+  L151 [MemberCanBeMadeStatic.Local] Method 'ResolveAvailableRaceName' can be made static
+  L153 [MergeIntoNegatedPattern] Merge into pattern
+  L167 [MergeIntoNegatedPattern] Merge into pattern
+  L172 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L183 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L204 [ConvertIfStatementToReturnStatement] Convert into 'return' statement
+  L219 [UnusedMember.Local] Method 'FirstNonEmpty' is never used
+  L226 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L257 [InvertIf] Invert 'if' statement to reduce nesting
+  L261 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L261 [LoopCanBeConvertedToQuery] Loop can be converted into LINQ-expression
+  L269 [InvertIf] Invert 'if' statement to reduce nesting
+  L273 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L297 [MergeIntoNegatedPattern] Merge into pattern
+  L304 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L304 [LoopCanBeConvertedToQuery] Loop can be converted into LINQ-expression
+  L319 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L354 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L354 [LoopCanBeConvertedToQuery] Loop can be converted into LINQ-expression
+  L367 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L367 [LoopCanBeConvertedToQuery] Loop can be converted into LINQ-expression
+  L380 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L380 [LoopCanBeConvertedToQuery] Loop can be converted into LINQ-expression
+  L400 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L422 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L444 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L580 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+
+=== Assets/Scripts/BuildingSystem/BaseBuilding/WorkerAI.cs ===
+  L17 [MemberCanBePrivate.Global] Property 'CurrentJob' can be made private
+  L19 [InconsistentNaming] Name 'tickTimer' does not match rule 'Instance fields (private)'. Suggested name is '_tickTimer'.
+  L32 [InvertIf] Invert 'if' statement to reduce nesting
+
+=== Assets/Scripts/BuildingSystem/Scripts/Editor/Zombera.BuildingSystem.Editor.asmdef ===
+  L5 [Unity.PreferGuidReference] Prefer GUID reference
+  L6 [Unity.PreferGuidReference] Prefer GUID reference
+
+=== Assets/Scripts/BuildingSystem/Scripts/StructureHealth.cs ===
+  L18 [UnusedMember.Global] Property 'MaxHealth' is never used
+  L19 [MemberCanBePrivate.Global] Property 'CurrentHealth' can be made private
+  L20 [MemberCanBePrivate.Global] Property 'IsDestroyed' can be made private
+  L22 [EventNeverSubscribedTo.Global] Event 'Damaged' is never subscribed to
+  L23 [EventNeverSubscribedTo.Global] Event 'Destroyed' is never subscribed to
+
+=== Assets/Scripts/Characters/RuntimeNavMeshBootstrapper.cs ===
+  L4 [RedundantUsingDirective] Using directive is not required by the code and can be safely removed
+  L6 [RedundantUsingDirective] Using directive is not required by the code and can be safely removed
+  L121 [InvertIf] Invert 'if' statement to reduce nesting
+  L154 [InvertIf] Invert 'if' statement to reduce nesting
+  L192 [MergeConditionalExpression] Merge conditional expression
+  L241 [MergeConditionalExpression] Merge conditional expression
+  L252 [MergeConditionalExpression] Merge conditional expression
+  L258 [MergeConditionalExpression] Merge conditional expression
+  L261 [MemberCanBePrivate.Global] Method 'IsWorldSessionStateForNavMeshWork' can be made private
+  L270 [MergeIntoLogicalPattern] Merge into logical pattern
+
+=== Assets/Scripts/Characters/SpawnPointSelector.cs ===
+  L19 [LoopCanBeConvertedToQuery] Loop can be converted into LINQ-expression
+  L38 [MemberCanBePrivate.Global] Method 'FindNearestActiveMapMagicTerrain' can be made private
+  L75 [InvertIf] Invert 'if' statement to reduce nesting
+  L132 [MergeIntoPattern] Merge into pattern
+  L183 [MergeConditionalExpression] Merge conditional expression
+  L203 [InvertIf] Invert 'if' statement to reduce nesting
+
+=== Assets/Scripts/Characters/SquadControlUiCoordinator.cs ===
+  L11 [NotAccessedField.Local] Field '_host' is assigned but its value is never used
+  L12 [NotAccessedField.Local] Field '_getSpawnedPlayer' is assigned but its value is never used
+  L14 [NotAccessedField.Local] Field '_ensurePlayerInputController' is assigned but its value is never used
+  L18 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L44 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L61 [MergeConditionalExpression] Merge conditional expression
+  L71 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L86 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L128 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+
+=== Assets/Scripts/Characters/StartupSquadSpawner.cs ===
+  L7 [RedundantUsingDirective] Using directive is not required by the code and can be safely removed
+  L180 [InvertIf] Invert 'if' statement to reduce nesting
+  L187 [ConditionIsAlwaysTrueOrFalse] Expression is always true
+  L187 [MergeIntoPattern] Merge into pattern
+  L192 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L196 [InvertIf] Invert 'if' statement to reduce nesting
+  L223 [RedundantNameQualifier] Qualifier is redundant
+  L224 [MergeConditionalExpression] Merge conditional expression
+  L226 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L235 [MergeConditionalExpression] Merge conditional expression
+  L255 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L305 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L320 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L351 [InvertIf] Invert 'if' statement to reduce nesting
+  L366 [RedundantNameQualifier] Qualifier is redundant
+  L367 [RedundantNameQualifier] Qualifier is redundant
+  L379 [RedundantNameQualifier] Qualifier is redundant
+  L419 [ArrangeRedundantParentheses] Redundant parentheses
+  L432 [ConvertToConstant.Local] Convert into constant
+  L450 [ConvertIfStatementToReturnStatement] Convert into 'return' statement
+  L485 [InvertIf] Invert 'if' statement to reduce nesting
+  L510 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L551 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+
+=== Assets/Scripts/Characters/UmaSpawnStylingService.cs ===
+  L16 [NotAccessedField.Local] Field '_logContext' is assigned but its value is never used
+  L45 [MemberCanBePrivate.Global] Method 'ApplySelectedUmaRecipe' can be made private
+  L94 [InvertIf] Invert 'if' statement to reduce nesting
+  L114 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L136 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L157 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L190 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+
+=== Assets/Scripts/Characters/UnitCombat.cs ===
+  L26 [InconsistentNaming] Name 'selfUnit' does not match rule 'Instance fields (private)'. Suggested name is '_selfUnit'.
+  L27 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L27 [InconsistentNaming] Name 'damageableTargetBuffer' does not match rule 'Instance fields (private)'. Suggested name is '_d
+  L41 [MemberCanBePrivate.Global] Property 'IsAttackOnCooldown' can be made private
+  L163 [MergeIntoPattern] Merge into pattern
+  L176 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L179 [UseNegatedPatternInIsExpression] Use negated pattern
+  L181 [InvertIf] Invert 'if' statement to reduce nesting
+  L207 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L222 [UseNegatedPatternInIsExpression] Use negated pattern
+
+=== Assets/Scripts/Characters/UnitController.cs ===
+  L36 [UnusedMember.Global] Property 'Role' is never used
+  L39 [MemberCanBePrivate.Global] Property 'InputEnabled' can be made private
+  L40 [MemberCanBePrivate.Global] Property 'MoveInput' can be made private
+  L41 [MemberCanBePrivate.Global] Property 'MoveTarget' can be made private
+  L47 [InconsistentNaming] Name 'agent' does not match rule 'Instance fields (private)'. Suggested name is '_agent'.
+  L48 [InconsistentNaming] Name 'baseMovSpeed' does not match rule 'Instance fields (private)'. Suggested name is '_baseMovSpee
+  L51 [InconsistentNaming] Name 'desiredMoveDirection' does not match rule 'Instance fields (private)'. Suggested name is '_des
+  L105 [Unity.RedundantEventFunction] Redundant Unity event function
+  L158 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L160 [DuplicatedSequentialIfBodies] Duplicated 'if' branches
+  L166 [InvertIf] Invert 'if' statement to reduce nesting
+  L182 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L184 [DuplicatedSequentialIfBodies] Duplicated 'if' branches
+  L190 [InvertIf] Invert 'if' statement to reduce nesting
+  L205 [InvertIf] Invert 'if' statement to reduce nesting
+  L224 [InvertIf] Invert 'if' statement to reduce nesting
+  L244 [InvertIf] Invert 'if' statement to reduce nesting
+  L259 [MergeIntoLogicalPattern] Merge into logical pattern
+  L293 [ParameterHidesMember] Parameter 'enabled' hides property 'UnityEngine.Behaviour.enabled'
+  L297 [InvertIf] Invert 'if' statement to reduce nesting
+  L344 [ArrangeRedundantParentheses] Redundant parentheses
+  L345 [ArrangeRedundantParentheses] Redundant parentheses
+  L377 [ArrangeRedundantParentheses] Redundant parentheses
+  L420 [InvertIf] Invert 'if' statement to reduce nesting
+  L432 [InvertIf] Invert 'if' statement to reduce nesting
+  L443 [InvertIf] Invert 'if' statement to reduce nesting
+  L505 [RedundantAssignment] Value assigned is not used in any execution path
+  L558 [ConvertIfStatementToReturnStatement] Convert into 'return' statement
+  L592 [MemberCanBeMadeStatic.Local] Method 'ResolveMoveToCaller' can be made static
+  L601 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L628 [InvertIf] Invert 'if' statement to reduce nesting
+  L656 [Unity.InefficientMultiplicationOrder] Order of multiplication operations is inefficient
+  L710 [NotAccessedField.Local] Field '_agentCheckTimer' is assigned but its value is never used
+  L826 [Unity.InefficientMultiplicationOrder] Order of multiplication operations is inefficient
+  L872 [InvertIf] Invert 'if' statement to reduce nesting
+  L924 [ArrangeRedundantParentheses] Redundant parentheses
+
+=== Assets/Scripts/Characters/UnitFaction.cs ===
+  L17 [ConvertSwitchStatementToSwitchExpression] Convert 'switch' statement to 'switch' expression
+  L17 [SwitchStatementHandlesSomeKnownEnumValuesWithDefault] Some values of the enum are not processed inside switch: Player, SquadMember, Survivor
+  L31 [ConvertIfStatementToSwitchStatement] Convert 'if' statement into 'switch' expression
+  L41 [MergeIntoLogicalPattern] Merge into logical pattern
+
+=== Assets/Scripts/Characters/UnitHealth.cs ===
+  L3 [RedundantUsingDirective] Using directive is not required by the code and can be safely removed
+  L31 [InconsistentNaming] Name 'lastDamageSource' does not match rule 'Instance fields (private)'. Suggested name is '_lastDam
+  L124 [RedundantNameQualifier] Qualifier is redundant
+
+=== Assets/Scripts/Characters/UnitInterfaces.cs ===
+  L14 [UnusedMemberInSuper.Global] Only implementations of method 'Heal' are used
+  L15 [UnusedMemberInSuper.Global] Only implementations of method 'Die' are used
+  L23 [UnusedMemberInSuper.Global] Only implementations of method 'Attack' are used
+  L24 [UnusedMemberInSuper.Global] Only implementations of method 'Reload' are used
+  L25 [UnusedMemberInSuper.Global] Only implementations of method 'ChooseTarget' are used
+  L33 [UnusedMemberInSuper.Global] Only implementations of property 'WeightLimit' are used
+  L34 [UnusedMemberInSuper.Global] Only implementations of property 'CurrentWeight' are used
+  L36 [UnusedMemberInSuper.Global] Only implementations of method 'RemoveItem' are used
+  L37 [UnusedMember.Global] Method 'GetWeight' is never used
+  L45 [UnusedMemberInSuper.Global] Only implementations of property 'UnitId' are used
+  L46 [UnusedMemberInSuper.Global] Only implementations of property 'Role' are used
+  L47 [UnusedMemberInSuper.Global] Only implementations of property 'Controller' are used
+  L48 [UnusedMemberInSuper.Global] Only implementations of property 'Health' are used
+  L49 [UnusedMember.Global] Property 'Combat' is never used
+  L50 [UnusedMemberInSuper.Global] Only implementations of property 'Inventory' are used
+  L51 [UnusedMemberInSuper.Global] Only implementations of property 'Stats' are used
+  L52 [UnusedMember.Global] Property 'OptionalAI' is never used
+
+=== Assets/Scripts/Characters/UnitInventory.cs ===
+  L14 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L14 [InconsistentNaming] Name 'items' does not match rule 'Instance fields (private)'. Suggested name is '_items'.
+  L19 [UnusedMember.Global] Property 'IsEncumbered' is never used
+  L27 [MemberCanBePrivate.Global] Method 'TryAddItem' can be made private
+  L144 [UnusedMember.Global] Method 'IsHeavyCarry' is never used
+  L151 [InvalidXmlDocComment] Cannot resolve symbol 'owner'
+  L154 [UnusedMember.Global] Method 'ConsumeItem' is never used
+  L171 [InvertIf] Invert 'if' statement to reduce nesting
+  L173 [SwitchStatementMissingSomeEnumCasesNoDefault] Some values of the enum are not processed inside switch: Generic, Medical, Weapon...
+  L197 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L197 [LoopCanBeConvertedToQuery] Loop can be converted into LINQ-expression
+
+=== Assets/Scripts/Characters/UnitStats.cs ===
+  L166 [InconsistentNaming] Name 'strengthBaseMaxHealth' does not match rule 'Instance fields (private)'. Suggested name is '_st
+  L167 [InconsistentNaming] Name 'hasStrengthBaseHealth' does not match rule 'Instance fields (private)'. Suggested name is '_ha
+  L170 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L193 [UnusedMember.Global] Property 'StrengthExperience' is never used
+  L194 [UnusedMember.Global] Property 'ToughnessExperience' is never used
+  L195 [UnusedMember.Global] Property 'ConstitutionExperience' is never used
+  L196 [UnusedMember.Global] Property 'ShootingExperience' is never used
+  L197 [UnusedMember.Global] Property 'MeleeExperience' is never used
+  L198 [UnusedMember.Global] Property 'AgilityExperience' is never used
+  L199 [UnusedMember.Global] Property 'EnduranceExperience' is never used
+  L200 [UnusedMember.Global] Property 'MedicalExperience' is never used
+  L201 [UnusedMember.Global] Property 'EngineeringExperience' is never used
+  L202 [UnusedMember.Global] Property 'ScavengingExperience' is never used
+  L203 [UnusedMember.Global] Property 'StealthExperience' is never used
+  L267 [ArrangeRedundantParentheses] Redundant parentheses
+  L271 [EventNeverSubscribedTo.Global] Event 'StrengthLeveledUp' is never subscribed to
+  L272 [EventNeverSubscribedTo.Global] Event 'ToughnessLeveledUp' is never subscribed to
+  L273 [EventNeverSubscribedTo.Global] Event 'ConstitutionLeveledUp' is never subscribed to
+  L274 [EventNeverSubscribedTo.Global] Event 'ShootingLeveledUp' is never subscribed to
+  L275 [EventNeverSubscribedTo.Global] Event 'MeleeLeveledUp' is never subscribed to
+  L276 [EventNeverSubscribedTo.Global] Event 'AgilityLeveledUp' is never subscribed to
+  L277 [EventNeverSubscribedTo.Global] Event 'EnduranceLeveledUp' is never subscribed to
+  L278 [EventNeverSubscribedTo.Global] Event 'MedicalLeveledUp' is never subscribed to
+  L279 [EventNeverSubscribedTo.Global] Event 'EngineeringLeveledUp' is never subscribed to
+  L280 [EventNeverSubscribedTo.Global] Event 'ScavengingLeveledUp' is never subscribed to
+  L281 [EventNeverSubscribedTo.Global] Event 'StealthLeveledUp' is never subscribed to
+  L305 [CanSimplifyDictionaryTryGetValueWithGetValueOrDefault] Dictionary lookup can be simplified with 'GetValueOrDefault'
+  L306 [ConvertSwitchStatementToSwitchExpression] Convert 'switch' statement to 'switch' expression
+  L359 [SwitchStatementHandlesSomeKnownEnumValuesWithDefault] Some cases are not processed: default
+  L378 [ConditionIsAlwaysTrueOrFalse] Expression is always false
+  L382 [ConditionIsAlwaysTrueOrFalse] Expression is always false
+  L421 [ConvertIfStatementToConditionalTernaryExpression] Convert into '?:' expression
+  L433 [SwitchStatementHandlesSomeKnownEnumValuesWithDefault] Some cases are not processed: default
+  L457 [ConditionIsAlwaysTrueOrFalse] Expression is always false
+  L462 [ConditionIsAlwaysTrueOrFalse] Expression is always false
+  L538 [MemberCanBePrivate.Global] Method 'AddStrengthExperience' can be made private
+  L538 [UnusedMethodReturnValue.Global] Method 'AddStrengthExperience' return value is never used
+  L546 [InvertIf] Invert 'if' statement to reduce nesting
+  L557 [MemberCanBePrivate.Global] Method 'AddToughnessExperience' can be made private
+  L557 [UnusedMethodReturnValue.Global] Method 'AddToughnessExperience' return value is never used
+  L565 [InvertIf] Invert 'if' statement to reduce nesting
+  L576 [MemberCanBePrivate.Global] Method 'AddConstitutionExperience' can be made private
+  L576 [UnusedMethodReturnValue.Global] Method 'AddConstitutionExperience' return value is never used
+  L584 [InvertIf] Invert 'if' statement to reduce nesting
+  L595 [MemberCanBePrivate.Global] Method 'AddShootingExperience' can be made private
+  L595 [UnusedMethodReturnValue.Global] Method 'AddShootingExperience' return value is never used
+  L603 [InvertIf] Invert 'if' statement to reduce nesting
+  L614 [MemberCanBePrivate.Global] Method 'AddMeleeExperience' can be made private
+  L614 [UnusedMethodReturnValue.Global] Method 'AddMeleeExperience' return value is never used
+  L622 [InvertIf] Invert 'if' statement to reduce nesting
+  L633 [MemberCanBePrivate.Global] Method 'AddAgilityExperience' can be made private
+  L633 [UnusedMethodReturnValue.Global] Method 'AddAgilityExperience' return value is never used
+  L641 [MemberCanBePrivate.Global] Method 'AddEnduranceExperience' can be made private
+  L641 [UnusedMethodReturnValue.Global] Method 'AddEnduranceExperience' return value is never used
+  L649 [MemberCanBePrivate.Global] Method 'AddScavengingExperience' can be made private
+  L649 [UnusedMethodReturnValue.Global] Method 'AddScavengingExperience' return value is never used
+  L657 [MemberCanBePrivate.Global] Method 'AddStealthExperience' can be made private
+  L657 [UnusedMethodReturnValue.Global] Method 'AddStealthExperience' return value is never used
+  L665 [MemberCanBePrivate.Global] Method 'AddMedicalExperience' can be made private
+  L665 [UnusedMethodReturnValue.Global] Method 'AddMedicalExperience' return value is never used
+  L673 [MemberCanBePrivate.Global] Method 'AddEngineeringExperience' can be made private
+  L673 [UnusedMethodReturnValue.Global] Method 'AddEngineeringExperience' return value is never used
+  L918 [ArrangeTrailingCommaInMultilineLists] Remove trailing comma to conform to code style
+  L923 [MemberCanBePrivate.Global] Method 'GetPostureSpeedMultiplier' can be made private
+  L930 [ArrangeTrailingCommaInMultilineLists] Remove trailing comma to conform to code style
+  L941 [ConvertToAutoPropertyWithPrivateSetter] Convert into auto-property with private setter
+  L944 [MemberCanBePrivate.Global] Method 'GetPostureStealthXpMultiplier' can be made private
+  L950 [ArrangeTrailingCommaInMultilineLists] Remove trailing comma to conform to code style
+  L983 [MemberCanBeMadeStatic.Local] Method 'SkillT' can be made static
+  L1138 [ConvertSwitchStatementToSwitchExpression] Convert 'switch' statement to 'switch' expression
+  L1138 [SwitchStatementHandlesSomeKnownEnumValuesWithDefault] Some values of the enum are not processed inside switch: Medical, Engineering, Agility...
+  L1160 [ConvertIfStatementToReturnStatement] Convert into 'return' statement
+  L1181 [ArrangeRedundantParentheses] Redundant parentheses
+  L1186 [ArrangeRedundantParentheses] Redundant parentheses
+  L1191 [ArrangeRedundantParentheses] Redundant parentheses
+
+=== Assets/Scripts/Combat/TargetingSystem.cs ===
+  L23 [MergeIntoPattern] Merge into pattern
+  L31 [MemberCanBePrivate.Global] Method 'SelectBestTarget' can be made private
+  L41 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L45 [UseNegatedPatternInIsExpression] Use negated pattern
+  L52 [InvertIf] Invert 'if' statement to reduce nesting
+  L72 [MemberCanBePrivate.Global] Method 'SelectBestTarget' can be made private
+  L82 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L93 [InvertIf] Invert 'if' statement to reduce nesting
+  L119 [InvertIf] Invert 'if' statement to reduce nesting
+  L119 [MergeIntoPattern] Merge into pattern
+
+=== Assets/Scripts/Combat/WeaponSystem.cs ===
+  L39 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L62 [InconsistentNaming] Name 'ownerUnit' does not match rule 'Instance fields (private)'. Suggested name is '_ownerUnit'.
+  L63 [InconsistentNaming] Name 'ownerStats' does not match rule 'Instance fields (private)'. Suggested name is '_ownerStats'.
+  L64 [InconsistentNaming] Name 'ownerInventory' does not match rule 'Instance fields (private)'. Suggested name is '_ownerInve
+  L65 [InconsistentNaming] Name 'ownerVisionSource' does not match rule 'Instance fields (private)'. Suggested name is '_ownerV
+  L66 [InconsistentNaming] Name 'runtimeBowProjectileMaterial' does not match rule 'Instance fields (private)'. Suggested name 
+  L67 [InconsistentNaming] Name 'currentAmmo' does not match rule 'Instance fields (private)'. Suggested name is '_currentAmmo'
+  L70 [ConvertToAutoPropertyWithPrivateSetter] Convert into auto-property with private setter
+  L70 [UnusedMember.Global] Property 'CurrentAmmo' is never used
+  L71 [UnusedMember.Global] Property 'MagazineSize' is never used
+  L73 [UnusedMember.Global] Property 'IsRangedWeaponEquipped' is never used
+  L75 [ConvertToAutoPropertyWithPrivateSetter] Convert into auto-property with private setter
+  L76 [ConvertToAutoPropertyWithPrivateSetter] Convert into auto-property with private setter
+  L112 [InvertIf] Invert 'if' statement to reduce nesting
+  L117 [Unity.PreferAddressByIdToGraphicsParams] String based property lookup is inefficient
+  L122 [Unity.PreferAddressByIdToGraphicsParams] String based property lookup is inefficient
+  L135 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L135 [LoopCanBeConvertedToQuery] Loop can be converted into LINQ-expression
+  L162 [SwitchStatementHandlesSomeKnownEnumValuesWithDefault] Some cases are not processed: default
+  L224 [ArrangeRedundantParentheses] Redundant parentheses
+  L247 [RedundantNameQualifier] Qualifier is redundant
+  L262 [RedundantNameQualifier] Qualifier is redundant
+  L275 [UseNegatedPatternInIsExpression] Use negated pattern
+  L277 [ConditionIsAlwaysTrueOrFalse] Expression is always false
+  L278 [HeuristicUnreachableCode] Code is heuristically unreachable
+  L279 [HeuristicUnreachableCode] Code is heuristically unreachable
+  L434 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L437 [InvertIf] Invert 'if' statement to reduce nesting
+  L445 [InvertIf] Invert 'if' statement to reduce nesting
+  L448 [InvertIf] Invert 'if' statement to reduce nesting
+  L466 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L466 [LoopCanBeConvertedToQuery] Loop can be converted into LINQ-expression
+  L496 [LocalVariableHidesMember] Local variable 'renderer' hides property 'UnityEngine.Component.renderer'
+  L557 [ConvertIfStatementToReturnStatement] Convert into 'return' statement
+  L662 [UseNegatedPatternInIsExpression] Use negated pattern
+  L678 [UseNegatedPatternInIsExpression] Use negated pattern
+  L707 [UseNegatedPatternInIsExpression] Use negated pattern
+  L726 [ArrangeRedundantParentheses] Redundant parentheses
+  L735 [UnusedMember.Local] Method 'ResolveStrengthScaledDamage' is never used
+  L739 [ConvertIfStatementToReturnStatement] Convert into 'return' statement
+  L747 [ConvertIfStatementToReturnStatement] Convert into 'return' statement
+  L755 [ConvertIfStatementToReturnStatement] Convert into 'return' statement
+  L821 [ConvertIfStatementToReturnStatement] Convert into 'return' statement
+  L868 [InvertIf] Invert 'if' statement to reduce nesting
+  L879 [MemberCanBePrivate.Global] Method 'GetEffectiveRangedRange' can be made private
+  L889 [MergeIntoLogicalPattern] Merge into logical pattern
+
+=== Assets/Scripts/Core/SaveSystem.cs ===
+  L15 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L15 [InconsistentNaming] Name 'saveSlots' does not match rule 'Instance fields (private)'. Suggested name is '_saveSlots'.
+  L18 [MemberCanBePrivate.Global] Property 'CurrentSlotId' can be made private
+  L67 [DuplicatedSequentialIfBodies] Duplicated 'if' branches
+  L83 [MemberCanBeMadeStatic.Global] Method 'BuildSaveData' can be made static
+  L83 [MemberCanBePrivate.Global] Method 'BuildSaveData' can be made private
+  L147 [ConvertToCompoundAssignment] Convert into compound assignment
+  L193 [ForeachCanBePartlyConvertedToQueryUsingAnotherGetEnumerator] Part of loop's body can be converted into LINQ-expression but another 'GetEnumerator' method will be
+  L195 [CanSimplifyDictionaryLookupWithTryAdd] Dictionary lookup can be simplified with 'TryAdd'
+  L208 [UnusedParameter.Local] Parameter 'slotId' is never used
+  L214 [ForeachCanBePartlyConvertedToQueryUsingAnotherGetEnumerator] Part of loop's body can be converted into LINQ-expression but another 'GetEnumerator' method will be
+  L232 [ForeachCanBePartlyConvertedToQueryUsingAnotherGetEnumerator] Part of loop's body can be converted into LINQ-expression but another 'GetEnumerator' method will be
+  L266 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L272 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L272 [InconsistentNaming] Name 'Player' does not match rule 'Unity serialized field'. Suggested name is 'player'.
+  L273 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L273 [InconsistentNaming] Name 'Squad' does not match rule 'Unity serialized field'. Suggested name is 'squad'.
+  L274 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L274 [InconsistentNaming] Name 'Inventory' does not match rule 'Unity serialized field'. Suggested name is 'inventory'.
+  L274 [NotAccessedField.Global] Serialised field 'Inventory' is assigned but its value is never used
+  L275 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L275 [InconsistentNaming] Name 'WorldChunks' does not match rule 'Unity serialized field'. Suggested name is 'worldChunks'.
+  L276 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L276 [InconsistentNaming] Name 'Zombies' does not match rule 'Unity serialized field'. Suggested name is 'zombies'.
+  L277 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L277 [InconsistentNaming] Name 'Bases' does not match rule 'Unity serialized field'. Suggested name is 'bases'.
+  L278 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L278 [InconsistentNaming] Name 'LootContainers' does not match rule 'Unity serialized field'. Suggested name is 'lootContainer
+  L279 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L279 [InconsistentNaming] Name 'ProceduralWorld' does not match rule 'Unity serialized field'. Suggested name is 'proceduralWo
+  L288 [NotAccessedField.Global] Serialised field 'formatVersion' is assigned but its value is never used
+  L289 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L299 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L305 [InconsistentNaming] Name 'Position' does not match rule 'Unity serialized field'. Suggested name is 'position'.
+  L306 [InconsistentNaming] Name 'Rotation' does not match rule 'Unity serialized field'. Suggested name is 'rotation'.
+  L307 [InconsistentNaming] Name 'Health' does not match rule 'Unity serialized field'. Suggested name is 'health'.
+  L308 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L308 [InconsistentNaming] Name 'Stats' does not match rule 'Unity serialized field'. Suggested name is 'stats'.
+  L314 [InconsistentNaming] Name 'UnitId' does not match rule 'Unity serialized field'. Suggested name is 'unitId'.
+  L315 [InconsistentNaming] Name 'Position' does not match rule 'Unity serialized field'. Suggested name is 'position'.
+  L316 [InconsistentNaming] Name 'Health' does not match rule 'Unity serialized field'. Suggested name is 'health'.
+  L317 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L317 [InconsistentNaming] Name 'Stats' does not match rule 'Unity serialized field'. Suggested name is 'stats'.
+  L323 [InconsistentNaming] Name 'HasSkillProgressionData' does not match rule 'Unity serialized field'. Suggested name is 'hasS
+  L324 [InconsistentNaming] Name 'Stamina' does not match rule 'Unity serialized field'. Suggested name is 'stamina'.
+  L326 [InconsistentNaming] Name 'Strength' does not match rule 'Unity serialized field'. Suggested name is 'strength'.
+  L327 [InconsistentNaming] Name 'StrengthXp' does not match rule 'Unity serialized field'. Suggested name is 'strengthXp'.
+  L328 [InconsistentNaming] Name 'Shooting' does not match rule 'Unity serialized field'. Suggested name is 'shooting'.
+  L329 [InconsistentNaming] Name 'ShootingXp' does not match rule 'Unity serialized field'. Suggested name is 'shootingXp'.
+  L330 [InconsistentNaming] Name 'Melee' does not match rule 'Unity serialized field'. Suggested name is 'melee'.
+  L331 [InconsistentNaming] Name 'MeleeXp' does not match rule 'Unity serialized field'. Suggested name is 'meleeXp'.
+  L332 [InconsistentNaming] Name 'Medical' does not match rule 'Unity serialized field'. Suggested name is 'medical'.
+  L333 [InconsistentNaming] Name 'MedicalXp' does not match rule 'Unity serialized field'. Suggested name is 'medicalXp'.
+  L334 [InconsistentNaming] Name 'Engineering' does not match rule 'Unity serialized field'. Suggested name is 'engineering'.
+  L335 [InconsistentNaming] Name 'EngineeringXp' does not match rule 'Unity serialized field'. Suggested name is 'engineeringXp'
+  L336 [InconsistentNaming] Name 'Toughness' does not match rule 'Unity serialized field'. Suggested name is 'toughness'.
+  L337 [InconsistentNaming] Name 'ToughnessXp' does not match rule 'Unity serialized field'. Suggested name is 'toughnessXp'.
+  L338 [InconsistentNaming] Name 'Constitution' does not match rule 'Unity serialized field'. Suggested name is 'constitution'.
+  L339 [InconsistentNaming] Name 'ConstitutionXp' does not match rule 'Unity serialized field'. Suggested name is 'constitutionX
+  L340 [InconsistentNaming] Name 'Agility' does not match rule 'Unity serialized field'. Suggested name is 'agility'.
+  L341 [InconsistentNaming] Name 'AgilityXp' does not match rule 'Unity serialized field'. Suggested name is 'agilityXp'.
+  L342 [InconsistentNaming] Name 'Endurance' does not match rule 'Unity serialized field'. Suggested name is 'endurance'.
+  L343 [InconsistentNaming] Name 'EnduranceXp' does not match rule 'Unity serialized field'. Suggested name is 'enduranceXp'.
+  L344 [InconsistentNaming] Name 'Scavenging' does not match rule 'Unity serialized field'. Suggested name is 'scavenging'.
+  L345 [InconsistentNaming] Name 'ScavengingXp' does not match rule 'Unity serialized field'. Suggested name is 'scavengingXp'.
+  L346 [InconsistentNaming] Name 'Stealth' does not match rule 'Unity serialized field'. Suggested name is 'stealth'.
+  L347 [InconsistentNaming] Name 'StealthXp' does not match rule 'Unity serialized field'. Suggested name is 'stealthXp'.
+  L353 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L353 [InconsistentNaming] Name 'ItemIds' does not match rule 'Unity serialized field'. Suggested name is 'itemIds'.
+  L354 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L354 [InconsistentNaming] Name 'Quantities' does not match rule 'Unity serialized field'. Suggested name is 'quantities'.
+  L355 [InconsistentNaming] Name 'CurrentWeight' does not match rule 'Unity serialized field'. Suggested name is 'currentWeight'
+  L355 [NotAccessedField.Global] Serialised field 'CurrentWeight' is assigned but its value is never used
+  L361 [InconsistentNaming] Name 'Coordinates' does not match rule 'Unity serialized field'. Suggested name is 'coordinates'.
+  L361 [NotAccessedField.Global] Serialised field 'Coordinates' is assigned but its value is never used
+  L362 [InconsistentNaming] Name 'Seed' does not match rule 'Unity serialized field'. Suggested name is 'seed'.
+  L362 [NotAccessedField.Global] Serialised field 'Seed' is assigned but its value is never used
+  L363 [InconsistentNaming] Name 'RegionId' does not match rule 'Unity serialized field'. Suggested name is 'regionId'.
+  L363 [NotAccessedField.Global] Serialised field 'RegionId' is assigned but its value is never used
+  L369 [InconsistentNaming] Name 'ZombieId' does not match rule 'Unity serialized field'. Suggested name is 'zombieId'.
+  L369 [NotAccessedField.Global] Serialised field 'ZombieId' is assigned but its value is never used
+  L370 [InconsistentNaming] Name 'Position' does not match rule 'Unity serialized field'. Suggested name is 'position'.
+  L370 [NotAccessedField.Global] Serialised field 'Position' is assigned but its value is never used
+  L371 [InconsistentNaming] Name 'Health' does not match rule 'Unity serialized field'. Suggested name is 'health'.
+  L371 [NotAccessedField.Global] Serialised field 'Health' is assigned but its value is never used
+  L372 [InconsistentNaming] Name 'State' does not match rule 'Unity serialized field'. Suggested name is 'state'.
+  L372 [NotAccessedField.Global] Serialised field 'State' is assigned but its value is never used
+  L378 [InconsistentNaming] Name 'BaseId' does not match rule 'Unity serialized field'. Suggested name is 'baseId'.
+  L378 [NotAccessedField.Global] Serialised field 'BaseId' is assigned but its value is never used
+  L379 [InconsistentNaming] Name 'Position' does not match rule 'Unity serialized field'. Suggested name is 'position'.
+  L379 [NotAccessedField.Global] Serialised field 'Position' is assigned but its value is never used
+  L380 [InconsistentNaming] Name 'BuildingState' does not match rule 'Unity serialized field'. Suggested name is 'buildingState'
+  L380 [NotAccessedField.Global] Serialised field 'BuildingState' is assigned but its value is never used
+  L381 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L381 [InconsistentNaming] Name 'StorageItemIds' does not match rule 'Unity serialized field'. Suggested name is 'storageItemId
+  L382 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L382 [InconsistentNaming] Name 'StorageQuantities' does not match rule 'Unity serialized field'. Suggested name is 'storageQua
+  L388 [InconsistentNaming] Name 'ContainerId' does not match rule 'Unity serialized field'. Suggested name is 'containerId'.
+  L388 [NotAccessedField.Global] Serialised field 'ContainerId' is assigned but its value is never used
+  L389 [InconsistentNaming] Name 'Position' does not match rule 'Unity serialized field'. Suggested name is 'position'.
+  L389 [NotAccessedField.Global] Serialised field 'Position' is assigned but its value is never used
+  L390 [InconsistentNaming] Name 'LootGenerated' does not match rule 'Unity serialized field'. Suggested name is 'lootGenerated'
+  L390 [NotAccessedField.Global] Serialised field 'LootGenerated' is assigned but its value is never used
+  L391 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L391 [InconsistentNaming] Name 'ItemIds' does not match rule 'Unity serialized field'. Suggested name is 'itemIds'.
+  L392 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L392 [InconsistentNaming] Name 'Quantities' does not match rule 'Unity serialized field'. Suggested name is 'quantities'.
+
+=== Assets/Scripts/Core/StartupReadinessValidator.cs ===
+  L6 [RedundantUsingDirective] Using directive is not required by the code and can be safely removed
+  L68 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L68 [InconsistentNaming] Name 'errors' does not match rule 'Instance fields (private)'. Suggested name is '_errors'.
+  L69 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L69 [InconsistentNaming] Name 'warnings' does not match rule 'Instance fields (private)'. Suggested name is '_warnings'.
+  L71 [InconsistentNaming] Name 'hasRun' does not match rule 'Instance fields (private)'. Suggested name is '_hasRun'.
+  L72 [InconsistentNaming] Name 'lastValidationPassed' does not match rule 'Instance fields (private)'. Suggested name is '_las
+  L74 [ConvertToAutoPropertyWithPrivateSetter] Convert into auto-property with private setter
+  L113 [ConvertIfStatementToSwitchStatement] Convert 'if' statement into 'switch' expression
+  L140 [InvertIf] Invert 'if' statement to reduce nesting
+  L175 [MergeSequentialChecks] Merge sequential checks
+  L181 [ForeachCanBePartlyConvertedToQueryUsingAnotherGetEnumerator] Part of loop's body can be converted into LINQ-expression but another 'GetEnumerator' method will be
+  L276 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L276 [LoopCanBeConvertedToQuery] Loop can be converted into LINQ-expression
+  L296 [RedundantNameQualifier] Qualifier is redundant
+  L350 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L373 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L393 [LoopCanBeConvertedToQuery] Loop can be converted into LINQ-expression
+  L404 [MemberCanBeMadeStatic.Local] Method 'IsSceneLoaded' can be made static
+  L424 [MemberCanBeMadeStatic.Local] Method 'GetBuildIndex' can be made static
+  L452 [InvertIf] Invert 'if' statement to reduce nesting
+  L469 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L469 [LoopCanBeConvertedToQuery] Loop can be converted into LINQ-expression
+
+=== Assets/Scripts/Core/TimeSystem.cs ===
+  L16 [InconsistentNaming] Name 'lastUnpausedTimeScale' does not match rule 'Instance fields (private)'. Suggested name is '_la
+  L19 [InconsistentNaming] Name 'channelGameplay' does not match rule 'Instance fields (private)'. Suggested name is '_channelG
+  L20 [InconsistentNaming] Name 'channelUI' does not match rule 'Instance fields (private)'. Suggested name is '_channelUI'.
+  L21 [InconsistentNaming] Name 'channelCutscene' does not match rule 'Instance fields (private)'. Suggested name is '_channelC
+  L69 [SwitchStatementHandlesSomeKnownEnumValuesWithDefault] Some cases are not processed: default
+  L80 [UnusedMember.Global] Method 'GetChannelScale' is never used
+  L86 [ArrangeTrailingCommaInMultilineLists] Remove trailing comma to conform to code style
+  L130 [MemberCanBeMadeStatic.Local] Method 'OnExternalPause' can be made static
+  L131 [MemberCanBeMadeStatic.Local] Method 'OnExternalResume' can be made static
+  L138 [ArrangeTrailingCommaInMultilineLists] Remove trailing comma to conform to code style
+
+=== Assets/Scripts/Data/RegionData.cs ===
+  L11 [UnusedAutoPropertyAccessor.Global] Auto-property accessor 'RegionId.get' is never used
+  L12 [UnusedAutoPropertyAccessor.Global] Auto-property accessor 'BiomeName.get' is never used
+  L14 [UnusedAutoPropertyAccessor.Global] Auto-property accessor 'ZombieDensity.get' is never used
+  L15 [UnusedAutoPropertyAccessor.Global] Auto-property accessor 'LootMultiplier.get' is never used
+  L19 [UnusedAutoPropertyAccessor.Global] Auto-property accessor 'WeatherProfileId.get' is never used
+  L23 [UnusedAutoPropertyAccessor.Global] Auto-property accessor 'AmbientEventWeights.get' is never used
+
+=== Assets/Scripts/Data/WeaponData.cs ===
+  L12 [NotAccessedField.Global] Serialised field 'weaponId' is assigned but its value is never used
+  L13 [NotAccessedField.Global] Serialised field 'displayName' is assigned but its value is never used
+  L22 [UnusedMember.Global] Serialised field 'recoilForce' is never used
+  L24 [NotAccessedField.Global] Serialised field 'spreadAngle' is assigned but its value is never used
+  L26 [NotAccessedField.Global] Serialised field 'reloadTimeSeconds' is assigned but its value is never used
+
+=== Assets/Scripts/Data/ZombieType.cs ===
+  L12 [NotAccessedField.Global] Serialised field 'displayName' is assigned but its value is never used
+  L20 [RedundantDefaultMemberInitializer] Initializing serialised field by default value is redundant
+
+=== Assets/Scripts/Data/ZombieUmaVisualProfile.cs ===
+  L14 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L21 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L24 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L27 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L30 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+
+=== Assets/Scripts/Debug/DebugStressTests/SquadStressTest.cs ===
+  L27 [ParameterHidesMember] Parameter 'enabled' hides property 'UnityEngine.Behaviour.enabled'
+  L61 [ConvertToConstant.Local] Convert into constant
+  L63 [RedundantNameQualifier] Qualifier is redundant
+  L75 [RedundantNameQualifier] Qualifier is redundant
+  L78 [RedundantNameQualifier] Qualifier is redundant
+
+=== Assets/Scripts/Debug/DebugStressTests/ZombieStressTest.cs ===
+  L27 [ParameterHidesMember] Parameter 'enabled' hides property 'UnityEngine.Behaviour.enabled'
+  L61 [ConvertToConstant.Local] Convert into constant
+  L67 [RedundantNameQualifier] Qualifier is redundant
+  L75 [RedundantNameQualifier] Qualifier is redundant
+  L77 [RedundantNameQualifier] Qualifier is redundant
+
+=== Assets/Scripts/Debug/DebugTools/SpawnDebugTools.cs ===
+  L53 [ParameterHidesMember] Parameter 'enabled' hides property 'UnityEngine.Behaviour.enabled'
+  L234 [ConvertIfStatementToReturnStatement] Convert into 'return' statement
+  L256 [ConvertIfStatementToReturnStatement] Convert into 'return' statement
+
+=== Assets/Scripts/Debug/DebugTools/WorldDebugTools.cs ===
+  L32 [ParameterHidesMember] Parameter 'enabled' hides property 'UnityEngine.Behaviour.enabled'
+  L68 [RedundantNameQualifier] Qualifier is redundant
+  L68 [RedundantNameQualifier] Qualifier is redundant
+
+=== Assets/Scripts/Inventory/UnitLootDropper.cs ===
+  L16 [InconsistentNaming] Name 'hasDropped' does not match rule 'Instance fields (private)'. Suggested name is '_hasDropped'.
+
+=== Assets/Scripts/Systems/RecruitmentSystem.cs ===
+  L27 [UnusedMember.Global] Method 'TryRecruit' is never used
+
+=== Assets/Scripts/Systems/SaveManager.cs ===
+  L26 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L26 [InconsistentNaming] Name 'unitBuffer' does not match rule 'Instance fields (private)'. Suggested name is '_unitBuffer'.
+  L27 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L27 [InconsistentNaming] Name 'zombieBuffer' does not match rule 'Instance fields (private)'. Suggested name is '_zombieBuffe
+  L28 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L28 [InconsistentNaming] Name 'lootContainerBuffer' does not match rule 'Instance fields (private)'. Suggested name is '_loot
+  L32 [MemberCanBePrivate.Global] Property 'ActiveSlotId' can be made private
+  L70 [InvertIf] Invert 'if' statement to reduce nesting
+  L131 [ConvertIfStatementToNullCoalescingAssignment] Convert into '??='
+  L153 [MergeIntoPattern] Merge into pattern
+  L176 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L185 [ConvertIfStatementToSwitchStatement] Convert 'if' statement into 'switch' statement
+  L201 [MergeIntoLogicalPattern] Merge into logical pattern
+  L248 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L285 [MergeIntoNegatedPattern] Merge into pattern
+  L334 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L338 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L342 [InvertIf] Invert 'if' statement to reduce nesting
+  L372 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L385 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L412 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L430 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L487 [MergeIntoNegatedPattern] Merge into pattern
+  L515 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+
+=== Assets/Scripts/Systems/SquadController.cs ===
+  L4 [RedundantUsingDirective] Using directive is not required by the code and can be safely removed
+  L31 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L31 [InconsistentNaming] Name 'visibleTargets' does not match rule 'Instance fields (private)'. Suggested name is '_visibleTa
+  L32 [InconsistentNaming] Name 'tickTimer' does not match rule 'Instance fields (private)'. Suggested name is '_tickTimer'.
+  L41 [InvertIf] Invert 'if' statement to reduce nesting
+  L56 [VirtualMemberNeverOverridden.Global] Virtual method 'TickAI' is never overridden
+  L66 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L76 [MergeConditionalExpression] Merge conditional expression
+  L105 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L105 [LoopCanBeConvertedToQuery] Loop can be converted into LINQ-expression
+  L130 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L139 [InvertIf] Invert 'if' statement to reduce nesting
+
+=== Assets/Scripts/Systems/SquadManager.cs ===
+  L16 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L16 [InconsistentNaming] Name 'squadMembers' does not match rule 'Instance fields (private)'. Suggested name is '_squadMember
+  L17 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L17 [InconsistentNaming] Name 'selectedMembers' does not match rule 'Instance fields (private)'. Suggested name is '_selected
+  L18 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L18 [InconsistentNaming] Name 'commandMembersBuffer' does not match rule 'Instance fields (private)'. Suggested name is '_com
+  L21 [UnusedMember.Global] Property 'SelectedMembers' is never used
+  L22 [UnusedMember.Global] Property 'HasSelectedMembers' is never used
+  L48 [InvertIf] Invert 'if' statement to reduce nesting
+  L60 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L135 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L151 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L168 [UnusedMember.Global] Method 'IsMemberSelected' is never used
+  L173 [UnusedMember.Global] Method 'GetMemberById' is never used
+  L175 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L175 [LoopCanBeConvertedToQuery] Loop can be converted into LINQ-expression
+  L199 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L211 [InvertIf] Invert 'if' statement to reduce nesting
+  L213 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+
+=== Assets/Scripts/Systems/SquadMember.cs ===
+  L11 [UnusedMember.Global] Enum member 'Defensive' is never used
+  L12 [ArrangeTrailingCommaInMultilineLists] Remove trailing comma to conform to code style
+  L19 [UnusedMember.Global] Enum member 'Support' is never used
+  L20 [UnusedMember.Global] Enum member 'Scout' is never used
+  L21 [ArrangeTrailingCommaInMultilineLists] Remove trailing comma to conform to code style
+  L66 [UnusedMember.Global] Accessor 'AutonomousPatrol.get' is never used
+  L73 [UnusedMember.Global] Accessor 'AutonomousScavenge.get' is never used
+  L100 [UnusedMember.Global] Method 'WillAutoEngage' is never used
+  L106 [UnusedMember.Global] Method 'WillReturnFire' is never used
+
+=== Assets/Scripts/Systems/SurvivorAI.cs ===
+  L1 [RedundantUsingDirective] Using directive is not required by the code and can be safely removed
+  L2 [RedundantUsingDirective] Using directive is not required by the code and can be safely removed
+  L3 [RedundantUsingDirective] Using directive is not required by the code and can be safely removed
+
+=== Assets/Scripts/Systems/SurvivorController.cs ===
+  L12 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L18 [UnusedMember.Global] Property 'Stats' is never used
+  L19 [UnusedMember.Global] Property 'Morale' is never used
+  L29 [InvertIf] Invert 'if' statement to reduce nesting
+  L40 [SwitchStatementHandlesSomeKnownEnumValuesWithDefault] Some cases are not processed: default
+
+=== Assets/Scripts/Systems/UnitManager.cs ===
+  L15 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L15 [InconsistentNaming] Name 'activeUnits' does not match rule 'Instance fields (private)'. Suggested name is '_activeUnits'
+  L17 [UnusedMember.Global] Property 'ActiveUnitCount' is never used
+  L38 [InvertIf] Invert 'if' statement to reduce nesting
+  L50 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L88 [ForeachCanBeConvertedToQueryUsingAnotherGetEnumerator] Loop can be converted into LINQ-expression but another 'GetEnumerator' method will be used
+  L104 [ForeachCanBeConvertedToQueryUsingAnotherGetEnumerator] Loop can be converted into LINQ-expression but another 'GetEnumerator' method will be used
+  L124 [ForeachCanBeConvertedToQueryUsingAnotherGetEnumerator] Loop can be converted into LINQ-expression but another 'GetEnumerator' method will be used
+  L140 [UnusedMember.Global] Method 'GetSquadMembers' is never used
+  L148 [ForeachCanBeConvertedToQueryUsingAnotherGetEnumerator] Loop can be converted into LINQ-expression but another 'GetEnumerator' method will be used
+  L162 [ForeachCanBeConvertedToQueryUsingAnotherGetEnumerator] Loop can be converted into LINQ-expression but another 'GetEnumerator' method will be used
+
+=== Assets/Scripts/Systems/ZombieManager.cs ===
+  L70 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L85 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L85 [InconsistentNaming] Name 'activeZombies' does not match rule 'Instance fields (private)'. Suggested name is '_activeZomb
+  L86 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L86 [InconsistentNaming] Name 'pendingDeadZombieReturns' does not match rule 'Instance fields (private)'. Suggested name is '
+  L87 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L87 [InconsistentNaming] Name 'pendingDeadZombieReturnBuffer' does not match rule 'Instance fields (private)'. Suggested name
+  L88 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L88 [InconsistentNaming] Name 'spawnedZombieBatchBuffer' does not match rule 'Instance fields (private)'. Suggested name is '
+  L89 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L89 [InconsistentNaming] Name 'invalidZombieBuffer' does not match rule 'Instance fields (private)'. Suggested name is '_inva
+  L90 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L90 [InconsistentNaming] Name 'playerUnitBuffer' does not match rule 'Instance fields (private)'. Suggested name is '_playerU
+  L91 [InconsistentNaming] Name 'runtimeFallbackAmbientZombieType' does not match rule 'Instance fields (private)'. Suggested n
+  L92 [InconsistentNaming] Name 'hasSpawnedValidationZombieNearPlayer' does not match rule 'Instance fields (private)'. Suggest
+  L93 [InconsistentNaming] Name 'runtimeSpawnerPrewarmed' does not match rule 'Instance fields (private)'. Suggested name is '_
+  L94 [InconsistentNaming] Name 'initializationTime' does not match rule 'Instance fields (private)'. Suggested name is '_initi
+  L95 [InconsistentNaming] Name 'nextAmbientSpawnEvaluationTime' does not match rule 'Instance fields (private)'. Suggested nam
+  L96 [InconsistentNaming] Name 'nextGuaranteedAmbientSpawnTime' does not match rule 'Instance fields (private)'. Suggested nam
+  L97 [InconsistentNaming] Name 'nextHordePulseTime' does not match rule 'Instance fields (private)'. Suggested name is '_nextH
+  L148 [InvertIf] Invert 'if' statement to reduce nesting
+  L181 [InvertIf] Invert 'if' statement to reduce nesting
+  L210 [InvertIf] Invert 'if' statement to reduce nesting
+  L219 [UnusedMethodReturnValue.Global] Method 'TrySpawnValidationZombieNearPlayer' return value is never used
+  L291 [ConditionIsAlwaysTrueOrFalse] Expression is always true
+  L407 [ForeachCanBeConvertedToQueryUsingAnotherGetEnumerator] Loop can be converted into LINQ-expression but another 'GetEnumerator' method will be used
+  L426 [RedundantNameQualifier] Qualifier is redundant
+  L502 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L506 [CanSimplifySetAddingWithSingleCall] Redundant 'Contains' before 'Add'
+  L527 [UseDeconstruction] Use deconstruction
+  L537 [RedundantNameQualifier] Qualifier is redundant
+  L537 [RedundantNameQualifier] Qualifier is redundant
+  L553 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L584 [InvertIf] Invert 'if' statement to reduce nesting
+  L682 [InvertIf] Invert 'if' statement to reduce nesting
+  L699 [InvertIf] Invert 'if' statement to reduce nesting
+  L733 [ForeachCanBePartlyConvertedToQueryUsingAnotherGetEnumerator] Part of loop's body can be converted into LINQ-expression but another 'GetEnumerator' method will be
+  L852 [ForeachCanBePartlyConvertedToQueryUsingAnotherGetEnumerator] Part of loop's body can be converted into LINQ-expression but another 'GetEnumerator' method will be
+  L860 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L930 [MergeIntoPattern] Merge into pattern
+  L941 [MergeIntoPattern] Merge into pattern
+
+=== Assets/Scripts/UI/HUD/SquadPanelController.cs ===
+  L27 [MemberCanBePrivate.Global] Property 'IsInitialized' can be made private
+  L29 [InconsistentNaming] Name 'hudManager' does not match rule 'Instance fields (private)'. Suggested name is '_hudManager'.
+  L29 [NotAccessedField.Local] Field 'hudManager' is assigned but its value is never used
+  L52 [RedundantNameQualifier] Qualifier is redundant
+  L52 [RedundantNameQualifier] Qualifier is redundant
+  L55 [RedundantNameQualifier] Qualifier is redundant
+  L82 [MergeConditionalExpression] Merge conditional expression
+  L104 [ArrangeRedundantParentheses] Redundant parentheses
+
+=== Assets/Scripts/UI/HUD/SquadPortraitStrip.cs ===
+  L22 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L23 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L24 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L41 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L49 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L50 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L59 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L60 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L61 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L62 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L63 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L64 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L65 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L70 [RedundantNameQualifier] Qualifier is redundant
+  L99 [InvertIf] Invert 'if' statement to reduce nesting
+  L99 [MergeIntoPattern] Merge into pattern
+  L115 [InvertIf] Invert 'if' statement to reduce nesting
+  L139 [MergeIntoLogicalPattern] Merge into logical pattern
+  L162 [ConvertIfStatementToConditionalTernaryExpression] Convert into '?:' expression
+  L281 [ConvertIfStatementToReturnStatement] Convert into 'return' statement
+  L297 [InvertIf] Invert 'if' statement to reduce nesting
+  L300 [InvertIf] Invert 'if' statement to reduce nesting
+  L306 [InvertIf] Invert 'if' statement to reduce nesting
+  L333 [InvertIf] Invert 'if' statement to reduce nesting
+  L390 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L390 [LoopCanBeConvertedToQuery] Loop can be converted into LINQ-expression
+  L409 [ConvertIfStatementToReturnStatement] Convert into 'return' statement
+  L480 [InconsistentNaming] Name 'buttonGO' does not match rule 'Local variables'. Suggested name is 'buttonGo'.
+  L497 [InconsistentNaming] Name 'labelGO' does not match rule 'Local variables'. Suggested name is 'labelGo'.
+  L575 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L575 [LoopCanBeConvertedToQuery] Loop can be converted into LINQ-expression
+  L670 [ConvertIfStatementToReturnStatement] Convert into 'return' statement
+  L675 [RedundantNameQualifier] Qualifier is redundant
+  L680 [ConvertIfStatementToSwitchStatement] Convert 'if' statement into 'switch' expression
+  L690 [ConvertIfStatementToReturnStatement] Convert into 'return' statement
+  L702 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L708 [InvertIf] Invert 'if' statement to reduce nesting
+  L862 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L872 [ForeachCanBePartlyConvertedToQueryUsingAnotherGetEnumerator] Part of loop's body can be converted into LINQ-expression but another 'GetEnumerator' method will be
+  L880 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L903 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L1056 [ConvertIfStatementToReturnStatement] Convert into 'return' statement
+  L1103 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L1109 [InvertIf] Invert 'if' statement to reduce nesting
+  L1119 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L1134 [InvertIf] Invert 'if' statement to reduce nesting
+  L1136 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L1156 [Unity.PreferAddressByIdToGraphicsParams] String based property lookup is inefficient
+  L1156 [Unity.PreferAddressByIdToGraphicsParams] String based property lookup is inefficient
+  L1157 [Unity.PreferAddressByIdToGraphicsParams] String based property lookup is inefficient
+  L1157 [Unity.PreferAddressByIdToGraphicsParams] String based property lookup is inefficient
+  L1227 [RedundantAssignment] Value assigned is not used in any execution path
+  L1276 [InvertIf] Invert 'if' statement to reduce nesting
+  L1278 [ArrangeStaticMemberQualifier] Qualifier is redundant
+  L1303 [ArrangeRedundantParentheses] Redundant parentheses
+  L1304 [ArrangeRedundantParentheses] Redundant parentheses
+  L1360 [ArrangeRedundantParentheses] Redundant parentheses
+  L1360 [ArrangeRedundantParentheses] Redundant parentheses
+  L1376 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L1392 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L1394 [InvertIf] Invert 'if' statement to reduce nesting
+  L1402 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L1409 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+
+=== Assets/Scripts/UI/HUD/SquadTabUnitStatsController.cs ===
+  L223 [ConvertIfStatementToConditionalTernaryExpression] Convert into method call with '?:' expression inside
+  L257 [ConvertIfStatementToConditionalTernaryExpression] Convert into method call with '?:' expression inside
+  L375 [ConvertSwitchStatementToSwitchExpression] Convert 'switch' statement to 'switch' expression
+  L406 [ConvertSwitchStatementToSwitchExpression] Convert 'switch' statement to 'switch' expression
+  L411 [ArrangeRedundantParentheses] Redundant parentheses
+  L413 [ArrangeRedundantParentheses] Redundant parentheses
+
+=== Assets/Scripts/UI/HUD/TopBarController.cs ===
+  L21 [InconsistentNaming] Name 'speed1xButton' does not match rule 'Unity serialized field'. Suggested name is 'speed1XButton'
+  L22 [InconsistentNaming] Name 'speed2xButton' does not match rule 'Unity serialized field'. Suggested name is 'speed2XButton'
+  L23 [InconsistentNaming] Name 'speed4xButton' does not match rule 'Unity serialized field'. Suggested name is 'speed4XButton'
+  L33 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L34 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L35 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L36 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L80 [InvertIf] Invert 'if' statement to reduce nesting
+
+=== Assets/Scripts/UI/HUD/WorldHUD.cs ===
+  L46 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L51 [RedundantDefaultMemberInitializer] Initializing serialised field by default value is redundant
+  L55 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L57 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L71 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L76 [InconsistentNaming] Name 'speed1xButtonOverride' does not match rule 'Unity serialized field'. Suggested name is 'speed1
+  L77 [InconsistentNaming] Name 'speed2xButtonOverride' does not match rule 'Unity serialized field'. Suggested name is 'speed2
+  L78 [InconsistentNaming] Name 'speed4xButtonOverride' does not match rule 'Unity serialized field'. Suggested name is 'speed4
+  L81 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L81 [ArrangeTypeMemberModifiers] Inconsistent modifiers style: missing 'private' modifier
+  L81 [InconsistentNaming] Name 'C_BarBackdrop' does not match rule 'Static readonly fields (private)'. Suggested name is 'CBar
+  L82 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L82 [ArrangeTypeMemberModifiers] Inconsistent modifiers style: missing 'private' modifier
+  L82 [InconsistentNaming] Name 'C_BarCore' does not match rule 'Static readonly fields (private)'. Suggested name is 'CBarCore
+  L83 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L83 [ArrangeTypeMemberModifiers] Inconsistent modifiers style: missing 'private' modifier
+  L83 [InconsistentNaming] Name 'C_BarGlow' does not match rule 'Static readonly fields (private)'. Suggested name is 'CBarGlow
+  L84 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L84 [ArrangeTypeMemberModifiers] Inconsistent modifiers style: missing 'private' modifier
+  L84 [InconsistentNaming] Name 'C_Divider' does not match rule 'Static readonly fields (private)'. Suggested name is 'CDivider
+  L85 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L85 [ArrangeTypeMemberModifiers] Inconsistent modifiers style: missing 'private' modifier
+  L85 [InconsistentNaming] Name 'C_Panel' does not match rule 'Static readonly fields (private)'. Suggested name is 'CPanel'.
+  L85 [UnusedMember.Local] Field 'C_Panel' is never used
+  L86 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L86 [ArrangeTypeMemberModifiers] Inconsistent modifiers style: missing 'private' modifier
+  L86 [InconsistentNaming] Name 'C_PanelSoft' does not match rule 'Static readonly fields (private)'. Suggested name is 'CPanel
+  L87 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L87 [ArrangeTypeMemberModifiers] Inconsistent modifiers style: missing 'private' modifier
+  L87 [InconsistentNaming] Name 'C_Text' does not match rule 'Static readonly fields (private)'. Suggested name is 'CText'.
+  L88 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L88 [ArrangeTypeMemberModifiers] Inconsistent modifiers style: missing 'private' modifier
+  L88 [InconsistentNaming] Name 'C_TextDim' does not match rule 'Static readonly fields (private)'. Suggested name is 'CTextDim
+  L89 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L89 [ArrangeTypeMemberModifiers] Inconsistent modifiers style: missing 'private' modifier
+  L89 [InconsistentNaming] Name 'C_TextSignal' does not match rule 'Static readonly fields (private)'. Suggested name is 'CText
+  L89 [UnusedMember.Local] Field 'C_TextSignal' is never used
+  L90 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L90 [ArrangeTypeMemberModifiers] Inconsistent modifiers style: missing 'private' modifier
+  L90 [InconsistentNaming] Name 'C_HpTrack' does not match rule 'Static readonly fields (private)'. Suggested name is 'CHpTrack
+  L91 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L91 [ArrangeTypeMemberModifiers] Inconsistent modifiers style: missing 'private' modifier
+  L91 [InconsistentNaming] Name 'C_HpHealthy' does not match rule 'Static readonly fields (private)'. Suggested name is 'CHpHea
+  L92 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L92 [ArrangeTypeMemberModifiers] Inconsistent modifiers style: missing 'private' modifier
+  L92 [InconsistentNaming] Name 'C_HpInjured' does not match rule 'Static readonly fields (private)'. Suggested name is 'CHpInj
+  L93 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L93 [ArrangeTypeMemberModifiers] Inconsistent modifiers style: missing 'private' modifier
+  L93 [InconsistentNaming] Name 'C_HpCritical' does not match rule 'Static readonly fields (private)'. Suggested name is 'CHpCr
+  L94 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L94 [ArrangeTypeMemberModifiers] Inconsistent modifiers style: missing 'private' modifier
+  L94 [InconsistentNaming] Name 'C_Bolt' does not match rule 'Static readonly fields (private)'. Suggested name is 'CBolt'.
+  L95 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L95 [ArrangeTypeMemberModifiers] Inconsistent modifiers style: missing 'private' modifier
+  L95 [InconsistentNaming] Name 'C_BoltCore' does not match rule 'Static readonly fields (private)'. Suggested name is 'CBoltCo
+  L96 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L96 [ArrangeTypeMemberModifiers] Inconsistent modifiers style: missing 'private' modifier
+  L96 [InconsistentNaming] Name 'C_TimePanel' does not match rule 'Static readonly fields (private)'. Suggested name is 'CTimeP
+  L97 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L97 [ArrangeTypeMemberModifiers] Inconsistent modifiers style: missing 'private' modifier
+  L97 [InconsistentNaming] Name 'C_TimeButton' does not match rule 'Static readonly fields (private)'. Suggested name is 'CTime
+  L98 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L98 [ArrangeTypeMemberModifiers] Inconsistent modifiers style: missing 'private' modifier
+  L98 [InconsistentNaming] Name 'C_TimeButtonOn' does not match rule 'Static readonly fields (private)'. Suggested name is 'CTi
+  L99 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L99 [ArrangeTypeMemberModifiers] Inconsistent modifiers style: missing 'private' modifier
+  L99 [InconsistentNaming] Name 'C_DamagePopup' does not match rule 'Static readonly fields (private)'. Suggested name is 'CDam
+  L104 [RedundantNameQualifier] Qualifier is redundant
+  L136 [NotAccessedField.Local] Field 'Unit' is assigned but its value is never used
+  L138 [NotAccessedField.Local] Field 'PowerRating' is assigned but its value is never used
+  L139 [NotAccessedField.Local] Field 'Rank' is assigned but its value is never used
+  L169 [InconsistentNaming] Name '_speed1xButtonImage' does not match rule 'Instance fields (private)'. Suggested name is '_spee
+  L170 [InconsistentNaming] Name '_speed2xButtonImage' does not match rule 'Instance fields (private)'. Suggested name is '_spee
+  L171 [InconsistentNaming] Name '_speed4xButtonImage' does not match rule 'Instance fields (private)'. Suggested name is '_spee
+  L178 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L179 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L180 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L284 [MergeIntoPattern] Merge into pattern
+  L354 [InvertIf] Invert 'if' statement to reduce nesting
+  L450 [MergeIntoLogicalPattern] Merge into logical pattern
+  L495 [InconsistentNaming] Name 'RefreshHP' does not match rule 'Methods'. Suggested name is 'RefreshHp'.
+  L791 [InvertIf] Invert 'if' statement to reduce nesting
+  L915 [MemberCanBeMadeStatic.Local] Method 'CreateActionButton' can be made static
+  L1006 [InvertIf] Invert 'if' statement to reduce nesting
+  L1009 [InvertIf] Invert 'if' statement to reduce nesting
+  L1053 [InvertIf] Invert 'if' statement to reduce nesting
+  L1087 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L1087 [LoopCanBeConvertedToQuery] Loop can be converted into LINQ-expression
+  L1121 [MemberCanBeMadeStatic.Local] Method 'BuildLiveHudContext' can be made static
+  L1123 [UnusedVariable] Local variable 'stats' is never used
+  L1132 [ConvertToConstant.Local] Convert into constant
+  L1133 [ConvertToConstant.Local] Convert into constant
+  L1136 [InvertIf] Invert 'if' statement to reduce nesting
+  L1157 [UnusedMember.Local] Method 'ResolvePowerRating' is never used
+  L1179 [UnusedMember.Local] Method 'ResolveRankFromPowerRating' is never used
+  L1210 [ConvertToConstant.Local] Convert into constant
+  L1211 [ConvertToConstant.Local] Convert into constant
+  L1237 [ConvertIfStatementToReturnStatement] Convert into 'return' statement
+  L1245 [MemberCanBeMadeStatic.Local] Method 'ApplyContextToSquadEntry' can be made static
+  L1292 [InvertIf] Invert 'if' statement to reduce nesting
+  L1343 [ConvertIfStatementToSwitchStatement] Convert 'if' statement into 'switch' expression
+  L1348 [ConvertIfStatementToReturnStatement] Convert into 'return' statement
+  L1350 [ReplaceSubstringWithRangeIndexer] Use range indexer
+  L1353 [ReplaceSubstringWithRangeIndexer] Use range indexer
+  L1353 [ReplaceSubstringWithRangeIndexer] Use range indexer
+  L1681 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L1755 [MergeIntoPattern] Merge into pattern
+  L1756 [MergeIntoPattern] Merge into pattern
+  L1756 [MergeIntoPattern] Merge into pattern
+  L1761 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L1821 [MemberCanBeMadeStatic.Local] Method 'BuildTimeControlButton' can be made static
+  L1879 [InconsistentNaming] Name 'speed1xButton' does not match rule 'Local variables'. Suggested name is 'speed1XButton'.
+  L1880 [InconsistentNaming] Name 'speed2xButton' does not match rule 'Local variables'. Suggested name is 'speed2XButton'.
+  L1881 [InconsistentNaming] Name 'speed4xButton' does not match rule 'Local variables'. Suggested name is 'speed4XButton'.
+  L1911 [ConvertIfStatementToSwitchStatement] Convert 'if' statement into 'switch' statement
+  L1959 [ConvertIfStatementToReturnStatement] Convert into 'return' statement
+  L2090 [InvertIf] Invert 'if' statement to reduce nesting
+  L2131 [InvertIf] Invert 'if' statement to reduce nesting
+  L2134 [MergeIntoPattern] Merge into pattern
+  L2148 [SwitchStatementHandlesSomeKnownEnumValuesWithDefault] Some values of the enum are not processed inside switch: None, Backspace, Delete...
+  L2223 [ArrangeTypeMemberModifiers] Inconsistent modifiers style: missing 'private' modifier
+  L2230 [ArrangeTypeMemberModifiers] Inconsistent modifiers style: missing 'private' modifier
+  L2237 [ArrangeTypeMemberModifiers] Inconsistent modifiers style: missing 'private' modifier
+  L2245 [ArrangeTypeMemberModifiers] Inconsistent modifiers style: missing 'private' modifier
+  L2262 [ArrangeTypeMemberModifiers] Inconsistent modifiers style: missing 'private' modifier
+  L2275 [ArrangeTypeMemberModifiers] Inconsistent modifiers style: missing 'private' modifier
+  L2288 [ArrangeTypeMemberModifiers] Inconsistent modifiers style: missing 'private' modifier
+  L2288 [UnusedMember.Local] Method 'BuildSlider' is never used
+
+=== Assets/Scripts/UI/HUD/WorldHUDController.cs ===
+  L54 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L56 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L60 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L62 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L76 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L92 [ConvertToAutoPropertyWithPrivateSetter] Convert into auto-property with private setter
+  L124 [RedundantNameQualifier] Qualifier is redundant
+  L130 [RedundantNameQualifier] Qualifier is redundant
+  L138 [MergeIntoLogicalPattern] Merge into logical pattern
+  L140 [InvertIf] Invert 'if' statement to reduce nesting
+  L282 [InvertIf] Invert 'if' statement to reduce nesting
+  L348 [InvertIf] Invert 'if' statement to reduce nesting
+  L367 [InvertIf] Invert 'if' statement to reduce nesting
+  L399 [RedundantNameQualifier] Qualifier is redundant
+  L404 [RedundantNameQualifier] Qualifier is redundant
+  L415 [RedundantNameQualifier] Qualifier is redundant
+  L428 [MergeIntoLogicalPattern] Merge into logical pattern
+  L510 [RedundantNameQualifier] Qualifier is redundant
+  L511 [RedundantNameQualifier] Qualifier is redundant
+  L643 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L645 [InvertIf] Invert 'if' statement to reduce nesting
+  L662 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L665 [InvertIf] Invert 'if' statement to reduce nesting
+
+=== Assets/Scripts/UI/Menus/CharacterCreation/UmaAppearanceService.cs ===
+  L51 [InvertIf] Invert 'if' statement to reduce nesting
+  L55 [RedundantArgumentDefaultValue] The parameter 'RestoreDNA' has the same default value
+  L55 [RedundantArgumentDefaultValue] The parameter 'skipBundleCheck' has the same default value
+  L140 [UnusedMember.Global] Method 'ValidateRoundTrip' is never used
+  L151 [RedundantArgumentDefaultValue] The parameter 'rebuildCharacter' has the same default value
+  L197 [RedundantAssignment] Value assigned is not used in any execution path
+  L209 [InvertIf] Invert 'if' statement to reduce nesting
+  L247 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L352 [InvertIf] Invert 'if' statement to reduce nesting
+  L369 [ConvertIfStatementToSwitchStatement] Convert 'if' statement into 'switch' statement
+  L379 [RedundantArgumentDefaultValue] The parameter 'Gloss' has the same default value
+  L379 [RedundantArgumentDefaultValue] The parameter 'UpdateTexture' has the same default value
+  L419 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L430 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L463 [ConvertIfStatementToReturnStatement] Convert into 'return' statement
+  L499 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L499 [LoopCanBeConvertedToQuery] Loop can be converted into LINQ-expression
+  L536 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L585 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L585 [InconsistentNaming] Name 'errors' does not match rule 'Instance fields (private)'. Suggested name is '_errors'.
+  L586 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L586 [InconsistentNaming] Name 'warnings' does not match rule 'Instance fields (private)'. Suggested name is '_warnings'.
+  L588 [UnusedMember.Global] Property 'Errors' is never used
+  L589 [UnusedMember.Global] Property 'Warnings' is never used
+  L635 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L640 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+
+=== Assets/Scripts/UI/Menus/SettingsMenuController.cs ===
+  L22 [MemberCanBePrivate.Global] Property 'IsInitialized' can be made private
+
+=== Assets/Scripts/UI/RuntimeUiEventSystemUtility.cs ===
+  L17 [InconsistentNaming] Name 'sceneHookInstalled' does not match rule 'Static fields (private)'. Suggested name is '_sceneHo
+  L18 [InconsistentNaming] Name 'heartbeat' does not match rule 'Static fields (private)'. Suggested name is '_heartbeat'.
+  L19 [InconsistentNaming] Name 'ensureInProgress' does not match rule 'Static fields (private)'. Suggested name is '_ensureInP
+  L83 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L113 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L128 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L155 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L210 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L221 [InconsistentNaming] Name 'nextEnsureAt' does not match rule 'Instance fields (private)'. Suggested name is '_nextEnsureA
+  L250 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L250 [LoopCanBeConvertedToQuery] Loop can be converted into LINQ-expression
+  L280 [InvertIf] Invert 'if' statement to reduce nesting
+
+=== Assets/Scripts/UI/SquadManagement/SkillsTabController.cs ===
+  L23 [InconsistentNaming] Name 'SkillName' does not match rule 'Unity serialized field'. Suggested name is 'skillName'.
+  L24 [InconsistentNaming] Name 'Category' does not match rule 'Unity serialized field'. Suggested name is 'category'.
+  L25 [InconsistentNaming] Name 'State' does not match rule 'Unity serialized field'. Suggested name is 'state'.
+  L26 [InconsistentNaming] Name 'IsPassive' does not match rule 'Unity serialized field'. Suggested name is 'isPassive'.
+  L27 [InconsistentNaming] Name 'Rank' does not match rule 'Unity serialized field'. Suggested name is 'rank'.
+  L28 [InconsistentNaming] Name 'Description' does not match rule 'Unity serialized field'. Suggested name is 'description'.
+  L29 [InconsistentNaming] Name 'Icon' does not match rule 'Unity serialized field'. Suggested name is 'icon'.
+  L79 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L79 [InconsistentNaming] Name 'skills' does not match rule 'Instance fields (private)'. Suggested name is '_skills'.
+  L80 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L80 [InconsistentNaming] Name 'skillViews' does not match rule 'Instance fields (private)'. Suggested name is '_skillViews'.
+  L82 [InconsistentNaming] Name 'hostRoot' does not match rule 'Instance fields (private)'. Suggested name is '_hostRoot'.
+  L83 [InconsistentNaming] Name 'listContent' does not match rule 'Instance fields (private)'. Suggested name is '_listContent'
+  L84 [InconsistentNaming] Name 'fontAsset' does not match rule 'Instance fields (private)'. Suggested name is '_fontAsset'.
+  L85 [InconsistentNaming] Name 'panelSprite' does not match rule 'Instance fields (private)'. Suggested name is '_panelSprite'
+  L86 [InconsistentNaming] Name 'slotSprite' does not match rule 'Instance fields (private)'. Suggested name is '_slotSprite'.
+  L88 [InconsistentNaming] Name 'contextText' does not match rule 'Instance fields (private)'. Suggested name is '_contextText'
+  L89 [InconsistentNaming] Name 'detailText' does not match rule 'Instance fields (private)'. Suggested name is '_detailText'.
+  L90 [InconsistentNaming] Name 'selectedSkillIndex' does not match rule 'Instance fields (private)'. Suggested name is '_selec
+  L131 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L203 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L230 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L246 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L246 [LoopCanBeConvertedToQuery] Loop can be converted into LINQ-expression
+  L248 [InvertIf] Invert 'if' statement to reduce nesting
+  L277 [UseObjectOrCollectionInitializer] Use object initializer
+  L329 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L415 [ConvertIfStatementToSwitchStatement] Convert 'if' statement into 'switch' statement
+  L435 [ConvertSwitchStatementToSwitchExpression] Convert 'switch' statement to 'switch' expression
+  L521 [ConvertIfStatementToReturnStatement] Convert into 'return' statement
+  L526 [ReplaceSubstringWithRangeIndexer] Use range indexer
+
+=== Assets/Scripts/UI/SquadManagement/SquadCustomizerTabController.cs ===
+  L26 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L26 [InconsistentNaming] Name 'members' does not match rule 'Instance fields (private)'. Suggested name is '_members'.
+  L27 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L27 [InconsistentNaming] Name 'memberViews' does not match rule 'Instance fields (private)'. Suggested name is '_memberViews'
+  L28 [InconsistentNaming] Name 'assignmentByMember' does not match rule 'Instance fields (private)'. Suggested name is '_assig
+  L29 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L31 [InconsistentNaming] Name 'roleOptions' does not match rule 'Instance fields (private)'. Suggested name is '_roleOptions'
+  L32 [InconsistentNaming] Name 'loadoutOptions' does not match rule 'Instance fields (private)'. Suggested name is '_loadoutOp
+  L33 [InconsistentNaming] Name 'positionOptions' does not match rule 'Instance fields (private)'. Suggested name is '_position
+  L35 [InconsistentNaming] Name 'hostRoot' does not match rule 'Instance fields (private)'. Suggested name is '_hostRoot'.
+  L36 [InconsistentNaming] Name 'memberListContent' does not match rule 'Instance fields (private)'. Suggested name is '_member
+  L37 [InconsistentNaming] Name 'fontAsset' does not match rule 'Instance fields (private)'. Suggested name is '_fontAsset'.
+  L38 [InconsistentNaming] Name 'panelSprite' does not match rule 'Instance fields (private)'. Suggested name is '_panelSprite'
+  L39 [InconsistentNaming] Name 'slotSprite' does not match rule 'Instance fields (private)'. Suggested name is '_slotSprite'.
+  L41 [InconsistentNaming] Name 'squadNameInput' does not match rule 'Instance fields (private)'. Suggested name is '_squadName
+  L42 [InconsistentNaming] Name 'selectedMemberText' does not match rule 'Instance fields (private)'. Suggested name is '_selec
+  L43 [InconsistentNaming] Name 'roleValueText' does not match rule 'Instance fields (private)'. Suggested name is '_roleValueT
+  L44 [InconsistentNaming] Name 'loadoutValueText' does not match rule 'Instance fields (private)'. Suggested name is '_loadout
+  L45 [InconsistentNaming] Name 'positionValueText' does not match rule 'Instance fields (private)'. Suggested name is '_positi
+  L46 [InconsistentNaming] Name 'statusText' does not match rule 'Instance fields (private)'. Suggested name is '_statusText'.
+  L48 [InconsistentNaming] Name 'moveUpButton' does not match rule 'Instance fields (private)'. Suggested name is '_moveUpButto
+  L49 [InconsistentNaming] Name 'moveDownButton' does not match rule 'Instance fields (private)'. Suggested name is '_moveDownB
+  L50 [InconsistentNaming] Name 'selectedIndex' does not match rule 'Instance fields (private)'. Suggested name is '_selectedIn
+  L101 [LocalVariableHidesMember] Local variable 'name' hides property 'UnityEngine.Object.name'
+  L281 [ConvertToConstant.Local] Convert into constant
+  L282 [ArrangeRedundantParentheses] Redundant parentheses
+  L390 [UseObjectOrCollectionInitializer] Use object initializer
+  L423 [SwapViaDeconstruction] Swap via deconstruction
+  L438 [MemberCanBeMadeStatic.Local] Method 'ShiftOption' can be made static
+
+=== Assets/Scripts/UI/SquadManagement/SquadListPanelController.cs ===
+  L23 [InconsistentNaming] Name 'Id' does not match rule 'Unity serialized field'. Suggested name is 'id'.
+  L24 [InconsistentNaming] Name 'DisplayName' does not match rule 'Unity serialized field'. Suggested name is 'displayName'.
+  L25 [InconsistentNaming] Name 'Portrait' does not match rule 'Unity serialized field'. Suggested name is 'portrait'.
+  L26 [InconsistentNaming] Name 'Health01' does not match rule 'Unity serialized field'. Suggested name is 'health01'.
+  L27 [InconsistentNaming] Name 'Stamina01' does not match rule 'Unity serialized field'. Suggested name is 'stamina01'.
+  L28 [InconsistentNaming] Name 'Condition' does not match rule 'Unity serialized field'. Suggested name is 'condition'.
+  L52 [NotAccessedField.Local] Field 'Portrait' is assigned but its value is never used
+  L56 [NotAccessedField.Local] Field 'HealthFill' is assigned but its value is never used
+  L57 [NotAccessedField.Local] Field 'StaminaFill' is assigned but its value is never used
+  L58 [NotAccessedField.Local] Field 'HealthValue' is assigned but its value is never used
+  L59 [NotAccessedField.Local] Field 'StaminaValue' is assigned but its value is never used
+  L80 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L80 [InconsistentNaming] Name 'entries' does not match rule 'Instance fields (private)'. Suggested name is '_entries'.
+  L81 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L81 [InconsistentNaming] Name 'entryViews' does not match rule 'Instance fields (private)'. Suggested name is '_entryViews'.
+  L83 [InconsistentNaming] Name 'hostRoot' does not match rule 'Instance fields (private)'. Suggested name is '_hostRoot'.
+  L84 [InconsistentNaming] Name 'listContent' does not match rule 'Instance fields (private)'. Suggested name is '_listContent'
+  L85 [InconsistentNaming] Name 'fontAsset' does not match rule 'Instance fields (private)'. Suggested name is '_fontAsset'.
+  L86 [InconsistentNaming] Name 'panelSprite' does not match rule 'Instance fields (private)'. Suggested name is '_panelSprite'
+  L87 [InconsistentNaming] Name 'entrySprite' does not match rule 'Instance fields (private)'. Suggested name is '_entrySprite'
+  L88 [InconsistentNaming] Name 'selectedIndex' does not match rule 'Instance fields (private)'. Suggested name is '_selectedIn
+  L125 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L245 [UseObjectOrCollectionInitializer] Use object initializer
+  L302 [ConvertToConstant.Local] Convert into constant
+  L303 [ArrangeRedundantParentheses] Redundant parentheses
+  L379 [ConvertSwitchStatementToSwitchExpression] Convert 'switch' statement to 'switch' expression
+  L446 [ConvertIfStatementToReturnStatement] Convert into 'return' statement
+  L451 [ReplaceSubstringWithRangeIndexer] Use range indexer
+
+=== Assets/Scripts/UI/SquadManagement/ZomberaSquadManagementUI.cs ===
+  L9 [RedundantUsingDirective] Using directive is not required by the code and can be safely removed
+  L25 [NotAccessedField.Local] Field 'SquadMember' is assigned but its value is never used
+  L84 [InconsistentNaming] Name 'survivors' does not match rule 'Instance fields (private)'. Suggested name is '_survivors'.
+  L85 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L87 [InconsistentNaming] Name 'inventorySlots' does not match rule 'Instance fields (private)'. Suggested name is '_inventory
+  L88 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L90 [InconsistentNaming] Name 'skillEntries' does not match rule 'Instance fields (private)'. Suggested name is '_skillEntrie
+  L91 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L93 [InconsistentNaming] Name 'liveSurvivorContexts' does not match rule 'Instance fields (private)'. Suggested name is '_liv
+  L94 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L96 [InconsistentNaming] Name 'defaultFont' does not match rule 'Instance fields (private)'. Suggested name is '_defaultFont'
+  L97 [InconsistentNaming] Name 'panelSprite' does not match rule 'Instance fields (private)'. Suggested name is '_panelSprite'
+  L98 [InconsistentNaming] Name 'cardSprite' does not match rule 'Instance fields (private)'. Suggested name is '_cardSprite'.
+  L99 [InconsistentNaming] Name 'slotSprite' does not match rule 'Instance fields (private)'. Suggested name is '_slotSprite'.
+  L100 [InconsistentNaming] Name 'stripeSprite' does not match rule 'Instance fields (private)'. Suggested name is '_stripeSprit
+  L101 [InconsistentNaming] Name 'activeTab' does not match rule 'Instance fields (private)'. Suggested name is '_activeTab'.
+  L101 [NotAccessedField.Local] Field 'activeTab' is assigned but its value is never used
+  L102 [InconsistentNaming] Name 'selectedSurvivorIndex' does not match rule 'Instance fields (private)'. Suggested name is '_se
+  L103 [InconsistentNaming] Name 'liveRefreshTimer' does not match rule 'Instance fields (private)'. Suggested name is '_liveRef
+  L104 [InconsistentNaming] Name 'resolvedTimeSystem' does not match rule 'Instance fields (private)'. Suggested name is '_resol
+  L105 [InconsistentNaming] Name 'pausedByVisibility' does not match rule 'Instance fields (private)'. Suggested name is '_pause
+  L195 [ConvertIfStatementToSwitchStatement] Convert 'if' statement into 'switch' statement
+  L258 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L293 [MergeIntoLogicalPattern] Merge into logical pattern
+  L378 [InvertIf] Invert 'if' statement to reduce nesting
+  L579 [UnusedVariable] Local variable 'labelText' is never used
+  L783 [InvertIf] Invert 'if' statement to reduce nesting
+  L811 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L858 [InvertIf] Invert 'if' statement to reduce nesting
+  L902 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L924 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L941 [MemberCanBeMadeStatic.Local] Method 'ResolvePlayerUnit' can be made static
+  L950 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L950 [LoopCanBeConvertedToQuery] Loop can be converted into LINQ-expression
+  L961 [UnusedMethodReturnValue.Local] Method 'TryAddLiveContext' return value is never used
+  L994 [MemberCanBeMadeStatic.Local] Method 'BuildSurvivorEntryFromContext' can be made static
+  L996 [MergeConditionalExpression] Merge conditional expression
+  L1048 [ConvertIfStatementToReturnStatement] Convert into 'return' statement
+  L1058 [ConvertIfStatementToSwitchStatement] Convert 'if' statement into 'switch' expression
+  L1068 [ConvertIfStatementToReturnStatement] Convert into 'return' statement
+  L1088 [ConvertIfStatementToSwitchStatement] Convert 'if' statement into 'switch' expression
+  L1117 [InvertIf] Invert 'if' statement to reduce nesting
+  L1126 [MergeConditionalExpression] Merge conditional expression
+  L1159 [MergeConditionalExpression] Merge conditional expression
+  L1167 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L1196 [ConvertIfStatementToReturnStatement] Convert into 'return' statement
+  L1208 [MergeConditionalExpression] Merge conditional expression
+  L1219 [MergeConditionalExpression] Merge conditional expression
+  L1223 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L1253 [ParameterHidesMember] Parameter 'name' hides property 'UnityEngine.Object.name'
+  L1269 [ConvertIfStatementToSwitchStatement] Convert 'if' statement into 'switch' expression
+  L1274 [ConvertIfStatementToReturnStatement] Convert into 'return' statement
+  L1326 [InvertIf] Invert 'if' statement to reduce nesting
+  L1355 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L1384 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L1464 [ConvertIfStatementToSwitchStatement] Convert 'if' statement into 'switch' expression
+  L1484 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L1653 [ConvertIfStatementToReturnStatement] Convert into 'return' statement
+  L1658 [ReplaceSubstringWithRangeIndexer] Use range indexer
+  L1669 [UseObjectOrCollectionInitializer] Use object initializer
+  L1690 [ArrangeRedundantParentheses] Redundant parentheses
+  L1690 [ArrangeRedundantParentheses] Redundant parentheses
+  L1695 [ArrangeRedundantParentheses] Redundant parentheses
+  L1695 [ArrangeRedundantParentheses] Redundant parentheses
+  L1700 [ArrangeRedundantParentheses] Redundant parentheses
+  L1712 [UseObjectOrCollectionInitializer] Use object initializer
+  L1721 [ArrangeRedundantParentheses] Redundant parentheses
+  L1723 [ArrangeRedundantParentheses] Redundant parentheses
+
+=== Assets/Scripts/UI/ZomberaCanvasLayer.cs ===
+  L16 [UnusedMember.Global] Constant 'Overlays' is never used
+
+=== Assets/Scripts/World/Regions/Region.cs ===
+  L4 [RedundantUsingDirective] Using directive is not required by the code and can be safely removed
+  L5 [RedundantUsingDirective] Using directive is not required by the code and can be safely removed
+  L19 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L27 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L28 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L30 [InconsistentNaming] Name 'activeLayer' does not match rule 'Instance fields (not private)'. Suggested name is 'ActiveLay
+  L31 [InconsistentNaming] Name 'runtimeMaterialized' does not match rule 'Instance fields (not private)'. Suggested name is 'R
+  L32 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L32 [InconsistentNaming] Name 'runtimeZombies' does not match rule 'Instance fields (not private)'. Suggested name is 'Runtim
+  L32 [RedundantNameQualifier] Qualifier is redundant
+  L32 [RedundantNameQualifier] Qualifier is redundant
+  L33 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L33 [InconsistentNaming] Name 'runtimeSurvivors' does not match rule 'Instance fields (not private)'. Suggested name is 'Runt
+  L33 [RedundantNameQualifier] Qualifier is redundant
+  L33 [RedundantNameQualifier] Qualifier is redundant
+
+=== Assets/Scripts/World/Regions/RegionManager.cs ===
+  L20 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L23 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L33 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L33 [InconsistentNaming] Name 'baselineBrainTicks' does not match rule 'Instance fields (private)'. Suggested name is '_basel
+  L47 [UnusedMember.Global] Method 'GetRegionAtPosition' is never used
+  L49 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L49 [LoopCanBeConvertedToQuery] Loop can be converted into LINQ-expression
+  L84 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L102 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L104 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L104 [LoopCanBeConvertedToQuery] Loop can be converted into LINQ-expression
+  L138 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L156 [RedundantNameQualifier] Qualifier is redundant
+  L171 [SwitchStatementHandlesSomeKnownEnumValuesWithDefault] Some cases are not processed: default
+  L224 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L229 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L238 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L243 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L261 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L268 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L330 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+
+=== Assets/Scripts/World/RegionSystem.cs ===
+  L13 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L17 [MemberCanBePrivate.Global] Method 'GetRegionAtWorldPosition' can be made private
+  L19 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L38 [UnusedMember.Global] Method 'GetDifficultyAtWorldPosition' is never used
+  L41 [MergeConditionalExpression] Merge conditional expression
+  L58 [ConvertIfStatementToReturnStatement] Convert into 'return' statement
+
+=== Assets/Scripts/World/Simulation/SurvivorManager.cs ===
+  L16 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L17 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L26 [RedundantDefaultMemberInitializer] Initializing serialised field by default value is redundant
+  L28 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L28 [InconsistentNaming] Name 'groups' does not match rule 'Instance fields (private)'. Suggested name is '_groups'.
+  L29 [InconsistentNaming] Name 'seeded' does not match rule 'Instance fields (private)'. Suggested name is '_seeded'.
+  L30 [InconsistentNaming] Name 'nextGroupId' does not match rule 'Instance fields (private)'. Suggested name is '_nextGroupId'
+  L32 [UnusedMember.Global] Property 'Groups' is never used
+  L47 [MergeIntoNegatedPattern] Merge into pattern
+  L91 [MergeIntoNegatedPattern] Merge into pattern
+  L98 [MergeIntoNegatedPattern] Merge into pattern
+  L147 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L147 [LoopCanBeConvertedToQuery] Loop can be converted into LINQ-expression
+  L200 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L209 [MergeIntoPattern] Merge into pattern
+  L211 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L215 [MergeIntoNegatedPattern] Merge into pattern
+  L292 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L296 [UseNullPropagation] Use null propagation
+  L302 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L306 [MergeIntoNegatedPattern] Merge into pattern
+  L313 [UseNullPropagation] Use null propagation
+  L324 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L347 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L364 [ArrangeRedundantParentheses] Redundant parentheses
+  L364 [ArrangeRedundantParentheses] Redundant parentheses
+  L366 [InvertIf] Invert 'if' statement to reduce nesting
+  L383 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L383 [LoopCanBeConvertedToQuery] Loop can be converted into LINQ-expression
+  L401 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L412 [InvertIf] Invert 'if' statement to reduce nesting
+  L445 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L449 [MergeIntoNegatedPattern] Merge into pattern
+
+=== Assets/Scripts/World/Simulation/WorldSimulationManager.cs ===
+  L38 [InconsistentNaming] Name 'simulationTimer' does not match rule 'Instance fields (private)'. Suggested name is '_simulati
+  L40 [UnusedMember.Global] Property 'SimulationActive' is never used
+  L41 [UnusedMember.Global] Property 'FullSimulationRange' is never used
+  L42 [UnusedMember.Global] Property 'ReducedSimulationRange' is never used
+  L43 [UnusedMember.Global] Property 'SimulationTickInterval' is never used
+  L109 [UnusedMember.Global] Property 'SimulationSeed' is never used
+  L110 [UnusedMember.Global] Property 'MaxRegionsTickedPerFrame' is never used
+
+=== Assets/Scripts/World/Spawning/SurvivorSpawner.cs ===
+  L33 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L33 [InconsistentNaming] Name 'survivorPool' does not match rule 'Instance fields (private)'. Suggested name is '_survivorPoo
+  L54 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L54 [LoopCanBeConvertedToQuery] Loop can be converted into LINQ-expression
+  L111 [RedundantNameQualifier] Qualifier is redundant
+  L111 [RedundantNameQualifier] Qualifier is redundant
+  L182 [RedundantNameQualifier] Qualifier is redundant
+  L182 [RedundantNameQualifier] Qualifier is redundant
+  L195 [ConvertIfStatementToReturnStatement] Convert into 'return' statement
+
+=== Assets/Scripts/World/Spawning/ZombieSpawner.cs ===
+  L18 [RedundantNameQualifier] Qualifier is redundant
+  L27 [RedundantNameQualifier] Qualifier is redundant
+  L44 [RedundantNameQualifier] Qualifier is redundant
+  L78 [RedundantNameQualifier] Qualifier is redundant
+  L86 [RedundantNameQualifier] Qualifier is redundant
+  L86 [RedundantNameQualifier] Qualifier is redundant
+  L125 [RedundantNameQualifier] Qualifier is redundant
+  L129 [RedundantNameQualifier] Qualifier is redundant
+  L143 [RedundantNameQualifier] Qualifier is redundant
+  L148 [RedundantNameQualifier] Qualifier is redundant
+
+=== Assets/Scripts/World/StreamedWorldChunkState.cs ===
+  L13 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L24 [MergeSequentialChecks] Merge sequential checks
+  L29 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L45 [MergeIntoNegatedPattern] Merge into pattern
+  L56 [MergeConditionalExpression] Merge conditional expression
+  L69 [ConvertIfStatementToNullCoalescingAssignment] Convert into '??='
+  L110 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+
+=== Assets/Scripts/World/StreamedWorldMetrics.cs ===
+  L10 [UnusedAutoPropertyAccessor.Global] Auto-property accessor 'ActiveMapMagicTiles.get' is never used
+  L11 [MemberCanBePrivate.Global] Property 'MapMagicTileAppliedEvents' can be made private
+  L12 [MemberCanBePrivate.Global] Property 'MapMagicAllCompleteEvents' can be made private
+  L13 [MemberCanBePrivate.Global] Property 'ChunksLoadedThisSession' can be made private
+  L14 [MemberCanBePrivate.Global] Property 'ChunksUnloadedThisSession' can be made private
+  L15 [UnusedAutoPropertyAccessor.Global] Auto-property accessor 'LastChunkLoadMilliseconds.get' is never used
+  L16 [UnusedAutoPropertyAccessor.Global] Auto-property accessor 'LastNavMeshBakeMilliseconds.get' is never used
+  L17 [MemberCanBePrivate.Global] Property 'NavMeshBakeCount' can be made private
+
+=== Assets/Scripts/World/StreamingNavMeshTileService.cs ===
+  L3 [RedundantUsingDirective] Using directive is not required by the code and can be safely removed
+  L36 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L40 [MemberCanBePrivate.Global] Property 'LastBootstrapHadTriangles' can be made private
+  L44 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L45 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L126 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L139 [ForeachCanBePartlyConvertedToQueryUsingAnotherGetEnumerator] Part of loop's body can be converted into LINQ-expression but another 'GetEnumerator' method will be
+  L169 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L189 [ForeachCanBeConvertedToQueryUsingAnotherGetEnumerator] Loop can be converted into LINQ-expression but another 'GetEnumerator' method will be used
+  L197 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L253 [MergeIntoLogicalPattern] Merge into logical pattern
+  L256 [UnusedParameter.Local] Parameter 'mapMagic' is never used
+  L291 [RedundantJumpStatement] Redundant control flow jump statement
+  L342 [ForeachCanBePartlyConvertedToQueryUsingAnotherGetEnumerator] Part of loop's body can be converted into LINQ-expression but another 'GetEnumerator' method will be
+  L366 [InvertIf] Invert 'if' statement to reduce nesting
+  L384 [CanSimplifyDictionaryRemovingWithSingleCall] Item removal can be simplified with single 'Remove'
+  L391 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L400 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L412 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L488 [MergeIntoPattern] Merge into pattern
+
+=== Assets/Scripts/World/TerrainResolver.cs ===
+  L37 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L50 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L75 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L81 [InvertIf] Invert 'if' statement to reduce nesting
+  L83 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+
+=== Assets/Scripts/World/TownPrefabCatalog.cs ===
+  L18 [NotAccessedField.Global] Serialised field 'id' is assigned but its value is never used
+  L51 [RedundantDefaultMemberInitializer] Initializing serialised field by default value is redundant
+  L76 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L89 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L89 [LoopCanBeConvertedToQuery] Loop can be converted into LINQ-expression
+  L110 [ForCanBeConvertedToForeach] 'for' loop can be converted into 'foreach' loop
+  L122 [InvertIf] Invert 'if' statement to reduce nesting
+
+=== Assets/Scripts/World/WorldEventSystem.cs ===
+  L42 [InconsistentNaming] Name 'eventTickTimer' does not match rule 'Instance fields (private)'. Suggested name is '_eventTick
+  L44 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L81 [RedundantNameQualifier] Qualifier is redundant
+  L96 [SwitchStatementHandlesSomeKnownEnumValuesWithDefault] Some cases are not processed: default
+
+=== Assets/Scripts/World/WorldManager.cs ===
+  L45 [MemberCanBePrivate.Global] Property 'IsSimulationActive' can be made private
+  L49 [InconsistentNaming] Name 'chunkStreamingTickTimer' does not match rule 'Instance fields (private)'. Suggested name is '_
+  L50 [InconsistentNaming] Name 'worldSimulationTimer' does not match rule 'Instance fields (private)'. Suggested name is '_wor
+  L51 [ArrangeObjectCreationWhenTypeEvident] Redundant type specification
+  L51 [InconsistentNaming] Name 'playerUnitBuffer' does not match rule 'Instance fields (private)'. Suggested name is '_playerU
+  L67 [InvertIf] Invert 'if' statement to reduce nesting
+  L158 [MergeIntoLogicalPattern] Merge into logical pattern
+  L226 [InvertIf] Invert 'if' statement to reduce nesting
+  L348 [MergeIntoNegatedPattern] Merge into pattern
+  L390 [ConvertIfStatementToReturnStatement] Convert into 'return' statement
+
+=== Assets/Scripts/World/WorldManager/SimulationLayer.cs ===
+  L27 [ConvertIfStatementToReturnStatement] Convert into 'return' statement
+
+=== Assets/Scripts/Zombera.Runtime.asmdef ===
+  L5 [Unity.PreferGuidReference] Prefer GUID reference
+  L6 [Unity.PreferGuidReference] Prefer GUID reference
+  L7 [Unity.PreferGuidReference] Prefer GUID reference
+  L8 [Unity.PreferGuidReference] Prefer GUID reference
+  L9 [Unity.PreferGuidReference] Prefer GUID reference
+  L10 [Unity.PreferGuidReference] Prefer GUID reference
+  L11 [Unity.PreferGuidReference] Prefer GUID reference

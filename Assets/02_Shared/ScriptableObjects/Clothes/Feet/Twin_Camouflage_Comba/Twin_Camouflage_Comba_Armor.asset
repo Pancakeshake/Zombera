@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 122911f0b0b0a494eace728ee9a62b8d, type: 3}
+  m_Name: Twin_Camouflage_Comba_Armor
+  m_EditorClassIdentifier: Zombera.Runtime::Zombera.Data.ArmorData
+  armorId: armor_feet_twin_camouflage_comba_twin_camouflage_comba
+  displayName: Twin Camouflage Comba
+  equipSlot: 8
+  armorRating: 4
+  damageResistances:
+  - damageType: 0
+    resistance: 0.05
+  statBonuses:
+  - skill: 7
+    flatBonus: 1

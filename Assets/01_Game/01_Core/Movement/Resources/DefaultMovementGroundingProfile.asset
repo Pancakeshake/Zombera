@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2373f379e2f3d0468fdae1a742a1fd3, type: 3}
+  m_Name: DefaultMovementGroundingProfile
+  m_EditorClassIdentifier: Zombera.Runtime::Zombera.Systems.MovementGroundingProfile
+  ground:
+    layers:
+      serializedVersion: 2
+      m_Bits: 1
+    probeUpMeters: 10
+    probeDownMeters: 120
+    footPivotOffsetY: 0
+  height:
+    terrainAuthority: 0
+    maxVerticalDelta: 1.5
+    navSampleUpMeters: 2
+    navSampleRadiiMeters:
+    - 2
+    - 6
+    - 15
+  bake:
+    voxelSize: 0.25
+    tileSize: 256
+    maxSlopeDegrees: 45
+    stepHeightMeters: 0.75
+    minRegionArea: 2
+    verticalHalfExtent: 180
+    tileBoundsPadding: 16
+  footSnap:
+    enabled: 0
+    threshold: 0.05
+    speed: 14
+    interval: 0.05
+  fallback:
+    enabled: 1
+    threshold: 0.1
+    speed: 18
+    interval: 0.05
+  seam:
+    verticalDeltaThreshold: 0.45
+  diagnostics:
+    logDestinations: 0
+    logUnitState: 0

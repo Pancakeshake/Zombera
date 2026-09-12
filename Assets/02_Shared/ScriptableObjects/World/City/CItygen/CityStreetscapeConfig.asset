@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f9b5225a78bc0e409ff0817873c6efc, type: 3}
+  m_Name: CityStreetscapeConfig
+  m_EditorClassIdentifier: Zombera.World::Zombera.World.Roads.CityStreetscapeConfig
+  fencePrefab: {fileID: 8925558586963464434, guid: 7a0964f0d5528434e895a67f937b6062, type: 3}
+  assembledPrefabFolder: Assets/02_Shared/Prefabs/Building/Buildings_Modular_Complete
+  proxyPrefabFolder: Assets/02_Shared/Proxies/Buildings_Complete
+  treePrefabFolder: Assets/02_Shared/Prefabs/Props/Nature
+  trafficSignalPrefab: {fileID: 1638620036864138150, guid: 14829427ac862084f90c0bd7427b7609, type: 3}
+  spawnTrafficLights: 1
+  trafficSignalSetbackMeters: 2.5
+  trafficSignalLateralOffsetMeters: 1.8
+  placeSignalsOnTerminatingBranch: 1
+  streetSignPrefab: {fileID: 6216140165507533935, guid: 761ff9ad78a1d184981bdc4123af2c08, type: 3}
+  spawnStreetSigns: 1
+  streetSignCornerOffsetMeters: 3.5
+  streetLampPrefab: {fileID: 100000, guid: 4ea7c531d5670a042a89583e175e72d1, type: 3}
+  utilityPolePrefab: {fileID: 120526, guid: 98e2ee8c4ad5eaf4584c4d3a16b3ee51, type: 3}
+  powerLineWireMaterial: {fileID: 2100000, guid: 92c6a3a4ec722c34d9176c4359b4b988, type: 2}
+  spawnPowerLines: 1
+  utilityPoleSpacingMeters: 40
+  utilityPoleLateralOffsetMeters: 2
+  utilityPoleCrossingClearanceMeters: 0.75
+  alternatePowerLineSides: 1
+  powerLineWireWidthMeters: 0.05
+  parkedCarPrefabs:
+  - {fileID: 7007543277593366402, guid: e79df4f0ca56f5a40a3dc78f74d83db2, type: 3}
+  - {fileID: 8271233640667783212, guid: d6a77217ad3e37f48a40ccebec719a80, type: 3}
+  - {fileID: 8267175181271187675, guid: cf8aedcb17918e44ab3d17419e6ccffc, type: 3}
+  - {fileID: 8267175181271187675, guid: cf8aedcb17918e44ab3d17419e6ccffc, type: 3}
+  spawnParkedCars: 1
+  parkedCarLotChance: 0.5
+  parkedCarSpacingMeters: 12
+  parkedCarShoulderOffsetMeters: 0.8
+  parkedCarLocalDensity: 0.7
+  parkedCarArterialDensity: 0.35
+  parkedCarHighwayDensity: 0.1
+  parkedCarJunctionExclusionMeters: 12
+  benchPrefab: {fileID: 4999742275636932151, guid: 9ebae7b08be96864795a2b15b2405a23, type: 3}
+  mailboxPrefab: {fileID: 2028905178310904767, guid: 9217ada716e35a546abbde8e26329b82, type: 3}
+  fireHydrantPrefab: {fileID: 2174108846166113439, guid: 435e60127698e5d4aaa88a8a1a80fdb5, type: 3}
+  trashCanPrefab: {fileID: 2553172578541587596, guid: e35ea9fd9cb8a9444b5245184b2e5b28, type: 3}
+  spawnStreetFurniture: 1
+  streetFurnitureMinSeparationMeters: 4
+  benchDensityPer100Meters: 0.15
+  mailboxDensityPer100Meters: 0.08
+  hydrantDensityPer100Meters: 0.05
+  trashCanDensityPer100Meters: 0.1

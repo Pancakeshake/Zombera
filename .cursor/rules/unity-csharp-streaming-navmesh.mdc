@@ -1,0 +1,22 @@
+---
+description: Unity C# conventions for WorldBuilder streaming, spawn, and NavMesh
+globs: Assets/**/*.cs
+alwaysApply: false
+---
+
+# Unity streaming + NavMesh conventions
+
+- **Never spawn/initialize world systems in MainMenu**. Gate with `GameState` before doing WorldBuilder/NavMesh/chunk/zombie work.
+- **WorldBuilder tile events** (first-party authority):
+  - Prefer `WorldTileStreamSource.TileStateChanged` for tile lifecycle.
+  - Prefer `IWorldTileGameplayEvents.TileAppliedForGameplay` (raised on `ContentReady`) for roads/buildings/grounding subscribers.
+  - Do not wire MapMagic `TerrainTile.OnTileApplied` / `OnAllComplete`.
+- **NavMesh**:
+  - Prefer `StreamingNavMeshTileService` for procedural streaming worlds (`ConfigureWorldTileStream`).
+  - If using `NavMeshSurface`, treat it as authoritative and avoid double-building via `NavMeshBuilder` in the same flow (flat labs only).
+- **Spawn**:
+  - Gate readiness on live tile stream / `StreamedWorldMetrics.ContentReadyTiles` (not dead MapMagic counters).
+  - Don’t trust raw XZ until at least one tile is `ContentReady`.
+  - Prefer “flatter” spawn selection (slope/normal sampling) over fixed points.
+- **Performance**:
+  - Avoid per-frame `FindObjectsByType` in `Update`; cache or run on ticks/events.

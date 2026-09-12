@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f70f8668f8d3dee418fcf95a06663141, type: 3}
+  m_Name: RoomFloorSkinConfig
+  m_EditorClassIdentifier: Zombera.Gameplay::Zombera.Data.RoomFloorSkinConfig
+  buildingSkinTable: {fileID: 11400000, guid: fcf640e4290b91342b2673af0528009c, type: 2}
+  roomSettings: {fileID: 11400000, guid: de04645d567914d48907cb781fdba6ad, type: 2}
+  entries:
+  - roomTypeName: LivingRoom
+    materials:
+    - material: {fileID: 2100000, guid: f0256f5ffc834783847a97f5fc52d4ec, type: 2}
+      weight: 0
+    - material: {fileID: 0}
+      weight: 1
+    wallPaintMaterials: []
+    ceilingMaterials: []
+  - roomTypeName: Kitchen
+    materials:
+    - material: {fileID: 2100000, guid: 25b0bcb2c6da49898da190f05e5f280e, type: 2}
+      weight: 1
+    wallPaintMaterials: []
+    ceilingMaterials: []
+  - roomTypeName: Bedroom
+    materials:
+    - material: {fileID: 2100000, guid: 25b0bcb2c6da49898da190f05e5f280e, type: 2}
+      weight: 1
+    wallPaintMaterials: []
+    ceilingMaterials: []
+  - roomTypeName: Bathroom
+    materials:
+    - material: {fileID: 2100000, guid: f149ccbc585003147bfe0742ac9c43ae, type: 2}
+      weight: 1
+    wallPaintMaterials: []
+    ceilingMaterials: []
+  - roomTypeName: Hallway
+    materials:
+    - material: {fileID: 2100000, guid: f149ccbc585003147bfe0742ac9c43ae, type: 2}
+      weight: 1
+    wallPaintMaterials: []
+    ceilingMaterials: []
+  - roomTypeName: Dining
+    materials:
+    - material: {fileID: 2100000, guid: 2a34eb7384a3463c99b398a8f67b8531, type: 2}
+      weight: 1
+    wallPaintMaterials: []
+    ceilingMaterials: []
+  - roomTypeName: Storage
+    materials:
+    - material: {fileID: 2100000, guid: 2a34eb7384a3463c99b398a8f67b8531, type: 2}
+      weight: 1
+    wallPaintMaterials: []
+    ceilingMaterials: []
+  - roomTypeName: Garage
+    materials:
+    - material: {fileID: 2100000, guid: 2a34eb7384a3463c99b398a8f67b8531, type: 2}
+      weight: 1
+    wallPaintMaterials: []
+    ceilingMaterials: []
+  - roomTypeName: Entry
+    materials:
+    - material: {fileID: 2100000, guid: 2a34eb7384a3463c99b398a8f67b8531, type: 2}
+      weight: 1
+    wallPaintMaterials: []
+    ceilingMaterials: []
+  fallback:
+  - material: {fileID: 0}
+    weight: 1
+  wallPaintFallback:
+  - material: {fileID: 0}
+    weight: 1
+  ceilingFallback: []

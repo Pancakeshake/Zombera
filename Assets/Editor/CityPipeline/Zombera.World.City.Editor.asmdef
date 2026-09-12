@@ -1,0 +1,26 @@
+{
+  "name": "Zombera.World.City.Editor",
+  "rootNamespace": "Zombera.Editor",
+    "references": [
+    "Zombera.World.City",
+    "Zombera.World.Crest",
+    "Zombera.World.Enviro",
+    "Zombera.Core",
+    "MapMagic",
+    "Den.Tools",
+    "JBooth.MicroSplat.Core",
+    "JBooth.MicroSplat.Core.Editor",
+    "Unity.AI.Navigation"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": false,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

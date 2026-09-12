@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 303562fb3da6c7e44abb6304e66cb7c9
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 344006
+  packageName: MicroSplat - URP for Unity 6.3
+  packageVersion: 1.0.1
+  assetPath: Packages/com.jbooth.microsplat.urp6p3/Scripts/Editor/fragments/URP6p3/microsplat_template_urp6p3_passdepthnormals.txt
+  uploadId: 830628

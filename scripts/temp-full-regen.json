@@ -1,0 +1,6 @@
+{
+  "className": "CommandScript",
+  "methodName": "Main",
+  "isMethodBody": true,
+  "csharpCode": "Debug.Log(\"[FixIsland] Starting full Reset -> Paint Natural Surfaces (seed 16, no fast iteration)...\");\nvar ok = Zombera.Editor.WorldBuilderHubPipelineRunner.TryRunStageRangeSync(\n    Zombera.World.CityPipeline.WorldBuilder.WorldBuildStageId.ResetGeneratedWorld,\n    Zombera.World.CityPipeline.WorldBuilder.WorldBuildStageId.PaintNaturalSurfaces,\n    useFastIteration: false,\n    out var error,\n    timeoutSeconds: 900f);\nif (!ok)\n{\n    Debug.LogError(\"[FixIsland] Pipeline failed: \" + (error ?? \"unknown\"));\n    return;\n}\nDebug.Log(\"[FixIsland] Pipeline completed.\");"
+}

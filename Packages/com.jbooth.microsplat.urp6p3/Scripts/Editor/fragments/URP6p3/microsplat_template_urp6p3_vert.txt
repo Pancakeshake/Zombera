@@ -1,0 +1,221 @@
+﻿
+         #if _PASSSHADOW
+            float3 _LightDirection;
+            float3 _LightPosition;
+         #endif
+
+         #if (_PASSMOTIONVECTOR || ((_PASSFORWARD || _PASSUNLIT) && defined(_WRITE_TRANSPARENT_MOTION_VECTOR)))
+
+            #define UNITY_MATRIX_V     _ViewMatrix
+            #define UNITY_MATRIX_I_V   _InvViewMatrix
+            #define UNITY_MATRIX_P     OptimizeProjectionMatrix(_ProjMatrix)
+            #define UNITY_MATRIX_I_P   _InvProjMatrix
+            #define UNITY_MATRIX_VP    _ViewProjMatrix
+            #define UNITY_MATRIX_I_VP  _InvViewProjMatrix
+            #define UNITY_MATRIX_UNJITTERED_VP _NonJitteredViewProjMatrix
+            #define UNITY_MATRIX_PREV_VP _PrevViewProjMatrix
+            #define UNITY_MATRIX_PREV_I_VP _PrevInvViewProjMatrix
+
+            void MotionVectorPositionZBias(VertexToPixel input)
+            {
+                #if UNITY_REVERSED_Z
+                input.pos.z -= unity_MotionVectorsParams.z * input.pos.w;
+                #else
+                input.pos.z += unity_MotionVectorsParams.z * input.pos.w;
+                #endif
+            }
+
+        #endif
+
+         // vertex shader
+         VertexToPixel Vert (VertexData v)
+         {
+           
+           VertexToPixel o = (VertexToPixel)0;
+
+           UNITY_SETUP_INSTANCE_ID(v);
+           UNITY_TRANSFER_INSTANCE_ID(v, o);
+           UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
+
+
+           #if _URP && (_PASSMOTIONVECTOR || ((_PASSFORWARD || _PASSUNLIT) && defined(_WRITE_TRANSPARENT_MOTION_VECTOR)))
+             VertexData previousMesh = v;
+           #endif
+           #if !_TESSELLATION_ON
+             ChainModifyVertex(v, o);
+           #endif
+
+           %V2FUV0% o.texcoord0 = v.texcoord0;
+
+           #if !_MICROTERRAIN || _TERRAINBLENDABLESHADER
+              %V2FUV1% o.texcoord1 = v.texcoord1;
+              %V2FUV2% o.texcoord2 = v.texcoord2;
+           #endif
+
+           %V2FUV3% o.texcoord3 = v.texcoord3;
+           %V2FVERTEXCOLOR% o.vertexColor = v.vertexColor;
+           
+           // This return the camera relative position (if enable)
+           float3 positionWS = TransformObjectToWorld(v.vertex.xyz);
+           float3 normalWS = TransformObjectToWorldNormal(v.normal);
+           
+           VertexPositionInputs vertexInput = GetVertexPositionInputs(v.vertex.xyz);
+           o.worldPos = positionWS;
+           o.worldNormal = normalWS;
+           
+           #if !_MICROTERRAIN || _TERRAINBLENDABLESHADER
+               float2 uv1 = v.texcoord1.xy;
+               float2 uv2 = v.texcoord2.xy;
+               float4 tangentWS = float4(TransformObjectToWorldDir(v.tangent.xyz), v.tangent.w);
+               o.worldTangent = tangentWS;
+           #else
+               float2 uv1 = v.texcoord0.xy;
+               float2 uv2 = uv1;
+           #endif
+
+           // MS Only
+           ApplyTerrainTangent(o);
+           
+
+          #if _PASSSHADOW
+              #if _CASTING_PUNCTUAL_LIGHT_SHADOW
+                 float3 lightDirectionWS = normalize(_LightPosition - o.worldPos);
+              #else
+                 float3 lightDirectionWS = _LightDirection;
+              #endif
+              // Define shadow pass specific clip position for Universal
+              o.pos = TransformWorldToHClip(ApplyShadowBias(o.worldPos, o.worldNormal, lightDirectionWS));
+              #if UNITY_REVERSED_Z
+                  o.pos.z = min(o.pos.z, o.pos.w * UNITY_NEAR_CLIP_VALUE);
+              #else
+                  o.pos.z = max(o.pos.z, o.pos.w * UNITY_NEAR_CLIP_VALUE);
+              #endif
+          #elif _PASSMETA
+              #if _MICROTERRAIN
+               o.pos = MetaVertexPosition(float4(v.vertex.xyz, 0), v.texcoord0.xy, v.texcoord0.xy, unity_LightmapST, unity_DynamicLightmapST);
+              #else
+               o.pos = MetaVertexPosition(float4(v.vertex.xyz, 0), uv1, uv2, unity_LightmapST, unity_DynamicLightmapST);
+              #endif
+          #else
+              o.pos = TransformWorldToHClip(o.worldPos);
+          #endif
+
+
+
+          %SCREENPOS% o.screenPos = ComputeScreenPos(o.pos, _ProjectionParams.x);
+          
+          // UNITY_VERSION
+          // 6000.0.9f1 = 6000 0 009
+
+          #if _PASSFORWARD || _PASSGBUFFER
+              #if _MICROTERRAIN
+                 OUTPUT_LIGHTMAP_UV(v.texcoord0.xy, unity_LightmapST, o.lightmapUV);
+              #else
+                 OUTPUT_LIGHTMAP_UV(uv1, unity_LightmapST, o.lightmapUV);
+              #endif
+              #if UNITY_VERSION < 60000009
+                OUTPUT_SH(o.worldNormal, o.sh);
+              #endif
+              
+              #if defined(DYNAMICLIGHTMAP_ON)
+                   o.dynamicLightmapUV.xy = uv2 * unity_DynamicLightmapST.xy + unity_DynamicLightmapST.zw;
+                   #if UNITY_VERSION >= 60000009
+                     OUTPUT_SH(o.worldNormal, o.sh);
+                   #endif
+              #elif (defined(PROBE_VOLUMES_L1) || defined(PROBE_VOLUMES_L2)) && UNITY_VERSION >= 60000009
+                   OUTPUT_SH4(vertexInput.positionWS, o.worldNormal.xyz, GetWorldSpaceNormalizeViewDir(vertexInput.positionWS), o.sh, o.probeOcclusion);
+              #endif
+          #endif
+
+          #ifdef VARYINGS_NEED_FOG_AND_VERTEX_LIGHT
+              half fogFactor = 0;
+              #if defined(_FOG_FRAGMENT)
+                fogFactor = ComputeFogFactor(o.pos.z);
+              #endif
+              #if _BAKEDLIT
+                  half3 vertexLight = VertexLighting(o.worldPos, o.worldNormal);
+                  o.fogFactorAndVertexLight = half4(fogFactor, vertexLight);
+              #else
+                  o.fogFactorAndVertexLight = half4(fogFactor, 0,0,0);
+              #endif
+          #endif
+
+          #if defined(REQUIRES_VERTEX_SHADOW_COORD_INTERPOLATOR)
+             o.shadowCoord = GetShadowCoord(vertexInput);
+          #endif
+
+          #if _URP && !_MICROTERRAIN && (_PASSMOTIONVECTOR || ((_PASSFORWARD || _PASSUNLIT) && defined(_WRITE_TRANSPARENT_MOTION_VECTOR)))
+            #if !defined(TESSELLATION_ON)
+              MotionVectorPositionZBias(o);
+            #endif
+
+            o.previousPositionCS = float4(0.0, 0.0, 0.0, 1.0);
+            // Note: unity_MotionVectorsParams.y is 0 is forceNoMotion is enabled
+            bool forceNoMotion = unity_MotionVectorsParams.y == 0.0;
+
+            if (!forceNoMotion)
+            {
+              #if defined(HAVE_VFX_MODIFICATION)
+                float3 previousPositionOS = currentFrameMvData.vfxParticlePositionOS;
+                #if defined(VFX_FEATURE_MOTION_VECTORS_VERTS)
+                  const bool applyDeformation = false;
+                #else
+                  const bool applyDeformation = true;
+                #endif
+              #else
+                const bool hasDeformation = unity_MotionVectorsParams.x == 1; // Mesh has skinned deformation
+                //float3 previousPositionOS = hasDeformation ? previousMesh.previousPositionOS : previousMesh.vertex.xyz;
+                float3 previousPositionOS = hasDeformation ? previousMesh.previousPositionOS : previousMesh.vertex.xyz;
+
+                #if defined(AUTOMATIC_TIME_BASED_MOTION_VECTORS) && defined(GRAPH_VERTEX_USES_TIME_PARAMETERS_INPUT)
+                  const bool applyDeformation = true;
+                #else
+                  const bool applyDeformation = hasDeformation;
+                #endif
+              #endif
+              // TODO
+              #if defined(FEATURES_GRAPH_VERTEX)
+                if (applyDeformation)
+                  previousPositionOS = GetLastFrameDeformedPosition(previousMesh, currentFrameMvData, previousPositionOS);
+                else
+                  previousPositionOS = previousMesh.positionOS;
+
+                #if defined(FEATURES_GRAPH_VERTEX_MOTION_VECTOR_OUTPUT)
+                  previousPositionOS -= previousMesh.precomputedVelocity;
+                #endif
+              #endif
+
+              #if defined(UNITY_DOTS_INSTANCING_ENABLED) && defined(DOTS_DEFORMED)
+                // Deformed vertices in DOTS are not cumulative with built-in Unity skinning/blend shapes
+                // Needs to be called after vertex modification has been applied otherwise it will be
+                // overwritten by Compute Deform node
+                ApplyPreviousFrameDeformedVertexPosition(previousMesh.vertexID, previousPositionOS);
+              #endif
+              #if defined (_ADD_PRECOMPUTED_VELOCITY)
+                previousPositionOS -= previousMesh.precomputedVelocity;
+              #endif
+              o.positionCS = mul(UNITY_MATRIX_UNJITTERED_VP, float4(positionWS, 1.0f));
+
+              #if defined(HAVE_VFX_MODIFICATION)
+                #if defined(VFX_FEATURE_MOTION_VECTORS_VERTS)
+                  #if defined(FEATURES_GRAPH_VERTEX_MOTION_VECTOR_OUTPUT) || defined(_ADD_PRECOMPUTED_VELOCITY)
+                    #error Unexpected fast path rendering VFX motion vector while there are vertex modification afterwards.
+                  #endif
+                  o.previousPositionCS = VFXGetPreviousClipPosition(previousMesh, currentFrameMvData.vfxElementAttributes, o.positionCS);
+                #else
+                  #if VFX_WORLD_SPACE
+                    //previousPositionOS is already in world space
+                    const float3 previousPositionWS = previousPositionOS;
+                  #else
+                    const float3 previousPositionWS = mul(UNITY_PREV_MATRIX_M, float4(previousPositionOS, 1.0f)).xyz;
+                  #endif
+                  o.previousPositionCS = mul(UNITY_MATRIX_PREV_VP, float4(previousPositionWS, 1.0f));
+                #endif
+              #else
+                o.previousPositionCS = mul(UNITY_MATRIX_PREV_VP, mul(UNITY_PREV_MATRIX_M, float4(previousPositionOS, 1)));
+              #endif
+            }
+          #endif
+
+           return o;
+         }

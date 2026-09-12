@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba02a00694df55e4f84913028e3dc863, type: 3}
+  m_Name: WorldMapSizeSettings
+  m_EditorClassIdentifier: Zombera.World.City::Zombera.World.CityPipeline.WorldBuilder.WorldMapSizeSettings
+  smallTilesPerSide: 4
+  mediumTilesPerSide: 8
+  largeTilesPerSide: 10
+  smallOceanRingTiles: 0
+  mediumOceanRingTiles: 0
+  largeOceanRingTiles: 1
+  smallMetropolisCount: 0
+  smallCityCount: 1
+  smallSettlementMinCount: 2
+  smallSettlementMaxCount: 2
+  mediumMetropolisCount: 1
+  mediumCityCount: 3
+  mediumSettlementMinCount: 6
+  mediumSettlementMaxCount: 6
+  largeMetropolisCount: 2
+  largeCityCount: 5
+  largeSettlementMinCount: 13
+  largeSettlementMaxCount: 18
+  initialPlayAreaRadiusTiles: 1
+  largestCityFootprintRadiusMeters: 960
+  roadExitClearanceMeters: 100

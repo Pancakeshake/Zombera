@@ -1,0 +1,30 @@
+{
+  "git.openRepositoryInParentFolders": "never",
+  "git.autoRepositoryDetection": true,
+  "git.ignoreLimitWarning": true,
+  "sonarlint.connectedMode.project": {
+    "connectionId": "pancakeshake",
+    "projectKey": "Pancakeshake_Zombera"
+  },
+  "dotnet.preferCSharpExtension": true,
+  "dotnet.defaultSolution": "disable",
+  "brotherwhale.autoApprove": true,
+  "sigmap.scriptPath": "C:\\Users\\codyc\\AppData\\Roaming\\npm\\node_modules\\sigmap\\gen-context.js",
+  "chat.mcp.serverSampling": {
+    "Zombera/.vscode/mcp.json: sigmap": {
+      "allowedModels": [
+        "deepseek/deepseek-v4-flash",
+        "deepseek/deepseek-v4-pro"
+      ]
+    },
+    "Zombera/.vscode/mcp.json: blender": {
+      "allowedModels": [
+        "copilotcli/auto",
+        "copilot/auto",
+        "deepseek/deepseek-v4-flash",
+        "deepseek/deepseek-v4-pro",
+        "agent-host-copilotcli:auto"
+      ]
+    }
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "csharpCode": "using UnityEngine; public class InspectTraffic { public static string GetTrafficLights() { var tl = GameObject.Find(\"TrafficLights\"); if (tl == null) { var rn = GameObject.Find(\"Road Network\"); if (rn != null) tl = rn.transform.Find(\"TrafficLights\")?.gameObject; } if (tl == null) return \"no traffic lights\"; var sb = new System.Text.StringBuilder(); sb.AppendLine(\"count=\" + tl.transform.childCount); int c=0; foreach (Transform t in tl.transform) { if (c>=8) break; sb.AppendLine(t.name + \" \" + t.position); c++; } return sb.ToString(); } }",
+  "className": "InspectTraffic",
+  "methodName": "GetTrafficLights"
+}

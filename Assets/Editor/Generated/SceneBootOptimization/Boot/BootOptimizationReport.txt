@@ -1,0 +1,28 @@
+Boot Optimization Report
+Generated: 2026-05-11 11:20:10
+Scene Name: Boot
+Scene Path: Assets/Scenes/Boot.unity
+
+Totals
+- Root Objects: 1
+- GameObjects: 17
+- Components: 39
+- MonoBehaviours: 22
+- Missing Components: 0
+- Enabled Cameras: 0
+- Enabled Lights: 0
+- Enabled Canvases: 0
+- NavMeshSurface Components: 0
+- Terrains: 0
+- Reflection Probes: 0
+- AudioSource PlayOnAwake: 0
+- ParticleSystem PlayOnAwake: 0
+
+Recommended Actions
+- Disable non-critical heavy roots: 0
+- Disable AudioSource PlayOnAwake: 0
+- Disable ParticleSystem PlayOnAwake: 0
+- Set Animator culling to CullCompletely: 0
+
+Top Root Cost Buckets
+- CoreRoot | Score=44 | Critical=True | RecommendDisable=False | GO=17 | Comp=39 | Mono=22 | Cameras=0 | Lights=0 | Canvases=0 | AudioPOA=0 | ParticlePOA=0 | Animators=0 | NavMeshSurface=0 | MissingComp=0

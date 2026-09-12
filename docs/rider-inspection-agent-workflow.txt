@@ -1,0 +1,84 @@
+Rider / InspectCode SARIF workflow for agents (Zombera)
+======================================================
+
+Goal
+----
+Use a single source of truth (rider-inspections.sarif), split it into three
+ordered work queues, verify the split matches the current SARIF, then fix
+issues starting with part 1 only (unless the human assigns part 2 or 3).
+
+
+1. Source file
+--------------
+Primary input: rider-inspections.sarif at the repository root (JetBrains
+InspectCode or Rider export).
+
+If only a text export exists, rz_issues.txt can be parsed by the same script;
+SARIF takes precedence when both exist and you run the script with no
+arguments (see scripts/split_rider_sarif_into_thirds.py).
+
+
+2. Always split before fixing
+-----------------------------
+From the repo root, refresh the thirds:
+
+  python scripts/split_rider_sarif_into_thirds.py
+
+Or explicitly:
+
+  python scripts/split_rider_sarif_into_thirds.py rider-inspections.sarif artifacts/rider-sarif-thirds
+
+Outputs (do not hand-edit):
+
+  artifacts/rider-sarif-thirds/rider-inspections.part-1-of-3.tsv
+  artifacts/rider-sarif-thirds/rider-inspections.part-2-of-3.tsv
+  artifacts/rider-sarif-thirds/rider-inspections.part-3-of-3.tsv
+  artifacts/rider-sarif-thirds/rider-inspections.thirds-summary.txt
+
+Ordering is fixed: sort key is (URI, start line, ruleId). Part boundaries
+change whenever the SARIF changes.
+
+
+3. Check whether the SARIF changed (stale split guard)
+----------------------------------------------------
+Before treating the TSVs as authoritative, confirm they were produced from
+the SARIF you intend to fix. Practical checks:
+
+  A) Timestamps (quick)
+     - If rider-inspections.sarif is newer than rider-inspections.thirds-summary.txt
+       (or any part-*.tsv), re-run the split script and use the new outputs.
+
+  B) Summary line (quick)
+     - Open rider-inspections.thirds-summary.txt and read "Total results: N".
+     - If N does not match the result count you expect from a fresh InspectCode
+       run, regenerate the SARIF, re-run the split, then proceed.
+
+  C) After local edits (mandatory)
+     - If you or the human changed code and re-ran inspections, assume the SARIF
+       changed: re-run the split, then re-read part 1 from the new TSVs.
+
+If any doubt remains, re-run the split; it is cheap and avoids working from
+an old queue.
+
+
+4. Commence work on part 1 only
+-------------------------------
+Unless the human explicitly assigns part 2 or part 3:
+
+  - Use rider-inspections.part-1-of-3.tsv as the issue list for this pass.
+  - Work file-by-file or issue-by-issue from that list; do not pull arbitrary
+    rows from part 2 or 3 for the same "thirds cleanup" task.
+
+Rationale: parts 2 and 3 are reserved for parallel agents or later passes so
+that ordering and coverage stay predictable.
+
+
+5. After fixes
+--------------
+When a meaningful batch of fixes is merged:
+
+  - Re-run InspectCode / Rider to produce a new rider-inspections.sarif.
+  - Re-run the split script.
+  - Continue with the new part 1 until the human changes priorities.
+
+End of workflow document.

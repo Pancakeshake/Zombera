@@ -1,0 +1,756 @@
+
+=== NavMeshRuntimeBaker.cs|Assets/Scripts/World/NavMeshRuntimeBaker.cs ===
+  L18 [RedundantDefaultMemberInitializer] Initializing serialised field by default value is redundant
+  L20 [InconsistentNaming] Name 'navMeshInstance' does not match rule 'Instance fields (private)'. Suggested name is '_navMeshI
+
+=== NoiseListener.cs|Assets/Scripts/AI/NoiseListener.cs ===
+  L15 [InconsistentNaming] Name 'stateMachine' does not match rule 'Instance fields (private)'. Suggested name is '_stateMachin
+
+=== NoiseSensor.cs|Assets/Scripts/AI/Sensors/NoiseSensor.cs ===
+  L44 [.CSharpErrors] Cannot resolve symbol 'Source'
+
+=== NpcUmaVisualSpawner.cs|Assets/Scripts/Characters/NpcUmaVisualSpawner.cs ===
+  L101 [InconsistentNaming] Name 'hasApplied' does not match rule 'Instance fields (private)'. Suggested name is '_hasApplied'.
+  L155 [RedundantArgumentDefaultValue] The parameter 'RestoreDNA' has the same default value
+  L155 [RedundantArgumentDefaultValue] The parameter 'skipBundleCheck' has the same default value
+  L352 [RedundantArgumentDefaultValue] The parameter 'Gloss' has the same default value
+  L352 [RedundantArgumentDefaultValue] The parameter 'UpdateTexture' has the same default value
+
+=== PathDebugDrawer.cs|Assets/Scripts/Debug/DebugVisuals/PathDebugDrawer.cs ===
+  L12 [RedundantDefaultMemberInitializer] Initializing serialised field by default value is redundant
+  L14 [InconsistentNaming] Name 'pathsById' does not match rule 'Instance fields (private)'. Suggested name is '_pathsById'.
+  L29 [ParameterHidesMember] Parameter 'enabled' hides property 'UnityEngine.Behaviour.enabled'
+  L97 [InconsistentNaming] Name 'agentColors' does not match rule 'Instance fields (private)'. Suggested name is '_agentColors'
+  L99 [InconsistentNaming] Name 'colorPalette' does not match rule 'Static readonly fields (private)'. Suggested name is 'Color
+  L99 [UnusedMember.Local] Field 'colorPalette' is never used
+  L109 [UnusedMember.Local] Method 'GetAgentColor' is never used
+
+=== PerformanceMonitor.cs|Assets/Scripts/Debug/DebugStressTests/PerformanceMonitor.cs ===
+  L36 [InconsistentNaming] Name 'refreshTimer' does not match rule 'Instance fields (private)'. Suggested name is '_refreshTime
+  L48 [ParameterHidesMember] Parameter 'enabled' hides property 'UnityEngine.Behaviour.enabled'
+  L71 [RedundantNameQualifier] Qualifier is redundant
+  L98 [InconsistentNaming] Name 'frametimeHistory' does not match rule 'Instance fields (private)'. Suggested name is '_frameti
+  L121 [RedundantNameQualifier] Qualifier is redundant
+
+=== PlayerAnimationController.cs|Assets/Scripts/Characters/PlayerAnimationController.cs ===
+  L4 [RedundantUsingDirective] Using directive is not required by the code and can be safely removed
+  L103 [RedundantExplicitArrayCreation] Redundant explicit array type specification
+  L172 [RedundantExplicitArrayCreation] Redundant explicit array type specification
+  L220 [RedundantDefaultMemberInitializer] Initializing serialised field by default value is redundant
+  L235 [RedundantDefaultMemberInitializer] Initializing serialised field by default value is redundant
+  L1024 [RedundantAssignment] Value assigned is not used in any execution path
+  L1083 [RedundantNameQualifier] Qualifier is redundant
+  L1611 [LocalVariableHidesMember] Local variable 'name' hides property 'UnityEngine.Object.name'
+
+=== PlayerFollowCamera.cs|Assets/Scripts/Characters/PlayerFollowCamera.cs ===
+  L35 [InconsistentNaming] Name 'currentZoomMultiplier' does not match rule 'Instance fields (private)'. Suggested name is '_cu
+  L36 [InconsistentNaming] Name 'orbitYawDegrees' does not match rule 'Instance fields (private)'. Suggested name is '_orbitYaw
+  L37 [InconsistentNaming] Name 'orbitPitchDegrees' does not match rule 'Instance fields (private)'. Suggested name is '_orbitP
+  L38 [InconsistentNaming] Name 'baseOffsetDistance' does not match rule 'Instance fields (private)'. Suggested name is '_baseO
+  L39 [InconsistentNaming] Name 'orbitInitialized' does not match rule 'Instance fields (private)'. Suggested name is '_orbitIn
+
+=== PlayerInputController.cs|Assets/Scripts/Systems/PlayerInputController.cs ===
+  L37 [RedundantDefaultMemberInitializer] Initializing serialised field by default value is redundant
+  L61 [RedundantDefaultMemberInitializer] Initializing serialised field by default value is redundant
+  L79 [RedundantDefaultMemberInitializer] Initializing serialised field by default value is redundant
+  L122 [RedundantNameQualifier] Qualifier is redundant
+  L125 [ParameterHidesMember] Parameter 'camera' hides property 'UnityEngine.Component.camera'
+  L163 [InconsistentNaming] Name 'visibleTargets' does not match rule 'Instance fields (private)'. Suggested name is '_visibleTa
+  L165 [InconsistentNaming] Name 'targetRaycastHits' does not match rule 'Instance fields (private)'. Suggested name is '_target
+  L166 [InconsistentNaming] Name 'targetSpherecastHits' does not match rule 'Instance fields (private)'. Suggested name is '_tar
+  L167 [InconsistentNaming] Name 'pendingEncounterTarget' does not match rule 'Instance fields (private)'. Suggested name is '_p
+  L168 [InconsistentNaming] Name 'combatFacingAssistTarget' does not match rule 'Instance fields (private)'. Suggested name is '
+  L169 [InconsistentNaming] Name 'suppressLeftClickMovementUntilRelease' does not match rule 'Instance fields (private)'. Sugges
+  L170 [InconsistentNaming] Name 'movementLockExpiresAt' does not match rule 'Instance fields (private)'. Suggested name is '_mo
+  L171 [InconsistentNaming] Name 'combatFacingAssistExpiresAt' does not match rule 'Instance fields (private)'. Suggested name i
+  L172 [InconsistentNaming] Name 'nextWeightTrainingRepAt' does not match rule 'Instance fields (private)'. Suggested name is '_
+  L173 [InconsistentNaming] Name 'suppressAutoEngageUntilAt' does not match rule 'Instance fields (private)'. Suggested name is 
+  L174 [InconsistentNaming] Name 'suppressCombatFacingUntilMoveOrderCompletes' does not match rule 'Instance fields (private)'. 
+  L179 [InconsistentNaming] Name 'activeBowRangedTarget' does not match rule 'Instance fields (private)'. Suggested name is '_ac
+  L180 [InconsistentNaming] Name 'nextBowShotAt' does not match rule 'Instance fields (private)'. Suggested name is '_nextBowSho
+  L181 [InconsistentNaming] Name 'nextBowRepositionAt' does not match rule 'Instance fields (private)'. Suggested name is '_next
+  L182 [InconsistentNaming] Name 'bowShotQueued' does not match rule 'Instance fields (private)'. Suggested name is '_bowShotQue
+  L183 [InconsistentNaming] Name 'bowQueuedReleaseAt' does not match rule 'Instance fields (private)'. Suggested name is '_bowQu
+  L184 [InconsistentNaming] Name 'bowQueuedDurationSeconds' does not match rule 'Instance fields (private)'. Suggested name is '
+  L185 [InconsistentNaming] Name 'bowQueuedRapidFire' does not match rule 'Instance fields (private)'. Suggested name is '_bowQu
+  L186 [InconsistentNaming] Name 'isDragSelectCandidateActive' does not match rule 'Instance fields (private)'. Suggested name i
+  L187 [InconsistentNaming] Name 'isDragSelecting' does not match rule 'Instance fields (private)'. Suggested name is '_isDragSe
+  L188 [InconsistentNaming] Name 'suppressNextLeftClickMoveRelease' does not match rule 'Instance fields (private)'. Suggested n
+  L189 [InconsistentNaming] Name 'leftWorldClickBegan' does not match rule 'Instance fields (private)'. Suggested name is '_left
+  L190 [InconsistentNaming] Name 'dragSelectStartScreen' does not match rule 'Instance fields (private)'. Suggested name is '_dr
+  L191 [InconsistentNaming] Name 'dragSelectCurrentScreen' does not match rule 'Instance fields (private)'. Suggested name is '_
+  L192 [InconsistentNaming] Name 'dragSelectionBuffer' does not match rule 'Instance fields (private)'. Suggested name is '_drag
+  L194 [InconsistentNaming] Name 'cachedItemPickupInteractorType' does not match rule 'Static fields (private)'. Suggested name 
+  L195 [InconsistentNaming] Name 'attemptedResolveItemPickupInteractorType' does not match rule 'Static fields (private)'. Sugge
+  L196 [InconsistentNaming] Name 'cachedItemPickupInteractMethod' does not match rule 'Static fields (private)'. Suggested name 
+  L352 [PossibleNullReferenceException] Possible 'System.NullReferenceException'
+  L1262 [ConditionIsAlwaysTrueOrFalse] Expression is always true
+  L1272 [ConditionIsAlwaysTrueOrFalse] Expression is always true
+  L1282 [ConditionIsAlwaysTrueOrFalse] Expression is always true
+
+=== PlayerSpawnSnapper.cs|Assets/Scripts/Characters/PlayerSpawnSnapper.cs ===
+  L44 [RedundantNameQualifier] Qualifier is redundant
+  L52 [RedundantNameQualifier] Qualifier is redundant
+  L246 [RedundantNameQualifier] Qualifier is redundant
+  L258 [PossiblyImpureMethodCallOnReadonlyVariable] Possibly impure struct method called on readonly variable: struct value always copied before invocat
+  L375 [RedundantNameQualifier] Qualifier is redundant
+  L396 [RedundantNameQualifier] Qualifier is redundant
+
+=== PlayerSpawnWiringService.cs|Assets/Scripts/Characters/PlayerSpawnWiringService.cs ===
+  L3 [RedundantUsingDirective] Using directive is not required by the code and can be safely removed
+  L13 [NotAccessedField.Local] Field '_host' is assigned but its value is never used
+
+=== PlayerSpawner.cs|Assets/Scripts/Characters/PlayerSpawner.cs ===
+  L10 [RedundantUsingDirective] Using directive is not required by the code and can be safely removed
+  L42 [RedundantNameQualifier] Qualifier is redundant
+  L42 [UnusedMember.Local] Field 'AllUnitSkillTypes' is never used
+  L133 [RedundantDefaultMemberInitializer] Initializing serialised field by default value is redundant
+  L149 [RedundantDefaultMemberInitializer] Initializing serialised field by default value is redundant
+  L201 [InconsistentNaming] Name 's_runtimeNavMeshInstances' does not match rule 'Static readonly fields (private)'. Suggested n
+  L202 [InconsistentNaming] Name 's_runtimeNavMeshOwner' does not match rule 'Static fields (private)'. Suggested name is '_sRun
+  L203 [InconsistentNaming] Name 's_loggedNestedSpawnerRemovalWarning' does not match rule 'Static fields (private)'. Suggested 
+  L645 [UnusedParameter.Local] Parameter 'spawnOrigin' is never used
+  L774 [UnusedMember.Local] Method 'BakeNavMesh' is never used
+  L1192 [RedundantNameQualifier] Qualifier is redundant
+  L1480 [DuplicatedStatements] Duplicated statements
+  L1723 [UnusedMethodReturnValue.Local] Method 'ActivateControlledUnit' return value is never used
+  L1900 [RedundantNameQualifier] Qualifier is redundant
+
+=== PlayerStatusController.cs|Assets/Scripts/UI/HUD/PlayerStatusController.cs ===
+  L33 [InconsistentNaming] Name 'hudManager' does not match rule 'Instance fields (private)'. Suggested name is '_hudManager'.
+  L33 [NotAccessedField.Local] Field 'hudManager' is assigned but its value is never used
+  L34 [InconsistentNaming] Name 'boundHealth' does not match rule 'Instance fields (private)'. Suggested name is '_boundHealth'
+  L35 [InconsistentNaming] Name 'boundStats' does not match rule 'Instance fields (private)'. Suggested name is '_boundStats'.
+
+=== Projectile.cs|Assets/Scripts/Combat/Projectile.cs ===
+  L29 [InconsistentNaming] Name 'target' does not match rule 'Instance fields (private)'. Suggested name is '_target'.
+  L30 [InconsistentNaming] Name 'targetDamageable' does not match rule 'Instance fields (private)'. Suggested name is '_targetD
+  L31 [InconsistentNaming] Name 'damage' does not match rule 'Instance fields (private)'. Suggested name is '_damage'.
+  L32 [InconsistentNaming] Name 'source' does not match rule 'Instance fields (private)'. Suggested name is '_source'.
+  L33 [InconsistentNaming] Name 'lifetime' does not match rule 'Instance fields (private)'. Suggested name is '_lifetime'.
+  L34 [InconsistentNaming] Name 'sourceStats' does not match rule 'Instance fields (private)'. Suggested name is '_sourceStats'
+  L35 [InconsistentNaming] Name 'shouldAwardWeightedStrengthXp' does not match rule 'Instance fields (private)'. Suggested name
+  L36 [InconsistentNaming] Name 'armedAttack' does not match rule 'Instance fields (private)'. Suggested name is '_armedAttack'
+  L37 [InconsistentNaming] Name 'flightMode' does not match rule 'Instance fields (private)'. Suggested name is '_flightMode'.
+  L38 [InconsistentNaming] Name 'velocity' does not match rule 'Instance fields (private)'. Suggested name is '_velocity'.
+  L39 [InconsistentNaming] Name 'gravityScale' does not match rule 'Instance fields (private)'. Suggested name is '_gravityScal
+  L40 [InconsistentNaming] Name 'stickToDamageableImpact' does not match rule 'Instance fields (private)'. Suggested name is '_
+  L41 [InconsistentNaming] Name 'embedOnWorldImpact' does not match rule 'Instance fields (private)'. Suggested name is '_embed
+  L42 [InconsistentNaming] Name 'embeddedLifetimeSeconds' does not match rule 'Instance fields (private)'. Suggested name is '_
+  L43 [InconsistentNaming] Name 'hasImpacted' does not match rule 'Instance fields (private)'. Suggested name is '_hasImpacted'
+  L44 [InconsistentNaming] Name 'destroyAtTime' does not match rule 'Instance fields (private)'. Suggested name is '_destroyAtT
+  L174 [Unity.InefficientMultiplicationOrder] Order of multiplication operations is inefficient
+  L233 [Unity.PreferNonAllocApi] Use non-allocating method 'SphereCastNonAlloc'
+  L399 [ParameterHidesMember] Parameter 'collider' hides property 'UnityEngine.Component.collider'
+
+=== Region.cs|Assets/Scripts/World/Regions/Region.cs ===
+  L4 [RedundantUsingDirective] Using directive is not required by the code and can be safely removed
+  L5 [RedundantUsingDirective] Using directive is not required by the code and can be safely removed
+  L30 [InconsistentNaming] Name 'activeLayer' does not match rule 'Instance fields (not private)'. Suggested name is 'ActiveLay
+  L31 [InconsistentNaming] Name 'runtimeMaterialized' does not match rule 'Instance fields (not private)'. Suggested name is 'R
+  L32 [InconsistentNaming] Name 'runtimeZombies' does not match rule 'Instance fields (not private)'. Suggested name is 'Runtim
+  L32 [RedundantNameQualifier] Qualifier is redundant
+  L32 [RedundantNameQualifier] Qualifier is redundant
+  L33 [InconsistentNaming] Name 'runtimeSurvivors' does not match rule 'Instance fields (not private)'. Suggested name is 'Runt
+  L33 [RedundantNameQualifier] Qualifier is redundant
+  L33 [RedundantNameQualifier] Qualifier is redundant
+
+=== RegionData.cs|Assets/Scripts/Data/RegionData.cs ===
+  L11 [UnusedAutoPropertyAccessor.Global] Auto-property accessor 'RegionId.get' is never used
+  L12 [UnusedAutoPropertyAccessor.Global] Auto-property accessor 'BiomeName.get' is never used
+  L14 [UnusedAutoPropertyAccessor.Global] Auto-property accessor 'ZombieDensity.get' is never used
+  L15 [UnusedAutoPropertyAccessor.Global] Auto-property accessor 'LootMultiplier.get' is never used
+  L19 [UnusedAutoPropertyAccessor.Global] Auto-property accessor 'WeatherProfileId.get' is never used
+  L23 [UnusedAutoPropertyAccessor.Global] Auto-property accessor 'AmbientEventWeights.get' is never used
+
+=== RegionManager.cs|Assets/Scripts/World/Regions/RegionManager.cs ===
+  L33 [InconsistentNaming] Name 'baselineBrainTicks' does not match rule 'Instance fields (private)'. Suggested name is '_basel
+  L156 [RedundantNameQualifier] Qualifier is redundant
+
+=== RuntimeNavMeshBootstrapper.cs|Assets/Scripts/Characters/RuntimeNavMeshBootstrapper.cs ===
+  L4 [RedundantUsingDirective] Using directive is not required by the code and can be safely removed
+  L6 [RedundantUsingDirective] Using directive is not required by the code and can be safely removed
+
+=== RuntimeUiEventSystemUtility.cs|Assets/Scripts/UI/RuntimeUiEventSystemUtility.cs ===
+  L17 [InconsistentNaming] Name 'sceneHookInstalled' does not match rule 'Static fields (private)'. Suggested name is '_sceneHo
+  L18 [InconsistentNaming] Name 'heartbeat' does not match rule 'Static fields (private)'. Suggested name is '_heartbeat'.
+  L19 [InconsistentNaming] Name 'ensureInProgress' does not match rule 'Static fields (private)'. Suggested name is '_ensureInP
+  L221 [InconsistentNaming] Name 'nextEnsureAt' does not match rule 'Instance fields (private)'. Suggested name is '_nextEnsureA
+
+=== SaveManager.cs|Assets/Scripts/Systems/SaveManager.cs ===
+  L26 [InconsistentNaming] Name 'unitBuffer' does not match rule 'Instance fields (private)'. Suggested name is '_unitBuffer'.
+  L27 [InconsistentNaming] Name 'zombieBuffer' does not match rule 'Instance fields (private)'. Suggested name is '_zombieBuffe
+  L28 [InconsistentNaming] Name 'lootContainerBuffer' does not match rule 'Instance fields (private)'. Suggested name is '_loot
+  L131 [.CSharpErrors] Cannot resolve symbol 'ProceduralWorld'
+  L133 [.CSharpErrors] Cannot resolve symbol 'ProceduralWorld'
+  L133 [.CSharpErrors] The assignment target must be an assignable variable, property, or indexer
+  L143 [.CSharpErrors] Cannot resolve symbol 'ProceduralWorld'
+  L160 [.CSharpErrors] Cannot resolve symbol 'ProceduralWorld'
+  L161 [.CSharpErrors] Cannot resolve symbol 'ProceduralWorld'
+  L162 [.CSharpErrors] Cannot resolve symbol 'ProceduralWorld'
+  L163 [.CSharpErrors] Cannot resolve symbol 'ProceduralWorld'
+  L187 [.CSharpErrors] Cannot resolve symbol 'Player'
+  L188 [.CSharpErrors] Cannot resolve symbol 'Player'
+  L189 [.CSharpErrors] Cannot resolve symbol 'Player'
+  L193 [.CSharpErrors] Cannot resolve symbol 'Player'
+  L198 [.CSharpErrors] Cannot resolve symbol 'Inventory'
+  L198 [.CSharpErrors] The assignment target must be an assignable variable, property, or indexer
+  L203 [.CSharpErrors] Cannot resolve symbol 'Squad'
+  L205 [.CSharpErrors] Cannot resolve symbol 'UnitId'
+  L206 [.CSharpErrors] Cannot resolve symbol 'Position'
+  L207 [.CSharpErrors] Cannot resolve symbol 'Health'
+  L208 [.CSharpErrors] Cannot resolve symbol 'Stats'
+  L230 [.CSharpErrors] Cannot resolve symbol 'WorldChunks'
+  L232 [.CSharpErrors] Cannot resolve symbol 'Coordinates'
+  L233 [.CSharpErrors] Cannot resolve symbol 'Seed'
+  L234 [.CSharpErrors] Cannot resolve symbol 'RegionId'
+  L261 [.CSharpErrors] Cannot resolve symbol 'Zombies'
+  L263 [.CSharpErrors] Cannot resolve symbol 'ZombieId'
+  L264 [.CSharpErrors] Cannot resolve symbol 'Position'
+  L265 [.CSharpErrors] Cannot resolve symbol 'Health'
+  L266 [.CSharpErrors] Cannot resolve symbol 'State'
+  L285 [.CSharpErrors] Cannot resolve symbol 'ProceduralWorld'
+  L285 [.CSharpErrors] Cannot resolve symbol 'ProceduralWorld'
+  L295 [.CSharpErrors] Cannot resolve symbol 'ProceduralWorld'
+  L312 [.CSharpErrors] Cannot resolve symbol 'Player'
+  L312 [.CSharpErrors] Cannot resolve symbol 'Player'
+  L316 [.CSharpErrors] Cannot resolve symbol 'Player'
+  L321 [.CSharpErrors] Cannot resolve symbol 'Player'
+  L327 [.CSharpErrors] Cannot resolve symbol 'Squad'
+  L334 [.CSharpErrors] Cannot resolve symbol 'Squad'
+  L336 [.CSharpErrors] Cannot resolve symbol 'Squad'
+  L342 [.CSharpErrors] Cannot resolve symbol 'UnitId'
+  L344 [.CSharpErrors] Cannot resolve symbol 'Position'
+  L348 [.CSharpErrors] Cannot resolve symbol 'Stats'
+  L353 [.CSharpErrors] Cannot resolve symbol 'Health'
+  L376 [.CSharpErrors] Cannot resolve symbol 'BaseId'
+  L377 [.CSharpErrors] Cannot resolve symbol 'Position'
+  L378 [.CSharpErrors] Cannot resolve symbol 'BuildingState'
+  L394 [.CSharpErrors] Cannot resolve symbol 'StorageItemIds'
+  L395 [.CSharpErrors] Cannot resolve symbol 'StorageQuantities'
+  L399 [.CSharpErrors] Cannot resolve symbol 'Bases'
+  L423 [.CSharpErrors] Cannot resolve symbol 'ContainerId'
+  L424 [.CSharpErrors] Cannot resolve symbol 'Position'
+  L425 [.CSharpErrors] Cannot resolve symbol 'LootGenerated'
+  L439 [.CSharpErrors] Cannot resolve symbol 'ItemIds'
+  L440 [.CSharpErrors] Cannot resolve symbol 'Quantities'
+  L443 [.CSharpErrors] Cannot resolve symbol 'LootContainers'
+  L456 [.CSharpErrors] Cannot resolve symbol 'HasSkillProgressionData'
+  L456 [.CSharpErrors] The assignment target must be an assignable variable, property, or indexer
+  L457 [.CSharpErrors] Cannot resolve symbol 'Stamina'
+  L457 [.CSharpErrors] The assignment target must be an assignable variable, property, or indexer
+  L459 [.CSharpErrors] Cannot resolve symbol 'Strength'
+  L459 [.CSharpErrors] The assignment target must be an assignable variable, property, or indexer
+  L460 [.CSharpErrors] Cannot resolve symbol 'StrengthXp'
+  L460 [.CSharpErrors] The assignment target must be an assignable variable, property, or indexer
+  L461 [.CSharpErrors] Cannot resolve symbol 'Shooting'
+  L461 [.CSharpErrors] The assignment target must be an assignable variable, property, or indexer
+  L462 [.CSharpErrors] Cannot resolve symbol 'ShootingXp'
+  L462 [.CSharpErrors] The assignment target must be an assignable variable, property, or indexer
+  L463 [.CSharpErrors] Cannot resolve symbol 'Melee'
+  L463 [.CSharpErrors] The assignment target must be an assignable variable, property, or indexer
+  L464 [.CSharpErrors] Cannot resolve symbol 'MeleeXp'
+  L464 [.CSharpErrors] The assignment target must be an assignable variable, property, or indexer
+  L465 [.CSharpErrors] Cannot resolve symbol 'Medical'
+  L465 [.CSharpErrors] The assignment target must be an assignable variable, property, or indexer
+  L466 [.CSharpErrors] Cannot resolve symbol 'MedicalXp'
+  L466 [.CSharpErrors] The assignment target must be an assignable variable, property, or indexer
+  L467 [.CSharpErrors] Cannot resolve symbol 'Engineering'
+  L467 [.CSharpErrors] The assignment target must be an assignable variable, property, or indexer
+  L468 [.CSharpErrors] Cannot resolve symbol 'EngineeringXp'
+  L468 [.CSharpErrors] The assignment target must be an assignable variable, property, or indexer
+  L469 [.CSharpErrors] Cannot resolve symbol 'Toughness'
+  L469 [.CSharpErrors] The assignment target must be an assignable variable, property, or indexer
+  L470 [.CSharpErrors] Cannot resolve symbol 'ToughnessXp'
+  L470 [.CSharpErrors] The assignment target must be an assignable variable, property, or indexer
+  L471 [.CSharpErrors] Cannot resolve symbol 'Constitution'
+  L471 [.CSharpErrors] The assignment target must be an assignable variable, property, or indexer
+  L472 [.CSharpErrors] Cannot resolve symbol 'ConstitutionXp'
+  L472 [.CSharpErrors] The assignment target must be an assignable variable, property, or indexer
+  L473 [.CSharpErrors] Cannot resolve symbol 'Agility'
+  L473 [.CSharpErrors] The assignment target must be an assignable variable, property, or indexer
+  L474 [.CSharpErrors] Cannot resolve symbol 'AgilityXp'
+  L474 [.CSharpErrors] The assignment target must be an assignable variable, property, or indexer
+  L475 [.CSharpErrors] Cannot resolve symbol 'Endurance'
+  L475 [.CSharpErrors] The assignment target must be an assignable variable, property, or indexer
+  L476 [.CSharpErrors] Cannot resolve symbol 'EnduranceXp'
+  L476 [.CSharpErrors] The assignment target must be an assignable variable, property, or indexer
+  L477 [.CSharpErrors] Cannot resolve symbol 'Scavenging'
+  L477 [.CSharpErrors] The assignment target must be an assignable variable, property, or indexer
+  L478 [.CSharpErrors] Cannot resolve symbol 'ScavengingXp'
+  L478 [.CSharpErrors] The assignment target must be an assignable variable, property, or indexer
+  L479 [.CSharpErrors] Cannot resolve symbol 'Stealth'
+  L479 [.CSharpErrors] The assignment target must be an assignable variable, property, or indexer
+  L480 [.CSharpErrors] Cannot resolve symbol 'StealthXp'
+  L480 [.CSharpErrors] The assignment target must be an assignable variable, property, or indexer
+  L487 [.CSharpErrors] Cannot resolve symbol 'HasSkillProgressionData'
+  L492 [.CSharpErrors] Cannot resolve symbol 'Strength'
+  L492 [.CSharpErrors] Cannot resolve symbol 'StrengthXp'
+  L493 [.CSharpErrors] Cannot resolve symbol 'Shooting'
+  L493 [.CSharpErrors] Cannot resolve symbol 'ShootingXp'
+  L494 [.CSharpErrors] Cannot resolve symbol 'Melee'
+  L494 [.CSharpErrors] Cannot resolve symbol 'MeleeXp'
+  L495 [.CSharpErrors] Cannot resolve symbol 'Medical'
+  L495 [.CSharpErrors] Cannot resolve symbol 'MedicalXp'
+  L496 [.CSharpErrors] Cannot resolve symbol 'Engineering'
+  L496 [.CSharpErrors] Cannot resolve symbol 'EngineeringXp'
+  L497 [.CSharpErrors] Cannot resolve symbol 'Toughness'
+  L497 [.CSharpErrors] Cannot resolve symbol 'ToughnessXp'
+  L498 [.CSharpErrors] Cannot resolve symbol 'Constitution'
+  L498 [.CSharpErrors] Cannot resolve symbol 'ConstitutionXp'
+  L499 [.CSharpErrors] Cannot resolve symbol 'Agility'
+  L499 [.CSharpErrors] Cannot resolve symbol 'AgilityXp'
+  L500 [.CSharpErrors] Cannot resolve symbol 'Endurance'
+  L500 [.CSharpErrors] Cannot resolve symbol 'EnduranceXp'
+  L501 [.CSharpErrors] Cannot resolve symbol 'Scavenging'
+  L501 [.CSharpErrors] Cannot resolve symbol 'ScavengingXp'
+  L502 [.CSharpErrors] Cannot resolve symbol 'Stealth'
+  L502 [.CSharpErrors] Cannot resolve symbol 'StealthXp'
+  L504 [.CSharpErrors] Cannot resolve symbol 'Stamina'
+  L506 [.CSharpErrors] Cannot resolve symbol 'Stamina'
+  L524 [.CSharpErrors] Cannot resolve symbol 'ItemIds'
+  L525 [.CSharpErrors] Cannot resolve symbol 'Quantities'
+  L528 [.CSharpErrors] Cannot resolve symbol 'CurrentWeight'
+  L528 [.CSharpErrors] The assignment target must be an assignable variable, property, or indexer
+
+=== SkillsTabController.cs|Assets/Scripts/UI/SquadManagement/SkillsTabController.cs ===
+  L23 [InconsistentNaming] Name 'SkillName' does not match rule 'Unity serialized field'. Suggested name is 'skillName'.
+  L24 [InconsistentNaming] Name 'Category' does not match rule 'Unity serialized field'. Suggested name is 'category'.
+  L25 [InconsistentNaming] Name 'State' does not match rule 'Unity serialized field'. Suggested name is 'state'.
+  L26 [InconsistentNaming] Name 'IsPassive' does not match rule 'Unity serialized field'. Suggested name is 'isPassive'.
+  L27 [InconsistentNaming] Name 'Rank' does not match rule 'Unity serialized field'. Suggested name is 'rank'.
+  L28 [InconsistentNaming] Name 'Description' does not match rule 'Unity serialized field'. Suggested name is 'description'.
+  L29 [InconsistentNaming] Name 'Icon' does not match rule 'Unity serialized field'. Suggested name is 'icon'.
+  L79 [InconsistentNaming] Name 'skills' does not match rule 'Instance fields (private)'. Suggested name is '_skills'.
+  L80 [InconsistentNaming] Name 'skillViews' does not match rule 'Instance fields (private)'. Suggested name is '_skillViews'.
+  L82 [InconsistentNaming] Name 'hostRoot' does not match rule 'Instance fields (private)'. Suggested name is '_hostRoot'.
+  L83 [InconsistentNaming] Name 'listContent' does not match rule 'Instance fields (private)'. Suggested name is '_listContent'
+  L84 [InconsistentNaming] Name 'fontAsset' does not match rule 'Instance fields (private)'. Suggested name is '_fontAsset'.
+  L85 [InconsistentNaming] Name 'panelSprite' does not match rule 'Instance fields (private)'. Suggested name is '_panelSprite'
+  L86 [InconsistentNaming] Name 'slotSprite' does not match rule 'Instance fields (private)'. Suggested name is '_slotSprite'.
+  L88 [InconsistentNaming] Name 'contextText' does not match rule 'Instance fields (private)'. Suggested name is '_contextText'
+  L89 [InconsistentNaming] Name 'detailText' does not match rule 'Instance fields (private)'. Suggested name is '_detailText'.
+  L90 [InconsistentNaming] Name 'selectedSkillIndex' does not match rule 'Instance fields (private)'. Suggested name is '_selec
+
+=== SpawnDebugTools.cs|Assets/Scripts/Debug/DebugTools/SpawnDebugTools.cs ===
+  L53 [ParameterHidesMember] Parameter 'enabled' hides property 'UnityEngine.Behaviour.enabled'
+
+=== SquadControlUiCoordinator.cs|Assets/Scripts/Characters/SquadControlUiCoordinator.cs ===
+  L11 [NotAccessedField.Local] Field '_host' is assigned but its value is never used
+  L12 [NotAccessedField.Local] Field '_getSpawnedPlayer' is assigned but its value is never used
+  L14 [NotAccessedField.Local] Field '_ensurePlayerInputController' is assigned but its value is never used
+
+=== SquadController.cs|Assets/Scripts/Systems/SquadController.cs ===
+  L4 [RedundantUsingDirective] Using directive is not required by the code and can be safely removed
+  L31 [InconsistentNaming] Name 'visibleTargets' does not match rule 'Instance fields (private)'. Suggested name is '_visibleTa
+  L32 [InconsistentNaming] Name 'tickTimer' does not match rule 'Instance fields (private)'. Suggested name is '_tickTimer'.
+
+=== SquadCustomizerTabController.cs|Assets/Scripts/UI/SquadManagement/SquadCustomizerTabController.cs ===
+  L26 [InconsistentNaming] Name 'members' does not match rule 'Instance fields (private)'. Suggested name is '_members'.
+  L27 [InconsistentNaming] Name 'memberViews' does not match rule 'Instance fields (private)'. Suggested name is '_memberViews'
+  L28 [InconsistentNaming] Name 'assignmentByMember' does not match rule 'Instance fields (private)'. Suggested name is '_assig
+  L31 [InconsistentNaming] Name 'roleOptions' does not match rule 'Instance fields (private)'. Suggested name is '_roleOptions'
+  L32 [InconsistentNaming] Name 'loadoutOptions' does not match rule 'Instance fields (private)'. Suggested name is '_loadoutOp
+  L33 [InconsistentNaming] Name 'positionOptions' does not match rule 'Instance fields (private)'. Suggested name is '_position
+  L35 [InconsistentNaming] Name 'hostRoot' does not match rule 'Instance fields (private)'. Suggested name is '_hostRoot'.
+  L36 [InconsistentNaming] Name 'memberListContent' does not match rule 'Instance fields (private)'. Suggested name is '_member
+  L37 [InconsistentNaming] Name 'fontAsset' does not match rule 'Instance fields (private)'. Suggested name is '_fontAsset'.
+  L38 [InconsistentNaming] Name 'panelSprite' does not match rule 'Instance fields (private)'. Suggested name is '_panelSprite'
+  L39 [InconsistentNaming] Name 'slotSprite' does not match rule 'Instance fields (private)'. Suggested name is '_slotSprite'.
+  L41 [InconsistentNaming] Name 'squadNameInput' does not match rule 'Instance fields (private)'. Suggested name is '_squadName
+  L42 [InconsistentNaming] Name 'selectedMemberText' does not match rule 'Instance fields (private)'. Suggested name is '_selec
+  L43 [InconsistentNaming] Name 'roleValueText' does not match rule 'Instance fields (private)'. Suggested name is '_roleValueT
+  L44 [InconsistentNaming] Name 'loadoutValueText' does not match rule 'Instance fields (private)'. Suggested name is '_loadout
+  L45 [InconsistentNaming] Name 'positionValueText' does not match rule 'Instance fields (private)'. Suggested name is '_positi
+  L46 [InconsistentNaming] Name 'statusText' does not match rule 'Instance fields (private)'. Suggested name is '_statusText'.
+  L48 [InconsistentNaming] Name 'moveUpButton' does not match rule 'Instance fields (private)'. Suggested name is '_moveUpButto
+  L49 [InconsistentNaming] Name 'moveDownButton' does not match rule 'Instance fields (private)'. Suggested name is '_moveDownB
+  L50 [InconsistentNaming] Name 'selectedIndex' does not match rule 'Instance fields (private)'. Suggested name is '_selectedIn
+  L101 [LocalVariableHidesMember] Local variable 'name' hides property 'UnityEngine.Object.name'
+
+=== SquadListPanelController.cs|Assets/Scripts/UI/SquadManagement/SquadListPanelController.cs ===
+  L23 [InconsistentNaming] Name 'Id' does not match rule 'Unity serialized field'. Suggested name is 'id'.
+  L24 [InconsistentNaming] Name 'DisplayName' does not match rule 'Unity serialized field'. Suggested name is 'displayName'.
+  L25 [InconsistentNaming] Name 'Portrait' does not match rule 'Unity serialized field'. Suggested name is 'portrait'.
+  L26 [InconsistentNaming] Name 'Health01' does not match rule 'Unity serialized field'. Suggested name is 'health01'.
+  L27 [InconsistentNaming] Name 'Stamina01' does not match rule 'Unity serialized field'. Suggested name is 'stamina01'.
+  L28 [InconsistentNaming] Name 'Condition' does not match rule 'Unity serialized field'. Suggested name is 'condition'.
+  L52 [NotAccessedField.Local] Field 'Portrait' is assigned but its value is never used
+  L56 [NotAccessedField.Local] Field 'HealthFill' is assigned but its value is never used
+  L57 [NotAccessedField.Local] Field 'StaminaFill' is assigned but its value is never used
+  L58 [NotAccessedField.Local] Field 'HealthValue' is assigned but its value is never used
+  L59 [NotAccessedField.Local] Field 'StaminaValue' is assigned but its value is never used
+  L80 [InconsistentNaming] Name 'entries' does not match rule 'Instance fields (private)'. Suggested name is '_entries'.
+  L81 [InconsistentNaming] Name 'entryViews' does not match rule 'Instance fields (private)'. Suggested name is '_entryViews'.
+  L83 [InconsistentNaming] Name 'hostRoot' does not match rule 'Instance fields (private)'. Suggested name is '_hostRoot'.
+  L84 [InconsistentNaming] Name 'listContent' does not match rule 'Instance fields (private)'. Suggested name is '_listContent'
+  L85 [InconsistentNaming] Name 'fontAsset' does not match rule 'Instance fields (private)'. Suggested name is '_fontAsset'.
+  L86 [InconsistentNaming] Name 'panelSprite' does not match rule 'Instance fields (private)'. Suggested name is '_panelSprite'
+  L87 [InconsistentNaming] Name 'entrySprite' does not match rule 'Instance fields (private)'. Suggested name is '_entrySprite'
+  L88 [InconsistentNaming] Name 'selectedIndex' does not match rule 'Instance fields (private)'. Suggested name is '_selectedIn
+
+=== SquadManager.cs|Assets/Scripts/Systems/SquadManager.cs ===
+  L16 [InconsistentNaming] Name 'squadMembers' does not match rule 'Instance fields (private)'. Suggested name is '_squadMember
+  L17 [InconsistentNaming] Name 'selectedMembers' does not match rule 'Instance fields (private)'. Suggested name is '_selected
+  L18 [InconsistentNaming] Name 'commandMembersBuffer' does not match rule 'Instance fields (private)'. Suggested name is '_com
+
+=== SquadPanelController.cs|Assets/Scripts/UI/HUD/SquadPanelController.cs ===
+  L29 [InconsistentNaming] Name 'hudManager' does not match rule 'Instance fields (private)'. Suggested name is '_hudManager'.
+  L29 [NotAccessedField.Local] Field 'hudManager' is assigned but its value is never used
+  L52 [RedundantNameQualifier] Qualifier is redundant
+  L52 [RedundantNameQualifier] Qualifier is redundant
+  L55 [RedundantNameQualifier] Qualifier is redundant
+
+=== SquadPortraitStrip.cs|Assets/Scripts/UI/HUD/SquadPortraitStrip.cs ===
+  L70 [RedundantNameQualifier] Qualifier is redundant
+  L480 [InconsistentNaming] Name 'buttonGO' does not match rule 'Local variables'. Suggested name is 'buttonGo'.
+  L497 [InconsistentNaming] Name 'labelGO' does not match rule 'Local variables'. Suggested name is 'labelGo'.
+  L675 [RedundantNameQualifier] Qualifier is redundant
+  L1156 [Unity.PreferAddressByIdToGraphicsParams] String based property lookup is inefficient
+  L1156 [Unity.PreferAddressByIdToGraphicsParams] String based property lookup is inefficient
+  L1157 [Unity.PreferAddressByIdToGraphicsParams] String based property lookup is inefficient
+  L1157 [Unity.PreferAddressByIdToGraphicsParams] String based property lookup is inefficient
+  L1227 [RedundantAssignment] Value assigned is not used in any execution path
+
+=== SquadStressTest.cs|Assets/Scripts/Debug/DebugStressTests/SquadStressTest.cs ===
+  L27 [ParameterHidesMember] Parameter 'enabled' hides property 'UnityEngine.Behaviour.enabled'
+  L63 [RedundantNameQualifier] Qualifier is redundant
+  L75 [RedundantNameQualifier] Qualifier is redundant
+  L78 [RedundantNameQualifier] Qualifier is redundant
+
+=== StartupReadinessValidator.cs|Assets/Scripts/Core/StartupReadinessValidator.cs ===
+  L6 [RedundantUsingDirective] Using directive is not required by the code and can be safely removed
+  L68 [InconsistentNaming] Name 'errors' does not match rule 'Instance fields (private)'. Suggested name is '_errors'.
+  L69 [InconsistentNaming] Name 'warnings' does not match rule 'Instance fields (private)'. Suggested name is '_warnings'.
+  L71 [InconsistentNaming] Name 'hasRun' does not match rule 'Instance fields (private)'. Suggested name is '_hasRun'.
+  L72 [InconsistentNaming] Name 'lastValidationPassed' does not match rule 'Instance fields (private)'. Suggested name is '_las
+  L296 [RedundantNameQualifier] Qualifier is redundant
+
+=== StartupSquadSpawner.cs|Assets/Scripts/Characters/StartupSquadSpawner.cs ===
+  L7 [RedundantUsingDirective] Using directive is not required by the code and can be safely removed
+  L187 [ConditionIsAlwaysTrueOrFalse] Expression is always true
+  L223 [RedundantNameQualifier] Qualifier is redundant
+  L366 [RedundantNameQualifier] Qualifier is redundant
+  L367 [RedundantNameQualifier] Qualifier is redundant
+  L379 [RedundantNameQualifier] Qualifier is redundant
+
+=== StreamedWorldChunkState.cs|Assets/Scripts/World/StreamedWorldChunkState.cs ===
+  L69 [.CSharpErrors] Cannot resolve symbol 'ProceduralWorld'
+  L71 [.CSharpErrors] Cannot resolve symbol 'ProceduralWorld'
+  L71 [.CSharpErrors] The assignment target must be an assignable variable, property, or indexer
+  L74 [.CSharpErrors] Cannot resolve symbol 'ProceduralWorld'
+  L78 [.CSharpErrors] Cannot resolve symbol 'ProceduralWorld'
+
+=== StreamedWorldMetrics.cs|Assets/Scripts/World/StreamedWorldMetrics.cs ===
+  L10 [UnusedAutoPropertyAccessor.Global] Auto-property accessor 'ActiveMapMagicTiles.get' is never used
+  L15 [UnusedAutoPropertyAccessor.Global] Auto-property accessor 'LastChunkLoadMilliseconds.get' is never used
+  L16 [UnusedAutoPropertyAccessor.Global] Auto-property accessor 'LastNavMeshBakeMilliseconds.get' is never used
+
+=== StreamingNavMeshTileService.cs|Assets/Scripts/World/StreamingNavMeshTileService.cs ===
+  L3 [RedundantUsingDirective] Using directive is not required by the code and can be safely removed
+  L256 [UnusedParameter.Local] Parameter 'mapMagic' is never used
+  L413 [UnusedMethodReturnValue.Local] Method 'TryAddTerrainIntersectingBounds' return value is never used
+
+=== SurvivorAI.cs|Assets/Scripts/Systems/SurvivorAI.cs ===
+  L1 [RedundantUsingDirective] Using directive is not required by the code and can be safely removed
+  L2 [RedundantUsingDirective] Using directive is not required by the code and can be safely removed
+  L3 [RedundantUsingDirective] Using directive is not required by the code and can be safely removed
+
+=== SurvivorManager.cs|Assets/Scripts/World/Simulation/SurvivorManager.cs ===
+  L26 [RedundantDefaultMemberInitializer] Initializing serialised field by default value is redundant
+  L28 [InconsistentNaming] Name 'groups' does not match rule 'Instance fields (private)'. Suggested name is '_groups'.
+  L29 [InconsistentNaming] Name 'seeded' does not match rule 'Instance fields (private)'. Suggested name is '_seeded'.
+  L30 [InconsistentNaming] Name 'nextGroupId' does not match rule 'Instance fields (private)'. Suggested name is '_nextGroupId'
+
+=== SurvivorSpawner.cs|Assets/Scripts/World/Spawning/SurvivorSpawner.cs ===
+  L33 [InconsistentNaming] Name 'survivorPool' does not match rule 'Instance fields (private)'. Suggested name is '_survivorPoo
+  L111 [RedundantNameQualifier] Qualifier is redundant
+  L111 [RedundantNameQualifier] Qualifier is redundant
+  L182 [RedundantNameQualifier] Qualifier is redundant
+  L182 [RedundantNameQualifier] Qualifier is redundant
+
+=== TimeSystem.cs|Assets/Scripts/Core/TimeSystem.cs ===
+  L16 [InconsistentNaming] Name 'lastUnpausedTimeScale' does not match rule 'Instance fields (private)'. Suggested name is '_la
+  L19 [InconsistentNaming] Name 'channelGameplay' does not match rule 'Instance fields (private)'. Suggested name is '_channelG
+  L20 [InconsistentNaming] Name 'channelUI' does not match rule 'Instance fields (private)'. Suggested name is '_channelUI'.
+  L21 [InconsistentNaming] Name 'channelCutscene' does not match rule 'Instance fields (private)'. Suggested name is '_channelC
+
+=== TopBarController.cs|Assets/Scripts/UI/HUD/TopBarController.cs ===
+  L21 [InconsistentNaming] Name 'speed1xButton' does not match rule 'Unity serialized field'. Suggested name is 'speed1XButton'
+  L22 [InconsistentNaming] Name 'speed2xButton' does not match rule 'Unity serialized field'. Suggested name is 'speed2XButton'
+  L23 [InconsistentNaming] Name 'speed4xButton' does not match rule 'Unity serialized field'. Suggested name is 'speed4XButton'
+
+=== TownPrefabCatalog.cs|Assets/Scripts/World/TownPrefabCatalog.cs ===
+  L51 [RedundantDefaultMemberInitializer] Initializing serialised field by default value is redundant
+
+=== UmaAppearanceService.cs|Assets/Scripts/UI/Menus/CharacterCreation/UmaAppearanceService.cs ===
+  L55 [RedundantArgumentDefaultValue] The parameter 'RestoreDNA' has the same default value
+  L55 [RedundantArgumentDefaultValue] The parameter 'skipBundleCheck' has the same default value
+  L151 [RedundantArgumentDefaultValue] The parameter 'rebuildCharacter' has the same default value
+  L197 [RedundantAssignment] Value assigned is not used in any execution path
+  L379 [RedundantArgumentDefaultValue] The parameter 'Gloss' has the same default value
+  L379 [RedundantArgumentDefaultValue] The parameter 'UpdateTexture' has the same default value
+  L585 [InconsistentNaming] Name 'errors' does not match rule 'Instance fields (private)'. Suggested name is '_errors'.
+  L586 [InconsistentNaming] Name 'warnings' does not match rule 'Instance fields (private)'. Suggested name is '_warnings'.
+
+=== UmaSpawnStylingService.cs|Assets/Scripts/Characters/UmaSpawnStylingService.cs ===
+  L16 [NotAccessedField.Local] Field '_logContext' is assigned but its value is never used
+
+=== UnitBrain.cs|Assets/Scripts/AI/Brains/UnitBrain.cs ===
+  L70 [UnusedAutoPropertyAccessor.Global] Auto-property accessor 'CurrentDecision.get' is never used
+  L71 [UnusedAutoPropertyAccessor.Global] Auto-property accessor 'LastSensorFrame.get' is never used
+
+=== UnitCombat.cs|Assets/Scripts/Characters/UnitCombat.cs ===
+  L26 [InconsistentNaming] Name 'selfUnit' does not match rule 'Instance fields (private)'. Suggested name is '_selfUnit'.
+  L27 [InconsistentNaming] Name 'damageableTargetBuffer' does not match rule 'Instance fields (private)'. Suggested name is '_d
+
+=== UnitController.cs|Assets/Scripts/Characters/UnitController.cs ===
+  L47 [InconsistentNaming] Name 'agent' does not match rule 'Instance fields (private)'. Suggested name is '_agent'.
+  L48 [InconsistentNaming] Name 'baseMovSpeed' does not match rule 'Instance fields (private)'. Suggested name is '_baseMovSpee
+  L51 [InconsistentNaming] Name 'desiredMoveDirection' does not match rule 'Instance fields (private)'. Suggested name is '_des
+  L291 [ParameterHidesMember] Parameter 'enabled' hides property 'UnityEngine.Behaviour.enabled'
+  L503 [RedundantAssignment] Value assigned is not used in any execution path
+  L654 [Unity.InefficientMultiplicationOrder] Order of multiplication operations is inefficient
+  L708 [NotAccessedField.Local] Field '_agentCheckTimer' is assigned but its value is never used
+  L824 [Unity.InefficientMultiplicationOrder] Order of multiplication operations is inefficient
+
+=== UnitHealth.cs|Assets/Scripts/Characters/UnitHealth.cs ===
+  L3 [RedundantUsingDirective] Using directive is not required by the code and can be safely removed
+  L31 [InconsistentNaming] Name 'lastDamageSource' does not match rule 'Instance fields (private)'. Suggested name is '_lastDam
+  L124 [RedundantNameQualifier] Qualifier is redundant
+
+=== UnitInventory.cs|Assets/Scripts/Characters/UnitInventory.cs ===
+  L14 [InconsistentNaming] Name 'items' does not match rule 'Instance fields (private)'. Suggested name is '_items'.
+  L151 [InvalidXmlDocComment] Cannot resolve symbol 'owner'
+
+=== UnitLootDropper.cs|Assets/Scripts/Inventory/UnitLootDropper.cs ===
+  L16 [InconsistentNaming] Name 'hasDropped' does not match rule 'Instance fields (private)'. Suggested name is '_hasDropped'.
+
+=== UnitManager.cs|Assets/Scripts/Systems/UnitManager.cs ===
+  L15 [InconsistentNaming] Name 'activeUnits' does not match rule 'Instance fields (private)'. Suggested name is '_activeUnits'
+
+=== UnitStats.cs|Assets/Scripts/Characters/UnitStats.cs ===
+  L166 [InconsistentNaming] Name 'strengthBaseMaxHealth' does not match rule 'Instance fields (private)'. Suggested name is '_st
+  L167 [InconsistentNaming] Name 'hasStrengthBaseHealth' does not match rule 'Instance fields (private)'. Suggested name is '_ha
+  L378 [ConditionIsAlwaysTrueOrFalse] Expression is always false
+  L382 [ConditionIsAlwaysTrueOrFalse] Expression is always false
+  L457 [ConditionIsAlwaysTrueOrFalse] Expression is always false
+  L462 [ConditionIsAlwaysTrueOrFalse] Expression is always false
+
+=== WeaponSystem.cs|Assets/Scripts/Combat/WeaponSystem.cs ===
+  L62 [InconsistentNaming] Name 'ownerUnit' does not match rule 'Instance fields (private)'. Suggested name is '_ownerUnit'.
+  L63 [InconsistentNaming] Name 'ownerStats' does not match rule 'Instance fields (private)'. Suggested name is '_ownerStats'.
+  L64 [InconsistentNaming] Name 'ownerInventory' does not match rule 'Instance fields (private)'. Suggested name is '_ownerInve
+  L65 [InconsistentNaming] Name 'ownerVisionSource' does not match rule 'Instance fields (private)'. Suggested name is '_ownerV
+  L66 [InconsistentNaming] Name 'runtimeBowProjectileMaterial' does not match rule 'Instance fields (private)'. Suggested name 
+  L67 [InconsistentNaming] Name 'currentAmmo' does not match rule 'Instance fields (private)'. Suggested name is '_currentAmmo'
+  L117 [Unity.PreferAddressByIdToGraphicsParams] String based property lookup is inefficient
+  L122 [Unity.PreferAddressByIdToGraphicsParams] String based property lookup is inefficient
+  L247 [RedundantNameQualifier] Qualifier is redundant
+  L262 [RedundantNameQualifier] Qualifier is redundant
+  L277 [ConditionIsAlwaysTrueOrFalse] Expression is always false
+  L278 [HeuristicUnreachableCode] Code is heuristically unreachable
+  L279 [HeuristicUnreachableCode] Code is heuristically unreachable
+  L496 [LocalVariableHidesMember] Local variable 'renderer' hides property 'UnityEngine.Component.renderer'
+  L735 [UnusedMember.Local] Method 'ResolveStrengthScaledDamage' is never used
+
+=== WorkerAI.cs|Assets/Scripts/BuildingSystem/BaseBuilding/WorkerAI.cs ===
+  L19 [InconsistentNaming] Name 'tickTimer' does not match rule 'Instance fields (private)'. Suggested name is '_tickTimer'.
+
+=== WorldDebugTools.cs|Assets/Scripts/Debug/DebugTools/WorldDebugTools.cs ===
+  L32 [ParameterHidesMember] Parameter 'enabled' hides property 'UnityEngine.Behaviour.enabled'
+  L68 [RedundantNameQualifier] Qualifier is redundant
+  L68 [RedundantNameQualifier] Qualifier is redundant
+
+=== WorldEventSystem.cs|Assets/Scripts/World/WorldEventSystem.cs ===
+  L42 [InconsistentNaming] Name 'eventTickTimer' does not match rule 'Instance fields (private)'. Suggested name is '_eventTick
+  L81 [RedundantNameQualifier] Qualifier is redundant
+
+=== WorldHUD.cs|Assets/Scripts/UI/HUD/WorldHUD.cs ===
+  L51 [RedundantDefaultMemberInitializer] Initializing serialised field by default value is redundant
+  L76 [InconsistentNaming] Name 'speed1xButtonOverride' does not match rule 'Unity serialized field'. Suggested name is 'speed1
+  L77 [InconsistentNaming] Name 'speed2xButtonOverride' does not match rule 'Unity serialized field'. Suggested name is 'speed2
+  L78 [InconsistentNaming] Name 'speed4xButtonOverride' does not match rule 'Unity serialized field'. Suggested name is 'speed4
+  L81 [InconsistentNaming] Name 'C_BarBackdrop' does not match rule 'Static readonly fields (private)'. Suggested name is 'CBar
+  L82 [InconsistentNaming] Name 'C_BarCore' does not match rule 'Static readonly fields (private)'. Suggested name is 'CBarCore
+  L83 [InconsistentNaming] Name 'C_BarGlow' does not match rule 'Static readonly fields (private)'. Suggested name is 'CBarGlow
+  L84 [InconsistentNaming] Name 'C_Divider' does not match rule 'Static readonly fields (private)'. Suggested name is 'CDivider
+  L85 [InconsistentNaming] Name 'C_Panel' does not match rule 'Static readonly fields (private)'. Suggested name is 'CPanel'.
+  L85 [UnusedMember.Local] Field 'C_Panel' is never used
+  L86 [InconsistentNaming] Name 'C_PanelSoft' does not match rule 'Static readonly fields (private)'. Suggested name is 'CPanel
+  L87 [InconsistentNaming] Name 'C_Text' does not match rule 'Static readonly fields (private)'. Suggested name is 'CText'.
+  L88 [InconsistentNaming] Name 'C_TextDim' does not match rule 'Static readonly fields (private)'. Suggested name is 'CTextDim
+  L89 [InconsistentNaming] Name 'C_TextSignal' does not match rule 'Static readonly fields (private)'. Suggested name is 'CText
+  L89 [UnusedMember.Local] Field 'C_TextSignal' is never used
+  L90 [InconsistentNaming] Name 'C_HpTrack' does not match rule 'Static readonly fields (private)'. Suggested name is 'CHpTrack
+  L91 [InconsistentNaming] Name 'C_HpHealthy' does not match rule 'Static readonly fields (private)'. Suggested name is 'CHpHea
+  L92 [InconsistentNaming] Name 'C_HpInjured' does not match rule 'Static readonly fields (private)'. Suggested name is 'CHpInj
+  L93 [InconsistentNaming] Name 'C_HpCritical' does not match rule 'Static readonly fields (private)'. Suggested name is 'CHpCr
+  L94 [InconsistentNaming] Name 'C_Bolt' does not match rule 'Static readonly fields (private)'. Suggested name is 'CBolt'.
+  L95 [InconsistentNaming] Name 'C_BoltCore' does not match rule 'Static readonly fields (private)'. Suggested name is 'CBoltCo
+  L96 [InconsistentNaming] Name 'C_TimePanel' does not match rule 'Static readonly fields (private)'. Suggested name is 'CTimeP
+  L97 [InconsistentNaming] Name 'C_TimeButton' does not match rule 'Static readonly fields (private)'. Suggested name is 'CTime
+  L98 [InconsistentNaming] Name 'C_TimeButtonOn' does not match rule 'Static readonly fields (private)'. Suggested name is 'CTi
+  L99 [InconsistentNaming] Name 'C_DamagePopup' does not match rule 'Static readonly fields (private)'. Suggested name is 'CDam
+  L104 [RedundantNameQualifier] Qualifier is redundant
+  L136 [NotAccessedField.Local] Field 'Unit' is assigned but its value is never used
+  L138 [NotAccessedField.Local] Field 'PowerRating' is assigned but its value is never used
+  L139 [NotAccessedField.Local] Field 'Rank' is assigned but its value is never used
+  L169 [InconsistentNaming] Name '_speed1xButtonImage' does not match rule 'Instance fields (private)'. Suggested name is '_spee
+  L170 [InconsistentNaming] Name '_speed2xButtonImage' does not match rule 'Instance fields (private)'. Suggested name is '_spee
+  L171 [InconsistentNaming] Name '_speed4xButtonImage' does not match rule 'Instance fields (private)'. Suggested name is '_spee
+  L495 [InconsistentNaming] Name 'RefreshHP' does not match rule 'Methods'. Suggested name is 'RefreshHp'.
+  L1123 [UnusedVariable] Local variable 'stats' is never used
+  L1157 [UnusedMember.Local] Method 'ResolvePowerRating' is never used
+  L1179 [UnusedMember.Local] Method 'ResolveRankFromPowerRating' is never used
+  L1879 [InconsistentNaming] Name 'speed1xButton' does not match rule 'Local variables'. Suggested name is 'speed1XButton'.
+  L1880 [InconsistentNaming] Name 'speed2xButton' does not match rule 'Local variables'. Suggested name is 'speed2XButton'.
+  L1881 [InconsistentNaming] Name 'speed4xButton' does not match rule 'Local variables'. Suggested name is 'speed4XButton'.
+  L2288 [UnusedMember.Local] Method 'BuildSlider' is never used
+
+=== WorldHUDController.cs|Assets/Scripts/UI/HUD/WorldHUDController.cs ===
+  L124 [RedundantNameQualifier] Qualifier is redundant
+  L130 [RedundantNameQualifier] Qualifier is redundant
+  L399 [RedundantNameQualifier] Qualifier is redundant
+  L404 [RedundantNameQualifier] Qualifier is redundant
+  L415 [RedundantNameQualifier] Qualifier is redundant
+  L510 [RedundantNameQualifier] Qualifier is redundant
+  L511 [RedundantNameQualifier] Qualifier is redundant
+
+=== WorldManager.cs|Assets/Scripts/World/WorldManager.cs ===
+  L49 [InconsistentNaming] Name 'chunkStreamingTickTimer' does not match rule 'Instance fields (private)'. Suggested name is '_
+  L50 [InconsistentNaming] Name 'worldSimulationTimer' does not match rule 'Instance fields (private)'. Suggested name is '_wor
+  L51 [InconsistentNaming] Name 'playerUnitBuffer' does not match rule 'Instance fields (private)'. Suggested name is '_playerU
+
+=== WorldSimulationManager.cs|Assets/Scripts/World/Simulation/WorldSimulationManager.cs ===
+  L38 [InconsistentNaming] Name 'simulationTimer' does not match rule 'Instance fields (private)'. Suggested name is '_simulati
+
+=== ZomberaSquadManagementUI.cs|Assets/Scripts/UI/SquadManagement/ZomberaSquadManagementUI.cs ===
+  L9 [RedundantUsingDirective] Using directive is not required by the code and can be safely removed
+  L25 [NotAccessedField.Local] Field 'SquadMember' is assigned but its value is never used
+  L84 [InconsistentNaming] Name 'survivors' does not match rule 'Instance fields (private)'. Suggested name is '_survivors'.
+  L87 [InconsistentNaming] Name 'inventorySlots' does not match rule 'Instance fields (private)'. Suggested name is '_inventory
+  L90 [InconsistentNaming] Name 'skillEntries' does not match rule 'Instance fields (private)'. Suggested name is '_skillEntrie
+  L93 [InconsistentNaming] Name 'liveSurvivorContexts' does not match rule 'Instance fields (private)'. Suggested name is '_liv
+  L96 [InconsistentNaming] Name 'defaultFont' does not match rule 'Instance fields (private)'. Suggested name is '_defaultFont'
+  L97 [InconsistentNaming] Name 'panelSprite' does not match rule 'Instance fields (private)'. Suggested name is '_panelSprite'
+  L98 [InconsistentNaming] Name 'cardSprite' does not match rule 'Instance fields (private)'. Suggested name is '_cardSprite'.
+  L99 [InconsistentNaming] Name 'slotSprite' does not match rule 'Instance fields (private)'. Suggested name is '_slotSprite'.
+  L100 [InconsistentNaming] Name 'stripeSprite' does not match rule 'Instance fields (private)'. Suggested name is '_stripeSprit
+  L101 [InconsistentNaming] Name 'activeTab' does not match rule 'Instance fields (private)'. Suggested name is '_activeTab'.
+  L101 [NotAccessedField.Local] Field 'activeTab' is assigned but its value is never used
+  L102 [InconsistentNaming] Name 'selectedSurvivorIndex' does not match rule 'Instance fields (private)'. Suggested name is '_se
+  L103 [InconsistentNaming] Name 'liveRefreshTimer' does not match rule 'Instance fields (private)'. Suggested name is '_liveRef
+  L104 [InconsistentNaming] Name 'resolvedTimeSystem' does not match rule 'Instance fields (private)'. Suggested name is '_resol
+  L105 [InconsistentNaming] Name 'pausedByVisibility' does not match rule 'Instance fields (private)'. Suggested name is '_pause
+  L579 [UnusedVariable] Local variable 'labelText' is never used
+  L961 [UnusedMethodReturnValue.Local] Method 'TryAddLiveContext' return value is never used
+  L1253 [ParameterHidesMember] Parameter 'name' hides property 'UnityEngine.Object.name'
+
+=== ZombieAnimationController.cs|Assets/Scripts/AI/ZombieAnimationController.cs ===
+  L132 [InconsistentNaming] Name 'attackTriggerHash' does not match rule 'Instance fields (private)'. Suggested name is '_attack
+  L133 [InconsistentNaming] Name 'altAttackTriggerHash' does not match rule 'Instance fields (private)'. Suggested name is '_alt
+  L134 [InconsistentNaming] Name 'dodgeTriggerHash' does not match rule 'Instance fields (private)'. Suggested name is '_dodgeTr
+  L135 [InconsistentNaming] Name 'hitTriggerHash' does not match rule 'Instance fields (private)'. Suggested name is '_hitTrigge
+  L136 [InconsistentNaming] Name 'dieTriggerHash' does not match rule 'Instance fields (private)'. Suggested name is '_dieTrigge
+  L137 [InconsistentNaming] Name 'spawnTriggerHash' does not match rule 'Instance fields (private)'. Suggested name is '_spawnTr
+  L138 [InconsistentNaming] Name 'isDeadHash' does not match rule 'Instance fields (private)'. Suggested name is '_isDeadHash'.
+  L139 [InconsistentNaming] Name 'isInCombatHash' does not match rule 'Instance fields (private)'. Suggested name is '_isInComba
+  L140 [InconsistentNaming] Name 'velocityXHash' does not match rule 'Instance fields (private)'. Suggested name is '_velocityXH
+  L141 [InconsistentNaming] Name 'velocityZHash' does not match rule 'Instance fields (private)'. Suggested name is '_velocityZH
+  L142 [InconsistentNaming] Name 'deathRollHash' does not match rule 'Instance fields (private)'. Suggested name is '_deathRollH
+  L144 [InconsistentNaming] Name 'hasAttackTrigger' does not match rule 'Instance fields (private)'. Suggested name is '_hasAtta
+  L145 [InconsistentNaming] Name 'hasAltAttackTrigger' does not match rule 'Instance fields (private)'. Suggested name is '_hasA
+  L146 [InconsistentNaming] Name 'hasDodgeTrigger' does not match rule 'Instance fields (private)'. Suggested name is '_hasDodge
+  L147 [InconsistentNaming] Name 'hasHitTrigger' does not match rule 'Instance fields (private)'. Suggested name is '_hasHitTrig
+  L148 [InconsistentNaming] Name 'hasDieTrigger' does not match rule 'Instance fields (private)'. Suggested name is '_hasDieTrig
+  L149 [InconsistentNaming] Name 'hasSpawnTrigger' does not match rule 'Instance fields (private)'. Suggested name is '_hasSpawn
+  L150 [InconsistentNaming] Name 'hasIsDeadBool' does not match rule 'Instance fields (private)'. Suggested name is '_hasIsDeadB
+  L151 [InconsistentNaming] Name 'hasIsInCombatBool' does not match rule 'Instance fields (private)'. Suggested name is '_hasIsI
+  L152 [InconsistentNaming] Name 'hasSpeedFloat' does not match rule 'Instance fields (private)'. Suggested name is '_hasSpeedFl
+  L153 [InconsistentNaming] Name 'hasVelocityX' does not match rule 'Instance fields (private)'. Suggested name is '_hasVelocity
+  L154 [InconsistentNaming] Name 'hasVelocityZ' does not match rule 'Instance fields (private)'. Suggested name is '_hasVelocity
+  L155 [InconsistentNaming] Name 'hasDeathRoll' does not match rule 'Instance fields (private)'. Suggested name is '_hasDeathRol
+  L156 [InconsistentNaming] Name 'speedFloatHash' does not match rule 'Instance fields (private)'. Suggested name is '_speedFloa
+  L157 [InconsistentNaming] Name 'lastForcedLocomotionRestartFrame' does not match rule 'Instance fields (private)'. Suggested n
+  L159 [InconsistentNaming] Name 'healthSubscribed' does not match rule 'Instance fields (private)'. Suggested name is '_healthS
+  L160 [InconsistentNaming] Name 'combatTickSubscribed' does not match rule 'Instance fields (private)'. Suggested name is '_com
+  L161 [InconsistentNaming] Name 'lastHitTriggerFrame' does not match rule 'Instance fields (private)'. Suggested name is '_last
+  L162 [InconsistentNaming] Name 'lastDodgeTriggerFrame' does not match rule 'Instance fields (private)'. Suggested name is '_la
+  L163 [InconsistentNaming] Name 'hasAppliedDeathPresentation' does not match rule 'Instance fields (private)'. Suggested name i
+  L165 [InconsistentNaming] Name 'zombieAi' does not match rule 'Instance fields (private)'. Suggested name is '_zombieAi'.
+  L166 [InconsistentNaming] Name 'zombieStateMachine' does not match rule 'Instance fields (private)'. Suggested name is '_zombi
+  L167 [InconsistentNaming] Name 'unitController' does not match rule 'Instance fields (private)'. Suggested name is '_unitContr
+  L168 [InconsistentNaming] Name 'navMeshAgent' does not match rule 'Instance fields (private)'. Suggested name is '_navMeshAgen
+  L169 [InconsistentNaming] Name 'mainCollider' does not match rule 'Instance fields (private)'. Suggested name is '_mainCollide
+  L170 [InconsistentNaming] Name 'rootRigidbody' does not match rule 'Instance fields (private)'. Suggested name is '_rootRigidb
+  L171 [InconsistentNaming] Name 'ragdollRigidbodies' does not match rule 'Instance fields (private)'. Suggested name is '_ragdo
+  L172 [InconsistentNaming] Name 'ragdollColliders' does not match rule 'Instance fields (private)'. Suggested name is '_ragdoll
+  L173 [InconsistentNaming] Name 'ragdollRigCached' does not match rule 'Instance fields (private)'. Suggested name is '_ragdoll
+  L174 [InconsistentNaming] Name 'hasRagdollRig' does not match rule 'Instance fields (private)'. Suggested name is '_hasRagdoll
+  L175 [InconsistentNaming] Name 'pendingRagdollCoroutine' does not match rule 'Instance fields (private)'. Suggested name is '_
+  L177 [InconsistentNaming] Name 'runtimeOverrideController' does not match rule 'Instance fields (private)'. Suggested name is 
+  L178 [InconsistentNaming] Name 'runtimeOverrides' does not match rule 'Instance fields (private)'. Suggested name is '_runtime
+  L180 [InconsistentNaming] Name 'idleVariants' does not match rule 'Instance fields (private)'. Suggested name is '_idleVariant
+  L181 [InconsistentNaming] Name 'locomotionVariants' does not match rule 'Instance fields (private)'. Suggested name is '_locom
+  L182 [InconsistentNaming] Name 'attackVariants' does not match rule 'Instance fields (private)'. Suggested name is '_attackVar
+  L183 [InconsistentNaming] Name 'dodgeVariants' does not match rule 'Instance fields (private)'. Suggested name is '_dodgeVaria
+  L184 [InconsistentNaming] Name 'hitVariants' does not match rule 'Instance fields (private)'. Suggested name is '_hitVariants'
+  L185 [InconsistentNaming] Name 'deathVariants' does not match rule 'Instance fields (private)'. Suggested name is '_deathVaria
+  L186 [InconsistentNaming] Name 'combatIdleVariants' does not match rule 'Instance fields (private)'. Suggested name is '_comba
+  L187 [InconsistentNaming] Name 'filteredHitVariants' does not match rule 'Instance fields (private)'. Suggested name is '_filt
+  L188 [InconsistentNaming] Name 'filteredHitVariantWeights' does not match rule 'Instance fields (private)'. Suggested name is 
+  L189 [InconsistentNaming] Name 'folderVariantCategoriesBuilt' does not match rule 'Instance fields (private)'. Suggested name 
+  L190 [InconsistentNaming] Name 'cachedIncomingHitDamage' does not match rule 'Instance fields (private)'. Suggested name is '_
+  L191 [InconsistentNaming] Name 'cachedIncomingHitStunChance01' does not match rule 'Instance fields (private)'. Suggested name
+  L192 [InconsistentNaming] Name 'cachedIncomingHitReactionArea' does not match rule 'Instance fields (private)'. Suggested name
+  L193 [InconsistentNaming] Name 'cachedIncomingHitContextExpiresAt' does not match rule 'Instance fields (private)'. Suggested 
+
+=== ZombieController.cs|Assets/Scripts/AI/ZombieController.cs ===
+  L33 [InconsistentNaming] Name 'tickTimer' does not match rule 'Instance fields (private)'. Suggested name is '_tickTimer'.
+  L34 [InconsistentNaming] Name 'nearbyEnemyBuffer' does not match rule 'Instance fields (private)'. Suggested name is '_nearby
+  L35 [InconsistentNaming] Name 'unitController' does not match rule 'Instance fields (private)'. Suggested name is '_unitContr
+  L36 [InconsistentNaming] Name 'navMeshAgent' does not match rule 'Instance fields (private)'. Suggested name is '_navMeshAgen
+
+=== ZombieManager.cs|Assets/Scripts/Systems/ZombieManager.cs ===
+  L85 [InconsistentNaming] Name 'activeZombies' does not match rule 'Instance fields (private)'. Suggested name is '_activeZomb
+  L86 [InconsistentNaming] Name 'pendingDeadZombieReturns' does not match rule 'Instance fields (private)'. Suggested name is '
+  L87 [InconsistentNaming] Name 'pendingDeadZombieReturnBuffer' does not match rule 'Instance fields (private)'. Suggested name
+  L88 [InconsistentNaming] Name 'spawnedZombieBatchBuffer' does not match rule 'Instance fields (private)'. Suggested name is '
+  L89 [InconsistentNaming] Name 'invalidZombieBuffer' does not match rule 'Instance fields (private)'. Suggested name is '_inva
+  L90 [InconsistentNaming] Name 'playerUnitBuffer' does not match rule 'Instance fields (private)'. Suggested name is '_playerU
+  L91 [InconsistentNaming] Name 'runtimeFallbackAmbientZombieType' does not match rule 'Instance fields (private)'. Suggested n
+  L92 [InconsistentNaming] Name 'hasSpawnedValidationZombieNearPlayer' does not match rule 'Instance fields (private)'. Suggest
+  L93 [InconsistentNaming] Name 'runtimeSpawnerPrewarmed' does not match rule 'Instance fields (private)'. Suggested name is '_
+  L94 [InconsistentNaming] Name 'initializationTime' does not match rule 'Instance fields (private)'. Suggested name is '_initi
+  L95 [InconsistentNaming] Name 'nextAmbientSpawnEvaluationTime' does not match rule 'Instance fields (private)'. Suggested nam
+  L96 [InconsistentNaming] Name 'nextGuaranteedAmbientSpawnTime' does not match rule 'Instance fields (private)'. Suggested nam
+  L97 [InconsistentNaming] Name 'nextHordePulseTime' does not match rule 'Instance fields (private)'. Suggested name is '_nextH
+  L291 [ConditionIsAlwaysTrueOrFalse] Expression is always true
+  L426 [RedundantNameQualifier] Qualifier is redundant
+  L537 [RedundantNameQualifier] Qualifier is redundant
+  L537 [RedundantNameQualifier] Qualifier is redundant
+
+=== ZombieSpawner.cs|Assets/Scripts/World/Spawning/ZombieSpawner.cs ===
+  L18 [RedundantNameQualifier] Qualifier is redundant
+  L27 [RedundantNameQualifier] Qualifier is redundant
+  L44 [RedundantNameQualifier] Qualifier is redundant
+  L78 [RedundantNameQualifier] Qualifier is redundant
+  L86 [RedundantNameQualifier] Qualifier is redundant
+  L86 [RedundantNameQualifier] Qualifier is redundant
+  L125 [RedundantNameQualifier] Qualifier is redundant
+  L129 [RedundantNameQualifier] Qualifier is redundant
+  L143 [RedundantNameQualifier] Qualifier is redundant
+  L148 [RedundantNameQualifier] Qualifier is redundant
+
+=== ZombieStateMachine.cs|Assets/Scripts/AI/ZombieStateMachine.cs ===
+  L475 [.CSharpErrors] Cannot convert source type 'void' to target type 'bool'
+
+=== ZombieStressTest.cs|Assets/Scripts/Debug/DebugStressTests/ZombieStressTest.cs ===
+  L27 [ParameterHidesMember] Parameter 'enabled' hides property 'UnityEngine.Behaviour.enabled'
+  L67 [RedundantNameQualifier] Qualifier is redundant
+  L75 [RedundantNameQualifier] Qualifier is redundant
+  L77 [RedundantNameQualifier] Qualifier is redundant
+
+=== ZombieType.cs|Assets/Scripts/Data/ZombieType.cs ===
+  L20 [RedundantDefaultMemberInitializer] Initializing serialised field by default value is redundant

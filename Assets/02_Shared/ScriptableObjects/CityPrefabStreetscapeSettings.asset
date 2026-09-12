@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a2e47a1273ff4a459a1b8f45aa809f4, type: 3}
+  m_Name: CityPrefabStreetscapeSettings
+  m_EditorClassIdentifier: Zombera.World::Zombera.World.Roads.CityPrefabStreetscapeSettings
+  spawnTrafficLights: 1
+  trafficSignalPrefab: {fileID: 1030990700, guid: abc00000000003748937347013388542, type: 3}
+  trafficSignalSetbackMeters: 2.5
+  trafficSignalLateralOffsetMeters: 1.8
+  placeSignalsOnTerminatingBranch: 1
+  spawnStreetSigns: 1
+  streetSignPrefab: {fileID: 1030986016, guid: 323b77eedc041fa4e91d28d84bde6bee, type: 3}
+  streetSignCornerOffsetMeters: 3.5
+  spawnPowerLines: 1
+  utilityPolePrefab: {fileID: 0}
+  utilityPoleSpacingMeters: 40
+  utilityPoleLateralOffsetMeters: 2
+  alternatePowerLineSides: 1
+  powerLineWireMaterial: {fileID: 0}
+  powerLineWireWidthMeters: 0.05
+  spawnParkedCars: 1
+  parkedCarPrefabs: []
+  parkedCarSpacingMeters: 12
+  parkedCarShoulderOffsetMeters: 0.8
+  parkedCarLocalDensity: 0.7
+  parkedCarArterialDensity: 0.35
+  parkedCarHighwayDensity: 0.1
+  parkedCarJunctionExclusionMeters: 12
+  spawnStreetFurniture: 1
+  benchPrefab: {fileID: 0}
+  mailboxPrefab: {fileID: 0}
+  fireHydrantPrefab: {fileID: 0}
+  trashCanPrefab: {fileID: 0}
+  streetFurnitureMinSeparationMeters: 4
+  benchDensityPer100Meters: 0.15
+  mailboxDensityPer100Meters: 0.08
+  hydrantDensityPer100Meters: 0.05
+  trashCanDensityPer100Meters: 0.1
